@@ -46,10 +46,6 @@ a {
     color: #0d5db8;
 }
 
-a:hover {
-    border-bottom: 1px solid #4a85c8;
-}
-
 i {
     font-style: italic;
 }
@@ -71,4 +67,34 @@ h1 {
     text-align: right;
     border-bottom: 1px solid #ddd;
     padding-right: 30px;
+}
+
+#profile {
+    padding: 30px 30px 10px 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+#profile-pic {
+    float: left;
+    margin-right: 40px;
+    text-align: center;
+}
+
+#profile img {
+    width: 220px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+
+/* Main Profile Name */
+#profile-name {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 24px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+#profile p {
+    margin-bottom: 20px;
 }
