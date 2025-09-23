@@ -2,69 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <title>Résumé — Nirav</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Resume — Your Name</title>
-  <meta name="description" content="Printable resume / CV for Your Name." />
-  <link rel="canonical" href="https://example.com/resume.html" />
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="assets/css/utilities.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header>
-    <nav aria-label="Primary">
-      <a href="/">Your Name</a>
-      <ul role="list">
-        <li><a href="/projects.html">Projects</a></li>
-        <li><a aria-current="page">Resume</a></li>
-        <li><a href="/blog.html">Blog</a></li>
-        <li><a href="/about.html">About</a></li>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">NIRAV</a>
+    <nav aria-label="Main">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a class="active" href="resume.html">Résumé</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="btn" href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <h1>Resume</h1>
-    <p><a href="/assets/your-name-cv.pdf" download>Download PDF</a></p>
-  </header>
+    <button class="theme-toggle" aria-label="Toggle dark mode">🌓</button>
+  </div>
+</header>
 
-  <main id="main" tabindex="-1">
-    <section aria-labelledby="summary">
-      <h2 id="summary">Summary</h2>
-      <p>Client-focused engineer with strengths in backend systems, data pipelines, and reliability.</p>
-    </section>
+<main class="container section">
+  <h1 class="section__title">Résumé</h1>
 
-    <section aria-labelledby="experience">
-      <h2 id="experience">Experience</h2>
-      <article class="role">
-        <h3>Software Engineer — Company</h3>
-        <p class="meta">Jan 2024 – Present · Dublin</p>
-        <ul>
-          <li>Reduced API P95 latency 62% with caching + index strategy.</li>
-          <li>Designed multi-tenant architecture; onboarded 30+ customers.</li>
-        </ul>
-      </article>
-      <!-- Add more roles -->
-    </section>
+  <section class="cv-block">
+    <h2>Experience</h2>
 
-    <section aria-labelledby="education">
-      <h2 id="education">Education</h2>
-      <p>BSc in Computer Science — University, 2025</p>
-      <ul>
-        <li>Modules: Algorithms, Networks, Databases, ML, Cloud</li>
+    <article>
+      <header class="cv-header">
+        <h3>Data Science Analyst Intern</h3>
+        <span>May 2025 – Sept 2025</span>
+      </header>
+      <ul class="bullets">
+        <li>Built analytics & ML artifacts to drive stakeholder decisions (details TBA).</li>
+        <li>Stack: Python, pandas, scikit-learn, SQL, Git, Jupyter.</li>
       </ul>
-    </section>
+    </article>
 
-    <section aria-labelledby="skills">
-      <h2 id="skills">Skills</h2>
-      <ul>
-        <li>Languages: Java, Go, Python, SQL</li>
-        <li>Frameworks: Spring, Express, Flask</li>
-        <li>Infra: Docker, K8s, AWS, Terraform</li>
-        <li>Data: Kafka, Postgres, Redis, BigQuery</li>
+    <article>
+      <header class="cv-header">
+        <h3>Co-founder & Treasurer — FarmEasy</h3>
+        <span>Jan 2020 – Sept 2022</span>
+      </header>
+      <ul class="bullets">
+        <li>Managed ~€25,000 cashflow; implemented zero-waste harvest policy.</li>
+        <li>Handled weekly orders, fulfillment, and bookkeeping.</li>
       </ul>
-    </section>
-  </main>
+    </article>
+  </section>
 
-  <footer>
-    <p>© 2025 Your Name</p>
-  </footer>
+  <section class="cv-block">
+    <h2>Education</h2>
+    <p>BSc (Hons) Computer Science — UCD</p>
+  </section>
+
+  <section class="cv-block">
+    <h2>Skills</h2>
+    <ul class="pill-list">
+      <li>Python</li><li>Java</li><li>Julia</li><li>Docker</li><li>Kubernetes</li>
+      <li>PostgreSQL</li><li>scikit-learn</li><li>RabbitMQ</li><li>Open3D</li>
+    </ul>
+  </section>
+
+  <div class="mt-24">
+    <a class="btn" href="#" aria-disabled="true" title="Add your PDF and link it here">Download PDF</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__inner">
+    <p>© <span id="year"></span> Nirav</p>
+    <ul class="social">
+      <li><a href="https://github.com/yourhandle">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/yourhandle/">LinkedIn</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

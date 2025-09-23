@@ -2,56 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <title>About — Nirav</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — Your Name</title>
-  <meta name="description" content="Bio, engineering philosophy, and what I'm exploring now." />
-  <link rel="canonical" href="https://example.com/about.html" />
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="assets/css/utilities.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header>
-    <nav aria-label="Primary">
-      <a href="/">Your Name</a>
-      <ul role="list">
-        <li><a href="/projects.html">Projects</a></li>
-        <li><a href="/resume.html">Resume</a></li>
-        <li><a href="/blog.html">Blog</a></li>
-        <li><a aria-current="page">About</a></li>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">NIRAV</a>
+    <nav aria-label="Main">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Résumé</a></li>
+        <li><a class="active" href="about.html">About</a></li>
+        <li><a class="btn" href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <h1>About</h1>
-  </header>
+    <button class="theme-toggle" aria-label="Toggle dark mode">🌓</button>
+  </div>
+</header>
 
-  <main id="main" tabindex="-1">
-    <section aria-labelledby="bio">
-      <h2 id="bio">Bio</h2>
-      <p>Short professional story, areas of focus, values, and interests.</p>
-    </section>
-
-    <section aria-labelledby="philosophy">
-      <h2 id="philosophy">Engineering Philosophy</h2>
-      <ul>
-        <li>Measure outcomes and optimize for reliability first.</li>
-        <li>Prefer boring tech for critical paths.</li>
-        <li>Automate the sharp edges.</li>
+<main class="container section">
+  <div class="about">
+    <img class="avatar" src="assets/images/avatar.jpg" alt="Portrait of Nirav" />
+    <div>
+      <h1>About</h1>
+      <p>
+        I’m a data & software engineer who likes turning messy problems into measurable results.
+        My work spans ML pipelines, optimisation, and systems performance.
+      </p>
+      <h2>Highlights</h2>
+      <ul class="bullets">
+        <li>Final Year Project: LiDAR re-localisation with ICP on KITTI (Open3D).</li>
+        <li>Cloud: Docker, Kubernetes (compose → k8s conversion), RabbitMQ pipelines.</li>
+        <li>Performance: M/M/K capacity planning with Erlang-C.</li>
+        <li>Entrepreneurship: FarmEasy (Jan 2020–Sept 2022), managed ~€25,000 as treasurer.</li>
       </ul>
-    </section>
+    </div>
+  </div>
+</main>
 
-    <section aria-labelledby="uses">
-      <h2 id="uses"><a href="/uses.html">/uses</a></h2>
-      <p>Tools, editor, dotfiles, and hardware I use.</p>
-    </section>
+<footer class="site-footer">
+  <div class="container footer__inner">
+    <p>© <span id="year"></span> Nirav</p>
+    <ul class="social">
+      <li><a href="https://github.com/yourhandle">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/yourhandle/">LinkedIn</a></li>
+    </ul>
+  </div>
+</footer>
 
-    <section aria-labelledby="now">
-      <h2 id="now"><a href="/now.html">/now</a></h2>
-      <p>What I’m working on currently.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Your Name</p>
-  </footer>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

@@ -2,175 +2,137 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <title>Nirav — Data & Software Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name — Software Engineer</title>
-  <meta name="description" content="Backend/Full-stack engineer. I build reliable systems with measurable impact." />
-  <link rel="canonical" href="https://example.com/" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Your Name — Software Engineer" />
-  <meta property="og:description" content="Backend/Full-stack engineer. I build reliable systems with measurable impact." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://example.com/" />
-  <meta property="og:image" content="https://example.com/og-image.jpg" />
-  <link rel="stylesheet" href="/styles.css" />
-  <!-- JSON-LD Person -->
+  <meta name="description" content="Portfolio of Nirav — data & software engineer focused on ML pipelines, systems performance, and optimisation." />
+  <link rel="preload" href="assets/images/placeholder.png" as="image" />
+  <link rel="stylesheet" href="assets/css/utilities.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/images/placeholder.png" />
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Your Name",
-    "url":"https://example.com",
-    "sameAs":["https://github.com/you","https://www.linkedin.com/in/you"],
-    "jobTitle":"Software Engineer",
-    "knowsAbout":["Java","Spring Boot","PostgreSQL","Docker","AWS"]
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nirav",
+    "url": "https://example.com",
+    "jobTitle": "Data & Software Engineer",
+    "sameAs": ["https://github.com/yourhandle","https://www.linkedin.com/in/yourhandle/"]
   }
   </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" role="banner">
-    <div class="container">
-      <nav class="site-nav" aria-label="Primary">
-        <a class="brand" href="/">Your Name</a>
-        <ul class="nav-list" role="list">
-          <li><a href="/projects.html">Projects</a></li>
-          <li><a href="/resume.html">Resume</a></li>
-          <li><a href="/blog.html">Blog</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/contact.html">Contact</a></li>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">NIRAV</a>
+      <nav aria-label="Main">
+        <ul class="menu">
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Résumé</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="btn" href="contact.html">Contact</a></li>
         </ul>
       </nav>
-
-      <section class="hero" aria-labelledby="hero-title">
-        <h1 id="hero-title">Software Engineer · Backend & Cloud</h1>
-        <p class="tagline">I help <strong>teams ship faster</strong> by building <strong>reliable APIs</strong> and <strong>data pipelines</strong>.</p>
-        <p class="hero-ctas">
-          <a href="/projects.html" class="btn">View Projects</a>
-          <a href="/resume.html" class="btn" rel="nofollow">Download CV</a>
-        </p>
-      </section>
+      <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">🌓</button>
     </div>
   </header>
 
-  <main id="main" tabindex="-1">
-    <section class="tech" aria-labelledby="tech-title">
-      <div class="container">
-        <h2 id="tech-title">Core Stack</h2>
-        <ul class="tech-list" role="list" aria-label="Technologies">
-          <li>Java · Spring Boot</li>
-          <li>PostgreSQL · Redis</li>
-          <li>Docker · Kubernetes</li>
-          <li>AWS (ECS, RDS, S3)</li>
-          <li>GitHub Actions · Terraform</li>
+  <main id="main">
+    <section class="hero container">
+      <div class="hero__copy">
+        <h1>Data & Software Engineer</h1>
+        <p class="lead">
+          I build measurable solutions — from LiDAR re-localisation to Kubernetes deployments and
+          queueing-theory capacity plans.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="projects.html">View Projects</a>
+          <a class="btn" href="resume.html">Download CV</a>
+        </div>
+        <ul class="tech-tags" aria-label="Key skills">
+          <li>Python</li><li>Julia</li><li>Java</li><li>Docker</li><li>Kubernetes</li>
+          <li>scikit-learn</li><li>RabbitMQ</li><li>Open3D</li><li>PostgreSQL</li>
         </ul>
       </div>
-    </section>
-
-    <section class="featured-projects" aria-labelledby="projects-title">
-      <div class="container">
-        <h2 id="projects-title">Featured Projects</h2>
-
-        <article class="project-card">
-          <header>
-            <h3><a href="/projects/event-streaming-platform.html">Event Streaming Platform</a></h3>
-            <p class="project-meta">Java · Kafka · Spring · PostgreSQL</p>
-          </header>
-          <p class="project-blurb">Built a real-time ingestion and aggregation pipeline; reduced data latency from 15 min to 45 s.</p>
-          <p class="project-links">
-            <a href="/projects/event-streaming-platform.html">Case Study</a>
-            <a href="https://github.com/you/event-streaming" rel="noopener">Code</a>
-            <a href="#" aria-disabled="true">Demo</a>
-          </p>
-        </article>
-
-        <article class="project-card">
-          <header>
-            <h3><a href="/projects/image-service.html">Image Processing Service</a></h3>
-            <p class="project-meta">Go · S3 · Lambda · CloudFront</p>
-          </header>
-          <p class="project-blurb">On-the-fly transforms & caching; cut egress cost 38% and TTFB 62%.</p>
-          <p class="project-links">
-            <a href="/projects/image-service.html">Case Study</a>
-            <a href="https://github.com/you/image-service" rel="noopener">Code</a>
-          </p>
-        </article>
-
-        <article class="project-card">
-          <header>
-            <h3><a href="/projects/ops-dashboard.html">Ops Reliability Dashboard</a></h3>
-            <p class="project-meta">Node · TimescaleDB · Grafana</p>
-          </header>
-          <p class="project-blurb">SLO tracking and alert pipeline; reduced MTTR from 2h to 35m.</p>
-          <p class="project-links">
-            <a href="/projects/ops-dashboard.html">Case Study</a>
-            <a href="https://github.com/you/ops-dashboard" rel="noopener">Code</a>
-            <a href="#">Live</a>
-          </p>
-        </article>
-
-        <p><a href="/projects.html" class="more-link">See all projects →</a></p>
+      <div class="hero__art">
+        <img src="assets/images/placeholder.png" alt="" width="560" height="420" loading="eager" />
       </div>
     </section>
 
-    <section class="experience" aria-labelledby="exp-title">
-      <div class="container">
-        <h2 id="exp-title">Experience</h2>
-
-        <article class="role">
-          <h3>Software Engineer — Company Name</h3>
-          <p class="role-meta">Jan 2024 – Present · Dublin, IE</p>
-          <ul>
-            <li>Cut query latency <strong>62%</strong> via indexing, caching, and read replicas.</li>
-            <li>Designed multi-tenant auth; onboarded 30+ customers with zero regressions.</li>
-          </ul>
+    <section class="container section">
+      <h2 class="section__title">Featured Work</h2>
+      <div class="grid cards">
+        <article class="card">
+          <a href="project-template.html">
+            <img src="assets/images/placeholder.png" alt="" loading="lazy" />
+            <div class="card__body">
+              <h3>LiDAR Re-localisation on Constrained Devices</h3>
+              <p>Open3D pipeline with ICP ablations (FoV, range, density, noise) on KITTI.</p>
+              <ul class="tags"><li>Python</li><li>Open3D</li><li>SLAM</li></ul>
+            </div>
+          </a>
         </article>
 
-        <article class="role">
-          <h3>Data Science Intern — Company Name</h3>
-          <p class="role-meta">May 2023 – Sep 2023 · Remote</p>
-          <ul>
-            <li>Unified 12 data silos into a BigQuery lake with dbt lineage.</li>
-            <li>Automated KPI reports; saved 6 h/week for the ops team.</li>
-          </ul>
+        <article class="card">
+          <a href="project-template.html">
+            <img src="assets/images/placeholder.png" alt="" loading="lazy" />
+            <div class="card__body">
+              <h3>Astro Classification (SDSS)</h3>
+              <p>Compared SVM kernels vs kNN/DT with filter + wrapper feature selection.</p>
+              <ul class="tags"><li>scikit-learn</li><li>ROC/AUC</li></ul>
+            </div>
+          </a>
         </article>
 
-        <p><a href="/resume.html" class="more-link">Full resume →</a></p>
+        <article class="card">
+          <a href="project-template.html">
+            <img src="assets/images/placeholder.png" alt="" loading="lazy" />
+            <div class="card__body">
+              <h3>Compose → Kubernetes in a Day</h3>
+              <p>Kompose conversion, Services/Deployments, Minikube workflows.</p>
+              <ul class="tags"><li>Docker</li><li>K8s</li></ul>
+            </div>
+          </a>
+        </article>
+      </div>
+      <div class="center mt-24">
+        <a class="btn" href="projects.html">See all projects</a>
       </div>
     </section>
 
-    <section class="posts" aria-labelledby="posts-title">
-      <div class="container">
-        <h2 id="posts-title">Writing</h2>
-        <article class="post-card">
-          <h3><a href="/blog/zero-downtime-migrations.html">Zero-Downtime Schema Migrations with Spring</a></h3>
-          <p>Patterns for blue/green, expand/contract, and backfills.</p>
-          <p class="post-meta">6 min read · Engineering</p>
-        </article>
-
-        <article class="post-card">
-          <h3><a href="/blog/kafka-exactly-once.html">Exactly-Once Processing on Kafka: When and How</a></h3>
-          <p>Idempotency keys, EOS, and operational caveats.</p>
-          <p class="post-meta">8 min read · Systems</p>
-        </article>
-
-        <p><a href="/blog.html" class="more-link">All posts →</a></p>
-      </div>
-    </section>
-
-    <section class="contact-cta" aria-labelledby="contact-title">
-      <div class="container">
-        <h2 id="contact-title">Let’s build something</h2>
-        <p>Have a challenge around APIs, data, or reliability? <a href="/contact.html">Get in touch</a>.</p>
+    <section class="container section section--alt">
+      <div class="two-col">
+        <div>
+          <h2>Entrepreneurial Edge</h2>
+          <p>
+            Co-founded <strong>FarmEasy</strong> during COVID (Jan 2020–Sept 2022). Managed ~€25,000 as treasurer,
+            ran zero-waste harvests, and served local customers.
+          </p>
+        </div>
+        <div>
+          <h2>Currently</h2>
+          <p>
+            <strong>Data Science Analyst Intern (May–Sept 2025)</strong>. Building analytics & ML artifacts that move
+            the needle for stakeholders.
+          </p>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <p>© <span data-year>2025</span> Your Name. <a href="/resume.html">CV</a> · <a href="https://github.com/you">GitHub</a> · <a href="https://www.linkedin.com/in/you">LinkedIn</a></p>
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Nirav — Built with vanilla HTML/CSS/JS</p>
+      <ul class="social">
+        <li><a href="https://github.com/yourhandle" aria-label="GitHub">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/yourhandle/" aria-label="LinkedIn">LinkedIn</a></li>
+        <li><a href="mailto:you@example.com" aria-label="Email">Email</a></li>
+      </ul>
     </div>
   </footer>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

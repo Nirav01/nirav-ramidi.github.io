@@ -2,78 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <title>Contact — Nirav</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — Your Name</title>
-  <meta name="description" content="Get in touch for engineering projects, consulting, or collaborations." />
-  <link rel="canonical" href="https://example.com/contact.html" />
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="assets/css/utilities.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header>
-    <nav aria-label="Primary">
-      <a href="/">Your Name</a>
-      <ul role="list">
-        <li><a href="/projects.html">Projects</a></li>
-        <li><a href="/resume.html">Resume</a></li>
-        <li><a href="/blog.html">Blog</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a aria-current="page">Contact</a></li>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">NIRAV</a>
+    <nav aria-label="Main">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Résumé</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="active btn" href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <h1>Contact</h1>
-  </header>
+    <button class="theme-toggle" aria-label="Toggle dark mode">🌓</button>
+  </div>
+</header>
 
-  <main id="main" tabindex="-1">
-    <section aria-labelledby="contact-form-title">
-      <h2 id="contact-form-title">Send a message</h2>
-      <form action="/thank-you.html" method="post">
-        <div class="field">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" autocomplete="name" required />
-        </div>
+<main class="container section">
+  <h1 class="section__title">Get in touch</h1>
+  <form class="contact-form" action="#" method="post" aria-describedby="formHelp">
+    <div class="grid form-grid">
+      <label>Full name
+        <input name="name" type="text" required autocomplete="name" />
+      </label>
+      <label>Email
+        <input name="email" type="email" required autocomplete="email" />
+      </label>
+      <label class="span-2">Message
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+    </div>
+    <p id="formHelp" class="muted">This demo form doesn’t submit anywhere yet. Wire it to your backend or a service like Formspree.</p>
+    <button class="btn primary" type="submit" disabled aria-disabled="true" title="Connect a backend to enable">Send</button>
+  </form>
+</main>
 
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required />
-        </div>
+<footer class="site-footer">
+  <div class="container footer__inner">
+    <p>© <span id="year"></span> Nirav</p>
+    <ul class="social">
+      <li><a href="https://github.com/yourhandle">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/yourhandle/">LinkedIn</a></li>
+    </ul>
+  </div>
+</footer>
 
-        <div class="field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" required></textarea>
-        </div>
-
-        <div class="field">
-          <label for="topic">Topic</label>
-          <select id="topic" name="topic">
-            <option>General</option>
-            <option>Project</option>
-            <option>Consulting</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <input id="consent" name="consent" type="checkbox" required />
-          <label for="consent">I agree to be contacted about this inquiry.</label>
-        </div>
-
-        <button type="submit">Send</button>
-      </form>
-    </section>
-
-    <section aria-labelledby="links">
-      <h2 id="links">Elsewhere</h2>
-      <ul role="list">
-        <li><a href="mailto:you@example.com">you@example.com</a></li>
-        <li><a href="https://github.com/you">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/you">LinkedIn</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Your Name</p>
-  </footer>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

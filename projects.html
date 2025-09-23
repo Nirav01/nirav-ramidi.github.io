@@ -2,66 +2,120 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <title>Projects — Nirav</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects — Your Name</title>
-  <meta name="description" content="All software projects, filters, and case studies." />
-  <link rel="canonical" href="https://example.com/projects.html" />
-  <link rel="stylesheet" href="/styles.css" />
+  <meta name="description" content="Projects by Nirav — Data & Software Engineer" />
+  <link rel="stylesheet" href="assets/css/utilities.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
-  <header>
-    <nav aria-label="Primary">
-      <a href="/">Your Name</a>
-      <ul role="list">
-        <li><a aria-current="page">Projects</a></li>
-        <li><a href="/resume.html">Resume</a></li>
-        <li><a href="/blog.html">Blog</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <h1>Projects</h1>
-    <p>Selected work across backend, data, and DevOps.</p>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">NIRAV</a>
+      <nav aria-label="Main">
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Résumé</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="btn" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" aria-label="Toggle dark mode">🌓</button>
+    </div>
   </header>
 
-  <main id="main" tabindex="-1">
-    <section aria-labelledby="filters-title">
-      <h2 id="filters-title">Filters</h2>
-      <ul class="filters" role="list" aria-label="Filter projects">
-        <li><a href="#">All</a></li>
-        <li><a href="#">Backend</a></li>
-        <li><a href="#">Data</a></li>
-        <li><a href="#">DevOps</a></li>
-      </ul>
-    </section>
+  <main id="main" class="container section">
+    <h1 class="section__title">Projects</h1>
 
-    <section aria-labelledby="grid-title">
-      <h2 id="grid-title">All Projects</h2>
+    <div class="filters" role="tablist" aria-label="Project filters">
+      <button class="chip active" data-filter="all" role="tab">All</button>
+      <button class="chip" data-filter="data-ml" role="tab">Data & ML</button>
+      <button class="chip" data-filter="systems" role="tab">Systems & Backend</button>
+      <button class="chip" data-filter="coursework" role="tab">Coursework</button>
+    </div>
 
-      <article class="project-card">
-        <h3><a href="/projects/event-streaming-platform.html">Event Streaming Platform</a></h3>
-        <p>Real-time ingest + aggregation; 45 s end-to-end latency.</p>
-        <p>Stack: Java, Spring, Kafka, PostgreSQL</p>
+    <div class="grid cards" id="projectGrid">
+      <article class="card" data-tags="data-ml">
+        <a href="project-template.html">
+          <img src="assets/images/placeholder.png" alt="" loading="lazy" />
+          <div class="card__body">
+            <h3>Astro Classification</h3>
+            <p>SVM kernels vs kNN/DT; filter & wrapper feature selection; ROC per class.</p>
+            <ul class="tags"><li>Python</li><li>sklearn</li></ul>
+          </div>
+        </a>
       </article>
 
-      <article class="project-card">
-        <h3><a href="/projects/image-service.html">Image Processing Service</a></h3>
-        <p>On-the-fly transforms; 38% egress cost reduction.</p>
-        <p>Stack: Go, AWS, Lambda, CloudFront</p>
+      <article class="card" data-tags="systems">
+        <a href="project-template.html">
+          <img src="assets/images/placeholder.png" alt="" loading="lazy" />
+          <div class="card__body">
+            <h3>Edge Offloading (Docker)</h3>
+            <p>Container IPC; stats aggregation; design for future offloading scenario.</p>
+            <ul class="tags"><li>Docker</li><li>Linux</li></ul>
+          </div>
+        </a>
       </article>
 
-      <article class="project-card">
-        <h3><a href="/projects/ops-dashboard.html">Ops Reliability Dashboard</a></h3>
-        <p>SLO tracking and alert pipeline; MTTR down to 35m.</p>
-        <p>Stack: Node, TimescaleDB, Grafana</p>
+      <article class="card" data-tags="systems">
+        <a href="project-template.html">
+          <img src="assets/images/placeholder.png" alt="" loading="lazy" />
+          <div class="card__body">
+            <h3>Compose → Kubernetes</h3>
+            <p>Kompose conversion; Services/Deployments; Minikube.</p>
+            <ul class="tags"><li>K8s</li><li>Docker</li></ul>
+          </div>
+        </a>
       </article>
-    </section>
+
+      <article class="card" data-tags="coursework">
+        <a href="project-template.html">
+          <img src="assets/images/placeholder.png" alt="" loading="lazy" />
+          <div class="card__body">
+            <h3>Huffman Compressor</h3>
+            <p>Greedy coding, binary I/O, benchmarks (text/genome/bitmap).</p>
+            <ul class="tags"><li>Java</li><li>Algorithms</li></ul>
+          </div>
+        </a>
+      </article>
+
+      <article class="card" data-tags="data-ml">
+        <a href="project-template.html">
+          <img src="assets/images/placeholder.png" alt="" loading="lazy" />
+          <div class="card__body">
+            <h3>LiDAR Re-localisation</h3>
+            <p>ICP ablations on KITTI (FoV, range, density, noise).</p>
+            <ul class="tags"><li>Python</li><li>Open3D</li></ul>
+          </div>
+        </a>
+      </article>
+
+      <article class="card" data-tags="systems">
+        <a href="project-template.html">
+          <img src="assets/images/placeholder.png" alt="" loading="lazy" />
+          <div class="card__body">
+            <h3>M/M/K Capacity Plan</h3>
+            <p>Erlang-C based connection/VM sizing for W ≤ 1s SLA.</p>
+            <ul class="tags"><li>Queuing</li><li>PerfEng</li></ul>
+          </div>
+        </a>
+      </article>
+    </div>
   </main>
 
-  <footer>
-    <p>© 2025 Your Name</p>
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Nirav</p>
+      <ul class="social">
+        <li><a href="https://github.com/yourhandle">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/yourhandle/">LinkedIn</a></li>
+      </ul>
+    </div>
   </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/projects.js" defer></script>
 </body>
 </html>
