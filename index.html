@@ -1,53 +1,176 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Nirav Reddy Ramidi</title>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://use.typekit.net/quv7bsd.css"> 
-        <link rel="stylesheet" href="css/style.css" />
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Software Engineer</title>
+  <meta name="description" content="Backend/Full-stack engineer. I build reliable systems with measurable impact." />
+  <link rel="canonical" href="https://example.com/" />
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="Your Name — Software Engineer" />
+  <meta property="og:description" content="Backend/Full-stack engineer. I build reliable systems with measurable impact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="https://example.com/og-image.jpg" />
 
-    </head>
+  <!-- JSON-LD Person -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Your Name",
+    "url":"https://example.com",
+    "sameAs":["https://github.com/you","https://www.linkedin.com/in/you"],
+    "jobTitle":"Software Engineer",
+    "knowsAbout":["Java","Spring Boot","PostgreSQL","Docker","AWS"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <body id = "body">
-        <div id = "main">
-            <header id = "header">
-                <a href="blog.html">Knowledge Blog</a>
-            </header>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="site-nav" aria-label="Primary">
+        <a class="brand" href="/">Your Name</a>
+        <ul class="nav-list" role="list">
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/resume.html">Resume</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
 
-            <div id="profile">
-                <div id="profile-pic">
-                    <img src="data/people/manas_sidelook.jpeg">
-                    <p>
-                        <a href="https://drive.google.com/file/d/1FwauoB1GQbc78VykyRrIT3g0XI-rAqpX/view?usp=sharing">CV</a>&nbsp;/&nbsp;
-                        <a href="https://www.linkedin.com/in/manas-r-1a57341b4/">LinkedIn</a>
-                    </p>
-                </div>
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">Software Engineer · Backend & Cloud</h1>
+        <p class="tagline">I help <strong>teams ship faster</strong> by building <strong>reliable APIs</strong> and <strong>data pipelines</strong>.</p>
+        <p class="hero-ctas">
+          <a href="/projects.html" class="btn">View Projects</a>
+          <a href="/resume.html" class="btn" rel="nofollow">Download CV</a>
+        </p>
+      </section>
+    </div>
+  </header>
 
-                <div id="profile-intro">
-                    <div id="profile-name">Nirav Reddy Ramidi</div>
-                    <p>
+  <main id="main" tabindex="-1">
+    <section class="tech" aria-labelledby="tech-title">
+      <div class="container">
+        <h2 id="tech-title">Core Stack</h2>
+        <ul class="tech-list" role="list" aria-label="Technologies">
+          <li>Java · Spring Boot</li>
+          <li>PostgreSQL · Redis</li>
+          <li>Docker · Kubernetes</li>
+          <li>AWS (ECS, RDS, S3)</li>
+          <li>GitHub Actions · Terraform</li>
+        </ul>
+      </div>
+    </section>
 
-                        <i>Enthused for MS positions for Fall 2024!</i><br>
+    <section class="featured-projects" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title">Featured Projects</h2>
 
-                        I am currently a <a>Research Associate</a> at the <a href="https://robotics.iiit.ac.in/">Robotics Research Center (RRC), IIIT Hyderabad</a> advised by 
-                        <a href="https://scholar.google.com/citations?user=KvD9ODcAAAAJ&hl=en">Dr. Nagamanikandan Govindan</a>. 
-                        Previously, I was an intern at <a href="https://www.iitb.ac.in/">IIT Bombay</a>. 
-                       
-                        I completed my Bachelors from <a href="https://manipal.edu/mit.html">Manipal Institute of Technology</a> in <a href="https://manipal.edu/mit/department-faculty/department-list/mechatronics.html">Mechatronics</a> specialising in Robotics and Automation.  
+        <article class="project-card">
+          <header>
+            <h3><a href="/projects/event-streaming-platform.html">Event Streaming Platform</a></h3>
+            <p class="project-meta">Java · Kafka · Spring · PostgreSQL</p>
+          </header>
+          <p class="project-blurb">Built a real-time ingestion and aggregation pipeline; reduced data latency from 15 min to 45 s.</p>
+          <p class="project-links">
+            <a href="/projects/event-streaming-platform.html">Case Study</a>
+            <a href="https://github.com/you/event-streaming" rel="noopener">Code</a>
+            <a href="#" aria-disabled="true">Demo</a>
+          </p>
+        </article>
 
-                        My goal is to obviate pains for society and I hope achieve that with the right utilisation of Robotics.<br> 
-                        I'm awed by the possibilities with Drone Tech and complementing them with mechanisms and intelligence would do wonders.<br>
+        <article class="project-card">
+          <header>
+            <h3><a href="/projects/image-service.html">Image Processing Service</a></h3>
+            <p class="project-meta">Go · S3 · Lambda · CloudFront</p>
+          </header>
+          <p class="project-blurb">On-the-fly transforms & caching; cut egress cost 38% and TTFB 62%.</p>
+          <p class="project-links">
+            <a href="/projects/image-service.html">Case Study</a>
+            <a href="https://github.com/you/image-service" rel="noopener">Code</a>
+          </p>
+        </article>
 
-                        Avid traveller, Loves delving into Histories, Cultures and Geo Politics, Explorer of anything new! 
+        <article class="project-card">
+          <header>
+            <h3><a href="/projects/ops-dashboard.html">Ops Reliability Dashboard</a></h3>
+            <p class="project-meta">Node · TimescaleDB · Grafana</p>
+          </header>
+          <p class="project-blurb">SLO tracking and alert pipeline; reduced MTTR from 2h to 35m.</p>
+          <p class="project-links">
+            <a href="/projects/ops-dashboard.html">Case Study</a>
+            <a href="https://github.com/you/ops-dashboard" rel="noopener">Code</a>
+            <a href="#">Live</a>
+          </p>
+        </article>
 
-                    <p>
-                        Email: <a href="mailto:manasramidi@gmail.com">niravramidi@gmail.com</a> <br> 
-                    </p>
-                </div>
-        </div>
+        <p><a href="/projects.html" class="more-link">See all projects →</a></p>
+      </div>
+    </section>
 
-    </body>
+    <section class="experience" aria-labelledby="exp-title">
+      <div class="container">
+        <h2 id="exp-title">Experience</h2>
 
+        <article class="role">
+          <h3>Software Engineer — Company Name</h3>
+          <p class="role-meta">Jan 2024 – Present · Dublin, IE</p>
+          <ul>
+            <li>Cut query latency <strong>62%</strong> via indexing, caching, and read replicas.</li>
+            <li>Designed multi-tenant auth; onboarded 30+ customers with zero regressions.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <h3>Data Science Intern — Company Name</h3>
+          <p class="role-meta">May 2023 – Sep 2023 · Remote</p>
+          <ul>
+            <li>Unified 12 data silos into a BigQuery lake with dbt lineage.</li>
+            <li>Automated KPI reports; saved 6 h/week for the ops team.</li>
+          </ul>
+        </article>
+
+        <p><a href="/resume.html" class="more-link">Full resume →</a></p>
+      </div>
+    </section>
+
+    <section class="posts" aria-labelledby="posts-title">
+      <div class="container">
+        <h2 id="posts-title">Writing</h2>
+        <article class="post-card">
+          <h3><a href="/blog/zero-downtime-migrations.html">Zero-Downtime Schema Migrations with Spring</a></h3>
+          <p>Patterns for blue/green, expand/contract, and backfills.</p>
+          <p class="post-meta">6 min read · Engineering</p>
+        </article>
+
+        <article class="post-card">
+          <h3><a href="/blog/kafka-exactly-once.html">Exactly-Once Processing on Kafka: When and How</a></h3>
+          <p>Idempotency keys, EOS, and operational caveats.</p>
+          <p class="post-meta">8 min read · Systems</p>
+        </article>
+
+        <p><a href="/blog.html" class="more-link">All posts →</a></p>
+      </div>
+    </section>
+
+    <section class="contact-cta" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Let’s build something</h2>
+        <p>Have a challenge around APIs, data, or reliability? <a href="/contact.html">Get in touch</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© <span data-year>2025</span> Your Name. <a href="/resume.html">CV</a> · <a href="https://github.com/you">GitHub</a> · <a href="https://www.linkedin.com/in/you">LinkedIn</a></p>
+    </div>
+  </footer>
+</body>
 </html>
