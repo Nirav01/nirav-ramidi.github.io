@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume — Your Name</title>
+  <meta name="description" content="Printable resume / CV for Your Name." />
+  <link rel="canonical" href="https://example.com/resume.html" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav aria-label="Primary">
+      <a href="/">Your Name</a>
+      <ul role="list">
+        <li><a href="/projects.html">Projects</a></li>
+        <li><a aria-current="page">Resume</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+    <h1>Resume</h1>
+    <p><a href="/assets/your-name-cv.pdf" download>Download PDF</a></p>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section aria-labelledby="summary">
+      <h2 id="summary">Summary</h2>
+      <p>Client-focused engineer with strengths in backend systems, data pipelines, and reliability.</p>
+    </section>
+
+    <section aria-labelledby="experience">
+      <h2 id="experience">Experience</h2>
+      <article class="role">
+        <h3>Software Engineer — Company</h3>
+        <p class="meta">Jan 2024 – Present · Dublin</p>
+        <ul>
+          <li>Reduced API P95 latency 62% with caching + index strategy.</li>
+          <li>Designed multi-tenant architecture; onboarded 30+ customers.</li>
+        </ul>
+      </article>
+      <!-- Add more roles -->
+    </section>
+
+    <section aria-labelledby="education">
+      <h2 id="education">Education</h2>
+      <p>BSc in Computer Science — University, 2025</p>
+      <ul>
+        <li>Modules: Algorithms, Networks, Databases, ML, Cloud</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="skills">
+      <h2 id="skills">Skills</h2>
+      <ul>
+        <li>Languages: Java, Go, Python, SQL</li>
+        <li>Frameworks: Spring, Express, Flask</li>
+        <li>Infra: Docker, K8s, AWS, Terraform</li>
+        <li>Data: Kafka, Postgres, Redis, BigQuery</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Your Name</p>
+  </footer>
+</body>
+</html>

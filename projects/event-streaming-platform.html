@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Streaming Platform — Case Study</title>
+  <meta name="description" content="How I built a low-latency event streaming platform with Kafka and Spring." />
+  <link rel="canonical" href="https://example.com/projects/event-streaming-platform.html" />
+  <link rel="stylesheet" href="/styles.css" />
+  <!-- JSON-LD SoftwareSourceCode -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareSourceCode",
+    "name":"Event Streaming Platform",
+    "programmingLanguage":["Java","SQL"],
+    "codeRepository":"https://github.com/you/event-streaming",
+    "runtimePlatform":"JVM 21",
+    "license":"https://opensource.org/licenses/MIT"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav aria-label="Primary">
+      <a href="/">Your Name</a>
+      <ul role="list">
+        <li><a href="/projects.html" aria-current="page">Projects</a></li>
+        <li><a href="/resume.html">Resume</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+    <h1>Event Streaming Platform</h1>
+    <p class="subtitle">Java · Kafka · Spring · PostgreSQL</p>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section aria-labelledby="one-liner">
+      <h2 id="one-liner">Summary</h2>
+      <p>Real-time ingestion and aggregation for analytics; reduced latency to <strong>45 seconds</strong> at peak 120k events/min.</p>
+    </section>
+
+    <section aria-labelledby="context">
+      <h2 id="context">Context</h2>
+      <ul>
+        <li><strong>Problem:</strong> Batch ETL created 15-minute stale dashboards.</li>
+        <li><strong>Constraints:</strong> Commodity hardware, strict cost cap, near-real-time.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="role-stack">
+      <h2 id="role-stack">Role & Stack</h2>
+      <p><strong>Role:</strong> Sole backend engineer (design → delivery).</p>
+      <p><strong>Stack:</strong> Java 21, Spring Boot 3, Kafka, Schema Registry, Debezium, PostgreSQL, Redis.</p>
+    </section>
+
+    <section aria-labelledby="architecture">
+      <h2 id="architecture">Architecture</h2>
+      <figure>
+        <img src="/assets/diagrams/event-streaming-arch.svg" alt="High-level architecture diagram showing producers, Kafka, stream processors, and sinks." />
+        <figcaption>Producers → Kafka → Stream processors → Postgres/Redis sinks.</figcaption>
+      </figure>
+      <ul>
+        <li>Exactly-once semantics via idempotent producers and transactional writes.</li>
+        <li>Schema evolution with Avro + SR; dead-letter topic for invalid events.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="challenges">
+      <h2 id="challenges">Key Challenges & Solutions</h2>
+      <article>
+        <h3>Backpressure & burst handling</h3>
+        <p>Implemented bounded queues + rate-aware consumers; autoscaled partitions after throughput tests.</p>
+      </article>
+      <article>
+        <h3>Stateful aggregations</h3>
+        <p>Windowed aggregations persisted to RocksDB; periodic snapshots to Postgres for BI.</p>
+      </article>
+    </section>
+
+    <section aria-labelledby="results">
+      <h2 id="results">Results</h2>
+      <ul>
+        <li>Latency: 15 min → <strong>45 s</strong>.</li>
+        <li>Cost: within <strong>$420/mo</strong> infra budget.</li>
+        <li>Uptime: <strong>99.95%</strong> over last quarter.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="code-links">
+      <h2 id="code-links">Links</h2>
+      <p><a href="https://github.com/you/event-streaming" rel="noopener">Repository</a> · <a href="#" aria-disabled="true">Live Demo</a></p>
+    </section>
+
+    <nav class="prev-next" aria-label="Project pagination">
+      <a href="/projects.html">← All projects</a>
+      <a href="/projects/image-service.html">Next: Image Processing Service →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p>© 2025 Your Name</p>
+  </footer>
+</body>
+</html>
