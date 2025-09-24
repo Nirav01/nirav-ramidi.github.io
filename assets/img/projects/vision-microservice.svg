@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs><linearGradient id="bg7" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e293b"></stop><stop offset="1" stop-color="#0b1220"></stop></linearGradient></defs>
+  <rect width="1200" height="630" rx="28" fill="url(#bg7)"></rect>
+  <rect x="120" y="200" width="300" height="220" rx="14" fill="#0ea5e9" opacity=".15" stroke="#38bdf8"></rect>
+  <rect x="460" y="200" width="300" height="220" rx="14" fill="#a855f7" opacity=".15" stroke="#c084fc"></rect>
+  <rect x="800" y="200" width="280" height="220" rx="14" fill="#10b981" opacity=".15" stroke="#34d399"></rect>
+  <text x="60" y="120" fill="#fff" font-size="48" font-weight="800" font-family="Inter, ui-sans-serif">Vision Microservice</text>
+  <text x="60" y="560" fill="#cbd5e1" font-size="24" font-family="Inter, ui-sans-serif">Docker • Health checks • Observability</text>
+</svg>

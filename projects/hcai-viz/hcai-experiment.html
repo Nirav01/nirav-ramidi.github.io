@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HCAI Empirical Study — Case Study — Nirav Ramidi</title>
+  <meta name="description" content="Human-Centred AI empirical study: experiment comparing a baseline model UI vs an explainable, human-centred design. Study design, analysis, findings, and ethics." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../../assets/css/main.css" />
+  <link rel="icon" href="../../../assets/img/favicon.png" />
+
+  <!-- Optional structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ResearchProject",
+    "name":"Human-Centred AI Empirical Study",
+    "description":"Experiment comparing baseline model UI vs explainable, human-centred design; measures include task success, time-on-task, trust, SUS, and workload.",
+    "author":{"@type":"Person","name":"Nirav Ramidi"},
+    "keywords":"HCAI, usability, explainability, trust, SUS, NASA-TLX"
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../../">Home</a></li>
+          <li><a href="../../../experience.html">Experience</a></li>
+          <li><a href="../../">Projects</a></li>
+          <li><a href="../../../writing/">Writing</a></li>
+          <li><a href="../../../education/">Education</a></li>
+          <li><a href="../../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../../">Home</a></li>
+        <li><a href="../../">Projects</a></li>
+        <li><a href="../">HCAI / Vis</a></li>
+        <li><span aria-current="page">HCAI Empirical Study</span></li>
+      </ol>
+    </nav>
+
+    <!-- Hero -->
+    <section class="case-hero section">
+      <div class="container case-hero__inner">
+        <div class="case-hero__copy">
+          <h1>HCAI Empirical Study</h1>
+          <p class="lead">
+            Designed and ran a controlled experiment comparing a <strong>baseline AI UI</strong> against an
+            <strong>explainable, human-centred design</strong>. Measured task success, time-on-task, perceived
+            <strong>trust</strong>, <strong>usability (SUS)</strong>, and <strong>workload (NASA-TLX)</strong>.
+          </p>
+          <ul class="metrics">
+            <li class="chip">Within-subjects</li>
+            <li class="chip">Counter-balanced</li>
+            <li class="chip">SUS · TLX · Trust</li>
+            <li class="chip">Qual + Quant</li>
+          </ul>
+        </div>
+        <figure class="case-hero__media">
+          <img src="../../../assets/img/case-studies/hcai-hero.jpg" alt="Participants using two AI interfaces: baseline vs explainable UI" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- Meta + Body -->
+    <section class="case-layout section">
+      <div class="container grid case-grid">
+
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Project info</h2>
+          <dl class="meta-list">
+            <dt>Course</dt><dd>Human-Centred AI</dd>
+            <dt>Type</dt><dd>Empirical study</dd>
+            <dt>Role</dt><dd>Study design, implementation, analysis</dd>
+            <dt>Focus</dt><dd>Explainability · Trust · Usability</dd>
+            <dt>Stack</dt><dd>Figma/HTML prototype, JS logger, R/Python stats</dd>
+            <dt>Links</dt>
+            <dd>
+              <ul class="bare">
+                <li><a href="../../" aria-label="Back to projects">Back to Projects</a></li>
+                <li><a href="../../../education/">Related modules</a></li>
+              </ul>
+            </dd>
+          </dl>
+        </aside>
+
+        <article class="case-body">
+          <!-- Research Questions -->
+          <section class="case-section" id="rq">
+            <h2>Research Questions</h2>
+            <ul>
+              <li>Does an explainable, human-centred UI improve <strong>task success</strong> and reduce <strong>time-on-task</strong> vs a baseline UI?</li>
+              <li>Does it increase <strong>perceived trust</strong> and <strong>usability (SUS)</strong> while lowering <strong>workload (NASA-TLX)</strong>?</li>
+            </ul>
+          </section>
+
+          <!-- Study Design -->
+          <section class="case-section" id="design">
+            <h2>Study Design</h2>
+            <div class="cols">
+              <div>
+                <h3>Design</h3>
+                <ul>
+                  <li><strong>Within-subjects</strong> with <strong>counter-balanced</strong> order (AB/BA) to minimise learning effects.</li>
+                  <li>Two conditions: <em>Baseline</em> vs <em>XAI</em> (salient explanations, confidence, data provenance, and recourse).</li>
+                </ul>
+                <h3>Variables</h3>
+                <ul>
+                  <li><strong>IV:</strong> Interface type (Baseline vs XAI).</li>
+                  <li><strong>DV:</strong> task success, time-on-task, error rate, trust, SUS, NASA-TLX; plus open-ended feedback.</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Participants &amp; Tasks</h3>
+                <ul>
+                  <li>Convenience sample of university participants (mixed backgrounds).</li>
+                  <li>Scenario-based decisions (e.g., classify, triage, or recommend) with ground truth available to compute accuracy.</li>
+                  <li>Think-aloud encouraged; post-task questionnaires per condition.</li>
+                </ul>
+              </div>
+            </div>
+
+            <figure class="case-figure">
+              <img src="../../../assets/img/case-studies/hcai-design.png" alt="Experiment flow: consent → training → condition A tasks → SUS/TLX → condition B tasks → exit interview" loading="lazy" />
+              <figcaption>Experiment flow and measures per phase.</figcaption>
+            </figure>
+          </section>
+
+          <!-- Instrumentation -->
+          <section class="case-section" id="instrumentation">
+            <h2>Instrumentation &amp; Data</h2>
+            <ul>
+              <li>Client-side logger captured timestamps, actions, and errors (pseudo-anonymous IDs).</li>
+              <li>Questionnaires: <strong>SUS</strong>, <strong>NASA-TLX</strong>, and a <strong>Likert trust</strong> scale.</li>
+              <li>Post-study semi-structured interview for qualitative themes.</li>
+            </ul>
+          </section>
+
+          <!-- Analysis -->
+          <section class="case-section" id="analysis">
+            <h2>Analysis</h2>
+            <ul>
+              <li>Checked normality; used <strong>paired t-tests</strong> or <strong>Wilcoxon</strong> where appropriate.</li>
+              <li>Effect sizes: <em>dz</em> / <em>r</em>; confidence intervals via bootstrap for robustness.</li>
+              <li>Thematic coding on interview notes; triangulated with quantitative trends.</li>
+            </ul>
+
+            <figure class="case-figure">
+              <img src="../../../assets/img/case-studies/hcai-results.png" alt="Bar/violin plots comparing SUS, Trust, TLX, and time between Baseline and XAI" loading="lazy" />
+              <figcaption>Indicative results view; the XAI condition generally trends better on SUS/Trust and time.</figcaption>
+            </figure>
+          </section>
+
+          <!-- Findings -->
+          <section class="case-section" id="findings">
+            <h2>Findings (Summary)</h2>
+            <ul class="checklist">
+              <li>XAI UI improved <strong>perceived trust</strong> and <strong>usability</strong> without increasing cognitive load.</li>
+              <li>Participants relied on <em>confidence + rationale</em> to resolve edge cases and reduced unnecessary overrides.</li>
+              <li>Qualitative feedback: participants valued <em>recourse</em> (“what can I do?”) as much as explanations.</li>
+            </ul>
+          </section>
+
+          <!-- Ethics -->
+          <section class="case-section" id="ethics">
+            <h2>Ethics &amp; Limitations</h2>
+            <div class="cols">
+              <div>
+                <h3>Ethics</h3>
+                <ul>
+                  <li>Informed consent, withdrawal at any time, and data minimisation.</li>
+                  <li>No personally identifiable information collected; logs pseudonymised.</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Limitations</h3>
+                <ul>
+                  <li>Convenience sampling and short sessions limit ecological validity.</li>
+                  <li>Prototype fidelity may cap external validity; follow-up field study recommended.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Case study pagination">
+            <a class="btn btn--ghost" href="../cloud-sre/library-analytics.html">← Cloud-Native Library Analytics</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="infovis-vegalite.html">Next: InfoVis Dashboard (Vega-Lite) →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../../resume/">Resume</a></li>
+        <li><a href="../../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../../assets/js/main.js" defer></script>
+</body>
+</html>

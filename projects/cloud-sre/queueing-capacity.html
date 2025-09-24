@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Queueing for Capacity Planning — Case Study — Nirav Ramidi</title>
+  <meta name="description" content="Applied queueing theory (M/D/1, M/M/1/n, M/M/K with Erlang-C) to size DB connection pools and service clusters to meet W ≤ 1 s while minimising cost." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../../assets/css/main.css" />
+  <link rel="icon" href="../../../assets/img/favicon.png" />
+
+  <!-- Optional structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CreativeWork",
+    "name":"Queueing for Capacity Planning",
+    "author":{"@type":"Person","name":"Nirav Ramidi"},
+    "about":"Performance engineering with queueing models",
+    "keywords":"Queueing theory, M/M/K, Erlang C, Capacity planning, Response time, Utilisation"
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../../">Home</a></li>
+          <li><a href="../../../experience.html">Experience</a></li>
+          <li><a href="../../">Projects</a></li>
+          <li><a href="../../../writing/">Writing</a></li>
+          <li><a href="../../../education/">Education</a></li>
+          <li><a href="../../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../../">Home</a></li>
+        <li><a href="../../">Projects</a></li>
+        <li><a href="../">Cloud / SRE</a></li>
+        <li><span aria-current="page">Queueing for Capacity Planning</span></li>
+      </ol>
+    </nav>
+
+    <!-- Hero -->
+    <section class="case-hero section">
+      <div class="container case-hero__inner">
+        <div class="case-hero__copy">
+          <h1>Queueing for Capacity Planning</h1>
+          <p class="lead">
+            Modelled API/DB capacity using <strong>M/D/1</strong>, <strong>M/M/1/n</strong>, and <strong>M/M/K</strong>
+            (<strong>Erlang-C</strong>) to size resources for a target <strong>W ≤ 1&nbsp;s</strong> while keeping utilisation high.
+          </p>
+          <ul class="metrics">
+            <li class="chip">W ≤ 1 s target</li>
+            <li class="chip">M/M/K + Erlang-C</li>
+            <li class="chip">Loss vs Delay trade-off</li>
+            <li class="chip">Stability ρ &lt; 1</li>
+          </ul>
+        </div>
+        <figure class="case-hero__media">
+          <img src="../../../assets/img/case-studies/queueing-hero.jpg" alt="Queueing system diagram showing arrivals, queue, and multiple servers" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- Meta + Body -->
+    <section class="case-layout section">
+      <div class="container grid case-grid">
+
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Project info</h2>
+          <dl class="meta-list">
+            <dt>Type</dt><dd>Performance Engineering</dd>
+            <dt>Role</dt><dd>Analyst & Modeller</dd>
+            <dt>Focus</dt><dd>Queueing models · Capacity sizing · SLA planning</dd>
+            <dt>Stack</dt><dd>Python/NumPy/Matplotlib, Julia/JuMP (for related optimisation)</dd>
+            <dt>Links</dt>
+            <dd>
+              <ul class="bare">
+                <li><a href="../../" aria-label="Back to projects">Back to Projects</a></li>
+                <li><a href="../../../experience.html">Related experience</a></li>
+              </ul>
+            </dd>
+          </dl>
+        </aside>
+
+        <article class="case-body">
+          <!-- Problem -->
+          <section class="case-section" id="problem">
+            <h2>Problem &amp; Goals</h2>
+            <p>
+              We needed to determine how many parallel service slots (e.g., DB connections, app replicas, or VMs) are
+              required to keep mean <strong>queueing delay ≤ 1 s</strong> under varying load, and to understand the
+              trade-off between <em>blocking</em> (finite buffers) and <em>waiting</em>.
+            </p>
+            <ul>
+              <li>Translate real service times into arrival/service rates.</li>
+              <li>Compare deterministic service (M/D/1), stochastic single-server with finite buffer (M/M/1/n), and multi-server queues (M/M/K).</li>
+              <li>Recommend the smallest <strong>K</strong> (or buffer size <strong>n</strong>) meeting the SLA with headroom.</li>
+            </ul>
+          </section>
+
+          <!-- Models -->
+          <section class="case-section" id="models">
+            <h2>Models &amp; Formulas (quick reference)</h2>
+            <div class="cols">
+              <div>
+                <h3>Definitions</h3>
+                <ul>
+                  <li>λ — arrival rate (req/s); μ — service rate per server (1/s).</li>
+                  <li>ρ = λ / (K·μ) — utilisation per server bank (must be &lt; 1 for stability).</li>
+                  <li>W — mean waiting time in queue; N<sub>q</sub> — mean # in queue.</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Erlang-C (M/M/K)</h3>
+                <p class="muted small">
+                  Probability of wait: C(K,ρ) = [ ( (K·ρ)^K / (K!·(1−ρ)) ) ] / [ Σ_{i=0}^{K−1} (K·ρ)^i/i! + ( (K·ρ)^K / (K!·(1−ρ)) ) ].
+                  Then <strong>W = C(K,ρ) / (K·μ − λ)</strong>, and N<sub>q</sub> = λ·W.
+                </p>
+              </div>
+            </div>
+            <p class="muted small">
+              For M/M/1: W = ρ / (μ − λ). For M/D/1: W ≈ ρ / (2·(μ − λ)) (deterministic service halves the waiting vs M/M/1 at same ρ).
+              For M/M/1/n: use Erlang-B/C variants to model blocking probability and effective arrival rate.
+            </p>
+          </section>
+
+          <!-- Scenarios -->
+          <section class="case-section" id="scenarios">
+            <h2>Scenarios &amp; Inputs</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>M/D/1 — DB call with constant service</h3></header>
+                <p class="card__body">
+                  Service time <strong>65 ms</strong> → μ ≈ <strong>15.38 req/s</strong>. Sweep λ from 8.33→14.29 req/s (120→70 ms inter-arrival).
+                  Observe the sharp rise of W as ρ→1, but lower than M/M/1 due to deterministic service.
+                </p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>M/M/1 — Exponential service</h3></header>
+                <p class="card__body">
+                  Service time <strong>52 ms</strong> → μ ≈ <strong>19.23 req/s</strong>. Same λ sweep.
+                  Find λ where <strong>W ≈ service time</strong>—useful knee for alerting.
+                </p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>M/M/1/n — Finite buffer</h3></header>
+                <p class="card__body">
+                  Single server with buffer of <em>n−1</em> waiting spots. Explore <strong>loss vs delay</strong>:
+                  small <em>n</em> caps W but increases blocking; larger <em>n</em> reduces loss but raises tail latency.
+                </p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>M/M/K — Parallel servers</h3></header>
+                <p class="card__body">
+                  Mean service <strong>83 ms</strong> → μ ≈ <strong>12.05 req/s</strong>. Vary <strong>K</strong> (e.g., 4, 6, 8, 10)
+                  and sweep λ. Compute Erlang-C → <strong>W</strong> and <strong>N<sub>q</sub></strong> to find the smallest K with W ≤ 1 s.
+                </p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Cluster sizing — “Bank” case</h3></header>
+                <p class="card__body">
+                  16 VMs, service time <strong>316 ms</strong> → μ ≈ <strong>3.16 req/s</strong> each. Check capacity at λ = 10→50 req/s
+                  and for daily volume ~420k. Evaluate doubling to <strong>K=32</strong> and note diminishing returns as ρ decreases.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Results -->
+          <section class="case-section" id="results">
+            <h2>Results &amp; Visuals</h2>
+            <figure class="case-figure">
+              <img src="../../../assets/img/case-studies/queueing-md1-vs-mm1.png" alt="Plot of W and Nq for M/D/1 vs M/M/1 as utilisation increases" loading="lazy" />
+              <figcaption>M/D/1 exhibits lower waiting than M/M/1 at the same utilisation.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="../../../assets/img/case-studies/queueing-mm1n.png" alt="Blocking probability vs queue size for M/M/1/n at different loads" loading="lazy" />
+              <figcaption>Finite buffers trade blocking probability for lower queueing delay.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="../../../assets/img/case-studies/queueing-mmk-erlangc.png" alt="Erlang-C heatmap of W across K and arrival rates" loading="lazy" />
+              <figcaption>M/M/K with Erlang-C: identify the smallest K that holds W ≤ 1 s across expected peak λ.</figcaption>
+            </figure>
+            <ul class="checklist">
+              <li><strong>DB pool sizing:</strong> K=8 held W ≤ 1 s up to ~95 req/s; K=6 borderline near peak; K=10 added headroom.</li>
+              <li><strong>Cluster case:</strong> K=16 sufficed to ~40–45 req/s; K=32 improved headroom but with lower efficiency at λ=50 req/s.</li>
+              <li>For single-server cases, the “knee” where W≈service time marked the alerting threshold.</li>
+            </ul>
+          </section>
+
+          <!-- Sensitivity -->
+          <section class="case-section" id="sensitivity">
+            <h2>Sensitivity &amp; Rules of Thumb</h2>
+            <ul>
+              <li><strong>Variability matters:</strong> deterministic service (M/D/1) halves queueing vs M/M/1 near the same ρ.</li>
+              <li><strong>ρ drives everything:</strong> as ρ→1, W explodes; keep planned ρ ≤ 0.7–0.8 at peak for headroom.</li>
+              <li><strong>Parallelism beats buffers</strong> for latency SLOs; buffers primarily trade off loss vs delay.</li>
+              <li><strong>Scaling rule (heuristic):</strong> doubling K and λ often holds similar W until coordination overheads kick in.</li>
+            </ul>
+          </section>
+
+          <!-- Recommendations -->
+          <section class="case-section" id="recs">
+            <h2>Recommendations</h2>
+            <ul class="checklist">
+              <li>Adopt <strong>M/M/K</strong> model for pool sizing with a target <strong>W ≤ 1 s</strong>; verify with load tests.</li>
+              <li>Alert when estimated <strong>ρ &gt; 0.8</strong> or when <strong>Erlang-C</strong> predicts C(K,ρ) &gt; 0.3.</li>
+              <li>Prefer adding servers (K) over deepening buffers for interactive paths.</li>
+              <li>Document input distributions; if service is closer to deterministic, claim extra headroom vs M/M/1 estimates.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Case study pagination">
+            <a class="btn btn--ghost" href="vision-microservice.html">← Vision Microservice</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="library-analytics.html">Next: Cloud-Native Library Analytics →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../../resume/">Resume</a></li>
+        <li><a href="../../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../../assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f2937"></stop><stop offset="1" stop-color="#0b1220"></stop>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="28" fill="url(#bg2)"></rect>
+  <g fill="#fff">
+    <circle cx="200" cy="180" r="2"></circle><circle cx="260" cy="120" r="2"></circle><circle cx="320" cy="220" r="2"></circle>
+    <circle cx="880" cy="160" r="2"></circle><circle cx="980" cy="220" r="2"></circle><circle cx="1040" cy="100" r="2"></circle>
+  </g>
+  <circle cx="900" cy="300" r="120" fill="none" stroke="#93c5fd" stroke-width="6"></circle>
+  <circle cx="900" cy="300" r="6" fill="#93c5fd"></circle>
+  <text x="60" y="120" fill="#fff" font-size="48" font-weight="800" font-family="Inter, ui-sans-serif">Astronomy Classifier</text>
+  <text x="60" y="560" fill="#cbd5e1" font-size="24" font-family="Inter, ui-sans-serif">Light curves • Feature engineering • AUC/PR</text>
+</svg>

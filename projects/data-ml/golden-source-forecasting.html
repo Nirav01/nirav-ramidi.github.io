@@ -2,71 +2,224 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Golden-Source & Forecasting — Projects — Nirav Ramidi</title>
-  <meta name="description" content="BigQuery golden source and LightGBM forecasting case study." />
-  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Golden-Source & Forecasting — Case Study — Nirav Ramidi</title>
+  <meta name="description" content="Built a BigQuery golden source across 12+ systems and delivered brand-level LightGBM forecasts (MAPE 7.9%) that reduced CNS stock-outs by 18%." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../../assets/css/main.css" />
+  <link rel="icon" href="../../../assets/img/favicon.png" />
+
+  <!-- Optional structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CreativeWork",
+    "name":"Golden-Source & Forecasting",
+    "author":{"@type":"Person","name":"Nirav Ramidi"},
+    "about":"Data engineering and forecasting case study",
+    "keywords":"BigQuery, Airflow, Forecasting, LightGBM, MAPE 7.9%"
+  }
+  </script>
 </head>
+
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <nav aria-label="Primary">
-      <a class="brand" href="../../index.html">NR</a>
-      <ul class="nav">
-        <li><a href="../../experience.html">Experience</a></li>
-        <li><a href="../index.html">Projects</a></li>
-        <li><a href="../../writing/index.html">Writing</a></li>
-        <li><a href="../../education/index.html">Education</a></li>
-        <li><a href="../../resume/index.html">Resume</a></li>
-        <li><a href="../../contact.html">Contact</a></li>
-        <li class="ext"><a href="https://github.com/Nirav01">GitHub</a></li>
-        <li class="ext"><a href="https://www.linkedin.com/in/nirav-ramidi/">LinkedIn</a></li>
-      </ul>
-    </nav>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../../">Home</a></li>
+          <li><a href="../../../experience.html">Experience</a></li>
+          <li><a href="../../">Projects</a></li>
+          <li><a href="../../../writing/">Writing</a></li>
+          <li><a href="../../../education/">Education</a></li>
+          <li><a href="../../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
   </header>
 
-  <main id="main">
-    <article class="case">
-      <header class="case-hero">
-        <h1>Golden-Source & Forecasting</h1>
-        <p class="tags">BigQuery • Airflow • Python • LightGBM</p>
-        <p class="result">Result: MAPE 7.9%, reduced stock-outs −18%.</p>
-      </header>
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../../">Home</a></li>
+        <li><a href="../../">Projects</a></li>
+        <li><span aria-current="page">Golden-Source & Forecasting</span></li>
+      </ol>
+    </nav>
 
-      <section>
-        <h2>Context</h2>
-        <p>Brief problem statement and stakeholders.</p>
-      </section>
+    <!-- Hero -->
+    <section class="case-hero section">
+      <div class="container case-hero__inner">
+        <div class="case-hero__copy">
+          <h1>Golden-Source &amp; Forecasting</h1>
+          <p class="lead">
+            Unified <strong>12+ data silos</strong> into a <strong>BigQuery</strong> golden source and shipped
+            brand-level <strong>LightGBM</strong> forecasts with <strong>MAPE 7.9%</strong>, helping reduce CNS stock-outs by <strong>18%</strong>.
+          </p>
+          <ul class="metrics">
+            <li class="chip">BigQuery + Airflow</li>
+            <li class="chip">MAPE 7.9%</li>
+            <li class="chip">108 SKUs · 25 therapy areas</li>
+            <li class="chip">Excel effort −80%</li>
+          </ul>
+        </div>
+        <figure class="case-hero__media">
+          <img src="../../../assets/img/case-studies/golden-source-hero.jpg" alt="Golden-source data architecture illustration" loading="lazy" />
+        </figure>
+      </div>
+    </section>
 
-      <section>
-        <h2>Approach</h2>
-        <ul>
-          <li>Unified 12+ ERPs/CRMs/e-com/Rx into BigQuery (schema, DAGs).</li>
-          <li>Feature engineering, model selection, validation.</li>
-        </ul>
-      </section>
+    <!-- Meta sidebar layout -->
+    <section class="case-layout section">
+      <div class="container grid case-grid">
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Project info</h2>
+          <dl class="meta-list">
+            <dt>Organisation</dt><dd>Icon Life Sciences</dd>
+            <dt>Duration</dt><dd>May 2025 – Sept 2025</dd>
+            <dt>Role</dt><dd>Data Science Analyst Intern</dd>
+            <dt>Focus</dt><dd>Data Engineering · Forecasting · BI</dd>
+            <dt>Stack</dt><dd>Python, BigQuery, Cloud Functions, Airflow, scikit-learn</dd>
+            <dt>Links</dt>
+            <dd>
+              <ul class="bare">
+                <li><a href="../../" aria-label="Back to projects">Back to Projects</a></li>
+                <li><a href="../../../experience.html">Related experience</a></li>
+              </ul>
+            </dd>
+          </dl>
+        </aside>
 
-      <section>
-        <h2>Results</h2>
-        <ul>
-          <li>MAPE 7.9% on quarterly brand-level forecasts.</li>
-          <li>Operational impact: reduced stock-outs, workflow time saved.</li>
-        </ul>
-      </section>
+        <article class="case-body">
+          <!-- Context -->
+          <section class="case-section" id="context">
+            <h2>Context &amp; Goals</h2>
+            <p>
+              Sales, inventory, and Rx data lived across disparate systems (ERP, CRM, e-commerce, distributor reports).
+              Analysts spent hours reconciling extracts and definitions varied by team. The goal was to establish a
+              <strong>single source of truth</strong> in BigQuery and deliver reliable brand-level forecasts for planning.
+            </p>
+            <ul>
+              <li>Unify data from <strong>12+ systems</strong> covering <strong>108 SKUs</strong> across <strong>25 therapy areas</strong>.</li>
+              <li>Replace manual Excel workflows (target: <strong>−80%</strong> analyst time).</li>
+              <li>Produce quarterly demand forecasts with <strong>MAPE ≤ 10%</strong>.</li>
+            </ul>
+          </section>
 
-      <section>
-        <h2>Links</h2>
-        <ul>
-          <li><a href="https://github.com/Nirav01">Code (if public)</a></li>
-          <li><a href="../../resume/index.html">Resume</a></li>
-        </ul>
-      </section>
-    </article>
+          <!-- Architecture -->
+          <section class="case-section" id="architecture">
+            <h2>Architecture</h2>
+            <figure class="case-figure">
+              <img src="../../../assets/img/case-studies/golden-source-architecture.png" alt="Pipeline architecture diagram: sources → Cloud Functions → BigQuery staging → transformations → marts → Looker" loading="lazy" />
+              <figcaption>ETL/ELT pipeline into BigQuery; scheduled with Airflow.</figcaption>
+            </figure>
+            <div class="cols">
+              <div>
+                <h3>Ingestion</h3>
+                <ul>
+                  <li><strong>Cloud Functions</strong> to normalise CSV/API feeds and land to <em>staging</em> tables.</li>
+                  <li>Idempotent loads with file hashing &amp; partitioned tables.</li>
+                </ul>
+                <h3>Orchestration</h3>
+                <ul>
+                  <li><strong>Airflow DAGs</strong> for daily/weekly jobs with retry &amp; SLA alerts.</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Transform</h3>
+                <ul>
+                  <li>SQL transforms to conformed dims (product, region, channel) and fact tables (orders, Rx, inventory).</li>
+                  <li>Audit columns, data quality checks, referential integrity reports.</li>
+                </ul>
+                <h3>Serve</h3>
+                <ul>
+                  <li>Model-ready marts and Looker/BI dashboards for commercial &amp; supply teams.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Modelling -->
+          <section class="case-section" id="modelling">
+            <h2>Forecasting Approach</h2>
+            <p>
+              Built a brand-level forecasting pipeline using <strong>LightGBM</strong> with calendar, promotion,
+              and lag features. Baselines included naive seasonal and moving-average models.
+            </p>
+            <ul>
+              <li><strong>Features:</strong> lags/rolling stats, holiday/calendar flags, stock-in/out indicators.</li>
+              <li><strong>Validation:</strong> time-series CV (expanding window); error reported as <strong>MAPE</strong>.</li>
+              <li><strong>Result:</strong> <strong>MAPE 7.9%</strong> (median across brands) vs baselines &gt; 12%.</li>
+            </ul>
+            <figure class="case-figure">
+              <img src="../../../assets/img/case-studies/golden-source-forecasting-metrics.png" alt="Forecast performance chart showing MAPE improvement over baseline" loading="lazy" />
+              <figcaption>LightGBM vs baselines across brands (lower is better).</figcaption>
+            </figure>
+          </section>
+
+          <!-- Outcomes -->
+          <section class="case-section" id="impact">
+            <h2>Outcomes &amp; Impact</h2>
+            <ul class="checklist">
+              <li><strong>Excel effort −80%</strong> via scheduled pipelines and conformed marts.</li>
+              <li><strong>Stock-outs −18%</strong> in CNS brands as planning adopted forecast signals.</li>
+              <li>Stakeholder <strong>RoB</strong>: weekly ops &amp; monthly exec reviews with dashboard snapshots.</li>
+              <li>Shared a <strong>data dictionary</strong> and lineage docs to align definitions across teams.</li>
+            </ul>
+          </section>
+
+          <!-- Lessons -->
+          <section class="case-section" id="lessons">
+            <h2>Lessons &amp; Next Steps</h2>
+            <ul>
+              <li>Semantic consistency beats model tweaks: a clean product hierarchy reduced unexplained variance.</li>
+              <li>Add <strong>dbt</strong> for versioned transformations; introduce <strong>Great Expectations</strong> checks.</li>
+              <li>Trial probabilistic forecasts (QR or NGBoost) for service-level planning.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Case study pagination">
+            <a class="btn btn--ghost" href="../../">← All projects</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="astronomy-classifier.html">Next: Astronomy Classifier →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© <span data-year></span> Nirav Ramidi</p>
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../../resume/">Resume</a></li>
+        <li><a href="../../../contact.html">Contact</a></li>
+      </ul>
+    </div>
   </footer>
-  <script src="../../assets/js/main.js" defer></script>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../../assets/js/main.js" defer></script>
 </body>
 </html>

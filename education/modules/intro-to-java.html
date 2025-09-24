@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Introduction to Java — Module — Nirav Ramidi</title>
+  <meta name="description" content="Foundations of Java and Object-Oriented Programming: syntax, control flow, arrays/collections, classes/objects, testing, exceptions, inheritance, polymorphism, and interfaces." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="icon" href="../../assets/img/favicon.png" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../experience.html">Experience</a></li>
+          <li><a href="../../projects/">Projects</a></li>
+          <li><a href="../../writing/">Writing</a></li>
+          <li><a href="../">Education</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../">Home</a></li>
+        <li><a href="../">Education</a></li>
+        <li><span aria-current="page">Introduction to Java</span></li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Introduction to Java</h1>
+        <p class="lead">
+          Learn the <strong>software development process</strong> and core <strong>Object-Oriented Programming</strong> in Java:
+          from syntax and control flow to <strong>classes/objects</strong>, <strong>testing</strong>, <strong>exceptions</strong>,
+          and key OOP pillars (<strong>inheritance</strong>, <strong>polymorphism</strong>, <strong>interfaces</strong>).
+        </p>
+        <ul class="chips">
+          <li class="chip">Java</li>
+          <li class="chip">OOP</li>
+          <li class="chip">Unit Testing</li>
+          <li class="chip">Exceptions</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="section">
+      <div class="container grid case-grid">
+        <!-- Meta -->
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Module info</h2>
+          <dl class="meta-list">
+            <dt>Category</dt><dd>Software Engineering</dd>
+            <dt>Focus</dt><dd>Syntax · OOP · Testing</dd>
+            <dt>Stack</dt><dd>Java 17+, JUnit 5, Maven/Gradle, IntelliJ IDEA</dd>
+            <dt>Assessment</dt><dd>Programming exercises, unit tests, small project</dd>
+          </dl>
+          <div class="note small">
+            <p><strong>Related project:</strong> <a href="../../projects/swe-systems/java-marketplace.html">Java Marketplace</a>.</p>
+          </div>
+        </aside>
+
+        <!-- Body -->
+        <article class="case-body">
+          <!-- Outcomes -->
+          <section class="case-section" id="outcomes">
+            <h2>Learning Outcomes</h2>
+            <ul>
+              <li>Articulate the <strong>software development process</strong> (spec → design → implement → test).</li>
+              <li>Define core <strong>OOP concepts</strong> and model simple object-oriented applications.</li>
+              <li>Independently implement and test simple Java apps using correct syntax and basic OOP techniques.</li>
+              <li>Use programming experience to recognise the <strong>challenges</strong> inherent in software development.</li>
+            </ul>
+          </section>
+
+          <!-- Syllabus -->
+          <section class="case-section" id="syllabus">
+            <h2>Indicative Module Content</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>Part I — Fundamentals</h3></header>
+                <p class="card__body">Data types, variables, I/O, loops, conditionals, arrays &amp; collections.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Part II — Class Design</h3></header>
+                <p class="card__body">Classes &amp; objects, access control, constructors, unit testing (JUnit), exceptions &amp; error handling.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Part III — OOP Pillars</h3></header>
+                <p class="card__body">Inheritance, polymorphism, interfaces; overriding vs overloading; clean API design.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Quick reference -->
+          <section class="case-section" id="reference">
+            <h2>Quick Reference</h2>
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Java class &amp; main()</h3></header>
+                <pre class="code-block"><code>public class Hello {
+  public static void main(String[] args) {
+    System.out.println("Hello, Java!");
+  }
+}</code></pre>
+                <p class="muted small">Compile with <code>javac Hello.java</code>; run with <code>java Hello</code>.</p>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>Exceptions</h3></header>
+                <pre class="code-block"><code>try {
+  riskyOp();
+} catch (IOException e) {
+  // handle / log
+} finally {
+  cleanup();
+}</code></pre>
+                <p class="muted small">Prefer specific exception types; avoid swallowing errors silently.</p>
+              </div>
+            </div>
+
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>JUnit 5 test</h3></header>
+                <pre class="code-block"><code>import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+
+class MathUtilsTest {
+  @Test void addsTwoNumbers() {
+    assertEquals(5, MathUtils.add(2, 3));
+  }
+}</code></pre>
+                <p class="muted small">Arrange–Act–Assert; keep tests small and deterministic.</p>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>OOP vocabulary</h3></header>
+                <ul class="tight">
+                  <li><strong>Encapsulation</strong>: hide internals behind methods.</li>
+                  <li><strong>Inheritance</strong>: reuse/extend behaviour via <code>extends</code>.</li>
+                  <li><strong>Polymorphism</strong>: call through interface/supertype.</li>
+                  <li><strong>Interfaces</strong>: contracts; multiple per class.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Snippets -->
+          <section class="case-section" id="snippets">
+            <h2>Design Snippets</h2>
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Class + interface</h3></header>
+                <pre class="code-block"><code>public interface Payable { double total(); }
+
+public class LineItem implements Payable {
+  private final String name;
+  private final int qty;
+  private final double price;
+  public LineItem(String name, int qty, double price) {
+    this.name = name; this.qty = qty; this.price = price;
+  }
+  @Override public double total() { return qty * price; }
+}</code></pre>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>Inheritance &amp; overriding</h3></header>
+                <pre class="code-block"><code>abstract class Shape { abstract double area(); }
+class Circle extends Shape {
+  private final double r;
+  Circle(double r){ this.r = r; }
+  @Override double area(){ return Math.PI * r * r; }
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- Takeaways -->
+          <section class="case-section" id="learnings">
+            <h2>Key Takeaways</h2>
+            <ul class="checklist">
+              <li>Favour clear <strong>class design</strong> and small, testable methods.</li>
+              <li>Use <strong>interfaces</strong> to depend on contracts, not concrete classes.</li>
+              <li>Handle <strong>exceptions</strong> deliberately; fail fast with useful messages.</li>
+              <li>Automate <strong>tests</strong> early—regression safety boosts iteration speed.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Module pagination">
+            <a class="btn btn--ghost" href="computer-programming-i.html">← Computer Programming I</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="computer-programming-ii.html">Next: Computer Programming II →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../resume/">Resume</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

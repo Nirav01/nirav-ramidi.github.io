@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Databases & Information Systems I — Module — Nirav Ramidi</title>
+  <meta name="description" content="Relational model, SQL, ER modeling, normalisation, transactions, indexing, and application integration. Hands-on practice with schema design and queries." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="icon" href="../../assets/img/favicon.png" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../experience.html">Experience</a></li>
+          <li><a href="../../projects/">Projects</a></li>
+          <li><a href="../../writing/">Writing</a></li>
+          <li><a href="../">Education</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../">Home</a></li>
+        <li><a href="../">Education</a></li>
+        <li><span aria-current="page">Databases &amp; Information Systems I</span></li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Databases &amp; Information Systems I</h1>
+        <p class="lead">
+          Foundations of data management: <strong>relational model</strong>, <strong>SQL</strong>, 
+          <strong>ER modeling → schema</strong>, <strong>normalisation</strong>, 
+          <strong>transactions</strong> &amp; <strong>indexes</strong>. Build correct schemas and write efficient queries.
+        </p>
+        <ul class="chips">
+          <li class="chip">SQL</li>
+          <li class="chip">Schema Design</li>
+          <li class="chip">Normalisation</li>
+          <li class="chip">Transactions & Indexing</li>
+        </ul>
+
+        <div class="actions">
+          <!-- Place these files in this folder to activate links -->
+          <a class="btn btn--secondary" href="COMP20070___1___Course_Info.pdf">Course Info (PDF)</a>
+          <a class="btn btn--ghost" href="COMP20070___Assignment.pdf">Assignment (PDF)</a>
+        </div>
+
+        <p class="muted small">
+          Tip: If a link 404s, ensure the files live in <code>/education/modules/</code> with the exact filenames above.
+        </p>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="section">
+      <div class="container grid case-grid">
+        <!-- Meta -->
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Module info</h2>
+          <dl class="meta-list">
+            <dt>Category</dt><dd>Software Engineering</dd>
+            <dt>Focus</dt><dd>Relational theory · Querying · Consistency</dd>
+            <dt>Stack</dt><dd>SQL (PostgreSQL/MySQL), ER tools, JDBC/ORM basics</dd>
+            <dt>Assessment</dt><dd>Assignment(s), labs, short quizzes</dd>
+          </dl>
+          <div class="note small">
+            <p><strong>Related projects:</strong>
+              <a href="../../projects/cloud-sre/library-analytics.html">Library Analytics</a> ·
+              <a href="../../projects/swe-systems/java-marketplace.html">Java Marketplace</a>.
+            </p>
+          </div>
+        </aside>
+
+        <!-- Body -->
+        <article class="case-body">
+          <!-- Outcomes -->
+          <section class="case-section" id="outcomes">
+            <h2>Learning Outcomes</h2>
+            <ul>
+              <li>Model a problem domain with <strong>ER diagrams</strong> and transform to a relational schema.</li>
+              <li>Write correct <strong>SQL</strong> queries (selection, joins, grouping/aggregation, subqueries).</li>
+              <li>Apply <strong>normal forms</strong> (1NF–3NF/BCNF) to remove redundancy and anomalies.</li>
+              <li>Explain and use <strong>transactions</strong> (ACID) and understand isolation phenomena.</li>
+              <li>Choose <strong>indexes</strong> to improve performance; reason about query plans.</li>
+            </ul>
+          </section>
+
+          <!-- Topics -->
+          <section class="case-section" id="topics">
+            <h2>Indicative Topics</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>Relational Model</h3></header>
+                <p class="card__body">Relations, keys, integrity constraints, NULL semantics, referential integrity.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>SQL Fundamentals</h3></header>
+                <p class="card__body">SELECT/WHERE, joins (INNER/LEFT), GROUP BY/HAVING, subqueries, set ops (UNION/EXCEPT).</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Design &amp; Normalisation</h3></header>
+                <p class="card__body">ER → tables, functional dependencies, 1NF/2NF/3NF/BCNF, anomalies &amp; decomposition.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Transactions</h3></header>
+                <p class="card__body">ACID, isolation levels (Read Committed, Repeatable Read, Serializable), deadlocks.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Indexing &amp; Performance</h3></header>
+                <p class="card__body">B-tree vs hash, composite indexes, EXPLAIN plans, basic query tuning.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Quick reference -->
+          <section class="case-section" id="reference">
+            <h2>Quick Reference</h2>
+
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>SQL pattern — joins &amp; grouping</h3></header>
+                <pre class="code-block"><code>SELECT a.name, COUNT(o.id) AS orders
+FROM accounts a
+LEFT JOIN orders o ON o.account_id = a.id
+WHERE a.active = TRUE
+GROUP BY a.name
+HAVING COUNT(o.id) &gt;= 1
+ORDER BY orders DESC
+LIMIT 10;</code></pre>
+                <p class="muted small">Prefer explicit <code>JOIN</code> syntax; group by selected non-aggregates.</p>
+              </div>
+
+              <div class="card">
+                <header class="card__header"><h3>Normal forms (at a glance)</h3></header>
+                <pre class="code-block"><code>1NF: atomic columns, no repeating groups
+2NF: 1NF + no partial deps on a composite key
+3NF: 2NF + no transitive deps on key
+BCNF: every determinant is a candidate key</code></pre>
+                <p class="muted small">Decompose when FDs violate 3NF/BCNF to avoid update anomalies.</p>
+              </div>
+            </div>
+
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Transactions &amp; isolation</h3></header>
+                <pre class="code-block"><code>BEGIN;
+UPDATE accounts SET balance = balance - 50 WHERE id=1;
+UPDATE accounts SET balance = balance + 50 WHERE id=2;
+COMMIT;  -- or ROLLBACK;</code></pre>
+                <p class="muted small">Use the weakest isolation that preserves correctness; beware lost updates &amp; phantom reads.</p>
+              </div>
+
+              <div class="card">
+                <header class="card__header"><h3>Indexes (Postgres)</h3></header>
+                <pre class="code-block"><code>-- Single & composite indexes
+CREATE INDEX idx_orders_account ON orders(account_id);
+CREATE INDEX idx_orders_status_created ON orders(status, created_at);
+
+-- Inspect plan
+EXPLAIN ANALYZE
+SELECT * FROM orders WHERE status='shipped' AND created_at&gt;now()-interval '30 days';</code></pre>
+                <p class="muted small">Put most selective columns first in composite indexes; avoid redundant overlaps.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Artefacts -->
+          <section class="case-section" id="artifacts">
+            <h2>Selected Artefacts</h2>
+            <ul class="list">
+              <li><a href="COMP20070___1___Course_Info.pdf">Course Info — overview &amp; assessment</a></li>
+              <li><a href="COMP20070___Assignment.pdf">Assignment — schema &amp; SQL queries</a></li>
+            </ul>
+          </section>
+
+          <!-- Takeaways -->
+          <section class="case-section" id="learnings">
+            <h2>Key Takeaways</h2>
+            <ul class="checklist">
+              <li>Design schemas from real-world entities and constraints before writing queries.</li>
+              <li>Normalise to remove anomalies; denormalise deliberately with a performance goal.</li>
+              <li>Read query plans; indexes are tools, not magic—measure before/after.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Module pagination">
+            <a class="btn btn--ghost" href="web-dev.html">← Web Development</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="intro-to-sociology.html">Next: Introduction to Sociology →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../resume/">Resume</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

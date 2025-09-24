@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Final Year Project — Module — Nirav Ramidi</title>
+  <meta name="description" content="Capstone research & engineering project: problem framing, literature review, prototype implementation, experimentation & evaluation, and dissertation write-up." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="icon" href="../../assets/img/favicon.png" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../experience.html">Experience</a></li>
+          <li><a href="../../projects/">Projects</a></li>
+          <li><a href="../../writing/">Writing</a></li>
+          <li><a href="../">Education</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../">Home</a></li>
+        <li><a href="../">Education</a></li>
+        <li><span aria-current="page">Final Year Project</span></li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Final Year Project</h1>
+        <p class="lead">
+          A capstone that combines <strong>research</strong>, <strong>engineering</strong>, and <strong>evaluation</strong>:
+          frame a real problem, survey prior work, build and iterate on a prototype, measure results, and document the work in a dissertation.
+        </p>
+        <ul class="chips">
+          <li class="chip">Capstone</li>
+          <li class="chip">Research</li>
+          <li class="chip">Implementation</li>
+          <li class="chip">Evaluation</li>
+        </ul>
+
+        <div class="actions">
+          <!-- Place this file in /education/modules/ to activate -->
+          <a class="btn btn--secondary" href="FINAL_FYP_21206258.pdf">Download Dissertation (PDF)</a>
+        </div>
+
+        <p class="muted small">
+          Tip: If the link 404s, ensure the file exists in <code>/education/modules/</code> with the exact filename above.
+        </p>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="section">
+      <div class="container grid case-grid">
+        <!-- Meta -->
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Project meta</h2>
+          <dl class="meta-list">
+            <dt>Category</dt><dd>Capstone Project</dd>
+            <dt>Focus</dt><dd>Problem Framing · Prototype · Experiments</dd>
+            <dt>Stack</dt><dd>Python/Java, Jupyter, GitHub, SQL; cloud &amp; notebooks as needed</dd>
+            <dt>Assessment</dt><dd>Dissertation, demo, viva/presentation</dd>
+          </dl>
+          <div class="note small">
+            <p><strong>Related modules:</strong>
+              <a href="machine-learning.html">Machine Learning</a> ·
+              <a href="programming-for-big-data.html">Programming for Big Data</a> ·
+              <a href="perf-of-comp-sys.html">Performance of Computer Systems</a>.
+            </p>
+          </div>
+        </aside>
+
+        <!-- Body -->
+        <article class="case-body">
+          <!-- Snapshot -->
+          <section class="case-section" id="snapshot">
+            <h2>Project Snapshot</h2>
+            <ul class="checklist">
+              <li><strong>Problem:</strong> Define a clear research/engineering question grounded in user or system needs.</li>
+              <li><strong>Approach:</strong> Literature review → design → implementation → experiments → iteration.</li>
+              <li><strong>Outcome:</strong> Working prototype, quantified results, and a written dissertation.</li>
+            </ul>
+          </section>
+
+          <!-- Methodology -->
+          <section class="case-section" id="methodology">
+            <h2>Design &amp; Methodology</h2>
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Research Design</h3></header>
+                <ul class="tight">
+                  <li>Survey prior work and define hypotheses or goals.</li>
+                  <li>Specify datasets, benchmarks, or system traces.</li>
+                  <li>Choose evaluation metrics (e.g., accuracy/F1, latency, throughput, cost).</li>
+                </ul>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>Implementation</h3></header>
+                <ul class="tight">
+                  <li>Plan modular architecture and experiment harness.</li>
+                  <li>Automate runs; log configs, seeds, and environment.</li>
+                  <li>Version code &amp; data manifests; ensure reproducibility.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Evaluation -->
+          <section class="case-section" id="evaluation">
+            <h2>Evaluation Plan</h2>
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Metrics &amp; Benchmarks</h3></header>
+                <pre class="code-block"><code># Example reporting schema
+{
+  "dataset": "name/version",
+  "config": "model_or_system_config",
+  "metrics": {
+    "primary": ["accuracy", "F1" or "latency", "throughput"],
+    "secondary": ["memory", "cost"]
+  },
+  "seed": 42
+}</code></pre>
+                <p class="muted small">Pick metrics that reflect the stated objectives; include confidence intervals where possible.</p>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>Ablations &amp; Baselines</h3></header>
+                <ul class="tight">
+                  <li>Compare to strong baselines; justify choices.</li>
+                  <li>Run ablations to isolate the effect of each component.</li>
+                  <li>Report failures &amp; limitations; propose next steps.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Artefacts -->
+          <section class="case-section" id="artifacts">
+            <h2>Artefacts</h2>
+            <ul class="list">
+              <li><a href="FINAL_FYP_21206258.pdf">Dissertation PDF</a></li>
+              <li>Demo video / poster (optional)</li>
+              <li>Source code repository (optional)</li>
+            </ul>
+          </section>
+
+          <!-- Takeaways -->
+          <section class="case-section" id="learnings">
+            <h2>Key Takeaways</h2>
+            <ul class="checklist">
+              <li>Good research starts with a precise question and measurable success criteria.</li>
+              <li>Reproducibility (scripts, seeds, configs) turns results into evidence.</li>
+              <li>Iteration beats perfection—build, measure, learn.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Module pagination">
+            <a class="btn btn--ghost" href="machine-learning.html">← Machine Learning</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="programming-for-big-data.html">Next: Programming for Big Data →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../resume/">Resume</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

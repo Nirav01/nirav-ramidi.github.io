@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cloud Computing — Module — Nirav Ramidi</title>
+  <meta name="description" content="Foundations of cloud platforms: containers, services, networking, storage, security/IAM, serverless, cost management, IaC and DevOps workflows with hands-on practicals." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="icon" href="../../assets/img/favicon.png" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../experience.html">Experience</a></li>
+          <li><a href="../../projects/">Projects</a></li>
+          <li><a href="../../writing/">Writing</a></li>
+          <li><a href="../">Education</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../">Home</a></li>
+        <li><a href="../">Education</a></li>
+        <li><span aria-current="page">Cloud Computing</span></li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Cloud Computing</h1>
+        <p class="lead">
+          Core cloud primitives and hands-on workflows: <strong>containers</strong>, <strong>compute</strong>, <strong>storage</strong>,
+          <strong>networking</strong>, <strong>security/IAM</strong>, <strong>serverless</strong>, and <strong>IaC/DevOps</strong>.
+          Focus on patterns that transfer across AWS/GCP/Azure.
+        </p>
+        <ul class="chips">
+          <li class="chip">Containers & Orchestration</li>
+          <li class="chip">Networking & Storage</li>
+          <li class="chip">Serverless</li>
+          <li class="chip">IaC & CI/CD</li>
+        </ul>
+
+        <div class="actions">
+          <!-- Place these files in this folder to activate links -->
+          <a class="btn btn--secondary" href="COMP30520__W1_Intro_to_Cloud1.pdf">Week 1 — Intro to Cloud (PDF)</a>
+          <a class="btn btn--ghost" href="practical_1.pdf">Practical 1</a>
+          <a class="btn btn--ghost" href="practical_2.pdf">Practical 2</a>
+          <a class="btn btn--ghost" href="practical_3.pdf">Practical 3</a>
+          <a class="btn btn--ghost" href="practical_4.pdf">Practical 4</a>
+        </div>
+
+        <p class="muted small">
+          Tip: If any link 404s, ensure the files live in <code>/education/modules/</code> with the exact filenames above.
+        </p>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="section">
+      <div class="container grid case-grid">
+        <!-- Meta -->
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Module info</h2>
+          <dl class="meta-list">
+            <dt>Category</dt><dd>Cloud / SRE</dd>
+            <dt>Focus</dt><dd>Platform fundamentals · Practical deployments</dd>
+            <dt>Stack</dt><dd>Docker, basic Kubernetes, Terraform, GitHub Actions</dd>
+            <dt>Assessment</dt><dd>Practicals/labs, mini-project, short quizzes</dd>
+          </dl>
+          <div class="note small">
+            <p><strong>Related projects:</strong> see
+              <a href="../../projects/cloud-sre/vision-microservice.html">Vision Microservice</a> and
+              <a href="../../projects/cloud-sre/library-analytics.html">Cloud-Native Library Analytics</a>.
+            </p>
+          </div>
+        </aside>
+
+        <!-- Body -->
+        <article class="case-body">
+          <!-- Outcomes -->
+          <section class="case-section" id="outcomes">
+            <h2>Learning Outcomes</h2>
+            <ul>
+              <li>Containerise apps and run them locally and in the cloud (Compose → basic K8s).</li>
+              <li>Pick appropriate compute/storage/networking services and understand trade-offs.</li>
+              <li>Apply <strong>IAM</strong> least-privilege, secrets management, and basic network security.</li>
+              <li>Automate infra with <strong>Terraform</strong>; ship via <strong>CI/CD</strong> pipelines.</li>
+              <li>Estimate and monitor costs; design for reliability with health checks and autoscaling.</li>
+            </ul>
+          </section>
+
+          <!-- Topics -->
+          <section class="case-section" id="topics">
+            <h2>Indicative Topics</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>Containers & Images</h3></header>
+                <p class="card__body">Dockerfiles, multi-stage builds, image scanning, Compose for dev, intro to K8s objects.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Compute & Storage</h3></header>
+                <p class="card__body">VMs vs managed containers vs serverless; block/object/DB choices and consistency notes.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Networking</h3></header>
+                <p class="card__body">VPC/VNet, subnets, routing, security groups, load balancers, DNS/TLS, ingress basics.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Security & IAM</h3></header>
+                <p class="card__body">Principle of least privilege, short-lived creds, secrets backends, audit logging.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>IaC & CI/CD</h3></header>
+                <p class="card__body">Terraform modules/state/backends; GitHub Actions pipelines; blue/green & canary.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Quick reference -->
+          <section class="case-section" id="reference">
+            <h2>Quick Reference</h2>
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>docker-compose.yml (dev)</h3></header>
+                <pre class="code-block"><code>version: "3.9"
+services:
+  api:
+    build: .
+    ports: ["8080:8080"]
+    env_file: .env
+    depends_on: [db]
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: example
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata: {}</code></pre>
+                <p class="muted small">Use multi-stage Dockerfiles; keep images small and non-root.</p>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>GitHub Actions — build &amp; push</h3></header>
+                <pre class="code-block"><code>name: ci
+on: {push: {branches: ["main"]}}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/build-push-action@v6
+        with:
+          push: true
+          tags: ghcr.io/&lt;owner&gt;/&lt;repo&gt;:sha-${{ github.sha }}</code></pre>
+                <p class="muted small">Pin base images; scan with Trivy/Grype in CI.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Practicals -->
+          <section class="case-section" id="artifacts">
+            <h2>Selected Practicals</h2>
+            <ul class="list">
+              <li><a href="practical_1.pdf">Practical 1 — Containers &amp; images</a></li>
+              <li><a href="practical_2.pdf">Practical 2 — Networking &amp; load balancing</a></li>
+              <li><a href="practical_3.pdf">Practical 3 — Storage &amp; databases</a></li>
+              <li><a href="practical_4.pdf">Practical 4 — IaC &amp; CI/CD</a></li>
+              <li><a href="COMP30520__W1_Intro_to_Cloud1.pdf">Slides — Intro to Cloud</a></li>
+            </ul>
+          </section>
+
+          <!-- Takeaways -->
+          <section class="case-section" id="learnings">
+            <h2>Key Takeaways</h2>
+            <ul class="checklist">
+              <li>Design to the <strong>SLO</strong>: reliability/cost drive service choices more than hype.</li>
+              <li><strong>IAM</strong> and network boundaries are your first line of defence—keep defaults tight.</li>
+              <li><strong>Automation</strong> (IaC + CI/CD) reduces drift and speeds up safe iteration.</li>
+              <li>Prefer managed building blocks unless there’s a clear reason to self-manage.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Module pagination">
+            <a class="btn btn--ghost" href="hcai.html">← Human-Centred AI</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="performance-of-computer-systems.html">Next: Performance of Computer Systems →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../resume/">Resume</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

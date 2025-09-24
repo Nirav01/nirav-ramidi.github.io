@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Java Marketplace — Case Study — Nirav Ramidi</title>
+  <meta name="description" content="Spring Boot marketplace with catalogue, cart/checkout, auth/roles, order history, and an admin back-office. Clean MVC, validation, and tests." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../../assets/css/main.css" />
+  <link rel="icon" href="../../../assets/img/favicon.png" />
+
+  <!-- Optional structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareSourceCode",
+    "name":"Java Marketplace",
+    "author":{"@type":"Person","name":"Nirav Ramidi"},
+    "programmingLanguage":"Java",
+    "runtimePlatform":"Spring Boot",
+    "keywords":"Spring Boot, Thymeleaf, REST, PostgreSQL, Spring Security, JUnit, MockMvc"
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../../">Home</a></li>
+          <li><a href="../../../experience.html">Experience</a></li>
+          <li><a href="../../">Projects</a></li>
+          <li><a href="../../../writing/">Writing</a></li>
+          <li><a href="../../../education/">Education</a></li>
+          <li><a href="../../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../../">Home</a></li>
+        <li><a href="../../">Projects</a></li>
+        <li><a href="../">SWE / Systems</a></li>
+        <li><span aria-current="page">Java Marketplace</span></li>
+      </ol>
+    </nav>
+
+    <!-- Hero -->
+    <section class="case-hero section">
+      <div class="container case-hero__inner">
+        <div class="case-hero__copy">
+          <h1>Java Marketplace</h1>
+          <p class="lead">
+            A full-stack <strong>Spring Boot</strong> marketplace with catalogue, cart/checkout, authentication &amp; roles,
+            order history, and an admin back-office. Built with clean MVC, form validation, and integration tests.
+          </p>
+          <ul class="metrics">
+            <li class="chip">Spring Boot · Thymeleaf</li>
+            <li class="chip">REST + MVC</li>
+            <li class="chip">PostgreSQL (H2 dev)</li>
+            <li class="chip">Spring Security (BCrypt)</li>
+          </ul>
+        </div>
+        <figure class="case-hero__media">
+          <img src="../../../assets/img/case-studies/marketplace-hero.jpg" alt="Screens of the Java marketplace: product list, cart, and admin dashboard" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- Meta + Body -->
+    <section class="case-layout section">
+      <div class="container grid case-grid">
+
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Project info</h2>
+          <dl class="meta-list">
+            <dt>Type</dt><dd>Course project — Web Development</dd>
+            <dt>Role</dt><dd>Solo developer</dd>
+            <dt>Focus</dt><dd>Backend, MVC, Auth, Data modelling</dd>
+            <dt>Stack</dt><dd>Java 17, Spring Boot, Spring MVC, Spring Data JPA, Spring Security, Thymeleaf, PostgreSQL/H2, Maven</dd>
+            <dt>Testing</dt><dd>JUnit 5, Mockito, MockMvc</dd>
+            <dt>Links</dt>
+            <dd>
+              <ul class="bare">
+                <li><a href="../../" aria-label="Back to projects">Back to Projects</a></li>
+                <li><a href="../../../education/">Related modules</a></li>
+              </ul>
+            </dd>
+          </dl>
+        </aside>
+
+        <article class="case-body">
+          <!-- Context -->
+          <section class="case-section" id="context">
+            <h2>Problem &amp; Goals</h2>
+            <p>
+              Build a small but realistic online store with user accounts, secure checkout, and basic admin operations.
+              The emphasis is on <strong>clean domain modelling</strong>, <strong>secure authentication</strong>, and a
+              <strong>testable MVC architecture</strong>.
+            </p>
+            <ul>
+              <li>Catalogue with categories, search, and product detail pages.</li>
+              <li>Cart → checkout flow with address &amp; payment stub.</li>
+              <li>Authentication/authorisation: <code>USER</code> vs <code>ADMIN</code>.</li>
+              <li>Admin back-office for CRUD on products and price history.</li>
+            </ul>
+          </section>
+
+          <!-- Architecture -->
+          <section class="case-section" id="architecture">
+            <h2>Architecture</h2>
+            <figure class="case-figure">
+              <img src="../../../assets/img/case-studies/marketplace-architecture.png" alt="Layered architecture: Controller → Service → Repository → DB; plus Security and View layers" loading="lazy" />
+              <figcaption>Layered MVC with services mediating between controllers and repositories.</figcaption>
+            </figure>
+            <div class="cols">
+              <div>
+                <h3>Domain Model</h3>
+                <ul>
+                  <li><code>User</code> (id, email, passwordHash, roles)</li>
+                  <li><code>Product</code> (id, sku, name, description, category, <em>PriceHistory</em>)</li>
+                  <li><code>Cart</code> / <code>CartItem</code> (session or user-bound)</li>
+                  <li><code>Order</code> / <code>OrderItem</code> (immutable totals, snapshot of prices)</li>
+                  <li><code>PriceHistory</code> (product, price, effectiveFrom, effectiveTo)</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Persistence</h3>
+                <ul>
+                  <li>Spring Data JPA + <strong>PostgreSQL</strong> (H2 for local/dev).</li>
+                  <li>Flyway migrations to version schema.</li>
+                  <li>Eager vs LAZY tuned per aggregate (e.g., order → items).</li>
+                </ul>
+                <h3>Views &amp; API</h3>
+                <ul>
+                  <li>Server-rendered views via <strong>Thymeleaf</strong> for store &amp; admin.</li>
+                  <li>Small JSON endpoints for cart actions (AJAX).</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Security -->
+          <section class="case-section" id="security">
+            <h2>Security</h2>
+            <ul class="checklist">
+              <li><strong>Spring Security</strong> with form login and role-based access control.</li>
+              <li><strong>BCrypt</strong> password hashing; users seeded via migration with hashed secrets.</li>
+              <li><strong>CSRF</strong> tokens on state-changing requests; input validation &amp; bean validation.</li>
+              <li>Restricted admin routes under <code>/admin/**</code>; method-level guards for mutations.</li>
+            </ul>
+          </section>
+
+          <!-- Features -->
+          <section class="case-section" id="features">
+            <h2>Key Features</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>Catalogue</h3></header>
+                <p class="card__body">Browse by category, keyword search, and product detail with related items.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Cart &amp; Checkout</h3></header>
+                <p class="card__body">Add/remove items, address capture, payment stub, order confirmation email stub.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Order History</h3></header>
+                <p class="card__body">Users can review past orders; totals are <em>immutable</em> from price snapshots.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Admin Back-Office</h3></header>
+                <p class="card__body">CRUD products, manage categories, and maintain <em>PriceHistory</em> with effective dates.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Testing -->
+          <section class="case-section" id="testing">
+            <h2>Testing</h2>
+            <ul>
+              <li><strong>Unit tests</strong> for services and domain rules (JUnit 5 + Mockito).</li>
+              <li><strong>Web layer tests</strong> with <strong>MockMvc</strong> (auth, CSRF, form validation).</li>
+              <li><strong>Repository tests</strong> against H2 with Flyway to validate mappings and queries.</li>
+            </ul>
+          </section>
+
+          <!-- Results -->
+          <section class="case-section" id="results">
+            <h2>What I learned</h2>
+            <ul class="checklist">
+              <li>Enforcing <strong>immutable order totals</strong> requires price snapshotting and careful mapping.</li>
+              <li>Clean separation of concerns simplifies testing and refactoring.</li>
+              <li>Security defaults (CSRF, password hashing) are easy to miss unless tested explicitly.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Case study pagination">
+            <a class="btn btn--ghost" href="../../">← All projects</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="huffman-compressor.html">Next: Huffman Compressor →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../../resume/">Resume</a></li>
+        <li><a href="../../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../../assets/js/main.js" defer></script>
+</body>
+</html>

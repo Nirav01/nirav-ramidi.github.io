@@ -2,75 +2,192 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects — Nirav Ramidi</title>
-  <meta name="description" content="Case studies and projects by category." />
-  <link rel="stylesheet" href="../assets/css/main.css" />
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <meta name="description" content="Project portfolio of Nirav Ramidi across Data/ML, SWE/Systems, Cloud/SRE, and HCAI/Visualisation." />
 
-  <header class="site-header">
-    <nav aria-label="Primary">
-      <a class="brand" href="../index.html">NR</a>
-      <ul class="nav">
-        <li><a href="../experience.html">Experience</a></li>
-        <li><a aria-current="page" href="index.html">Projects</a></li>
-        <li><a href="../writing/index.html">Writing</a></li>
-        <li><a href="../education/index.html">Education</a></li>
-        <li><a href="../resume/index.html">Resume</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-        <li class="ext"><a href="https://github.com/Nirav01">GitHub</a></li>
-        <li class="ext"><a href="https://www.linkedin.com/in/nirav-ramidi/">LinkedIn</a></li>
-      </ul>
-    </nav>
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="icon" href="../assets/img/favicon.png" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../">Home</a></li>
+          <li><a href="../experience.html">Experience</a></li>
+          <li><a href="../projects/" aria-current="page">Projects</a></li>
+          <li><a href="../writing/">Writing</a></li>
+          <li><a href="../education/">Education</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
   </header>
 
-  <main id="main">
-    <h1>Projects</h1>
-    <nav class="subnav" aria-label="Categories">
-      <ul>
-        <li><a href="data-ml/golden-source-forecasting.html">Data / ML</a></li>
-        <li><a href="swe-systems/huffman-compressor.html">SWE / Systems</a></li>
-        <li><a href="cloud-sre/vision-microservice.html">Cloud / SRE</a></li>
-        <li><a href="hcai-viz/infovis-vegalite.html">HCAI / Viz</a></li>
-      </ul>
-    </nav>
+  <main id="content" class="site-main" role="main">
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Projects</h1>
+        <p class="lead">Browse selected work. Use filters to jump between areas.</p>
 
-    <section class="grid">
-      <article class="card">
-        <a href="data-ml/golden-source-forecasting.html">
-          <h2>Golden-Source & Forecasting</h2>
-          <p>BigQuery + Airflow + LightGBM • MAPE 7.9%</p>
-        </a>
-      </article>
+        <!-- Filters (handled by assets/js/main.js) -->
+        <div class="filters" role="toolbar" aria-label="Filter projects">
+          <button class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" data-filter="data-ml">Data/ML</button>
+          <button class="filter" data-filter="swe-systems">SWE/Systems</button>
+          <button class="filter" data-filter="cloud-sre">Cloud/SRE</button>
+          <button class="filter" data-filter="hcai-viz">HCAI/Vis</button>
+        </div>
 
-      <article class="card">
-        <a href="cloud-sre/vision-microservice.html">
-          <h2>CNN-OCR Vision Service</h2>
-          <p>Docker/K8s • p95 &lt; 300 ms @ ~1k req/s</p>
-        </a>
-      </article>
+        <!-- Projects grid -->
+        <div class="grid tiles projects-grid">
 
-      <article class="card">
-        <a href="swe-systems/huffman-compressor.html">
-          <h2>Huffman Compressor</h2>
-          <p>Greedy optimality • Benchmarked corpora</p>
-        </a>
-      </article>
+          <!-- Data / ML -->
+          <a class="tile" data-tags="data-ml" href="data-ml/golden-source-forecasting.html">
+            <img src="../assets/img/projects/golden-source-thumb.jpg" alt="Golden-source and forecasting case study" loading="lazy" />
+            <div class="tile__meta">
+              <h3>Golden-Source & Forecasting</h3>
+              <p>BigQuery · Airflow · LightGBM · MAPE 7.9%</p>
+              <ul class="chips"><li class="chip">Data/ML</li></ul>
+            </div>
+          </a>
 
-      <article class="card">
-        <a href="cloud-sre/queueing-capacity.html">
-          <h2>Queueing for Capacity</h2>
-          <p>M/M/K sizing • W ≤ 1s</p>
-        </a>
-      </article>
+          <a class="tile" data-tags="data-ml" href="data-ml/astronomy-classifier.html">
+            <img src="../assets/img/projects/astro-thumb.jpg" alt="Astronomy classifier thumbnail" loading="lazy" />
+            <div class="tile__meta">
+              <h3>Astronomy Classifier (SDSS)</h3>
+              <p>SVM vs kNN vs DT · ROC · feature selection</p>
+              <ul class="chips"><li class="chip">Data/ML</li></ul>
+            </div>
+          </a>
+
+          <a class="tile" data-tags="data-ml" href="data-ml/healthcare-data-mining.html">
+            <img src="../assets/img/projects/healthcare-dm-thumb.jpg" alt="Healthcare data mining project" loading="lazy" />
+            <div class="tile__meta">
+              <h3>Healthcare Data Mining</h3>
+              <p>SMOTE · Classification/Regression · Clustering</p>
+              <ul class="chips"><li class="chip">Data/ML</li></ul>
+            </div>
+          </a>
+
+          <!-- SWE / Systems -->
+          <a class="tile" data-tags="swe-systems" href="swe-systems/java-marketplace.html">
+            <img src="../assets/img/projects/marketplace-thumb.jpg" alt="Java marketplace project" loading="lazy" />
+            <div class="tile__meta">
+              <h3>Java Marketplace</h3>
+              <p>Spring Boot · Thymeleaf · Docker</p>
+              <ul class="chips"><li class="chip">SWE/Systems</li></ul>
+            </div>
+          </a>
+
+          <a class="tile" data-tags="swe-systems" href="swe-systems/huffman-compressor.html">
+            <img src="../assets/img/projects/huffman-thumb.jpg" alt="Huffman compressor project" loading="lazy" />
+            <div class="tile__meta">
+              <h3>Huffman Compressor</h3>
+              <p>Greedy optimality · Compress/Decompress · Benchmarks</p>
+              <ul class="chips"><li class="chip">SWE/Systems</li></ul>
+            </div>
+          </a>
+
+          <a class="tile" data-tags="swe-systems" href="swe-systems/twitter-cli.html">
+            <img src="../assets/img/projects/twitter-cli-thumb.jpg" alt="Twitter-like CLI project" loading="lazy" />
+            <div class="tile__meta">
+              <h3>Twitter-like CLI</h3>
+              <p>C · Data structures · Linked-list feed</p>
+              <ul class="chips"><li class="chip">SWE/Systems</li></ul>
+            </div>
+          </a>
+
+          <!-- Cloud / SRE -->
+          <a class="tile" data-tags="cloud-sre" href="cloud-sre/vision-microservice.html">
+            <img src="../assets/img/projects/vision-thumb.jpg" alt="Vision microservice architecture" loading="lazy" />
+            <div class="tile__meta">
+              <h3>Vision Microservice at Scale</h3>
+              <p>CNN-OCR · Docker/K8s · p95 &lt; 300 ms · ~1k req/s</p>
+              <ul class="chips"><li class="chip">Cloud/SRE</li></ul>
+            </div>
+          </a>
+
+          <a class="tile" data-tags="cloud-sre" href="cloud-sre/queueing-capacity.html">
+            <img src="../assets/img/projects/queueing-thumb.jpg" alt="Queueing capacity planning" loading="lazy" />
+            <div class="tile__meta">
+              <h3>Queueing for Capacity Planning</h3>
+              <p>M/D/1 · M/M/1/n · M/M/K (Erlang-C)</p>
+              <ul class="chips"><li class="chip">Cloud/SRE</li></ul>
+            </div>
+          </a>
+
+          <a class="tile" data-tags="cloud-sre" href="cloud-sre/library-analytics.html">
+            <img src="../assets/img/projects/library-analytics-thumb.jpg" alt="Cloud-native library analytics" loading="lazy" />
+            <div class="tile__meta">
+              <h3>Cloud-Native Library Analytics</h3>
+              <p>Containers · Dashboards · Alerting</p>
+              <ul class="chips"><li class="chip">Cloud/SRE</li></ul>
+            </div>
+          </a>
+
+          <!-- HCAI / Vis -->
+          <a class="tile" data-tags="hcai-viz" href="hcai-viz/hcai-experiment.html">
+            <img src="../assets/img/projects/hcai-thumb.jpg" alt="HCAI empirical study" loading="lazy" />
+            <div class="tile__meta">
+              <h3>HCAI Empirical Study</h3>
+              <p>Experiment design · IV/DV · Results</p>
+              <ul class="chips"><li class="chip">HCAI/Vis</li></ul>
+            </div>
+          </a>
+
+          <a class="tile" data-tags="hcai-viz" href="hcai-viz/infovis-vegalite.html">
+            <img src="../assets/img/projects/infovis-thumb.jpg" alt="Information visualisation with Vega-Lite" loading="lazy" />
+            <div class="tile__meta">
+              <h3>InfoVis Dashboard (Vega-Lite)</h3>
+              <p>Interactive multi-view · Tidy transforms</p>
+              <ul class="chips"><li class="chip">HCAI/Vis</li></ul>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- CTA -->
+        <p class="section__cta">
+          Looking for something specific? <a class="btn btn--secondary" href="../contact.html">Contact me</a>
+          or browse my <a class="btn btn--ghost" href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a>.
+        </p>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© <span data-year></span> Nirav Ramidi</p>
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../resume/">Resume</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
   </footer>
+
+  <!-- Scripts (kept separate) -->
   <script src="../assets/js/main.js" defer></script>
 </body>
 </html>

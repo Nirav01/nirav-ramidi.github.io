@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Performance of Computer Systems — Module — Nirav Ramidi</title>
+  <meta name="description" content="Queueing models, measurement & benchmarking, latency SLOs, capacity planning, and workload modelling with practical labs." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="icon" href="../../assets/img/favicon.png" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../experience.html">Experience</a></li>
+          <li><a href="../../projects/">Projects</a></li>
+          <li><a href="../../writing/">Writing</a></li>
+          <li><a href="../">Education</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../">Home</a></li>
+        <li><a href="../">Education</a></li>
+        <li><span aria-current="page">Performance of Computer Systems</span></li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Performance of Computer Systems</h1>
+        <p class="lead">
+          Practical performance engineering: <strong>queueing theory</strong>, <strong>benchmarking</strong> &amp; measurement,
+          <strong>latency SLOs</strong>, and <strong>capacity planning</strong>. Apply models to size services and interpret
+          load test results.
+        </p>
+        <ul class="chips">
+          <li class="chip">Queueing Models</li>
+          <li class="chip">Benchmarking</li>
+          <li class="chip">SLOs &amp; SLIs</li>
+          <li class="chip">Capacity Planning</li>
+        </ul>
+
+        <div class="actions">
+          <!-- Place these files in this folder to activate links -->
+          <a class="btn btn--secondary" href="40010-jan2025-intro.pdf">Intro slides (PDF)</a>
+          <a class="btn btn--ghost" href="PerfEng-Pract-1-2025.pdf">Practical 1</a>
+          <a class="btn btn--ghost" href="PerfEng-Pract-2-2025.pdf">Practical 2</a>
+        </div>
+
+        <p class="muted small">
+          Tip: If any link 404s, ensure the files live in <code>/education/modules/</code> with the exact filenames above.
+        </p>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="section">
+      <div class="container grid case-grid">
+        <!-- Meta -->
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Module info</h2>
+          <dl class="meta-list">
+            <dt>Category</dt><dd>Cloud / SRE · Systems</dd>
+            <dt>Focus</dt><dd>Latency · Throughput · Utilisation · Sizing</dd>
+            <dt>Stack</dt><dd>Python/NumPy, wrk/hey, Docker, Grafana</dd>
+            <dt>Assessment</dt><dd>Practicals, short report, final assessment</dd>
+          </dl>
+          <div class="note small">
+            <p><strong>Related work:</strong> see
+              <a href="../../projects/cloud-sre/queueing-capacity.html">Queueing for Capacity Planning</a> and
+              <a href="../../writing/notes/queueing-cheatsheet.html">Queueing Cheatsheet</a>.
+            </p>
+          </div>
+        </aside>
+
+        <!-- Body -->
+        <article class="case-body">
+          <!-- Outcomes -->
+          <section class="case-section" id="outcomes">
+            <h2>Learning Outcomes</h2>
+            <ul>
+              <li>Model systems with <strong>M/M/1</strong>, <strong>M/D/1</strong>, <strong>M/M/1/K</strong>, and <strong>M/M/K</strong> (Erlang-C).</li>
+              <li>Translate <strong>arrival</strong> and <strong>service</strong> rates into latency predictions and back.</li>
+              <li>Design experiments: choose representative workloads and avoid <strong>benchmarking traps</strong>.</li>
+              <li>Set and validate <strong>SLOs</strong> (e.g., “p95 &lt; 300 ms”) with proper <strong>SLIs</strong> and alerting.</li>
+              <li>Use results to make <strong>capacity</strong> and <strong>cost</strong> trade-offs.</li>
+            </ul>
+          </section>
+
+          <!-- Topics -->
+          <section class="case-section" id="topics">
+            <h2>Indicative Topics</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>Workloads &amp; Metrics</h3></header>
+                <p class="card__body">Open vs closed workloads, arrival processes, latency distributions, tail percentiles, throughput and utilisation.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Queueing Basics</h3></header>
+                <p class="card__body">Little’s Law, stability ρ&lt;1, response vs waiting time, parallel servers and Erlang-C.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Benchmarking</h3></header>
+                <p class="card__body">Warm-up, steady-state, Coordinated Omission, resource saturation, reproducibility.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>SLOs &amp; Capacity</h3></header>
+                <p class="card__body">Pick percentiles, budget queueing delay, pick <em>K</em> servers to meet latency targets with headroom.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Quick reference -->
+          <section class="case-section" id="reference">
+            <h2>Quick Reference</h2>
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Little’s Law</h3></header>
+                <pre class="code-block"><code>L = λ · W
+Lq = λ · Wq</code></pre>
+                <p class="muted small">Holds for stable systems; sanity-check your measurements with it.</p>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>M/M/1 formulas</h3></header>
+                <pre class="code-block"><code>ρ  = λ / μ          (ρ &lt; 1)
+W  = 1 / (μ − λ)
+Wq = ρ / (μ − λ)</code></pre>
+                <p class="muted small">As ρ → 1, queueing explodes; keep planned peaks ≤ 0.7–0.8.</p>
+              </div>
+            </div>
+
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Erlang-C (M/M/K)</h3></header>
+                <pre class="code-block"><code>a = λ/μ,  ρ = a/K
+Pwait = [ (a^K / K!) · (K / (K − a)) ]
+        / [ Σ_{i=0}^{K−1} (a^i / i!) + (a^K / K!) · (K / (K − a)) ]
+Wq    = Pwait / (K·μ − λ)
+W     = Wq + 1/μ</code></pre>
+                <p class="muted small">Use to size replicas K for a target W (e.g., p50 budget) with headroom.</p>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>Rules of thumb</h3></header>
+                <ul class="tight">
+                  <li>Parallelism beats buffering for latency SLOs.</li>
+                  <li>Stabilise service time: variance drives queueing.</li>
+                  <li>Alert near the “knee”: W ≈ service time.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Lab snippet -->
+          <section class="case-section" id="labs">
+            <h2>Lab Snippet — Simple Load Test</h2>
+            <pre class="code-block"><code># Using 'hey' (Go HTTP load generator)
+hey -z 60s -q 0 -c 64 -m GET https://localhost:8080/api
+
+# Using wrk
+wrk -t8 -c128 -d60s --latency https://localhost:8080/api</code></pre>
+            <p class="muted small">Warm up the system first; capture percentiles and CPU/memory/I/O metrics alongside RPS.</p>
+          </section>
+
+          <!-- Practicals -->
+          <section class="case-section" id="artifacts">
+            <h2>Selected Practicals</h2>
+            <ul class="list">
+              <li><a href="PerfEng-Pract-1-2025.pdf">Practical 1 — Queueing models &amp; headroom</a></li>
+              <li><a href="PerfEng-Pract-2-2025.pdf">Practical 2 — Load testing &amp; SLO validation</a></li>
+              <li><a href="40010-jan2025-intro.pdf">Slides — Course introduction</a></li>
+            </ul>
+          </section>
+
+          <!-- Takeaways -->
+          <section class="case-section" id="learnings">
+            <h2>Key Takeaways</h2>
+            <ul class="checklist">
+              <li>Use models to <em>predict</em> and experiments to <em>verify</em> under real workloads.</li>
+              <li>Design to percentiles, not averages; tails drive user experience.</li>
+              <li>Keep utilisation modest at peak; small headroom prevents big tail spikes.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Module pagination">
+            <a class="btn btn--ghost" href="cloud-comp.html">← Cloud Computing</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="operating-systems.html">Next: Intro to Operating Systems →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../resume/">Resume</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

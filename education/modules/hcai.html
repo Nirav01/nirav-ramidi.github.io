@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Human-Centred AI — Module — Nirav Ramidi</title>
+  <meta name="description" content="Principles and practice of Human-Centred AI: usability, trust, explainability, fairness, study design, and ethical operations with empirical evaluation (SUS, NASA-TLX)." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="icon" href="../../assets/img/favicon.png" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../experience.html">Experience</a></li>
+          <li><a href="../../projects/">Projects</a></li>
+          <li><a href="../../writing/">Writing</a></li>
+          <li><a href="../">Education</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../">Home</a></li>
+        <li><a href="../">Education</a></li>
+        <li><span aria-current="page">Human-Centred AI</span></li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Human-Centred AI</h1>
+        <p class="lead">
+          Design AI systems that are <strong>useful</strong>, <strong>trustworthy</strong>, and <strong>fair</strong>.
+          Topics include explainability patterns, usability &amp; trust, study design and measurement
+          (e.g., <strong>SUS</strong>, <strong>NASA-TLX</strong>), and lightweight governance for shipping ML features safely.
+        </p>
+        <ul class="chips">
+          <li class="chip">Explainability (XAI)</li>
+          <li class="chip">Usability &amp; Trust</li>
+          <li class="chip">Fairness &amp; Ethics</li>
+          <li class="chip">Empirical Methods</li>
+        </ul>
+
+        <div class="actions">
+          <!-- Place these files in this folder to activate links -->
+          <a class="btn btn--secondary" href="L1%20introduction.pdf">Lecture 1 — Introduction (PDF)</a>
+          <a class="btn btn--ghost" href="Coursework%20-%20empirical%20study.pdf">Coursework — Empirical Study (PDF)</a>
+          <a class="btn btn--ghost" href="HCAI%20essay.pdf">Essay — Human-Centred AI (PDF)</a>
+        </div>
+
+        <p class="muted small">
+          Tip: If any link 404s, ensure the file exists in <code>/education/modules/</code> with the exact filename above.
+        </p>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="section">
+      <div class="container grid case-grid">
+        <!-- Meta -->
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Module info</h2>
+          <dl class="meta-list">
+            <dt>Category</dt><dd>Vis / HCAI</dd>
+            <dt>Focus</dt><dd>Product UX · Safety · Evaluation</dd>
+            <dt>Stack</dt><dd>Figma/HTML prototypes, JS logging, R/Python stats</dd>
+            <dt>Assessment</dt><dd>Empirical study, reflective essay, quizzes</dd>
+          </dl>
+          <div class="note small">
+            <p><strong>Related work:</strong> see
+              <a href="../../projects/hcai-viz/hcai-experiment.html">HCAI Empirical Study</a> and
+              <a href="../../writing/hcai-essay.html">Human-Centred AI — Essay</a>.
+            </p>
+          </div>
+        </aside>
+
+        <!-- Body -->
+        <article class="case-body">
+          <!-- Outcomes -->
+          <section class="case-section" id="outcomes">
+            <h2>Learning Outcomes</h2>
+            <ul>
+              <li>Apply <strong>explainability patterns</strong> (confidence, rationale, provenance, recourse) appropriate to the task.</li>
+              <li>Design and run <strong>user studies</strong> (within-subjects / A/B) with counter-balancing and clear metrics.</li>
+              <li>Measure <strong>trust</strong>, <strong>usability (SUS)</strong>, and <strong>workload (NASA-TLX)</strong>; report effect sizes and CIs.</li>
+              <li>Identify and mitigate <strong>fairness risks</strong>; communicate scope, limits, and guardrails.</li>
+              <li>Operationalise governance: model cards, decision logs, and feedback/appeal loops.</li>
+            </ul>
+          </section>
+
+          <!-- Topics -->
+          <section class="case-section" id="topics">
+            <h2>Indicative Topics</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>Principles</h3></header>
+                <p class="card__body">Appropriate use, calibrated transparency, contestability, privacy by design.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Design patterns</h3></header>
+                <p class="card__body">Confidence/uncertainty, progressive disclosure, counterfactuals/recourse, provenance/versioning.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Empirical methods</h3></header>
+                <p class="card__body">Task success/time, SUS, NASA-TLX, trust scales; paired t-tests/Wilcoxon, bootstrap CIs.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Fairness &amp; ethics</h3></header>
+                <p class="card__body">Group metrics, harms/benefits framing, consent and data minimisation, documentation.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Quick reference -->
+          <section class="case-section" id="reference">
+            <h2>Quick Reference</h2>
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>SUS scoring</h3></header>
+                <pre class="code-block"><code>For items 1,3,5,7,9:   score = x - 1
+For items 2,4,6,8,10:  score = 5 - x
+SUS = 2.5 × Σ scores   (range 0–100)</code></pre>
+                <p class="muted small">Report mean ± CI; beware ceiling effects. Pair with task success/time.</p>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>NASA-TLX (raw)</h3></header>
+                <pre class="code-block"><code>Dimensions: Mental, Physical, Temporal, Performance, Effort, Frustration
+Score = mean of 6 ratings (0–100)  // weighting optional</code></pre>
+                <p class="muted small">Lower is better for workload; complement with qualitative notes.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Instrumentation snippet -->
+          <section class="case-section" id="instrumentation">
+            <h2>Instrumentation — Minimal Logger</h2>
+            <pre class="code-block"><code>// Client-side event logger (pseudo)
+const log = (type, payload) => fetch("/log", {
+  method: "POST",
+  headers: {"Content-Type":"application/json"},
+  body: JSON.stringify({
+    ts: Date.now(), uid, session, type, ...payload
+  })
+});
+// Example: decision taken
+log("decision", {model_ver, input_hash, output, confidence});</code></pre>
+            <p class="muted small">Use pseudonymous IDs; avoid storing raw PII. Document fields in a data sheet.</p>
+          </section>
+
+          <!-- Artefacts -->
+          <section class="case-section" id="artifacts">
+            <h2>Selected Artefacts</h2>
+            <ul class="list">
+              <li><a href="L1%20introduction.pdf">Lecture 1 — Introduction to HCAI</a></li>
+              <li><a href="Coursework%20-%20empirical%20study.pdf">Coursework — Empirical Study brief</a></li>
+              <li><a href="HCAI%20essay.pdf">Essay — Human-Centred AI (submitted)</a></li>
+            </ul>
+          </section>
+
+          <!-- Takeaways -->
+          <section class="case-section" id="learnings">
+            <h2>Key Takeaways</h2>
+            <ul class="checklist">
+              <li>Clarity and recourse often matter more than raw model accuracy for user outcomes.</li>
+              <li>Trust is calibrated by honest uncertainty and reversible actions, not persuasion.</li>
+              <li>Measure with purpose: pick metrics that reflect the decision context.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Module pagination">
+            <a class="btn btn--ghost" href="info-vis.html">← Information Visualisation</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="cloud-computing.html">Next: Cloud Computing →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../resume/">Resume</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

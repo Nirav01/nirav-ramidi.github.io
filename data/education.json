@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "owner": "Nirav Ramidi",
+  "generatedAt": "2025-09-24",
+  "areas": [
+    { "id": "data-ml", "title": "Data & ML" },
+    { "id": "systems-cloud", "title": "Systems & Cloud" },
+    { "id": "security", "title": "Security" },
+    { "id": "hci-viz", "title": "HCAI & Visualization" },
+    { "id": "theory-algo", "title": "Algorithms & Theory" },
+    { "id": "foundations", "title": "Programming Foundations" },
+    { "id": "business-soc", "title": "Business & Society" },
+    { "id": "capstone", "title": "Capstone" }
+  ],
+  "modules": [
+    {
+      "id": "final-year-project",
+      "title": "Final Year Project",
+      "area": "capstone",
+      "page": "/education/modules/final-year-project.html",
+      "tags": ["Research", "Prototype", "Evaluation"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Dissertation PDF", "href": "/education/modules/FINAL_FYP_21206258.pdf" }
+      ]
+    },
+
+    {
+      "id": "machine-learning",
+      "title": "Machine Learning",
+      "area": "data-ml",
+      "page": "/education/modules/machine-learning.html",
+      "tags": ["Supervised", "Unsupervised", "Evaluation"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Intro Slides", "href": "/education/modules/01%20-%20Introduction-to-ML.pdf" },
+        { "title": "Programming Assignment", "href": "/education/modules/2024-ML-Programming-Assignment-instructions.pdf" },
+        { "title": "Schedule", "href": "/education/modules/ml-Schedule-of-lectures-assessments.pdf" }
+      ]
+    },
+    {
+      "id": "data-mining",
+      "title": "Data Mining",
+      "area": "data-ml",
+      "page": "/education/modules/data-mining.html",
+      "tags": ["ETL", "Classification", "Clustering"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Practical 01A", "href": "/education/modules/Practical-01(A).pdf" },
+        { "title": "Practical 01B", "href": "/education/modules/Practical-01(B).pdf" },
+        { "title": "Practical 02A", "href": "/education/modules/Practical-02-A.pdf" },
+        { "title": "Practical IIB", "href": "/education/modules/Practical-II-B.pdf" },
+        { "title": "Practical IIIA", "href": "/education/modules/Practical-III-A.pdf" },
+        { "title": "Practical IIIB", "href": "/education/modules/practical-III-B.pdf" }
+      ]
+    },
+    {
+      "id": "programming-for-big-data",
+      "title": "Programming for Big Data",
+      "area": "data-ml",
+      "page": "/education/modules/programming-for-big-data.html",
+      "tags": ["PySpark", "ETL", "Streaming"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Lecture 1 — Intro", "href": "/education/modules/1-Introduction.pdf" },
+        { "title": "Group Project (HTML)", "href": "/education/modules/group_project.html" }
+      ]
+    },
+
+    {
+      "id": "cloud-comp",
+      "title": "Cloud Computing",
+      "area": "systems-cloud",
+      "page": "/education/modules/cloud-comp.html",
+      "tags": ["Cloud", "SRE", "Containers"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Week 1 — Intro", "href": "/education/modules/COMP30520__W1_Intro_to_Cloud1.pdf" },
+        { "title": "Practical 1", "href": "/education/modules/practical_1.pdf" },
+        { "title": "Practical 2", "href": "/education/modules/practical_2.pdf" },
+        { "title": "Practical 3", "href": "/education/modules/practical_3.pdf" },
+        { "title": "Practical 4", "href": "/education/modules/practical_4.pdf" }
+      ]
+    },
+    {
+      "id": "perf-of-comp-sys",
+      "title": "Performance of Computer Systems",
+      "area": "systems-cloud",
+      "page": "/education/modules/perf-of-comp-sys.html",
+      "tags": ["Queueing", "Benchmarking", "SLOs"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Intro (Jan 2025)", "href": "/education/modules/40010-jan2025-intro.pdf" },
+        { "title": "Practical 1", "href": "/education/modules/PerfEng-Pract-1-2025.pdf" },
+        { "title": "Practical 2", "href": "/education/modules/PerfEng-Pract-2-2025.pdf" }
+      ]
+    },
+    {
+      "id": "intro-to-os",
+      "title": "Intro to Operating Systems",
+      "area": "systems-cloud",
+      "page": "/education/modules/intro-to-os.html",
+      "tags": ["Processes", "Threads", "Memory"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Overview", "href": "/education/modules/0.%20Overview.pdf" }
+      ]
+    },
+    {
+      "id": "comp-networking",
+      "title": "Computer Networking",
+      "area": "systems-cloud",
+      "page": "/education/modules/comp-networking.html",
+      "tags": ["OSI", "TCP/IP", "Wireshark"],
+      "status": "completed"
+    },
+    {
+      "id": "advances-in-wireless-networking",
+      "title": "Advances in Wireless Networking",
+      "area": "systems-cloud",
+      "page": "/education/modules/advances-in-wireless-networking.html",
+      "tags": ["Wi-Fi 6/7", "5G/NR", "MEC"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Introduction 2025", "href": "/education/modules/Introduction%202025.pdf" },
+        { "title": "Assignment 1 (2025)", "href": "/education/modules/COMP40660_Assignment1-2025.pdf" },
+        { "title": "Assignment 3", "href": "/education/modules/COMP40660_Assignment_3.pdf" },
+        { "title": "Assignment 4", "href": "/education/modules/COMP40660_Assignment_4.pdf" },
+        { "title": "Assignment 5", "href": "/education/modules/COMP40660_Assignment_5.pdf" },
+        { "title": "Group — Edge Computing", "href": "/education/modules/COMP40660%20-%20Group%20Assignment%20-%20Edge%20Computing.pdf" }
+      ]
+    },
+
+    {
+      "id": "info-sec",
+      "title": "Information Security",
+      "area": "security",
+      "page": "/education/modules/info-sec.html",
+      "tags": ["Threat Modeling", "Crypto Basics", "AppSec"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Course Intro", "href": "/education/modules/comp41960-course-introduction.pdf" },
+        { "title": "Assignment 1", "href": "/education/modules/comp41960-assignment.pdf" },
+        { "title": "Assignment 2", "href": "/education/modules/Information_Security_Assignment_2.pdf" },
+        { "title": "Organisation & Policies", "href": "/education/modules/comp30940-organisation.pdf" }
+      ]
+    },
+
+    {
+      "id": "hcai",
+      "title": "Human Centred AI",
+      "area": "hci-viz",
+      "page": "/education/modules/hcai.html",
+      "tags": ["HCI", "Empirical Study", "Ethics"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Lecture 1 — Introduction", "href": "/education/modules/L1%20introduction.pdf" },
+        { "title": "Coursework — Empirical Study", "href": "/education/modules/Coursework%20-%20empirical%20study.pdf" },
+        { "title": "HCAI Essay", "href": "/education/modules/HCAI%20essay.pdf" }
+      ]
+    },
+    {
+      "id": "info-vis",
+      "title": "Information Visualisation",
+      "area": "hci-viz",
+      "page": "/education/modules/info-vis.html",
+      "tags": ["Charts", "Design", "Vega-Lite"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Graded Assignment", "href": "/education/modules/Information%20Visualisation%20Graded%20Assignment.pdf" },
+        { "title": "Lecture — Introduction", "href": "/education/modules/Infovis2024_01_Introduction.pdf" }
+      ]
+    },
+
+    {
+      "id": "algorithms",
+      "title": "Algorithms",
+      "area": "theory-algo",
+      "page": "/education/modules/algorithms.html",
+      "tags": ["Complexity", "Greedy", "DP"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Week 1 — Lecture 1", "href": "/education/modules/Week%201_Lecture%201.pdf" },
+        { "title": "Compression Assignment", "href": "/education/modules/Compression%20Assignment-1.pdf" }
+      ]
+    },
+    {
+      "id": "graph-algorithms",
+      "title": "Graph Algorithms",
+      "area": "theory-algo",
+      "page": "/education/modules/graph-algorithms.html",
+      "tags": ["Graphs", "Shortest Paths", "MST"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Intro Slides", "href": "/education/modules/01_intro.pdf" },
+        { "title": "Assignment", "href": "/education/modules/assignment_updated.pdf" }
+      ]
+    },
+    {
+      "id": "optimisation",
+      "title": "Optimisation",
+      "area": "theory-algo",
+      "page": "/education/modules/optimisation.html",
+      "tags": ["LP", "Convexity", "Heuristics"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Module Notes", "href": "/education/modules/Optimisation.pdf" },
+        { "title": "Assignment 1", "href": "/education/modules/assignment1_comp30930.pdf" },
+        { "title": "Assignment 2", "href": "/education/modules/comp30930_assignment2.pdf" }
+      ]
+    },
+
+    {
+      "id": "intro-to-java",
+      "title": "Introduction to Java",
+      "area": "foundations",
+      "page": "/education/modules/intro-to-java.html",
+      "tags": ["OOP", "Inheritance", "Interfaces"],
+      "status": "completed"
+    },
+    {
+      "id": "data-structures",
+      "title": "Data Structures",
+      "area": "foundations",
+      "page": "/education/modules/data-structures.html",
+      "tags": ["Lists", "Trees", "Hashing"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Assignment 1", "href": "/education/modules/COMP20280_Assignment_1_2023%20(1).pdf" },
+        { "title": "Assignment 2", "href": "/education/modules/COMP20280_Assignment_2_2022_23%20(3).pdf" },
+        { "title": "Lecture — Intro", "href": "/education/modules/01.1%20-%20COMP20280%20Introduction.pdf" }
+      ]
+    },
+    {
+      "id": "comp-programming-1",
+      "title": "Computer Programming I",
+      "area": "foundations",
+      "page": "/education/modules/comp-programming-1.html",
+      "tags": ["C", "Control Flow", "I/O"],
+      "status": "completed"
+    },
+    {
+      "id": "comp-programming-2",
+      "title": "Computer Programming II",
+      "area": "foundations",
+      "page": "/education/modules/comp-programming-2.html",
+      "tags": ["Pointers", "Structs", "Files"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Welcome / Outline", "href": "/education/modules/COMP10120_2122Welcome.pdf" }
+      ]
+    },
+    {
+      "id": "soft-eng-1",
+      "title": "Software Engineering Project 1",
+      "area": "foundations",
+      "page": "/education/modules/soft-eng-1.html",
+      "tags": ["Teamwork", "Design", "Testing"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Intro", "href": "/education/modules/Introduction.pdf" },
+        { "title": "Assignment 2", "href": "/education/modules/COMP10050-Assignment2-2022.pdf" }
+      ]
+    },
+    {
+      "id": "soft-eng-2",
+      "title": "Software Engineering Project 2",
+      "area": "foundations",
+      "page": "/education/modules/soft-eng-2.html",
+      "tags": ["Processes", "Collaboration", "Docs"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Project Brief", "href": "/education/modules/COMP20050%20Project(2).pdf" },
+        { "title": "Slides", "href": "/education/modules/comp20050_00.key.pdf" }
+      ]
+    },
+    {
+      "id": "web-dev",
+      "title": "Web Development",
+      "area": "foundations",
+      "page": "/education/modules/web-dev.html",
+      "tags": ["Frontend", "Backend", "HTTP"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Lecture 1", "href": "/education/modules/COMP30860_lecture1.pdf" },
+        { "title": "Frontend Notes", "href": "/education/modules/frontend.pdf" },
+        { "title": "Backend Notes", "href": "/education/modules/backend.pdf" }
+      ]
+    },
+    {
+      "id": "digital-sys",
+      "title": "Digital Systems",
+      "area": "foundations",
+      "page": "/education/modules/digital-sys.html",
+      "tags": ["Logic", "Circuits", "State Machines"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Module Outline", "href": "/education/modules/comp20020_001.pdf" },
+        { "title": "Assignment 1 Answers", "href": "/education/modules/Assignment%201%20Answers.pdf" },
+        { "title": "Assignment 2 Answers", "href": "/education/modules/Assignment%202%20Answers.pdf" },
+        { "title": "Assignment 3 Answers", "href": "/education/modules/Assignment%203%20Answers.pdf" }
+      ]
+    },
+    {
+      "id": "databases-and-info-sys-1",
+      "title": "Databases & Information Systems I",
+      "area": "foundations",
+      "page": "/education/modules/databases-and-info-sys-1.html",
+      "tags": ["SQL", "ER Modeling", "Transactions"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Course Info", "href": "/education/modules/COMP20070___1___Course_Info.pdf" },
+        { "title": "Assignment", "href": "/education/modules/COMP20070___Assignment.pdf" }
+      ]
+    },
+
+    {
+      "id": "business-plan",
+      "title": "Business Plan",
+      "area": "business-soc",
+      "page": "/education/modules/business-plan.html",
+      "tags": ["Lean Canvas", "Financials", "Pitching"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Module Outline", "href": "/education/modules/BMGT%2010140-Business%20Plan-Module%20Outline%202023-Trimester-2.pdf" }
+      ]
+    },
+    {
+      "id": "intro-to-sociology",
+      "title": "Introduction to Sociology",
+      "area": "business-soc",
+      "page": "/education/modules/intro-to-sociology.html",
+      "tags": ["Institutions", "Methods", "Inequality"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Week 1 — Introduction", "href": "/education/modules/Intro%202023%20WEEK%201.pdf" }
+      ]
+    },
+
+    {
+      "id": "info-vis-vega-lite",
+      "title": "Information Visualization (Vega-Lite)",
+      "area": "hci-viz",
+      "page": "/projects/hcai-viz/infovis-vega-lite.html",
+      "tags": ["Vega-Lite", "Interaction", "Design"],
+      "status": "project"
+    },
+    {
+      "id": "intro-to-ai",
+      "title": "Introduction to AI",
+      "area": "data-ml",
+      "page": "/education/modules/intro-to-ai.html",
+      "tags": ["Search", "Logic", "ML Basics"],
+      "status": "completed",
+      "artifacts": [
+        { "title": "Module Overview", "href": "/education/modules/Module%20Overview.pdf" }
+      ]
+    }
+  ]
+}

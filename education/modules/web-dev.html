@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Development — Module — Nirav Ramidi</title>
+  <meta name="description" content="Frontend, backend, and full-stack fundamentals: HTML/CSS/JS, HTTP & REST, MVC, auth, validation, databases, and deployment practices." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="icon" href="../../assets/img/favicon.png" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../experience.html">Experience</a></li>
+          <li><a href="../../projects/">Projects</a></li>
+          <li><a href="../../writing/">Writing</a></li>
+          <li><a href="../">Education</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../">Home</a></li>
+        <li><a href="../">Education</a></li>
+        <li><span aria-current="page">Web Development</span></li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Web Development</h1>
+        <p class="lead">
+          Full-stack fundamentals: <strong>HTML/CSS/JS</strong>, <strong>HTTP &amp; REST</strong>, <strong>MVC</strong>, 
+          <strong>auth</strong>, <strong>validation</strong>, and <strong>deployment</strong>. Practical labs on building a small
+          app end-to-end with clean routing and forms.
+        </p>
+        <ul class="chips">
+          <li class="chip">Frontend</li>
+          <li class="chip">Backend / APIs</li>
+          <li class="chip">Auth &amp; Security</li>
+          <li class="chip">Deployment</li>
+        </ul>
+
+        <div class="actions">
+          <!-- Place these files in this folder to activate links -->
+          <a class="btn btn--secondary" href="COMP30860_lecture1.pdf">Lecture 1 — Course Intro (PDF)</a>
+          <a class="btn btn--ghost" href="frontend.pdf">Frontend slides</a>
+          <a class="btn btn--ghost" href="backend.pdf">Backend slides</a>
+        </div>
+
+        <p class="muted small">
+          Tip: If any link 404s, ensure the PDF exists in <code>/education/modules/</code> with the exact filename shown.
+        </p>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="section">
+      <div class="container grid case-grid">
+        <!-- Meta -->
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Module info</h2>
+          <dl class="meta-list">
+            <dt>Category</dt><dd>Software Engineering</dd>
+            <dt>Focus</dt><dd>MVC · REST · Forms · Auth</dd>
+            <dt>Stack</dt><dd>HTML/CSS/JS, Node/Express or Flask, SQL basics</dd>
+            <dt>Assessment</dt><dd>Labs, mini-project, short write-ups</dd>
+          </dl>
+          <div class="note small">
+            <p><strong>Related projects:</strong> 
+              <a href="../../projects/swe-systems/java-marketplace.html">Java Marketplace</a>,
+              <a href="../../projects/cloud-sre/library-analytics.html">Library Analytics</a>,
+              <a href="../../projects/hcai-viz/infovis-vega-lite.html">InfoVis (Vega-Lite)</a>.
+            </p>
+          </div>
+        </aside>
+
+        <!-- Body -->
+        <article class="case-body">
+          <!-- Outcomes -->
+          <section class="case-section" id="outcomes">
+            <h2>Learning Outcomes</h2>
+            <ul>
+              <li>Structure accessible pages with semantic <strong>HTML</strong> and responsive <strong>CSS</strong>.</li>
+              <li>Build a <strong>RESTful</strong> backend with routing, validation, and clean error handling.</li>
+              <li>Implement <strong>auth</strong> (sessions/JWT), protect against <strong>XSS/CSRF</strong>, and handle <strong>CORS</strong>.</li>
+              <li>Persist data with a relational database; write parameterised queries and simple ORMs.</li>
+              <li>Ship with environment-based config and a minimal CI/CD flow.</li>
+            </ul>
+          </section>
+
+          <!-- Topics -->
+          <section class="case-section" id="topics">
+            <h2>Indicative Topics</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>Frontend Essentials</h3></header>
+                <p class="card__body">Semantic HTML, forms, responsive layout (flex/grid), progressive enhancement, ARIA basics.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>HTTP &amp; REST</h3></header>
+                <p class="card__body">Methods, status codes, content negotiation, idempotency, pagination &amp; filtering.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Backend &amp; MVC</h3></header>
+                <p class="card__body">Routing, controllers/services, validation, error middleware, logging.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Auth &amp; Security</h3></header>
+                <p class="card__body">Sessions vs JWT, password hashing, CSRF tokens, CORS, input sanitisation (OWASP basics).</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Data Layer</h3></header>
+                <p class="card__body">ER → schema, migrations, parameterised SQL/ORM, N+1 pitfalls, indexes.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Deploy &amp; Ops</h3></header>
+                <p class="card__body">Env config, static assets, logs/health checks, simple CI/CD.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Quick reference -->
+          <section class="case-section" id="reference">
+            <h2>Quick Reference</h2>
+
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>RESTful routes (example)</h3></header>
+                <pre class="code-block"><code>GET    /items          → list
+POST   /items          → create
+GET    /items/:id      → retrieve
+PUT    /items/:id      → replace
+PATCH  /items/:id      → partial update
+DELETE /items/:id      → delete</code></pre>
+                <p class="muted small">Use plural nouns; return proper status codes and problem+json on errors.</p>
+              </div>
+
+              <div class="card">
+                <header class="card__header"><h3>Status codes (mini)</h3></header>
+                <pre class="code-block"><code>200 OK        | 201 Created
+204 No Content| 400 Bad Request
+401 Unauthorized | 403 Forbidden
+404 Not Found | 409 Conflict
+422 Unprocessable | 500 Server Error</code></pre>
+              </div>
+            </div>
+
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Express.js skeleton</h3></header>
+                <pre class="code-block"><code>import express from "express";
+const app = express();
+app.use(express.json());
+
+app.get("/api/health", (req, res) => res.json({ok:true}));
+
+app.post("/api/items", (req, res, next) => {
+  try {
+    const {name} = req.body;
+    if (!name) return res.status(400).json({error:"name required"});
+    // save...
+    res.status(201).json({id: 1, name});
+  } catch (e) { next(e); }
+});
+
+app.use((err, req, res, _next) => res.status(500).json({error:"server"}));
+app.listen(8080);</code></pre>
+              </div>
+
+              <div class="card">
+                <header class="card__header"><h3>Flask micro-API</h3></header>
+                <pre class="code-block"><code>from flask import Flask, request, jsonify
+app = Flask(__name__)
+
+@app.get("/api/health")
+def health(): return jsonify(ok=True)
+
+@app.post("/api/items")
+def create_item():
+  data = request.get_json() or {}
+  if "name" not in data: return jsonify(error="name required"), 400
+  return jsonify(id=1, name=data["name"]), 201
+
+if __name__ == "__main__":
+  app.run(port=8080)</code></pre>
+              </div>
+            </div>
+
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>HTML form + fetch</h3></header>
+                <pre class="code-block"><code>&lt;form id="newItem"&gt;
+  &lt;input name="name" required aria-label="Item name"/&gt;
+  &lt;button&gt;Create&lt;/button&gt;
+&lt;/form&gt;
+&lt;script&gt;
+document.getElementById("newItem").onsubmit = async (e) =&gt; {
+  e.preventDefault();
+  const name = e.target.name.value;
+  const res = await fetch("/api/items", {
+    method:"POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({name})
+  });
+  // handle response...
+};
+&lt;/script&gt;</code></pre>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>Security checklist</h3></header>
+                <ul class="tight">
+                  <li>Hash passwords (bcrypt/argon2); never store plain text.</li>
+                  <li>Validate + sanitise inputs; encode outputs.</li>
+                  <li>CSRF tokens for state-changing form posts.</li>
+                  <li>Use parameterised SQL / ORM to prevent injection.</li>
+                  <li>Set secure cookies (HttpOnly, Secure, SameSite).</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Artefacts -->
+          <section class="case-section" id="artifacts">
+            <h2>Selected Artefacts</h2>
+            <ul class="list">
+              <li><a href="COMP30860_lecture1.pdf">Lecture 1 — Course introduction</a></li>
+              <li><a href="frontend.pdf">Frontend slides — HTML/CSS/JS &amp; accessibility</a></li>
+              <li><a href="backend.pdf">Backend slides — REST, MVC, auth, database</a></li>
+            </ul>
+          </section>
+
+          <!-- Takeaways -->
+          <section class="case-section" id="learnings">
+            <h2>Key Takeaways</h2>
+            <ul class="checklist">
+              <li>Semantic HTML + progressive enhancement yields accessible, durable UIs.</li>
+              <li>Consistent REST patterns and status codes make APIs predictable.</li>
+              <li>Security is a feature: validate inputs, protect sessions, and log responsibly.</li>
+              <li>Small automated tests and CI keep changes safe and shippable.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Module pagination">
+            <a class="btn btn--ghost" href="data-structures.html">← Data Structures</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="databases-and-information-systems-i.html">Next: Databases &amp; Info Systems I →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../resume/">Resume</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InfoVis Dashboard (Vega-Lite) — Case Study — Nirav Ramidi</title>
+  <meta name="description" content="Interactive information visualisation built with Vega-Lite: multi-view dashboard, brushing & linking, selections, and tidy transforms for exploratory analysis." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../../assets/css/main.css" />
+  <link rel="icon" href="../../../assets/img/favicon.png" />
+
+  <!-- Optional structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"InfoVis Dashboard (Vega-Lite)",
+    "author":{"@type":"Person","name":"Nirav Ramidi"},
+    "applicationCategory":"DataVisualization",
+    "programmingLanguage":"Vega-Lite",
+    "keywords":"Information Visualization, Vega-Lite, Brushing and Linking, Small Multiples, Tidy Transforms"
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../../">Home</a></li>
+          <li><a href="../../../experience.html">Experience</a></li>
+          <li><a href="../../">Projects</a></li>
+          <li><a href="../../../writing/">Writing</a></li>
+          <li><a href="../../../education/">Education</a></li>
+          <li><a href="../../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../../">Home</a></li>
+        <li><a href="../../">Projects</a></li>
+        <li><a href="../">HCAI / Vis</a></li>
+        <li><span aria-current="page">InfoVis Dashboard (Vega-Lite)</span></li>
+      </ol>
+    </nav>
+
+    <!-- Hero -->
+    <section class="case-hero section">
+      <div class="container case-hero__inner">
+        <div class="case-hero__copy">
+          <h1>InfoVis Dashboard (Vega-Lite)</h1>
+          <p class="lead">
+            An interactive, multi-view dashboard using <strong>Vega-Lite</strong> with
+            <strong>brushing &amp; linking</strong>, <strong>cross-filters</strong>, and tidy
+            <strong>data transforms</strong> (fold, aggregate, calculate). Designed for fast,
+            explainable exploration without custom JavaScript.
+          </p>
+          <ul class="metrics">
+            <li class="chip">Brushing &amp; linking</li>
+            <li class="chip">Small multiples</li>
+            <li class="chip">Selections &amp; conditions</li>
+            <li class="chip">Tidy transforms</li>
+          </ul>
+        </div>
+        <figure class="case-hero__media">
+          <img src="../../../assets/img/case-studies/infovis-hero.jpg" alt="Vega-Lite dashboard with linked scatter, bar, and line charts" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- Meta + Body -->
+    <section class="case-layout section">
+      <div class="container grid case-grid">
+
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Project info</h2>
+          <dl class="meta-list">
+            <dt>Course</dt><dd>Information Visualisation</dd>
+            <dt>Type</dt><dd>Graded assignment</dd>
+            <dt>Role</dt><dd>Design &amp; implementation</dd>
+            <dt>Focus</dt><dd>Interactive analytics · Visual encodings · UX</dd>
+            <dt>Stack</dt><dd>Vega-Lite (JSON), HTML, a pinch of JS to embed specs</dd>
+            <dt>Links</dt>
+            <dd>
+              <ul class="bare">
+                <li><a href="../../" aria-label="Back to projects">Back to Projects</a></li>
+                <li><a href="../../../education/">Related modules</a></li>
+              </ul>
+            </dd>
+          </dl>
+        </aside>
+
+        <article class="case-body">
+          <!-- Goals -->
+          <section class="case-section" id="goals">
+            <h2>Goals</h2>
+            <ul>
+              <li>Provide an <strong>overview → zoom &amp; filter → details</strong> flow with clear affordances.</li>
+              <li>Use <strong>expressive encodings</strong> (position/length/color) and avoid misleading scales.</li>
+              <li>Stay within <strong>Vega-Lite</strong> primitives—no bespoke JS logic for fairness/grading.</li>
+            </ul>
+          </section>
+
+          <!-- Views -->
+          <section class="case-section" id="views">
+            <h2>Views &amp; Interactions</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>Scatter (overview)</h3></header>
+                <p class="card__body">
+                  Encodes two continuous metrics with color by category and point <em>size</em> by magnitude.
+                  A brush selection filters the other views. Tooltips expose exact values.
+                </p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Bar (composition)</h3></header>
+                <p class="card__body">
+                  Aggregated counts/means by category; responds to the scatter brush.
+                  Conditional color highlights selected categories; labels show percentages.
+                </p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Line (trend)</h3></header>
+                <p class="card__body">
+                  Small multiples per category with shared y-scale (can switch to <em>resolve: independent</em>).
+                  Hover selection reveals focus lines and value annotations.
+                </p>
+              </article>
+            </div>
+            <figure class="case-figure">
+              <img src="../../../assets/img/case-studies/infovis-views.png" alt="Three linked charts: scatter brush filtering a bar chart and small-multiple lines" loading="lazy" />
+              <figcaption>Brushing in the scatter filters bars &amp; lines; selections drive conditional encodings.</figcaption>
+            </figure>
+          </section>
+
+          <!-- Data & Transforms -->
+          <section class="case-section" id="data">
+            <h2>Data &amp; Transforms</h2>
+            <div class="cols">
+              <div>
+                <h3>Tidy transforms</h3>
+                <ul>
+                  <li><code>fold</code> wide columns to long format for small multiples.</li>
+                  <li><code>calculate</code> derived ratios (e.g., share, normalised scores).</li>
+                  <li><code>aggregate</code> + <code>bin</code> for histograms; <code>window</code> for ranks.</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Selections</h3>
+                <ul>
+                  <li>Interval selection on scatter: <code>selection: {brush: {type: 'interval'}}</code>.</li>
+                  <li>Single/multi selections to toggle categories with <code>condition</code> color/opacity.</li>
+                  <li><code>transform: [{filter: {selection: 'brush'}}]</code> links views.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Design decisions -->
+          <section class="case-section" id="design">
+            <h2>Design Decisions</h2>
+            <ul class="checklist">
+              <li>Used <strong>aligned axes</strong> and <strong>consistent scales</strong> to support visual comparison.</li>
+              <li>Kept color palette accessible (contrast-checked); relied on position/length first.</li>
+              <li>Added <strong>legends</strong> and helper text (“Drag to filter”) to improve learnability.</li>
+              <li>Reduced clutter with <strong>gridlines</strong> and minimalist annotations.</li>
+            </ul>
+          </section>
+
+          <!-- Results -->
+          <section class="case-section" id="results">
+            <h2>Outcome</h2>
+            <ul>
+              <li>Users could segment patterns quickly via the brush; bars/lines updated without lag.</li>
+              <li>Small multiples clarified category trends; independent scales helped when ranges differed widely.</li>
+              <li>Achieved assignment rubric goals for interaction, correctness, and readability.</li>
+            </ul>
+          </section>
+
+          <!-- Embed note -->
+          <section class="case-section" id="embed">
+            <h2>Embedding the Spec</h2>
+            <p class="muted small">
+              The actual Vega-Lite spec JSON and embed script live in <code>assets/js/</code> and are initialised on page load.
+              This page focuses on the narrative; the running demo sits in the <em>live site</em>.
+            </p>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Case study pagination">
+            <a class="btn btn--ghost" href="hcai-experiment.html">← HCAI Empirical Study</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="../../">Back to Projects →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../../resume/">Resume</a></li>
+        <li><a href="../../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../../assets/js/main.js" defer></script>
+</body>
+</html>

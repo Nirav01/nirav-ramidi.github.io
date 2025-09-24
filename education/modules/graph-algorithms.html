@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Graph Algorithms — Module — Nirav Ramidi</title>
+  <meta name="description" content="Connectivity, traversals (BFS/DFS), shortest paths (Dijkstra/Bellman–Ford), minimum spanning trees (Kruskal/Prim), and flows/cuts with proofs and complexity." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="icon" href="../../assets/img/favicon.png" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../experience.html">Experience</a></li>
+          <li><a href="../../projects/">Projects</a></li>
+          <li><a href="../../writing/">Writing</a></li>
+          <li><a href="../">Education</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../">Home</a></li>
+        <li><a href="../">Education</a></li>
+        <li><span aria-current="page">Graph Algorithms</span></li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Graph Algorithms</h1>
+        <p class="lead">
+          From <strong>traversals</strong> and <strong>connectivity</strong> to <strong>shortest paths</strong>,
+          <strong>minimum spanning trees</strong>, and <strong>flows &amp; cuts</strong>. Emphasis on correctness proofs
+          (cut/cycle properties, invariants) and tight complexity bounds.
+        </p>
+        <ul class="chips">
+          <li class="chip">BFS / DFS</li>
+          <li class="chip">Shortest Paths</li>
+          <li class="chip">MSTs</li>
+          <li class="chip">Flows & Cuts</li>
+        </ul>
+
+        <div class="actions">
+          <!-- Place these files in this folder to activate links -->
+          <a class="btn btn--secondary" href="01_intro.pdf">Lecture 1 — Introduction (PDF)</a>
+          <a class="btn btn--ghost" href="assignment_updated.pdf">Assignment — Updated (PDF)</a>
+        </div>
+
+        <p class="muted small">
+          Tip: If a link 404s, check that the PDF filename in <code>/education/modules/</code> matches exactly.
+        </p>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="section">
+      <div class="container grid case-grid">
+        <!-- Meta -->
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Module info</h2>
+          <dl class="meta-list">
+            <dt>Category</dt><dd>Theory</dd>
+            <dt>Focus</dt><dd>Correctness · Complexity · Data structures</dd>
+            <dt>Stack</dt><dd>Pseudocode, Python/Java, adjacency lists</dd>
+            <dt>Assessment</dt><dd>Problem sets, implementation tasks, final assessment</dd>
+          </dl>
+          <div class="note small">
+            <p><strong>Related pages:</strong> <a href="algorithms.html">Algorithms</a> ·
+              <a href="../../projects/swe-systems/huffman-compressor.html">Huffman Compressor</a> (complexity practice).
+            </p>
+          </div>
+        </aside>
+
+        <!-- Body -->
+        <article class="case-body">
+          <!-- Outcomes -->
+          <section class="case-section" id="outcomes">
+            <h2>Learning Outcomes</h2>
+            <ul>
+              <li>Implement and analyse <strong>BFS/DFS</strong>, including topological sort and SCCs (Kosaraju/Tarjan).</li>
+              <li>Choose and justify <strong>shortest path</strong> algorithms (BFS, Dijkstra, Bellman–Ford) based on weights.</li>
+              <li>Build <strong>MSTs</strong> via Kruskal or Prim; prove correctness using cut/cycle properties.</li>
+              <li>Understand <strong>max-flow min-cut</strong> and implement Edmonds–Karp at a high level.</li>
+              <li>Use appropriate data structures (heaps, union–find) to hit target time bounds.</li>
+            </ul>
+          </section>
+
+          <!-- Topics -->
+          <section class="case-section" id="topics">
+            <h2>Indicative Topics</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>Traversals &amp; Connectivity</h3></header>
+                <p class="card__body">BFS/DFS, tree/forward/back edges, articulation points/bridges, SCCs.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Shortest Paths</h3></header>
+                <p class="card__body">Unweighted (BFS), non-negative (Dijkstra), general weights (Bellman–Ford), DAG-SP via topo order.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>MSTs</h3></header>
+                <p class="card__body">Cut/cycle properties, Kruskal (union–find), Prim (heap), distinct-weight uniqueness.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Flows &amp; Cuts</h3></header>
+                <p class="card__body">Residual graphs, augmenting paths, Edmonds–Karp, min-cut and applications (matching).</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Quick reference -->
+          <section class="case-section" id="reference">
+            <h2>Quick Reference</h2>
+
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>BFS / DFS complexity</h3></header>
+                <pre class="code-block"><code>Adjacency list:
+BFS/DFS      Θ(V + E)
+Topo sort    Θ(V + E)  (DAG)
+SCC (Kosaraju) 2 × DFS</code></pre>
+                <p class="muted small">Use adjacency lists for sparse graphs; matrices cost Θ(V²).</p>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>Dijkstra (min-heap)</h3></header>
+                <pre class="code-block"><code># Non-negative weights
+Time: Θ((V + E) log V)
+Initialise dist[s]=0; others=∞
+Relax via PQ (decrease-key)</code></pre>
+                <p class="muted small">For negative edges, use Bellman–Ford (Θ(V·E)) or reweight (Johnson’s).</p>
+              </div>
+            </div>
+
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>MST properties</h3></header>
+                <pre class="code-block"><code>Cut property:
+  For any cut, the lightest edge crossing it
+  is in some MST.
+Cycle property:
+  Heaviest edge on any cycle is in no MST.</code></pre>
+                <p class="muted small">These drive correctness for Kruskal and Prim.</p>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>Edmonds–Karp (flow)</h3></header>
+                <pre class="code-block"><code>While an s→t path exists in residual graph:
+  augment by its bottleneck capacity
+Runtime: O(V·E²)</code></pre>
+                <p class="muted small">Gives max-flow = min-cut; use for bipartite matching too.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Snippets -->
+          <section class="case-section" id="snippets">
+            <h2>Code Snippets</h2>
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Kruskal + Union–Find</h3></header>
+                <pre class="code-block"><code>parent = list(range(n))
+rank   = [0]*n
+def find(x):
+  if parent[x]!=x: parent[x]=find(parent[x])
+  return parent[x]
+def union(a,b):
+  ra, rb = find(a), find(b)
+  if ra==rb: return False
+  if rank[ra]<rank[rb]: parent[ra]=rb
+  elif rank[rb]<rank[ra]: parent[rb]=ra
+  else: parent[rb]=ra; rank[ra]+=1
+  return True
+
+mst, cost = [], 0
+for w,u,v in sorted(edges):  # edges as (w,u,v)
+  if union(u,v): mst.append((u,v,w)); cost += w</code></pre>
+                <p class="muted small">Runtime Θ(E log E) from sorting; union–find is near-constant (α(V)).</p>
+              </div>
+
+              <div class="card">
+                <header class="card__header"><h3>Topological Sort (Kahn)</h3></header>
+                <pre class="code-block"><code>in_deg = {v:0 for v in V}
+for (u,v) in E: in_deg[v]+=1
+Q = [v for v in V if in_deg[v]==0]
+order = []
+while Q:
+  u = Q.pop(0)
+  order.append(u)
+  for v in adj[u]:
+    in_deg[v]-=1
+    if in_deg[v]==0: Q.append(v)
+# if len(order) &lt; |V| → cycle</code></pre>
+                <p class="muted small">Use a queue for BFS-like processing; works only on DAGs.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Artefacts -->
+          <section class="case-section" id="artifacts">
+            <h2>Selected Artefacts</h2>
+            <ul class="list">
+              <li><a href="01_intro.pdf">Lecture 1 — Graph Algorithms introduction</a></li>
+              <li><a href="assignment_updated.pdf">Assignment — Updated brief and exercises</a></li>
+            </ul>
+          </section>
+
+          <!-- Takeaways -->
+          <section class="case-section" id="learnings">
+            <h2>Key Takeaways</h2>
+            <ul class="checklist">
+              <li>Pick algorithms to match constraints: weights, negatives, DAG structure, density.</li>
+              <li>Data structures (heaps, DSU) often decide whether you hit <em>Θ(V+E)</em> or worse.</li>
+              <li>Cut/cycle properties are powerful tools for proving correctness on MST problems.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Module pagination">
+            <a class="btn btn--ghost" href="algorithms.html">← Algorithms</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="optimisation.html">Next: Optimisation →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../resume/">Resume</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

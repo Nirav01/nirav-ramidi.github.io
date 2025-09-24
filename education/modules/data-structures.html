@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Structures — Module — Nirav Ramidi</title>
+  <meta name="description" content="Arrays, linked lists, stacks/queues, hash tables, trees, heaps, and complexity analysis with practical assignments." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="icon" href="../../assets/img/favicon.png" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../experience.html">Experience</a></li>
+          <li><a href="../../projects/">Projects</a></li>
+          <li><a href="../../writing/">Writing</a></li>
+          <li><a href="../">Education</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../">Home</a></li>
+        <li><a href="../">Education</a></li>
+        <li><span aria-current="page">Data Structures</span></li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Data Structures</h1>
+        <p class="lead">
+          Build and analyse the fundamental data structures that power efficient programs:
+          <strong>arrays</strong>, <strong>linked lists</strong>, <strong>stacks/queues</strong>, <strong>hash tables</strong>,
+          <strong>trees</strong> (BST/AVL), <strong>heaps</strong>, and <strong>graphs</strong>, with tight complexity reasoning.
+        </p>
+        <ul class="chips">
+          <li class="chip">Asymptotics</li>
+          <li class="chip">Hashing</li>
+          <li class="chip">Trees & Heaps</li>
+          <li class="chip">Stacks & Queues</li>
+        </ul>
+
+        <div class="actions">
+          <!-- Place these files in this folder to activate links -->
+          <a class="btn btn--secondary" href="01.1%20-%20COMP20280%20Introduction.pdf">Course introduction (PDF)</a>
+          <a class="btn btn--ghost" href="COMP20280_Assignment_1_2023%20(1).pdf">Assignment 1 (PDF)</a>
+          <a class="btn btn--ghost" href="COMP20280_Assignment_2_2022_23%20(3).pdf">Assignment 2 (PDF)</a>
+        </div>
+
+        <p class="muted small">
+          Tip: If a link 404s, ensure the PDF sits in <code>/education/modules/</code> with the exact filename above.
+        </p>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="section">
+      <div class="container grid case-grid">
+        <!-- Meta -->
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Module info</h2>
+          <dl class="meta-list">
+            <dt>Category</dt><dd>CS Fundamentals</dd>
+            <dt>Focus</dt><dd>Implementation · Invariants · Complexity</dd>
+            <dt>Stack</dt><dd>Java/Python, JUnit/PyTest, Big-O proofs</dd>
+            <dt>Assessment</dt><dd>Assignments, quizzes, final assessment</dd>
+          </dl>
+          <div class="note small">
+            <p><strong>Related modules:</strong> <a href="algorithms.html">Algorithms</a> and <a href="graph-algorithms.html">Graph Algorithms</a>.</p>
+          </div>
+        </aside>
+
+        <!-- Body -->
+        <article class="case-body">
+          <!-- Outcomes -->
+          <section class="case-section" id="outcomes">
+            <h2>Learning Outcomes</h2>
+            <ul>
+              <li>Choose the right structure to meet <strong>time/space</strong> constraints.</li>
+              <li>Implement core structures with correct <strong>invariants</strong> and <strong>tests</strong>.</li>
+              <li>Analyse operations with precise <strong>asymptotics</strong> (worst/avg/amortised).</li>
+              <li>Apply structures inside algorithms (priority queues, maps/sets, balanced trees).</li>
+            </ul>
+          </section>
+
+          <!-- Topics -->
+          <section class="case-section" id="topics">
+            <h2>Indicative Topics</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>Arrays &amp; Lists</h3></header>
+                <p class="card__body">Static vs dynamic arrays (amortised doubling), singly/doubly linked lists, iterators.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Stacks &amp; Queues</h3></header>
+                <p class="card__body">Array/linked implementations, circular buffers, deque, applications (parsing, BFS).</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Hash Tables</h3></header>
+                <p class="card__body">Hash functions, load factor, chaining vs open addressing (linear/quadratic/DoubleHash).</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Trees &amp; Heaps</h3></header>
+                <p class="card__body">BST invariants, rotations, AVL/Red–Black intuition, min/max-heaps &amp; priority queues.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Graphs (basics)</h3></header>
+                <p class="card__body">Adjacency list vs matrix, degrees, traversal hooks for algorithms.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Quick reference -->
+          <section class="case-section" id="reference">
+            <h2>Quick Reference — Common Complexities</h2>
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Operations</h3></header>
+                <pre class="code-block"><code>Dynamic array:
+  index  O(1)     push_back  amort. O(1)
+  insert/delete at i  O(n)
+Linked list (singly):
+  head ops O(1)   search O(n)
+
+Hash table (avg):
+  get/put  O(1)   worst O(n) if many collisions
+BST (balanced):
+  search/insert/delete  O(log n)
+Heap (binary):
+  push/pop-min  O(log n)   peek  O(1)</code></pre>
+                <p class="muted small">Amortised O(1) push via geometric growth (2×) + occasional reallocation.</p>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>Asymptotic notation</h3></header>
+                <pre class="code-block"><code>O(g):     upper bound
+Ω(g):     lower bound
+Θ(g):     tight bound
+o(g), ω(g): strict</code></pre>
+                <p class="muted small">Prefer Θ when you can; document assumptions (e.g., uniform hashing).</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Snippets -->
+          <section class="case-section" id="snippets">
+            <h2>Code Snippets</h2>
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Stack via Deque (Java)</h3></header>
+                <pre class="code-block"><code>import java.util.ArrayDeque;
+ArrayDeque<Integer> st = new ArrayDeque<>();
+st.push(10); st.push(20);
+int top = st.pop();   // 20</code></pre>
+                <p class="muted small">Prefer <code>ArrayDeque</code> over legacy <code>Stack</code>.</p>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>Binary Search (Python)</h3></header>
+                <pre class="code-block"><code>def bsearch(a, x):
+    lo, hi = 0, len(a)-1
+    while lo <= hi:
+        mid = (lo + hi)//2
+        if a[mid] == x: return mid
+        if a[mid] < x:  lo = mid + 1
+        else:           hi = mid - 1
+    return -1</code></pre>
+                <p class="muted small">Requires sorted array; runtime Θ(log n).</p>
+              </div>
+            </div>
+
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Min-Heap (Java)</h3></header>
+                <pre class="code-block"><code>import java.util.PriorityQueue;
+PriorityQueue<int[]> pq = new PriorityQueue<>((a,b) -> a[0]-b[0]);
+pq.add(new int[]{5,42}); pq.add(new int[]{1,7});
+int[] x = pq.poll();  // [1,7]</code></pre>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>HashMap (Java)</h3></header>
+                <pre class="code-block"><code>import java.util.HashMap;
+HashMap<String,Integer> freq = new HashMap<>();
+for (var s: words) freq.merge(s, 1, Integer::sum);
+int n = freq.getOrDefault("hello", 0);</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- Artefacts -->
+          <section class="case-section" id="artifacts">
+            <h2>Selected Artefacts</h2>
+            <ul class="list">
+              <li><a href="01.1%20-%20COMP20280%20Introduction.pdf">Lecture — Course introduction</a></li>
+              <li><a href="COMP20280_Assignment_1_2023%20(1).pdf">Assignment 1 — Data structure implementation</a></li>
+              <li><a href="COMP20280_Assignment_2_2022_23%20(3).pdf">Assignment 2 — Advanced operations &amp; tests</a></li>
+            </ul>
+          </section>
+
+          <!-- Takeaways -->
+          <section class="case-section" id="learnings">
+            <h2>Key Takeaways</h2>
+            <ul class="checklist">
+              <li>Pick structures that match <strong>access patterns</strong> and <strong>mutation</strong> costs.</li>
+              <li>Preserve <strong>invariants</strong> (e.g., BST order, heap property) with every operation.</li>
+              <li>Use <strong>amortised analysis</strong> to reason about dynamic arrays and hash tables.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Module pagination">
+            <a class="btn btn--ghost" href="digital-sys.html">← Digital Systems</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="algorithms.html">Next: Algorithms →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../resume/">Resume</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

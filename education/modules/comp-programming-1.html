@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Computer Programming I — Module — Nirav Ramidi</title>
+  <meta name="description" content="First principles of programming: variables, types, control flow, I/O, functions, arrays, and the edit–compile–run cycle (in C). Build confidence writing small programs that produce correct results." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="icon" href="../../assets/img/favicon.png" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../experience.html">Experience</a></li>
+          <li><a href="../../projects/">Projects</a></li>
+          <li><a href="../../writing/">Writing</a></li>
+          <li><a href="../">Education</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../">Home</a></li>
+        <li><a href="../">Education</a></li>
+        <li><span aria-current="page">Computer Programming I</span></li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Computer Programming I</h1>
+        <p class="lead">
+          Learn the basic ideas of programming and gain confidence writing small programs in <strong>C</strong>:
+          variables and types, control flow, I/O, functions, arrays, and how to edit, compile, run, and debug.
+        </p>
+        <ul class="chips">
+          <li class="chip">C language</li>
+          <li class="chip">Control Flow</li>
+          <li class="chip">I/O</li>
+          <li class="chip">Functions & Arrays</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="section">
+      <div class="container grid case-grid">
+        <!-- Meta -->
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Module info</h2>
+          <dl class="meta-list">
+            <dt>Category</dt><dd>CS Fundamentals</dd>
+            <dt>Focus</dt><dd>Syntax · Problem solving · Run/debug</dd>
+            <dt>Stack</dt><dd>C (gcc/clang), Make, VS Code/CLion, GDB</dd>
+            <dt>Assessment</dt><dd>Weekly labs, small programming tasks, final practical</dd>
+          </dl>
+          <div class="note small">
+            <p><strong>Next module:</strong> <a href="intro-to-java.html">Introduction to Java</a>.</p>
+          </div>
+        </aside>
+
+        <!-- Body -->
+        <article class="case-body">
+          <!-- Outcomes -->
+          <section class="case-section" id="outcomes">
+            <h2>Learning Outcomes</h2>
+            <ul>
+              <li>Understand the basic ideas of programming and write small programs using variables, loops, and I/O.</li>
+              <li>Confidently write programs in C that compile and run to produce correct results.</li>
+              <li>Use functions and arrays to structure solutions; reason about common errors and debugging.</li>
+            </ul>
+          </section>
+
+          <!-- Topics -->
+          <section class="case-section" id="topics">
+            <h2>Indicative Topics</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>Getting Started</h3></header>
+                <p class="card__body">Tooling (compiler, editor), project layout, the edit–compile–run loop.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Types &amp; Variables</h3></header>
+                <p class="card__body">int/float/double/char, assignment, scope &amp; lifetime, <code>const</code>.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Control Flow</h3></header>
+                <p class="card__body"><code>if/else</code>, <code>switch</code>, <code>for</code>/<code>while</code>/<code>do-while</code>, boolean logic.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>I/O</h3></header>
+                <p class="card__body"><code>printf</code>, <code>scanf</code>, basic file I/O; formatting pitfalls.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Functions &amp; Arrays</h3></header>
+                <p class="card__body">Parameters/returns, pass-by-value, arrays &amp; strings, simple algorithms.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Quick reference -->
+          <section class="case-section" id="reference">
+            <h2>Quick Reference</h2>
+
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Hello + compile/run</h3></header>
+                <pre class="code-block"><code>#include &lt;stdio.h&gt;
+int main(void) {
+  printf("Hello, C!\n");
+  return 0;
+}
+/* Compile & run:
+   gcc -Wall -Wextra -O2 hello.c -o hello
+   ./hello
+*/</code></pre>
+                <p class="muted small">Enable warnings (<code>-Wall -Wextra</code>) to catch common mistakes early.</p>
+              </div>
+
+              <div class="card">
+                <header class="card__header"><h3>Input &amp; loops</h3></header>
+                <pre class="code-block"><code>#include &lt;stdio.h&gt;
+int main(void){
+  int n, sum = 0;
+  if (scanf("%d", &n) != 1) return 1;
+  for (int i=1; i<=n; i++) sum += i;
+  printf("sum = %d\n", sum);
+  return 0;
+}</code></pre>
+                <p class="muted small">Always check <code>scanf</code> returns to avoid using uninitialised values.</p>
+              </div>
+            </div>
+
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Functions</h3></header>
+                <pre class="code-block"><code>int max(int a, int b) { return (a &gt; b) ? a : b; }
+int main(void){ printf("%d\n", max(3,7)); }</code></pre>
+                <p class="muted small">Prefer small functions; name them after what they return/do.</p>
+              </div>
+
+              <div class="card">
+                <header class="card__header"><h3>Arrays &amp; strings</h3></header>
+                <pre class="code-block"><code>#include &lt;string.h&gt;
+int main(void){
+  int a[5] = {1,2,3,4,5};
+  char name[16] = "Nirav";
+  printf("%zu\n", strlen(name));  // 5
+  return 0;
+}</code></pre>
+                <p class="muted small">Mind bounds: arrays are fixed-size; C strings are NUL-terminated.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Tooling -->
+          <section class="case-section" id="tooling">
+            <h2>Tooling &amp; Debugging</h2>
+            <pre class="code-block"><code># Makefile (mini)
+CC=gcc
+CFLAGS=-Wall -Wextra -O2 -g
+all: app
+app: main.o util.o
+	$(CC) $(CFLAGS) -o $@ $^
+clean:
+	rm -f *.o app
+
+# GDB (basics)
+gdb ./app
+(gdb) break main
+(gdb) run
+(gdb) next / step
+(gdb) print n
+(gdb) backtrace</code></pre>
+            <p class="muted small">Compile with <code>-g</code> for debugging symbols; use <code>valgrind</code> in later modules to find memory issues.</p>
+          </section>
+
+          <!-- Artefacts -->
+          <section class="case-section" id="artifacts">
+            <h2>Selected Artefacts</h2>
+            <ul class="list">
+              <li>Weekly lab exercises — variables, loops, arrays</li>
+              <li>Mini-project — simple calculator / text utilities</li>
+              <li>Checklist — compile, run, test, and submit</li>
+            </ul>
+            <p class="muted small">Syllabi and PDFs can be added here later.</p>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Module pagination">
+            <a class="btn btn--ghost" href="../">← All modules</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="intro-to-java.html">Next: Introduction to Java →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../resume/">Resume</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

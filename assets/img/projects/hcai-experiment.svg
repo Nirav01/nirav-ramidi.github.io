@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs><linearGradient id="bg10" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c3aed"></stop><stop offset="1" stop-color="#06b6d4"></stop></linearGradient></defs>
+  <rect width="1200" height="630" rx="28" fill="url(#bg10)"></rect>
+  <rect x="140" y="170" width="920" height="320" rx="18" fill="#fff" opacity=".15" stroke="#e9d5ff"></rect>
+  <text x="60" y="120" fill="#fff" font-size="48" font-weight="800" font-family="Inter, ui-sans-serif">HCAI Experiment</text>
+  <text x="60" y="560" fill="#f8fafc" font-size="24" font-family="Inter, ui-sans-serif">Study design • Stats • UX</text>
+</svg>

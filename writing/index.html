@@ -3,41 +3,176 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Writing · Nirav Ramidi</title>
-  <meta name="description" content="Data Scientist & ML Engineer — shipping reliable models and systems" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css" />
-</head>
-<body>
-  
-    <header class="site-header">
-      <a class="brand" href="index.html">Nirav Ramidi</a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-      <nav class="site-nav"><a href="index.html" class="">Home</a><a href="experience.html" class="">Experience</a><a href="projects/index.html" class="">Projects</a><a href="writing/index.html" class="active">Writing</a><a href="education/index.html" class="">Education</a><a href="resume/index.html" class="">Resume</a><a href="contact.html" class="">Contact</a></nav>
-      
-    <div class="socials">
-      <a href="https://github.com/Nirav01/" aria-label="GitHub (opens in new tab)" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/nirav-ramidi/" aria-label="LinkedIn (opens in new tab)" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    </header>
-    
-  <main class="container">
-    
-<h1>Writing</h1>
-<ul class="list">
-  <li><a href="../writing/business-management-ia.html">Business Management Research (IA): Division Viability</a></li>
-  <li><a href="../writing/hcai-essay.html">HCAI Essay (UN SDG): Critical literature synthesis</a></li>
-  <li>Notes: <a href="../writing/notes/queueing-cheatsheet.html">Queueing cheat‑sheet</a>, <a href="../writing/notes/svm-kernels.html">SVM kernels</a></li>
-</ul>
+  <title>Writing — Nirav Ramidi</title>
+  <meta name="description" content="Writing and research by Nirav Ramidi — case studies, essays, and technical notes across Data/ML, HCAI, queueing, and more." />
 
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="icon" href="../assets/img/favicon.png" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../">Home</a></li>
+          <li><a href="../experience.html">Experience</a></li>
+          <li><a href="../projects/">Projects</a></li>
+          <li><a href="../writing/" aria-current="page">Writing</a></li>
+          <li><a href="../education/">Education</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Header -->
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Writing</h1>
+        <p class="lead">Case studies, essays, and concise technical notes. Mostly Data/ML, HCAI, and systems.</p>
+      </div>
+    </section>
+
+    <!-- Featured / Long-form -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Long-form</h2>
+        <div class="grid cards">
+
+          <article class="card">
+            <header class="card__header">
+              <h3><a href="business-management-ia.html">Business Management Research (IA)</a></h3>
+              <p class="card__kicker">Finance · Break-even · CVP</p>
+            </header>
+            <p class="card__body">
+              A practical analysis exploring the viability of a new division. Covers four-point moving averages,
+              PMPM calculations, divisional P&amp;L, and break-even sensitivity.
+            </p>
+            <footer class="card__footer">
+              <ul class="chips"><li class="chip">Case study</li><li class="chip">Analytics</li></ul>
+            </footer>
+          </article>
+
+          <article class="card">
+            <header class="card__header">
+              <h3><a href="hcai-essay.html">Human-Centred AI Essay</a></h3>
+              <p class="card__kicker">HCAI · Fairness · Explainability</p>
+            </header>
+            <p class="card__body">
+              A critical synthesis of 5–10 papers on human-centred design for AI systems: usability, trust,
+              and the trade-offs between performance and transparency.
+            </p>
+            <footer class="card__footer">
+              <ul class="chips"><li class="chip">Essay</li><li class="chip">Research</li></ul>
+            </footer>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Notes -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Notes &amp; Cheatsheets</h2>
+        <div class="grid tiles">
+
+          <a class="tile" href="notes/queueing-cheatsheet.html">
+            <img src="../assets/img/writing/queueing-thumb.jpg" alt="Queueing formulas thumbnail" loading="lazy" />
+            <div class="tile__meta">
+              <h3>Queueing Cheatsheet</h3>
+              <p>M/M/1, M/D/1, M/M/K, Erlang-C — formulas and quick rules.</p>
+              <ul class="chips"><li class="chip">Performance</li></ul>
+            </div>
+          </a>
+
+          <a class="tile" href="notes/svm-kernels.html">
+            <img src="../assets/img/writing/svm-thumb.jpg" alt="SVM kernels thumbnail" loading="lazy" />
+            <div class="tile__meta">
+              <h3>SVM Kernels in Practice</h3>
+              <p>RBF vs linear vs poly, scaling, C &amp; γ intuition, and pitfalls.</p>
+              <ul class="chips"><li class="chip">ML</li></ul>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Archive / Filters -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">All writing</h2>
+
+        <div class="filters" role="toolbar" aria-label="Filter writing">
+          <button class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" data-filter="case-study">Case studies</button>
+          <button class="filter" data-filter="essay">Essays</button>
+          <button class="filter" data-filter="notes">Notes</button>
+        </div>
+
+        <ul class="list list--articles" id="writingList">
+          <li class="list-item" data-tags="case-study">
+            <a href="business-management-ia.html">Business Management Research (IA)</a>
+            <span class="muted middot">·</span>
+            <span class="muted small">Case study</span>
+          </li>
+          <li class="list-item" data-tags="essay">
+            <a href="hcai-essay.html">Human-Centred AI Essay</a>
+            <span class="muted middot">·</span>
+            <span class="muted small">Essay</span>
+          </li>
+          <li class="list-item" data-tags="notes">
+            <a href="notes/queueing-cheatsheet.html">Queueing Cheatsheet</a>
+            <span class="muted middot">·</span>
+            <span class="muted small">Notes</span>
+          </li>
+          <li class="list-item" data-tags="notes">
+            <a href="notes/svm-kernels.html">SVM Kernels — quick guide</a>
+            <span class="muted middot">·</span>
+            <span class="muted small">Notes</span>
+          </li>
+        </ul>
+
+        <p class="section__cta muted small">
+          Want a PDF or printable version? Ping me via <a href="../contact.html">contact</a>.
+        </p>
+      </div>
+    </section>
   </main>
-  
-    <footer class="site-footer">
-      <p>© Nirav Ramidi · <a href="https://github.com/Nirav01/" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></p>
-    </footer>
-    <script src="/assets/js/main.js"></script>
-    
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../resume/">Resume</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../assets/js/main.js" defer></script>
 </body>
 </html>

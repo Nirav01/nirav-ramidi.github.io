@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10b981"></stop><stop offset="1" stop-color="#059669"></stop>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="28" fill="url(#bg3)"></rect>
+  <rect x="80" y="200" width="200" height="260" rx="12" fill="#ecfdf5" opacity=".9"></rect>
+  <rect x="320" y="160" width="200" height="300" rx="12" fill="#ecfdf5" opacity=".9"></rect>
+  <rect x="560" y="240" width="200" height="220" rx="12" fill="#ecfdf5" opacity=".9"></rect>
+  <rect x="800" y="120" width="200" height="340" rx="12" fill="#ecfdf5" opacity=".9"></rect>
+  <text x="60" y="120" fill="#fff" font-size="48" font-weight="800" font-family="Inter, ui-sans-serif">Healthcare Data Mining</text>
+  <text x="60" y="560" fill="#e6fffa" font-size="24" font-family="Inter, ui-sans-serif">ETL • Imbalance handling • Model selection</text>
+</svg>

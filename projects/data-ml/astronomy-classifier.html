@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Astronomy Classifier (SDSS) — Case Study — Nirav Ramidi</title>
+  <meta name="description" content="Multi-class classification of SDSS objects (star/galaxy/quasar) using SVM, kNN, and Decision Trees with ROC-AUC per class and stratified cross-validation." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../../assets/css/main.css" />
+  <link rel="icon" href="../../../assets/img/favicon.png" />
+
+  <!-- Optional structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CreativeWork",
+    "name":"Astronomy Classifier (SDSS)",
+    "author":{"@type":"Person","name":"Nirav Ramidi"},
+    "about":"Supervised learning case study on SDSS objects",
+    "keywords":"SDSS, SVM, kNN, Decision Tree, ROC-AUC, Stratified CV"
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../../">Home</a></li>
+          <li><a href="../../../experience.html">Experience</a></li>
+          <li><a href="../../">Projects</a></li>
+          <li><a href="../../../writing/">Writing</a></li>
+          <li><a href="../../../education/">Education</a></li>
+          <li><a href="../../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../../">Home</a></li>
+        <li><a href="../../">Projects</a></li>
+        <li><span aria-current="page">Astronomy Classifier (SDSS)</span></li>
+      </ol>
+    </nav>
+
+    <!-- Hero -->
+    <section class="case-hero section">
+      <div class="container case-hero__inner">
+        <div class="case-hero__copy">
+          <h1>Astronomy Classifier (SDSS)</h1>
+          <p class="lead">
+            Multi-class classification of <strong>SDSS</strong> objects (star / galaxy / quasar) using
+            <strong>SVM</strong>, <strong>kNN</strong>, and <strong>Decision Trees</strong>.
+            Evaluated with <strong>ROC-AUC (OvR)</strong>, macro-F1, and stratified cross-validation.
+          </p>
+          <ul class="metrics">
+            <li class="chip">SDSS photometry</li>
+            <li class="chip">SVM · kNN · DT</li>
+            <li class="chip">ROC-AUC per class</li>
+            <li class="chip">Stratified CV</li>
+          </ul>
+        </div>
+        <figure class="case-hero__media">
+          <img src="../../../assets/img/case-studies/astronomy-hero.jpg" alt="Visualization of SDSS color-color space" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- Meta sidebar layout -->
+    <section class="case-layout section">
+      <div class="container grid case-grid">
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Project info</h2>
+          <dl class="meta-list">
+            <dt>Course</dt><dd>Machine Learning (COMP47490)</dd>
+            <dt>Institution</dt><dd>University College Dublin</dd>
+            <dt>Role</dt><dd>Student — individual assignment</dd>
+            <dt>Focus</dt><dd>Supervised learning · Model evaluation</dd>
+            <dt>Stack</dt><dd>Python, pandas, NumPy, scikit-learn, matplotlib</dd>
+            <dt>Links</dt>
+            <dd>
+              <ul class="bare">
+                <li><a href="../../" aria-label="Back to projects">Back to Projects</a></li>
+                <li><a href="../../../education/">Related modules</a></li>
+              </ul>
+            </dd>
+          </dl>
+        </aside>
+
+        <article class="case-body">
+          <!-- Dataset & Problem -->
+          <section class="case-section" id="dataset">
+            <h2>Dataset &amp; Problem</h2>
+            <p>
+              The task is to classify astronomical objects from the <strong>Sloan Digital Sky Survey (SDSS)</strong>
+              into three classes: <em>star</em>, <em>galaxy</em>, and <em>quasar (QSO)</em>. Inputs include
+              photometric magnitudes (e.g., <code>u, g, r, i, z</code>), colours (magnitude differences), redshift
+              (if available), and quality flags. The dataset is moderately imbalanced.
+            </p>
+            <ul>
+              <li>Split strategy: <strong>stratified train/test</strong> with a validation fold inside training.</li>
+              <li>Targets: 3 classes with one-vs-rest (OvR) evaluation for ROC-AUC.</li>
+              <li>Goal: robust macro-F1 and clear class separation in ROC curves.</li>
+            </ul>
+          </section>
+
+          <!-- Preprocessing & Features -->
+          <section class="case-section" id="features">
+            <h2>Preprocessing &amp; Features</h2>
+            <div class="cols">
+              <div>
+                <h3>Cleaning</h3>
+                <ul>
+                  <li>Removed records with invalid/flagged magnitudes; imputed rare missing values.</li>
+                  <li>Winsorised extreme outliers in colours to reduce tail influence.</li>
+                </ul>
+                <h3>Scaling</h3>
+                <ul>
+                  <li><strong>StandardScaler</strong> on numeric features (required for SVM/kNN).</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Feature Engineering</h3>
+                <ul>
+                  <li>Constructed colour indices (e.g., <code>u-g, g-r, r-i, i-z</code>).</li>
+                  <li>Added interaction terms and simple polynomial features for non-linear boundaries.</li>
+                  <li>Compared <strong>filter methods</strong> (mutual information) with <strong>RFE</strong> wrappers.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Models & Tuning -->
+          <section class="case-section" id="models">
+            <h2>Models &amp; Tuning</h2>
+            <ul>
+              <li><strong>Baselines:</strong> Majority class; Logistic Regression (multinomial).</li>
+              <li><strong>kNN:</strong> grid over <code>k ∈ {5, 7, 9, 11, 15, 21}</code>, distance metrics, and weighting.</li>
+              <li><strong>SVM (RBF):</strong> grid over <code>C</code> and <code>γ</code>; class weights to handle imbalance.</li>
+              <li><strong>Decision Tree:</strong> tuned <code>max_depth</code>, <code>min_samples_split</code>, and <code>ccp_alpha</code> (cost-complexity pruning).</li>
+            </ul>
+            <p>
+              All models were evaluated with <strong>5-fold stratified CV</strong> on the training set; the selected
+              model was then assessed on the held-out test set.
+            </p>
+          </section>
+
+          <!-- Evaluation -->
+          <section class="case-section" id="evaluation">
+            <h2>Evaluation</h2>
+            <ul>
+              <li><strong>Metrics:</strong> macro-F1, per-class precision/recall/F1, micro-F1, and ROC-AUC (OvR).</li>
+              <li><strong>Diagnostics:</strong> confusion matrix, learning curves, and calibration curves (optional).</li>
+            </ul>
+            <figure class="case-figure">
+              <img src="../../../assets/img/case-studies/astronomy-roc.png" alt="One-vs-rest ROC curves for star, galaxy, and quasar classes" loading="lazy" />
+              <figcaption>ROC-AUC (OvR) shows strong separation for galaxies; stars vs QSOs are closer in certain colour bands.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="../../../assets/img/case-studies/astronomy-confusion.png" alt="Confusion matrix for the best performing model" loading="lazy" />
+              <figcaption>Confusion matrix highlights common confusions between stars and QSOs at specific redshifts.</figcaption>
+            </figure>
+          </section>
+
+          <!-- Results -->
+          <section class="case-section" id="results">
+            <h2>Results</h2>
+            <ul class="checklist">
+              <li><strong>SVM (RBF)</strong> provided the best macro-F1 on the test set; <strong>kNN</strong> was competitive with careful scaling and <code>k</code> choice.</li>
+              <li><strong>Decision Trees</strong> were most interpretable; pruning reduced overfitting with a small trade-off in metrics.</li>
+              <li>Feature selection modestly improved generalisation; colour indices were among the most informative features.</li>
+            </ul>
+          </section>
+
+          <!-- Lessons & Next steps -->
+          <section class="case-section" id="lessons">
+            <h2>Lessons &amp; Next Steps</h2>
+            <ul>
+              <li>Proper <strong>scaling</strong> is critical for distance-based and kernel methods.</li>
+              <li>Class weighting and careful validation mitigate moderate imbalance.</li>
+              <li>Next: try <strong>Gradient Boosting / XGBoost</strong>, <strong>probability calibration</strong> (Platt/Isotonic), and <strong>SHAP</strong> for explanations.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Case study pagination">
+            <a class="btn btn--ghost" href="../../">← All projects</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="healthcare-data-mining.html">Next: Healthcare Data Mining →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../../resume/">Resume</a></li>
+        <li><a href="../../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../../assets/js/main.js" defer></script>
+</body>
+</html>

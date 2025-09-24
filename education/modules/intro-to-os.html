@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intro to Operating Systems — Module — Nirav Ramidi</title>
+  <meta name="description" content="Processes & threads, CPU scheduling, synchronisation, deadlocks, memory management & virtual memory, filesystems, I/O, and virtualisation basics." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="icon" href="../../assets/img/favicon.png" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../experience.html">Experience</a></li>
+          <li><a href="../../projects/">Projects</a></li>
+          <li><a href="../../writing/">Writing</a></li>
+          <li><a href="../">Education</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../">Home</a></li>
+        <li><a href="../">Education</a></li>
+        <li><span aria-current="page">Intro to Operating Systems</span></li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Intro to Operating Systems</h1>
+        <p class="lead">
+          Core OS concepts: <strong>processes &amp; threads</strong>, <strong>CPU scheduling</strong>,
+          <strong>concurrency</strong> &amp; <strong>synchronisation</strong>, <strong>deadlocks</strong>,
+          <strong>memory management</strong> &amp; <strong>virtual memory</strong>, <strong>filesystems</strong>,
+          and <strong>I/O</strong> with a taste of <strong>virtualisation</strong>.
+        </p>
+        <ul class="chips">
+          <li class="chip">Processes & Threads</li>
+          <li class="chip">Scheduling</li>
+          <li class="chip">Sync & Deadlocks</li>
+          <li class="chip">Memory & VM</li>
+        </ul>
+
+        <div class="actions">
+          <!-- Place this file in /education/modules/ to activate -->
+          <a class="btn btn--secondary" href="0.%20Overview.pdf">Overview slides (PDF)</a>
+        </div>
+
+        <p class="muted small">
+          Tip: If the link 404s, ensure the PDF is named exactly <code>0. Overview.pdf</code> (URL-encoded above).
+        </p>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="section">
+      <div class="container grid case-grid">
+        <!-- Meta -->
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Module info</h2>
+          <dl class="meta-list">
+            <dt>Category</dt><dd>Systems</dd>
+            <dt>Focus</dt><dd>Abstractions · Isolation · Resource mgmt</dd>
+            <dt>Stack</dt><dd>C, POSIX APIs, Linux tooling</dd>
+            <dt>Assessment</dt><dd>Labs, programming exercises, final exam</dd>
+          </dl>
+          <div class="note small">
+            <p><strong>Related modules:</strong> <a href="perf-of-comp-sys.html">Performance of Computer Systems</a> and <a href="computer-networking.html">Computer Networking</a>.</p>
+          </div>
+        </aside>
+
+        <!-- Body -->
+        <article class="case-body">
+          <!-- Outcomes -->
+          <section class="case-section" id="outcomes">
+            <h2>Learning Outcomes</h2>
+            <ul>
+              <li>Explain OS abstractions (process, thread, address space, file, socket) and their lifecycle.</li>
+              <li>Compare scheduling strategies and reason about latency/throughput trade-offs.</li>
+              <li>Write correct synchronised code using mutexes, semaphores, and condition variables.</li>
+              <li>Analyse and avoid deadlocks via prevention/avoidance/detection strategies.</li>
+              <li>Describe paging, TLBs, and demand-paged <strong>virtual memory</strong>; reason about locality.</li>
+              <li>Understand filesystem layout (inodes, directories, journaling) and buffered I/O.</li>
+            </ul>
+          </section>
+
+          <!-- Topics -->
+          <section class="case-section" id="topics">
+            <h2>Indicative Topics</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>Processes &amp; Threads</h3></header>
+                <p class="card__body">PCB/TCB, state transitions (new→ready→running→blocked→terminated), context switching, user vs kernel mode.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>CPU Scheduling</h3></header>
+                <p class="card__body">FCFS, SJF/SRTF, RR, priority &amp; multilevel queues; starvation &amp; aging; metrics (waiting, turnaround, response).</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Synchronisation</h3></header>
+                <p class="card__body">Critical sections, atomicity, locks, semaphores, monitors; producer–consumer &amp; readers–writers patterns.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Deadlocks</h3></header>
+                <p class="card__body">Coffman conditions, resource-allocation graphs, Banker's algorithm, prevention/avoidance/detection &amp; recovery.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Memory &amp; VM</h3></header>
+                <p class="card__body">Paging &amp; segmentation, page tables (multi-level), TLB, page replacement (LRU/Clock), thrashing &amp; working sets.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Storage &amp; Filesystems</h3></header>
+                <p class="card__body">Inodes, allocation strategies, journaling (ext4), caching &amp; write-back, fsck basics.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>I/O &amp; Virtualisation</h3></header>
+                <p class="card__body">Device drivers, interrupts/DMA, polling vs interrupts, hypervisors &amp; containers (namespaces/cgroups).</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Quick reference -->
+          <section class="case-section" id="reference">
+            <h2>Quick Reference</h2>
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Scheduling metrics</h3></header>
+                <pre class="code-block"><code>Waiting time   = Σ (start_i − arrival_i)
+Turnaround     = finish − arrival
+Response time  = first_run − arrival</code></pre>
+                <p class="muted small">Shorter time-slices improve response but raise context-switch overhead.</p>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>Deadlock conditions</h3></header>
+                <pre class="code-block"><code>1. Mutual exclusion
+2. Hold and wait
+3. No preemption
+4. Circular wait</code></pre>
+                <p class="muted small">Break any one to prevent deadlock (e.g., impose a global lock order).</p>
+              </div>
+            </div>
+
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Producer–Consumer (semaphores)</h3></header>
+                <pre class="code-block"><code>// Pseudo-code
+semaphore empty = N, full = 0, mutex = 1
+producer:
+  wait(empty); wait(mutex);
+  put(item); 
+  signal(mutex); signal(full);
+
+consumer:
+  wait(full); wait(mutex);
+  get(item);
+  signal(mutex); signal(empty);</code></pre>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>Address translation</h3></header>
+                <pre class="code-block"><code>virtual_addr = (VPN, offset)
+phys_frame   = PT[VPN]  // TLB hit ≈ fast; miss → walk
+physical_addr = (phys_frame, offset)</code></pre>
+                <p class="muted small">Locality (temporal/spatial) underpins caching & paging performance.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Artefacts -->
+          <section class="case-section" id="artifacts">
+            <h2>Selected Artefacts</h2>
+            <ul class="list">
+              <li><a href="0.%20Overview.pdf">Lecture — Course Overview</a></li>
+            </ul>
+          </section>
+
+          <!-- Takeaways -->
+          <section class="case-section" id="learnings">
+            <h2>Key Takeaways</h2>
+            <ul class="checklist">
+              <li>OS abstractions simplify programming by safely multiplexing hardware.</li>
+              <li>Concurrency demands disciplined synchronisation to avoid races & deadlocks.</li>
+              <li>Virtual memory enables isolation & overcommit; locality makes it fast in practice.</li>
+              <li>Filesystems balance durability and performance via journaling and caching.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Module pagination">
+            <a class="btn btn--ghost" href="perf-of-comp-sys.html">← Performance of Computer Systems</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="computer-networking.html">Next: Computer Networking →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../resume/">Resume</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

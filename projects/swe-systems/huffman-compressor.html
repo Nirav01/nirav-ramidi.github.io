@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Huffman Compressor — Case Study — Nirav Ramidi</title>
+  <meta name="description" content="A Java implementation of Huffman coding: optimal prefix codes, bit-level I/O, canonical code serialisation, and benchmarks on mixed corpora." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../../assets/css/main.css" />
+  <link rel="icon" href="../../../assets/img/favicon.png" />
+
+  <!-- Optional structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareSourceCode",
+    "name":"Huffman Compressor",
+    "author":{"@type":"Person","name":"Nirav Ramidi"},
+    "programmingLanguage":"Java",
+    "runtimePlatform":"JVM",
+    "keywords":"Huffman coding, prefix codes, compression, greedy algorithm, priority queue"
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../../">Home</a></li>
+          <li><a href="../../../experience.html">Experience</a></li>
+          <li><a href="../../">Projects</a></li>
+          <li><a href="../../../writing/">Writing</a></li>
+          <li><a href="../../../education/">Education</a></li>
+          <li><a href="../../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../../">Home</a></li>
+        <li><a href="../../">Projects</a></li>
+        <li><a href="../">SWE / Systems</a></li>
+        <li><span aria-current="page">Huffman Compressor</span></li>
+      </ol>
+    </nav>
+
+    <!-- Hero -->
+    <section class="case-hero section">
+      <div class="container case-hero__inner">
+        <div class="case-hero__copy">
+          <h1>Huffman Compressor</h1>
+          <p class="lead">
+            A from-scratch <strong>Java</strong> implementation of <strong>Huffman coding</strong> with optimal prefix
+            codes, <strong>bit-level I/O</strong>, and <strong>canonical code</strong> serialisation. Includes a CLI for
+            compress/decompress and a benchmark harness over mixed corpora.
+          </p>
+          <ul class="metrics">
+            <li class="chip">Greedy + Priority Queue</li>
+            <li class="chip">Canonical codes</li>
+            <li class="chip">BitOutputStream</li>
+            <li class="chip">Unit & property tests</li>
+          </ul>
+        </div>
+        <figure class="case-hero__media">
+          <img src="../../../assets/img/case-studies/huffman-hero.jpg" alt="Huffman tree visual with code lengths for characters" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- Meta + Body -->
+    <section class="case-layout section">
+      <div class="container grid case-grid">
+
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Project info</h2>
+          <dl class="meta-list">
+            <dt>Type</dt><dd>Algorithms / Systems project</dd>
+            <dt>Role</dt><dd>Solo developer</dd>
+            <dt>Focus</dt><dd>Compression · Data structures · File format design</dd>
+            <dt>Stack</dt><dd>Java 17, JUnit 5, Maven</dd>
+            <dt>CLI</dt><dd><code>huff -c in.txt out.huf</code> · <code>huff -d out.huf out.txt</code></dd>
+            <dt>Links</dt>
+            <dd>
+              <ul class="bare">
+                <li><a href="../../" aria-label="Back to projects">Back to Projects</a></li>
+                <li><a href="../../../education/">Related modules</a></li>
+              </ul>
+            </dd>
+          </dl>
+        </aside>
+
+        <article class="case-body">
+          <!-- Problem & Goals -->
+          <section class="case-section" id="context">
+            <h2>Problem &amp; Goals</h2>
+            <p>
+              Implement a lossless compressor using <strong>Huffman coding</strong>, ensuring portability and correctness:
+              deterministic codebooks, robust bit-level read/write, and linear-time encode/decode after codebook build.
+            </p>
+            <ul>
+              <li>File format with <strong>self-contained header</strong> (code lengths) for decoder reconstruction.</li>
+              <li>Support full 8-bit byte alphabet (σ ≤ 256) and arbitrary binary input.</li>
+              <li>Provide a <strong>CLI</strong> with helpful errors and progress stats.</li>
+            </ul>
+          </section>
+
+          <!-- Algorithm -->
+          <section class="case-section" id="algorithm">
+            <h2>Algorithm</h2>
+            <div class="cols">
+              <div>
+                <h3>Build (one pass over frequencies)</h3>
+                <ol>
+                  <li>Count symbol frequencies → array[0..255].</li>
+                  <li>Push non-zero symbols into a <strong>min-heap</strong> by frequency.</li>
+                  <li>Pop two, merge to parent with sum freq, push back — repeat.</li>
+                  <li>Derive code lengths from root-to-leaf depths.</li>
+                </ol>
+                <p class="muted small">Time: O(σ log σ + n) with σ≤256 ⇒ effectively O(n). Space: O(σ).</p>
+              </div>
+              <div>
+                <h3>Canonicalisation</h3>
+                <ul>
+                  <li>Sort (length, symbol) to produce <strong>canonical codes</strong> — compact header, deterministic.</li>
+                  <li>Decoder reconstructs codes from lengths only (no tree serialisation needed).</li>
+                </ul>
+                <h3>I/O</h3>
+                <ul>
+                  <li><code>BitOutputStream</code> / <code>BitInputStream</code> buffer bits to/from bytes.</li>
+                  <li>Pad final byte; record <em>payload bit length</em> in header.</li>
+                </ul>
+              </div>
+            </div>
+            <figure class="case-figure">
+              <img src="../../../assets/img/case-studies/huffman-diagram.png" alt="Diagram: frequency table → heap merges → canonical code lengths → encoder/decoder" loading="lazy" />
+              <figcaption>Pipeline from frequency table to canonical codes and bit-level encoding.</figcaption>
+            </figure>
+          </section>
+
+          <!-- Implementation -->
+          <section class="case-section" id="implementation">
+            <h2>Implementation Highlights</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>Header format</h3></header>
+                <p class="card__body">
+                  Magic bytes, version, <strong>256 code lengths</strong> (0..maxLen), and <em>payloadBits</em>.
+                  Decoder rebuilds canonical codes from lengths; zero length ⇒ symbol absent.
+                </p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Streaming safety</h3></header>
+                <p class="card__body">
+                  Chunked frequency count to cap memory; encoder writes as it reads, no full file buffering.
+                </p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Edge cases</h3></header>
+                <p class="card__body">
+                  Empty input; single-symbol files (emit 1-bit code); binary data with all 256 symbols; corrupted header checks.
+                </p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Testing</h3></header>
+                <p class="card__body">
+                  Unit tests for heap/tree, canonical codes, and round-trip <code>decode(encode(x)) = x</code>.
+                  Property tests across random byte arrays; golden files for CLI.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Benchmarks -->
+          <section class="case-section" id="benchmarks">
+            <h2>Benchmarks (indicative)</h2>
+            <p>
+              Ran on text (UTF-8), logs, and small binaries. Huffman excels on skewed text; header overhead impacts tiny files.
+              General-purpose codecs (e.g., DEFLATE) may beat Huffman on mixed/binary due to LZ stages, but Huffman remains a great
+              teaching-quality baseline with predictable behaviour.
+            </p>
+            <ul class="checklist">
+              <li>Compression time roughly linear in input size after codebook build.</li>
+              <li>Compression ratio improves with symbol skew and larger files.</li>
+              <li>Canonical header reduced file-format size vs raw tree serialisation.</li>
+            </ul>
+          </section>
+
+          <!-- Lessons -->
+          <section class="case-section" id="lessons">
+            <h2>What I learned</h2>
+            <ul>
+              <li>How <strong>greedy</strong> tree construction yields an <em>optimal prefix code</em>.</li>
+              <li>Why <strong>canonical codes</strong> simplify serialisation and speed decoding.</li>
+              <li>The importance of deterministic formats and bit-precise I/O.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Case study pagination">
+            <a class="btn btn--ghost" href="java-marketplace.html">← Java Marketplace</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="twitter-cli.html">Next: Twitter-like CLI →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../../resume/">Resume</a></li>
+        <li><a href="../../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../../assets/js/main.js" defer></script>
+</body>
+</html>

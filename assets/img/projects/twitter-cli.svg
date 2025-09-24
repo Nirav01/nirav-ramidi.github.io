@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs><linearGradient id="bg6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0ea5e9"></stop><stop offset="1" stop-color="#14b8a6"></stop></linearGradient></defs>
+  <rect width="1200" height="630" rx="28" fill="url(#bg6)"></rect>
+  <rect x="80" y="160" width="1040" height="320" rx="16" fill="#000" opacity=".35"></rect>
+  <text x="110" y="320" fill="#e5e7eb" font-size="28" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas">tw post "hello world!"</text>
+  <text x="60" y="120" fill="#fff" font-size="48" font-weight="800" font-family="Inter, ui-sans-serif">Twitter CLI</text>
+  <text x="60" y="560" fill="#e6fffb" font-size="24" font-family="Inter, ui-sans-serif">HTTP • OAuth • Rate limits</text>
+</svg>

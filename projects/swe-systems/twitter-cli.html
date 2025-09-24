@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Twitter-like CLI (C) — Case Study — Nirav Ramidi</title>
+  <meta name="description" content="C command-line Twitter clone: post, follow/unfollow, top-10 news feed, delete user, and endTurn/endTwitter. Refactored from arrays to a linked-list feed; modular design and tests." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../../assets/css/main.css" />
+  <link rel="icon" href="../../../assets/img/favicon.png" />
+
+  <!-- Optional structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareSourceCode",
+    "name":"Twitter-like CLI (C)",
+    "author":{"@type":"Person","name":"Nirav Ramidi"},
+    "programmingLanguage":"C",
+    "runtimePlatform":"CLI",
+    "keywords":"C, data structures, linked list, CLI, modular design"
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../../">Home</a></li>
+          <li><a href="../../../experience.html">Experience</a></li>
+          <li><a href="../../">Projects</a></li>
+          <li><a href="../../../writing/">Writing</a></li>
+          <li><a href="../../../education/">Education</a></li>
+          <li><a href="../../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../../">Home</a></li>
+        <li><a href="../../">Projects</a></li>
+        <li><a href="../">SWE / Systems</a></li>
+        <li><span aria-current="page">Twitter-like CLI (C)</span></li>
+      </ol>
+    </nav>
+
+    <!-- Hero -->
+    <section class="case-hero section">
+      <div class="container case-hero__inner">
+        <div class="case-hero__copy">
+          <h1>Twitter-like CLI (C)</h1>
+          <p class="lead">
+            A command-line microblogging system written in <strong>C</strong>: users can <strong>post</strong>,
+            <strong>follow/unfollow</strong>, view a <strong>top-10 news feed</strong>, <strong>delete</strong> accounts,
+            and advance time with <strong>endTurn</strong>. Final refactor replaces array storage with a
+            <strong>linked-list news feed</strong> for simpler deletions and ordered traversal.
+          </p>
+          <ul class="metrics">
+            <li class="chip">C (modular)</li>
+            <li class="chip">Linked-list feed</li>
+            <li class="chip">O(n) feed build</li>
+            <li class="chip">Unit & integration tests</li>
+          </ul>
+        </div>
+        <figure class="case-hero__media">
+          <img src="../../../assets/img/case-studies/twitter-cli-hero.jpg" alt="Terminal screenshot of the Twitter-like CLI showing posts and a news feed" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- Meta + Body -->
+    <section class="case-layout section">
+      <div class="container grid case-grid">
+
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Project info</h2>
+          <dl class="meta-list">
+            <dt>Type</dt><dd>Systems / Data Structures (C)</dd>
+            <dt>Role</dt><dd>Solo developer</dd>
+            <dt>Focus</dt><dd>APIs, memory management, data structure refactor</dd>
+            <dt>Stack</dt><dd>ANSI C, gcc/clang, Make, GDB</dd>
+            <dt>Links</dt>
+            <dd>
+              <ul class="bare">
+                <li><a href="../../" aria-label="Back to projects">Back to Projects</a></li>
+                <li><a href="../../../education/">Related modules</a></li>
+              </ul>
+            </dd>
+          </dl>
+        </aside>
+
+        <article class="case-body">
+          <!-- Problem & Goals -->
+          <section class="case-section" id="context">
+            <h2>Problem &amp; Goals</h2>
+            <p>
+              Design a simple microblogging platform with a deterministic command set and a <em>news feed</em> that
+              shows the 10 most recent tweets from a user and accounts they follow. Start with array-backed storage,
+              then refactor the news-feed mechanism to a <strong>linked list</strong> to simplify insert/delete and
+              maintain recency order.
+            </p>
+            <ul>
+              <li>Clear separation between <strong>I/O</strong> parsing and <strong>core logic</strong>.</li>
+              <li>Deterministic behaviour and safe memory management (no leaks/dangling pointers).</li>
+              <li>Graceful deletion of users and their tweets.</li>
+            </ul>
+          </section>
+
+          <!-- Data Model -->
+          <section class="case-section" id="model">
+            <h2>Data Model</h2>
+            <div class="cols">
+              <div>
+                <h3>Structs</h3>
+                <ul>
+                  <li><code>Tweet</code>: <em>id</em> (monotonic timestamp), <em>text</em> (≤280), <em>username</em>, <em>*next</em></li>
+                  <li><code>User</code>: <em>username</em>, <em>followers</em>, <em>following</em>, <em>tweets</em> (head ptr)</li>
+                  <li><code>TwitterSystem</code>: dynamic arrays (users), global <em>clock</em>, temp buffers</li>
+                </ul>
+                <p class="muted small">Tweets are kept in per-user singly linked lists, newest at head.</p>
+              </div>
+              <div>
+                <h3>Why linked list?</h3>
+                <ul>
+                  <li><strong>Delete user</strong>: drop list head and iterate freeing nodes (O(tweets)).</li>
+                  <li><strong>Post</strong>: push-front (O(1)) with current timestamp id.</li>
+                  <li><strong>Feed</strong>: k-way merge (users followed + self) by id; stop at 10 entries.</li>
+                </ul>
+              </div>
+            </div>
+            <figure class="case-figure">
+              <img src="../../../assets/img/case-studies/twitter-cli-architecture.png" alt="Diagram of users and tweet linked lists with a k-way merge for the news feed" loading="lazy" />
+              <figcaption>Per-user linked lists; feed uses a small max-heap or pointers for k-way merge.</figcaption>
+            </figure>
+          </section>
+
+          <!-- Commands -->
+          <section class="case-section" id="commands">
+            <h2>Command Interface</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>post</h3></header>
+                <p class="card__body"><code>post &lt;user&gt; "&lt;text up to 280 chars&gt;"</code> — creates a tweet with current <em>clock</em> as id.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>follow / unfollow</h3></header>
+                <p class="card__body"><code>follow &lt;userA&gt; &lt;userB&gt;</code> — A follows B. <code>unfollow</code> reverses it (no-ops are safe).</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>newsfeed</h3></header>
+                <p class="card__body"><code>newsfeed &lt;user&gt;</code> — print up to 10 most recent tweets from user ∪ following, newest first.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>delete</h3></header>
+                <p class="card__body"><code>delete &lt;user&gt;</code> — remove account and all tweets; detach from follower/following lists.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>endTurn / endTwitter</h3></header>
+                <p class="card__body"><code>endTurn</code> increments the global clock; <code>endTwitter</code> flushes state and exits.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Implementation -->
+          <section class="case-section" id="impl">
+            <h2>Implementation Highlights</h2>
+            <ul class="checklist">
+              <li><strong>Parsing</strong> separates tokens and quoted text; rejects invalid commands with helpful errors.</li>
+              <li><strong>Memory safety</strong>: ownership is explicit; every <code>malloc</code> has a matching <code>free</code> on <code>endTwitter</code> / deletion paths.</li>
+              <li><strong>Feed</strong>: k-way merge from heads of followed lists (and self); a small max-heap by <em>id</em> yields O(m log k) for m≤10.</li>
+              <li><strong>Refactor</strong>: initial array solution replaced with linked lists to simplify deletions and head insertions.</li>
+            </ul>
+            <figure class="case-figure">
+              <img src="../../../assets/img/case-studies/twitter-cli-transcript.png" alt="Transcript snippet showing posting, following, and newsfeed output" loading="lazy" />
+              <figcaption>Transcript snippet: posting, following, feed generation, and user deletion.</figcaption>
+            </figure>
+          </section>
+
+          <!-- Testing -->
+          <section class="case-section" id="tests">
+            <h2>Testing</h2>
+            <ul>
+              <li><strong>Unit</strong>: follow/unfollow idempotence; delete user removes tweets; post length limits.</li>
+              <li><strong>Integration</strong>: golden transcript comparison for a fixed command script.</li>
+              <li><strong>Valgrind</strong> clean on all paths (no leaks, no invalid reads/writes).</li>
+            </ul>
+          </section>
+
+          <!-- Lessons -->
+          <section class="case-section" id="lessons">
+            <h2>What I learned</h2>
+            <ul>
+              <li>How data-structure choice (arrays → linked lists) changes complexity and simplifies edge cases.</li>
+              <li>Designing a stable CLI and separating I/O from logic improves testability.</li>
+              <li>Owning memory in C requires disciplined APIs and teardown paths.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Case study pagination">
+            <a class="btn btn--ghost" href="huffman-compressor.html">← Huffman Compressor</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="../cloud-sre/vision-microservice.html">Next: Vision Microservice →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../../resume/">Resume</a></li>
+        <li><a href="../../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../../assets/js/main.js" defer></script>
+</body>
+</html>

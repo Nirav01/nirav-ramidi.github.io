@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Information Visualisation — Module — Nirav Ramidi</title>
+  <meta name="description" content="Interactive visualisation principles, Vega-Lite grammar, brushing & linking, small multiples, tidy transforms, and perceptual best practices." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="icon" href="../../assets/img/favicon.png" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../experience.html">Experience</a></li>
+          <li><a href="../../projects/">Projects</a></li>
+          <li><a href="../../writing/">Writing</a></li>
+          <li><a href="../">Education</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../">Home</a></li>
+        <li><a href="../">Education</a></li>
+        <li><span aria-current="page">Information Visualisation</span></li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Information Visualisation</h1>
+        <p class="lead">
+          Design and build effective visualisations using the <strong>Vega-Lite</strong> grammar. Focus on perceptual
+          principles, <strong>interaction</strong> (brushing &amp; linking), and tidy <strong>data transforms</strong> to support
+          exploratory analysis and clear communication.
+        </p>
+        <ul class="chips">
+          <li class="chip">Vega-Lite</li>
+          <li class="chip">Interaction Design</li>
+          <li class="chip">Perception</li>
+          <li class="chip">UX for Analytics</li>
+        </ul>
+
+        <div class="actions">
+          <!-- Place these files in this folder to activate links -->
+          <a class="btn btn--secondary" href="Infovis2024_01_Introduction.pdf">Intro slides (PDF)</a>
+          <a class="btn btn--ghost" href="Information%20Visualisation%20Graded%20Assignment.pdf">Graded assignment</a>
+        </div>
+
+        <p class="muted small">
+          Tip: If any link 404s, ensure the PDF exists in <code>/education/modules/</code> with the exact filename.
+        </p>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="section">
+      <div class="container grid case-grid">
+        <!-- Meta -->
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Module info</h2>
+          <dl class="meta-list">
+            <dt>Category</dt><dd>Vis / HCAI</dd>
+            <dt>Focus</dt><dd>Encodings · Interaction · Clarity</dd>
+            <dt>Stack</dt><dd>Vega-Lite (JSON), HTML, minimal JS</dd>
+            <dt>Assessment</dt><dd>Graded dashboard, short write-up, quizzes</dd>
+          </dl>
+          <div class="note small">
+            <p><strong>Related projects:</strong> see
+              <a href="../../projects/hcai-viz/infovis-vega-lite.html">InfoVis Dashboard (Vega-Lite)</a> and
+              <a href="../../projects/hcai-viz/hcai-experiment.html">HCAI Empirical Study</a>.
+            </p>
+          </div>
+        </aside>
+
+        <!-- Body -->
+        <article class="case-body">
+          <!-- Outcomes -->
+          <section class="case-section" id="outcomes">
+            <h2>Learning Outcomes</h2>
+            <ul>
+              <li>Select appropriate <strong>visual encodings</strong> (position, length, color) for data types and tasks.</li>
+              <li>Compose dashboards with <strong>brushing &amp; linking</strong>, selections, and small multiples.</li>
+              <li>Use Vega-Lite <strong>transforms</strong> (aggregate, bin, calculate, fold, window) to tidy data.</li>
+              <li>Apply <strong>perception</strong> &amp; <strong>accessibility</strong> guidelines to reduce bias and improve readability.</li>
+              <li>Communicate findings with concise captions, legends, and progressive disclosure.</li>
+            </ul>
+          </section>
+
+          <!-- Topics -->
+          <section class="case-section" id="topics">
+            <h2>Indicative Topics</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>Encodings &amp; Marks</h3></header>
+                <p class="card__body">Bar, line, point, area; channels (x/y, color, size, shape) and effectiveness ranking.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Interaction</h3></header>
+                <p class="card__body">Selections, interval brush, cross-filtering, highlighting, tooltips.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Composition</h3></header>
+                <p class="card__body">Layering, concatenation, faceting, small multiples; resolve scales and legends.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Tidy transforms</h3></header>
+                <p class="card__body"><code>aggregate</code>, <code>calculate</code>, <code>fold</code>, <code>bin</code>, <code>window</code> for ranks and rolling stats.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Perception &amp; Accessibility</h3></header>
+                <p class="card__body">Color/contrast checks, alignment, annotation, avoiding misleading scales.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Quick reference -->
+          <section class="case-section" id="reference">
+            <h2>Quick Reference — Embedding Vega-Lite</h2>
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>HTML container</h3></header>
+                <pre class="code-block"><code>&lt;div id="vis-dashboard"&gt;&lt;/div&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/vega@5"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/vega-lite@5"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/vega-embed@6"&gt;&lt;/script&gt;</code></pre>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>JS to render</h3></header>
+                <pre class="code-block"><code>const spec = {/* vega-lite JSON spec */};
+vegaEmbed("#vis-dashboard", spec, {actions:false});</code></pre>
+              </div>
+            </div>
+            <p class="muted small">In this site, specs live in <code>assets/js/</code> and are initialised on page load.</p>
+          </section>
+
+          <!-- Artefacts -->
+          <section class="case-section" id="artifacts">
+            <h2>Selected Artefacts</h2>
+            <ul class="list">
+              <li><a href="Infovis2024_01_Introduction.pdf">Lecture — Introduction to Information Visualisation</a></li>
+              <li><a href="Information%20Visualisation%20Graded%20Assignment.pdf">Graded Assignment — dashboard &amp; write-up</a></li>
+            </ul>
+          </section>
+
+          <!-- Takeaways -->
+          <section class="case-section" id="learnings">
+            <h2>Key Takeaways</h2>
+            <ul class="checklist">
+              <li>Start with the <strong>task</strong>: overview → filter → details on demand.</li>
+              <li>Prefer <strong>position/length</strong> over color/area for quantitative comparisons.</li>
+              <li>Consistent scales and aligned axes beat fancy visuals for sense-making.</li>
+              <li>Minimal annotations and helpful legends increase learnability.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Module pagination">
+            <a class="btn btn--ghost" href="../">← All modules</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="human-centred-ai.html">Next: Human-Centred AI →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../resume/">Resume</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

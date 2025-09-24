@@ -2,41 +2,243 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Optimisation — Education — Nirav Ramidi</title>
-  <meta name="description" content="Linear/Integer Programming, Julia/JuMP coursework." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Optimisation — Module — Nirav Ramidi</title>
+  <meta name="description" content="Linear & integer programming, duality, simplex, sensitivity, network flows, and practical modelling with solvers." />
+
+  <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="icon" href="../../assets/img/favicon.png" />
 </head>
+
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <nav aria-label="Primary">
-      <a class="brand" href="../../index.html">NR</a>
-      <ul class="nav">
-        <li><a href="../../experience.html">Experience</a></li>
-        <li><a href="../../projects/index.html">Projects</a></li>
-        <li><a href="../../writing/index.html">Writing</a></li>
-        <li><a href="../index.html">Education</a></li>
-        <li><a href="../../resume/index.html">Resume</a></li>
-        <li><a href="../../contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../experience.html">Experience</a></li>
+          <li><a href="../../projects/">Projects</a></li>
+          <li><a href="../../writing/">Writing</a></li>
+          <li><a href="../">Education</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
   </header>
 
-  <main id="main">
-    <article>
-      <h1>Optimisation (Julia/JuMP)</h1>
-      <ul>
-        <li>LP/ILP models (k-medoids ILP; L1 regression LP)</li>
-        <li>Solvers and constraints; experiment summaries</li>
-        <li>Links to reports/code</li>
-      </ul>
-    </article>
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../">Home</a></li>
+        <li><a href="../">Education</a></li>
+        <li><span aria-current="page">Optimisation</span></li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Optimisation</h1>
+        <p class="lead">
+          Mathematical programming for decision-making: formulate real problems as models, solve with
+          <strong>LP</strong>/<strong>ILP</strong> and network flows, and interpret solutions via <strong>duality</strong> and
+          <strong>sensitivity</strong>. Includes hands-on modelling with modern solvers.
+        </p>
+        <ul class="chips">
+          <li class="chip">Linear Programming</li>
+          <li class="chip">Integer Programming</li>
+          <li class="chip">Duality &amp; Sensitivity</li>
+          <li class="chip">Network Flows</li>
+        </ul>
+
+        <div class="actions">
+          <!-- Place these files in this folder to activate links -->
+          <a class="btn btn--secondary" href="Optimisation.pdf">Module notes (PDF)</a>
+          <a class="btn btn--ghost" href="assignment1_comp30930.pdf">Assignment 1</a>
+          <a class="btn btn--ghost" href="comp30930_assignment2.pdf">Assignment 2</a>
+        </div>
+
+        <p class="muted small">
+          Tip: If any link 404s, drop the corresponding PDF into <code>/education/modules/</code> with the exact filename.
+        </p>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="section">
+      <div class="container grid case-grid">
+        <!-- Meta -->
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Module info</h2>
+          <dl class="meta-list">
+            <dt>Category</dt><dd>Theory · OR · Applied Math</dd>
+            <dt>Focus</dt><dd>Modelling · Algorithms · Solver use</dd>
+            <dt>Stack</dt><dd>Python (PuLP/OR-Tools), Julia (JuMP), GLPK/Gurobi</dd>
+            <dt>Assessment</dt><dd>Problem sets, modelling assignments, final exam/project</dd>
+          </dl>
+          <div class="note small">
+            <p><strong>Related work:</strong> see <a href="../../projects/cloud-sre/queueing-capacity.html">Queueing for Capacity Planning</a> for OR in practice.</p>
+          </div>
+        </aside>
+
+        <!-- Body -->
+        <article class="case-body">
+          <!-- Outcomes -->
+          <section class="case-section" id="outcomes">
+            <h2>Learning Outcomes</h2>
+            <ul>
+              <li>Formulate business/engineering problems as mathematical programs (LP/ILP, flows, assignments).</li>
+              <li>Apply <strong>simplex</strong> and understand <strong>duality</strong>, shadow prices, and reduced costs.</li>
+              <li>Model <strong>integer constraints</strong> (binary decisions, logical constraints, big-M safely).</li>
+              <li>Use solvers via <strong>PuLP/JuMP</strong>; interpret solver output &amp; sensitivity reports.</li>
+              <li>Design small <strong>heuristics</strong> (greedy, local search) when exact solves are impractical.</li>
+            </ul>
+          </section>
+
+          <!-- Syllabus -->
+          <section class="case-section" id="syllabus">
+            <h2>Indicative Topics</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>LP fundamentals</h3></header>
+                <p class="card__body">Standard form, geometry, feasible regions, basic feasible solutions, simplex pivoting.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Duality &amp; sensitivity</h3></header>
+                <p class="card__body">Primal–dual pairs, complementary slackness, shadow prices, RHS/coeff ranges.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Integer programming</h3></header>
+                <p class="card__body">Branch-and-bound, cutting planes, modelling tricks (SOS, big-M, indicator constraints).</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Network optimisation</h3></header>
+                <p class="card__body">Shortest paths, max-flow/min-cut, min-cost flow, assignment &amp; transportation.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Heuristics</h3></header>
+                <p class="card__body">Greedy, local search, metaheuristic intuition for large combinatorial problems.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Quick reference -->
+          <section class="case-section" id="reference">
+            <h2>Quick Reference</h2>
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>LP — standard form</h3></header>
+                <pre class="code-block"><code>maximise   cᵀx
+subject to Ax ≤ b
+           x ≥ 0</code></pre>
+                <p class="muted small">Convert ≥ with slack/surplus &amp; sign constraints; equality via two inequalities.</p>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>Dual (for ≤-primal)</h3></header>
+                <pre class="code-block"><code>minimise   bᵀy
+subject to Aᵀy ≥ c
+           y ≥ 0</code></pre>
+                <p class="muted small">Complementary slackness ties primal activity to dual feasibility.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Modelling snippets -->
+          <section class="case-section" id="snippets">
+            <h2>Modelling Snippets</h2>
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Python · PuLP (transport)</h3></header>
+                <pre class="code-block"><code>import pulp as pl
+
+prob = pl.LpProblem("transport", pl.LpMinimize)
+x = pl.LpVariable.dicts("x", (plants, markets), lowBound=0)
+
+# Objective
+prob += pl.lpSum(cost[i][j] * x[i][j] for i in plants for j in markets)
+
+# Supply/ demand
+for i in plants:  prob += pl.lpSum(x[i][j] for j in markets) <= supply[i]
+for j in markets: prob += pl.lpSum(x[i][j] for i in plants) >= demand[j]
+
+prob.solve()</code></pre>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>Julia · JuMP (assignment)</h3></header>
+                <pre class="code-block"><code>using JuMP, GLPK
+model = Model(GLPK.Optimizer)
+@variable(model, x[1:n,1:n], Bin)
+@objective(model, Min, sum(C[i,j]*x[i,j] for i=1:n, j=1:n))
+@constraint(model, [i=1:n], sum(x[i,j] for j=1:n) == 1)
+@constraint(model, [j=1:n], sum(x[i,j] for i=1:n) == 1)
+optimize!(model)</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- Assessment artifacts -->
+          <section class="case-section" id="artifacts">
+            <h2>Selected Artefacts</h2>
+            <ul class="list">
+              <li><a href="assignment1_comp30930.pdf">Assignment 1 — LP modelling &amp; sensitivity</a></li>
+              <li><a href="comp30930_assignment2.pdf">Assignment 2 — Network flows &amp; ILP</a></li>
+              <li><a href="Optimisation.pdf">Lecture summary — Optimisation (slides/notes)</a></li>
+            </ul>
+          </section>
+
+          <!-- What I learned -->
+          <section class="case-section" id="learnings">
+            <h2>Key Takeaways</h2>
+            <ul class="checklist">
+              <li>Good <strong>formulations</strong> are often more powerful than clever heuristics.</li>
+              <li><strong>Dual variables</strong> provide economic intuition (shadow prices) for constraints.</li>
+              <li>Be cautious with <strong>big-M</strong>; choose tight bounds to keep relaxations strong.</li>
+              <li>Network problems admit <strong>specialised</strong> fast algorithms—use them when applicable.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Module pagination">
+            <a class="btn btn--ghost" href="../">← All modules</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="machine-learning.html">Next: Machine Learning →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© <span data-year></span> Nirav Ramidi</p>
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../resume/">Resume</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+    </div>
   </footer>
+
+  <!-- Scripts (kept separate) -->
   <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>

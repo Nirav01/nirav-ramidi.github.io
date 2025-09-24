@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital Systems — Module — Nirav Ramidi</title>
+  <meta name="description" content="Combinational and sequential logic, Boolean algebra & Karnaugh maps, adders/ALU, flip-flops, FSM design, and timing analysis." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="icon" href="../../assets/img/favicon.png" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../experience.html">Experience</a></li>
+          <li><a href="../../projects/">Projects</a></li>
+          <li><a href="../../writing/">Writing</a></li>
+          <li><a href="../">Education</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../">Home</a></li>
+        <li><a href="../">Education</a></li>
+        <li><span aria-current="page">Digital Systems</span></li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Digital Systems</h1>
+        <p class="lead">
+          From <strong>Boolean algebra</strong> and <strong>K-maps</strong> to <strong>flip-flops</strong>, 
+          <strong>finite state machines</strong>, and <strong>timing analysis</strong>. Build reliable combinational 
+          and sequential circuits and reason about performance constraints.
+        </p>
+        <ul class="chips">
+          <li class="chip">Combinational Logic</li>
+          <li class="chip">Sequential Logic</li>
+          <li class="chip">FSMs</li>
+          <li class="chip">Timing</li>
+        </ul>
+
+        <div class="actions">
+          <!-- Place these files in this folder to activate links -->
+          <a class="btn btn--secondary" href="comp20020_001.pdf">Course overview / slides (PDF)</a>
+          <a class="btn btn--ghost" href="Assignment%201%20Answers.pdf">Assignment 1 — Answers</a>
+          <a class="btn btn--ghost" href="Assignment%202%20Answers.pdf">Assignment 2 — Answers</a>
+          <a class="btn btn--ghost" href="Assignment%203%20Answers.pdf">Assignment 3 — Answers</a>
+        </div>
+
+        <p class="muted small">
+          Tip: If a link 404s, ensure the file exists in <code>/education/modules/</code> with the exact filename above.
+        </p>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="section">
+      <div class="container grid case-grid">
+        <!-- Meta -->
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Module info</h2>
+          <dl class="meta-list">
+            <dt>Category</dt><dd>Systems · Hardware</dd>
+            <dt>Focus</dt><dd>Logic design · State · Timing</dd>
+            <dt>Stack</dt><dd>Logisim / Quartus, basic Verilog (intro), truth tables &amp; K-maps</dd>
+            <dt>Assessment</dt><dd>Problem sets, design labs, final assessment</dd>
+          </dl>
+          <div class="note small">
+            <p><strong>Related modules:</strong> <a href="comp-networking.html">Computer Networking</a>, <a href="intro-to-os.html">Operating Systems</a>.</p>
+          </div>
+        </aside>
+
+        <!-- Body -->
+        <article class="case-body">
+          <!-- Outcomes -->
+          <section class="case-section" id="outcomes">
+            <h2>Learning Outcomes</h2>
+            <ul>
+              <li>Simplify logic with <strong>Boolean identities</strong> and <strong>Karnaugh maps</strong>.</li>
+              <li>Design adders, multiplexers, decoders, comparators, and small ALUs.</li>
+              <li>Use <strong>D/JK flip-flops</strong> to build registers, counters, and FSMs.</li>
+              <li>Specify and implement <strong>Mealy/Moore</strong> machines from textual requirements.</li>
+              <li>Analyse <strong>timing</strong>: setup/hold, clk→Q, critical path, and f<sub>max</sub>.</li>
+            </ul>
+          </section>
+
+          <!-- Topics -->
+          <section class="case-section" id="topics">
+            <h2>Indicative Topics</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>Boolean Algebra &amp; Minimisation</h3></header>
+                <p class="card__body">De Morgan’s, distributive/associative, absorption; K-maps (2–5 vars), don’t-care handling.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Combinational Blocks</h3></header>
+                <p class="card__body">Half/full adders, ripple/carry-lookahead, MUX/DEMUX, encoders/decoders, priority logic.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Sequential Logic</h3></header>
+                <p class="card__body">Latches vs flip-flops, registers, synchronous counters, shift registers, debouncing.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>FSM Design</h3></header>
+                <p class="card__body">State encoding (binary/one-hot/Gray), transition/output logic, hazards &amp; synchronisers.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Timing &amp; Constraints</h3></header>
+                <p class="card__body">Setup/hold, clk→Q, propagation, skew/jitter, critical path and maximum clock frequency.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Quick reference -->
+          <section class="case-section" id="reference">
+            <h2>Quick Reference</h2>
+
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>De Morgan &amp; Identities</h3></header>
+                <pre class="code-block"><code>¬(A · B) = ¬A + ¬B
+¬(A + B) = ¬A · ¬B
+A + (A · B) = A
+A · (A + B) = A</code></pre>
+                <p class="muted small">Use don’t-cares (X) in K-maps to form larger groups (2ⁿ cells).</p>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>Adders — Ripple vs Lookahead</h3></header>
+                <pre class="code-block"><code>sum_i = a_i ⊕ b_i ⊕ c_i
+c_{i+1} = g_i + p_i · c_i
+g_i = a_i · b_i,   p_i = a_i ⊕ b_i</code></pre>
+                <p class="muted small">Carry lookahead reduces critical path depth vs ripple addition.</p>
+              </div>
+            </div>
+
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Flip-flops (characteristic)</h3></header>
+                <pre class="code-block"><code>D : Q_{next} = D
+JK: Q_{next} = J·¬Q + ¬K·Q   // J=K=1 toggles</code></pre>
+                <p class="muted small">Use D-FFs for pipelines/registers; JK useful for toggle counters.</p>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>Clock &amp; f<sub>max</sub></h3></header>
+                <pre class="code-block"><code>T_clk ≥ T_clk→Q + T_comb + T_setup + T_skew
+f_max = 1 / T_clk</code></pre>
+                <p class="muted small">Critical path defines T_comb; shorten with pipeline registers.</p>
+              </div>
+            </div>
+
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Binary ↔ Hex Quick Map</h3></header>
+                <pre class="code-block"><code>0000=0 0001=1 0010=2 0011=3
+0100=4 0101=5 0110=6 0111=7
+1000=8 1001=9 1010=A 1011=B
+1100=C 1101=D 1110=E 1111=F</code></pre>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>FSM Steps</h3></header>
+                <pre class="code-block"><code>1) Define I/O & states
+2) Draw state diagram
+3) Write transition/output table
+4) Choose encoding (one-hot/binary)
+5) Derive next-state/output logic (K-maps)
+6) Verify timing & reset</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- Artefacts -->
+          <section class="case-section" id="artifacts">
+            <h2>Selected Artefacts</h2>
+            <ul class="list">
+              <li><a href="comp20020_001.pdf">Lecture — Digital Systems overview</a></li>
+              <li><a href="Assignment%201%20Answers.pdf">Assignment 1 — Answers</a></li>
+              <li><a href="Assignment%202%20Answers.pdf">Assignment 2 — Answers</a></li>
+              <li><a href="Assignment%203%20Answers.pdf">Assignment 3 — Answers</a></li>
+            </ul>
+            <p class="muted small">Answers are for study/reference; credit original coursework where applicable.</p>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Module pagination">
+            <a class="btn btn--ghost" href="comp-networking.html">← Computer Networking</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="data-structures.html">Next: Data Structures →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../resume/">Resume</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

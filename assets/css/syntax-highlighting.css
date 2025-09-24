@@ -1,0 +1,169 @@
+/* ==========================================================================
+   syntax-highlighting.css — Nirav Ramidi Portfolio
+   Lightweight token colors that work with the code block chrome in main.css.
+   This file intentionally avoids setting a hard background so it layers
+   nicely over .code-block / pre from main.css.
+   ========================================================================== */
+
+/* Base: scope common code elements */
+pre[class*="language-"],
+code[class*="language-"] {
+  text-shadow: none;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  tab-size: 2;
+}
+
+/* Inline code */
+:not(pre) > code {
+  padding: .15rem .35rem;
+  border-radius: 6px;
+  background: color-mix(in oklab, var(--soft, #f3f4f6), transparent 30%);
+  border: 1px solid color-mix(in oklab, var(--border, #e5e7eb), transparent 50%);
+}
+
+/* -----------------------------
+   Token colors (light mode)
+   ----------------------------- */
+:root {
+  --syn-fg: #111827;   /* base text */
+  --syn-muted: #6b7280;
+  --syn-kw: #1d4ed8;   /* keywords */
+  --syn-fn: #7c3aed;   /* functions */
+  --syn-str: #047857;  /* strings */
+  --syn-num: #b91c1c;  /* numbers */
+  --syn-type: #0369a1; /* classes/types */
+  --syn-prop: #0f766e; /* properties/attrs */
+  --syn-punc: #374151; /* punctuation */
+  --syn-op: #6d28d9;   /* operators */
+  --syn-meta: #7c2d12; /* annotations/meta */
+  --syn-del: #dc2626;
+  --syn-add: #059669;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--syn-muted);
+  font-style: italic;
+}
+
+.token.punctuation { color: var(--syn-punc); }
+.token.operator { color: var(--syn-op); }
+.token.keyword,
+.token.control,
+.token.directive { color: var(--syn-kw); font-weight: 600; }
+
+.token.boolean,
+.token.number { color: var(--syn-num); }
+
+.token.string,
+.token.char,
+.token.regex,
+.token.attr-value { color: var(--syn-str); }
+
+.token.function,
+.token.builtin { color: var(--syn-fn); }
+
+.token.class-name,
+.token.type,
+.token.namespace { color: var(--syn-type); font-weight: 600; }
+
+.token.property,
+.token.attr-name,
+.token.constant,
+.token.symbol { color: var(--syn-prop); }
+
+.token.tag,
+.token.selector { color: var(--syn-type); }
+
+.token.url { color: var(--syn-kw); text-decoration: underline; }
+
+.token.entity,
+.token.parameter,
+.token.variable { color: var(--syn-fg); }
+
+.token.important { font-weight: 700; }
+.token.bold { font-weight: 700; }
+.token.italic { font-style: italic; }
+
+.token.inserted { color: var(--syn-add); background: rgba(5,150,105,.08); }
+.token.deleted  { color: var(--syn-del); background: rgba(220,38,38,.08); }
+
+/* -----------------------------
+   Token colors (dark mode)
+   ----------------------------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --syn-fg: #e5e7eb;
+    --syn-muted: #9ca3af;
+    --syn-kw: #93c5fd;     /* light blue */
+    --syn-fn: #c4b5fd;     /* soft violet */
+    --syn-str: #86efac;    /* green */
+    --syn-num: #fca5a5;    /* red */
+    --syn-type: #7dd3fc;   /* sky */
+    --syn-prop: #67e8f9;   /* cyan */
+    --syn-punc: #cbd5e1;   /* slate-300 */
+    --syn-op: #c7d2fe;     /* indigo-200 */
+    --syn-meta: #fca5a5;
+    --syn-del: #f87171;
+    --syn-add: #34d399;
+  }
+  :not(pre) > code {
+    background: color-mix(in oklab, var(--soft, #101826), transparent 20%);
+    border-color: color-mix(in oklab, var(--border, #1f2937), transparent 30%);
+  }
+}
+
+/* -----------------------------
+   Line highlight (optional)
+   Add class="line-highlight" as a background span overlay if your
+   highlighter supports it; safe no-op otherwise.
+   ----------------------------- */
+.line-highlight {
+  background: linear-gradient(90deg, rgba(253,224,71,.18), rgba(253,224,71,.06));
+  display: block;
+  margin: 0 -1.1rem; /* align with .code-block padding in main.css */
+  padding: 0 1.1rem;
+  border-left: 3px solid #fde047;
+}
+
+/* -----------------------------
+   Line numbers (optional)
+   Works with pre.line-numbers > code (if your highlighter emits them).
+   ----------------------------- */
+pre.line-numbers {
+  position: relative;
+  padding-left: 3.2rem; /* gutter */
+}
+pre.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 1rem; bottom: 1rem; left: 0;
+  width: 2.4rem;
+  border-right: 1px solid color-mix(in oklab, var(--border, #e5e7eb), transparent 30%);
+}
+pre.line-numbers .line-numbers-rows > span {
+  display: block;
+  counter-increment: linenumber;
+  color: var(--syn-muted);
+  text-align: right;
+  padding-right: .6rem;
+  line-height: 1.6;
+}
+pre.line-numbers .line-numbers-rows > span:before {
+  content: counter(linenumber);
+}
+
+/* -----------------------------
+   Compatibility aliases
+   (maps to token names some highlighters use)
+   ----------------------------- */
+.token.plain { color: var(--syn-fg); }
+.token.variable.language,
+.token.this { color: var(--syn-type); }
+.token.annotation,
+.token.meta { color: var(--syn-meta); }

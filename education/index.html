@@ -2,40 +2,348 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Education — Nirav Ramidi</title>
-  <meta name="description" content="UCD BSc (Hons) Computer Science modules and artefacts." />
+  <meta name="description" content="Modules, coursework, and selected academic projects across Data/ML, Systems, Cloud/SRE, and HCI/Visualization." />
+
+  <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="icon" href="../assets/img/favicon.png" />
 </head>
+
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <nav aria-label="Primary">
-      <a class="brand" href="../index.html">NR</a>
-      <ul class="nav">
-        <li><a href="../experience.html">Experience</a></li>
-        <li><a href="../projects/index.html">Projects</a></li>
-        <li><a href="../writing/index.html">Writing</a></li>
-        <li><a aria-current="page" href="index.html">Education</a></li>
-        <li><a href="../resume/index.html">Resume</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../">Home</a></li>
+          <li><a href="../experience.html">Experience</a></li>
+          <li><a href="../projects/">Projects</a></li>
+          <li><a href="../writing/">Writing</a></li>
+          <li><a href="./" aria-current="page">Education</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
   </header>
 
-  <main id="main">
-    <h1>Education</h1>
-    <ul class="list">
-      <li><a href="modules/optimisation.html">Optimisation (Julia/JuMP)</a></li>
-      <li><a href="modules/machine-learning.html">Machine Learning (SVM/kNN/DT)</a></li>
-      <li><a href="modules/infovis.html">Information Visualisation (Vega-Lite)</a></li>
-      <!-- add the rest as needed -->
-    </ul>
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../">Home</a></li>
+        <li><span aria-current="page">Education</span></li>
+      </ol>
+    </nav>
+
+    <!-- Intro -->
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Education</h1>
+        <p class="lead">
+          A curated view of my university modules and coursework. Use the filters to jump to topics of interest,
+          or open a module page for summaries, artefacts, and key learnings.
+        </p>
+        <div class="actions">
+          <a class="btn btn--secondary" href="../projects/">See projects</a>
+          <a class="btn btn--ghost" href="../resume/">Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="section">
+      <div class="container">
+        <div class="filters" role="toolbar" aria-label="Filter modules">
+          <button class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" data-filter="ml-data">ML / Data</button>
+          <button class="filter" data-filter="systems">Systems</button>
+          <button class="filter" data-filter="cloud-sre">Cloud / SRE</button>
+          <button class="filter" data-filter="viz-hcai">Vis / HCAI</button>
+          <button class="filter" data-filter="swe">Software Eng</button>
+          <button class="filter" data-filter="theory">Theory</button>
+          <button class="filter" data-filter="business">Business / Soc.</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Module grid -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Modules &amp; Coursework</h2>
+
+        <div class="grid cards" id="moduleGrid">
+          <!-- ML / Data -->
+          <article class="card" data-tags="ml-data">
+            <header class="card__header">
+              <h3><a href="modules/machine-learning.html">Machine Learning</a></h3>
+              <p class="card__kicker">Supervised/unsupervised · model eval</p>
+            </header>
+            <p class="card__body">From regression/classification baselines to SVMs, ensembles, and validation strategies.</p>
+          </article>
+
+          <article class="card" data-tags="ml-data">
+            <header class="card__header">
+              <h3><a href="modules/data-mining.html">Data Mining</a></h3>
+              <p class="card__kicker">Pipelines · SMOTE · clustering</p>
+            </header>
+            <p class="card__body">Imbalanced learning, KMeans/DBSCAN, and PR/ROC evaluation with clean preprocessing.</p>
+          </article>
+
+          <article class="card" data-tags="viz-hcai">
+            <header class="card__header">
+              <h3><a href="modules/information-visualisation.html">Information Visualisation</a></h3>
+              <p class="card__kicker">Vega-Lite · interaction design</p>
+            </header>
+            <p class="card__body">Brushing &amp; linking, small multiples, tidy transforms, and perceptual best practices.</p>
+          </article>
+
+          <article class="card" data-tags="viz-hcai">
+            <header class="card__header">
+              <h3><a href="modules/human-centred-ai.html">Human-Centred AI</a></h3>
+              <p class="card__kicker">Explainability · trust · usability</p>
+            </header>
+            <p class="card__body">Study design, SUS/NASA-TLX, recourse, and calibrated transparency patterns.</p>
+          </article>
+
+          <!-- Cloud / SRE -->
+          <article class="card" data-tags="cloud-sre">
+            <header class="card__header">
+              <h3><a href="modules/cloud-computing.html">Cloud Computing</a></h3>
+              <p class="card__kicker">Containers · services · cost</p>
+            </header>
+            <p class="card__body">Patterns for containerised apps, storage, networking, and basic DevOps workflows.</p>
+          </article>
+
+          <article class="card" data-tags="cloud-sre">
+            <header class="card__header">
+              <h3><a href="modules/performance-of-computer-systems.html">Performance of Computer Systems</a></h3>
+              <p class="card__kicker">Queueing · benchmarking · SLOs</p>
+            </header>
+            <p class="card__body">M/M/K sizing, load testing, and using SLOs to guide capacity decisions.</p>
+          </article>
+
+          <!-- Systems -->
+          <article class="card" data-tags="systems">
+            <header class="card__header">
+              <h3><a href="modules/operating-systems.html">Intro to Operating Systems</a></h3>
+              <p class="card__kicker">Processes · memory · filesystems</p>
+            </header>
+            <p class="card__body">Scheduling, paging/segmentation, synchronisation, and virtual filesystems.</p>
+          </article>
+
+          <article class="card" data-tags="systems">
+            <header class="card__header">
+              <h3><a href="modules/computer-networking.html">Computer Networking</a></h3>
+              <p class="card__kicker">OSI/TCP-IP · routing · transport</p>
+            </header>
+            <p class="card__body">Layered models, congestion control, and practical labs on fundamentals.</p>
+          </article>
+
+          <article class="card" data-tags="systems theory">
+            <header class="card__header">
+              <h3><a href="modules/digital-systems.html">Digital Systems</a></h3>
+              <p class="card__kicker">Logic · circuits · state</p>
+            </header>
+            <p class="card__body">Combinational/Sequential logic, finite state machines, and basic hardware design.</p>
+          </article>
+
+          <!-- SWE -->
+          <article class="card" data-tags="swe">
+            <header class="card__header">
+              <h3><a href="modules/web-development.html">Web Development</a></h3>
+              <p class="card__kicker">Full-stack · MVC · REST</p>
+            </header>
+            <p class="card__body">Frontend+backend fundamentals, auth, validation, and deployment basics.</p>
+          </article>
+
+          <article class="card" data-tags="swe">
+            <header class="card__header">
+              <h3><a href="modules/software-engineering-project-1.html">Software Engineering Project 1</a></h3>
+              <p class="card__kicker">Teamwork · design · delivery</p>
+            </header>
+            <p class="card__body">Requirements, iteration planning, and building a working prototype.</p>
+          </article>
+
+          <article class="card" data-tags="swe">
+            <header class="card__header">
+              <h3><a href="modules/software-engineering-project-2.html">Software Engineering Project 2</a></h3>
+              <p class="card__kicker">Scaling · testing · polish</p>
+            </header>
+            <p class="card__body">Hardening, test coverage, and handover with docs and demo.</p>
+          </article>
+
+          <!-- Theory -->
+          <article class="card" data-tags="theory">
+            <header class="card__header">
+              <h3><a href="modules/algorithms.html">Algorithms</a></h3>
+              <p class="card__kicker">Greedy · divide &amp; conquer · DP</p>
+            </header>
+            <p class="card__body">Asymptotics, correctness, classic problems, and compression (Huffman) practice.</p>
+          </article>
+
+          <article class="card" data-tags="theory">
+            <header class="card__header">
+              <h3><a href="modules/graph-algorithms.html">Graph Algorithms</a></h3>
+              <p class="card__kicker">Shortest paths · flows</p>
+            </header>
+            <p class="card__body">Connectivity, MSTs, Dijkstra/Bellman-Ford, and network flows.</p>
+          </article>
+
+          <article class="card" data-tags="theory">
+            <header class="card__header">
+              <h3><a href="modules/optimisation.html">Optimisation</a></h3>
+              <p class="card__kicker">LP · ILP · heuristics</p>
+            </header>
+            <p class="card__body">Formulation, duality intuition, solvers, and practical heuristics.</p>
+          </article>
+
+          <!-- Core CS -->
+          <article class="card" data-tags="swe">
+            <header class="card__header">
+              <h3><a href="modules/introduction-to-java.html">Introduction to Java</a></h3>
+              <p class="card__kicker">OOP · testing · exceptions</p>
+            </header>
+            <p class="card__body">From syntax &amp; control flow to classes, inheritance, and unit tests.</p>
+          </article>
+
+          <article class="card" data-tags="swe theory">
+            <header class="card__header">
+              <h3><a href="modules/data-structures.html">Data Structures</a></h3>
+              <p class="card__kicker">Lists · trees · heaps · hash</p>
+            </header>
+            <p class="card__body">Implementation details, complexity, and idiomatic usage patterns.</p>
+          </article>
+
+          <article class="card" data-tags="swe">
+            <header class="card__header">
+              <h3><a href="modules/computer-programming-i.html">Computer Programming I</a></h3>
+              <p class="card__kicker">C basics · loops · I/O</p>
+            </header>
+            <p class="card__body">Intro to programming with C: variables, control flow, and simple programs.</p>
+          </article>
+
+          <article class="card" data-tags="swe">
+            <header class="card__header">
+              <h3><a href="modules/computer-programming-ii.html">Computer Programming II</a></h3>
+              <p class="card__kicker">Data structures · modular C</p>
+            </header>
+            <p class="card__body">Pointers, modular design, and small systems like a Twitter-like CLI.</p>
+          </article>
+
+          <!-- Security / DB -->
+          <article class="card" data-tags="systems">
+            <header class="card__header">
+              <h3><a href="modules/information-security.html">Information Security</a></h3>
+              <p class="card__kicker">Threats · crypto basics · policy</p>
+            </header>
+            <p class="card__body">Foundations of securing systems and practical risk assessment.</p>
+          </article>
+
+          <article class="card" data-tags="systems">
+            <header class="card__header">
+              <h3><a href="modules/databases-and-information-systems-i.html">Databases &amp; Info Systems I</a></h3>
+              <p class="card__kicker">ER → SQL · normal forms</p>
+            </header>
+            <p class="card__body">Schema design, relational algebra, queries, and basic transactions.</p>
+          </article>
+
+          <!-- Electives / Business / Soc -->
+          <article class="card" data-tags="business">
+            <header class="card__header">
+              <h3><a href="modules/business-plan.html">Business Plan</a></h3>
+              <p class="card__kicker">Unit economics · CVP</p>
+            </header>
+            <p class="card__body">Market sizing, PMPM, divisional P&amp;L, and break-even analysis.</p>
+          </article>
+
+          <article class="card" data-tags="business">
+            <header class="card__header">
+              <h3><a href="modules/introduction-to-sociology.html">Introduction to Sociology</a></h3>
+              <p class="card__kicker">Social structures · methods</p>
+            </header>
+            <p class="card__body">Core concepts and how social context shapes technology and policy.</p>
+          </article>
+
+          <!-- Comms / Wireless -->
+          <article class="card" data-tags="systems">
+            <header class="card__header">
+              <h3><a href="modules/advances-in-wireless-networking.html">Advances in Wireless Networking</a></h3>
+              <p class="card__kicker">802.11 · 5G/edge · IoT</p>
+            </header>
+            <p class="card__body">Modern wireless protocols, edge computing, and performance considerations.</p>
+          </article>
+
+          <!-- Big Data / FYP -->
+          <article class="card" data-tags="ml-data swe">
+            <header class="card__header">
+              <h3><a href="modules/programming-for-big-data.html">Programming for Big Data</a></h3>
+              <p class="card__kicker">Python · ETL · analytics</p>
+            </header>
+            <p class="card__body">Data processing patterns and a small group analytics project.</p>
+          </article>
+
+          <article class="card" data-tags="ml-data swe viz-hcai">
+            <header class="card__header">
+              <h3><a href="modules/final-year-project.html">Final Year Project</a></h3>
+              <p class="card__kicker">Research · build · evaluate</p>
+            </header>
+            <p class="card__body">Independent project tying together methodology, implementation, and reporting.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Callout -->
+    <section class="section">
+      <div class="container">
+        <div class="note">
+          <p><strong>Heads up:</strong> Each module page lives under <code>/education/modules/…</code>. If a link 404s, that page is still being added.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer nav -->
+    <section class="section">
+      <div class="container">
+        <nav class="case-pager" aria-label="Education pagination">
+          <a class="btn btn--ghost" href="../projects/">← Projects</a>
+          <div class="spacer"></div>
+          <a class="btn btn--secondary" href="../writing/">Go to Writing →</a>
+        </nav>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© <span data-year></span> Nirav Ramidi</p>
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../resume/">Resume</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
   </footer>
+
+  <!-- Scripts (kept separate) -->
   <script src="../assets/js/main.js" defer></script>
 </body>
 </html>

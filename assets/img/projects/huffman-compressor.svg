@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs><linearGradient id="bg5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#111827"></stop><stop offset="1" stop-color="#1f2937"></stop></linearGradient></defs>
+  <rect width="1200" height="630" rx="28" fill="url(#bg5)"></rect>
+  <g stroke="#60a5fa" stroke-width="4" fill="none">
+    <path d="M200 440 L300 320 L260 240"></path>
+    <path d="M300 320 L380 260"></path>
+    <path d="M300 320 L420 380"></path>
+    <circle cx="200" cy="440" r="6" fill="#60a5fa"></circle><circle cx="300" cy="320" r="6" fill="#60a5fa"></circle>
+    <circle cx="260" cy="240" r="6" fill="#60a5fa"></circle><circle cx="380" cy="260" r="6" fill="#60a5fa"></circle>
+    <circle cx="420" cy="380" r="6" fill="#60a5fa"></circle>
+  </g>
+  <text x="60" y="120" fill="#fff" font-size="48" font-weight="800" font-family="Inter, ui-sans-serif">Huffman Compressor</text>
+  <text x="60" y="560" fill="#9ca3af" font-size="24" font-family="Inter, ui-sans-serif">Greedy • Priority queue • Entropy</text>
+</svg>

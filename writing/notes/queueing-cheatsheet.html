@@ -3,34 +3,266 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Queueing Cheat‑Sheet · Nirav Ramidi</title>
-  <meta name="description" content="Data Scientist & ML Engineer — shipping reliable models and systems" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css" />
+  <title>Queueing Cheatsheet — Notes — Nirav Ramidi</title>
+  <meta name="description" content="Compact formulas and rules of thumb for M/M/1, M/D/1, M/M/1/K, and M/M/K (Erlang-C). Little’s Law, stability, and quick sizing tips." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="icon" href="../../assets/img/favicon.png" />
 </head>
+
 <body>
-  
-    <header class="site-header">
-      <a class="brand" href="index.html">Nirav Ramidi</a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-      <nav class="site-nav"><a href="index.html" class="">Home</a><a href="experience.html" class="">Experience</a><a href="projects/index.html" class="">Projects</a><a href="writing/index.html" class="active">Writing</a><a href="education/index.html" class="">Education</a><a href="resume/index.html" class="">Resume</a><a href="contact.html" class="">Contact</a></nav>
-      
-    <div class="socials">
-      <a href="https://github.com/Nirav01/" aria-label="GitHub (opens in new tab)" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/nirav-ramidi/" aria-label="LinkedIn (opens in new tab)" target="_blank" rel="noopener">LinkedIn</a>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../experience.html">Experience</a></li>
+          <li><a href="../../projects/">Projects</a></li>
+          <li><a href="../">Writing</a></li>
+          <li><a href="../../education/">Education</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
     </div>
-    </header>
-    
-  <main class="container">
-    <article class="card"><h1>Queueing Cheat‑Sheet</h1><ul class='list'><li>M/M/1: ρ=λ/μ, W=1/(μ-λ)</li><li>M/M/K Erlang‑C basics…</li></ul></article>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../">Home</a></li>
+        <li><a href="../">Writing</a></li>
+        <li><a href="../index.html#notes">Notes</a></li>
+        <li><span aria-current="page">Queueing Cheatsheet</span></li>
+      </ol>
+    </nav>
+
+    <!-- Title -->
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Queueing Cheatsheet</h1>
+        <p class="lead">
+          Fast reference for common models: <strong>M/M/1</strong>, <strong>M/D/1</strong>, <strong>M/M/1/K</strong> (finite capacity),
+          and <strong>M/M/K</strong> (Erlang-C). Includes <em>Little’s Law</em>, stability, and quick sizing rules.
+        </p>
+        <ul class="chips">
+          <li class="chip">Performance</li>
+          <li class="chip">Capacity Planning</li>
+          <li class="chip">SRE</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Notation -->
+    <section class="section">
+      <div class="container">
+        <h2>Notation</h2>
+        <div class="grid two">
+          <ul>
+            <li><strong>λ</strong> — arrival rate (req/s)</li>
+            <li><strong>μ</strong> — service rate per server (1/s)</li>
+            <li><strong>K</strong> — number of parallel servers</li>
+            <li><strong>ρ</strong> — utilisation
+              <span class="muted">(M/M/1: ρ=λ/μ; M/M/K: ρ=λ/(Kμ))</span>
+            </li>
+          </ul>
+          <ul>
+            <li><strong>W</strong> — mean response (sojourn) time</li>
+            <li><strong>W<sub>q</sub></strong> — mean waiting time in queue</li>
+            <li><strong>L</strong> — mean number in system</li>
+            <li><strong>L<sub>q</sub></strong> — mean number waiting</li>
+          </ul>
+        </div>
+        <p class="muted small"><strong>Little’s Law:</strong> <code>L = λ · W</code> and <code>L<sub>q</sub> = λ · W<sub>q</sub></code> (for stable systems).</p>
+      </div>
+    </section>
+
+    <!-- M/M/1 -->
+    <section class="section">
+      <div class="container">
+        <h2>M/M/1 (Poisson arrivals, exponential service, single server)</h2>
+        <div class="card">
+          <div class="card__body">
+            <ul class="tight">
+              <li><strong>Stability:</strong> ρ = λ/μ &lt; 1</li>
+              <li><strong>W</strong> = <code>1 / (μ − λ)</code></li>
+              <li><strong>W<sub>q</sub></strong> = <code>ρ / (μ − λ)</code></li>
+              <li><strong>L</strong> = <code>ρ / (1 − ρ)</code></li>
+              <li><strong>L<sub>q</sub></strong> = <code>ρ² / (1 − ρ)</code></li>
+            </ul>
+          </div>
+        </div>
+        <p class="muted small">As ρ → 1, queueing explodes; keep planned peaks ≤ 0.7–0.8.</p>
+      </div>
+    </section>
+
+    <!-- M/D/1 -->
+    <section class="section">
+      <div class="container">
+        <h2>M/D/1 (Poisson arrivals, <em>deterministic</em> service, single server)</h2>
+        <div class="card">
+          <div class="card__body">
+            <ul class="tight">
+              <li><strong>Stability:</strong> ρ = λ/μ &lt; 1</li>
+              <li><strong>W<sub>q</sub></strong> = <code>ρ / (2 · μ · (1 − ρ))</code></li>
+              <li><strong>W</strong> = <code>W<sub>q</sub> + 1/μ</code> = <code>ρ/(2μ(1−ρ)) + 1/μ</code></li>
+              <li>Compare to M/M/1: deterministic service roughly halves waiting time near the same ρ.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- M/M/1/K -->
+    <section class="section">
+      <div class="container">
+        <h2>M/M/1/K (finite capacity, blocking)</h2>
+        <p>System capacity <strong>K</strong> includes the job in service. New arrivals seeing K jobs are <em>blocked</em>.</p>
+        <div class="card">
+          <div class="card__body">
+            <ul class="tight">
+              <li><strong>ρ</strong> = λ/μ (use for formulas below), assume ρ ≠ 1.</li>
+              <li><strong>P<sub>0</sub></strong> = <code>(1−ρ) / (1 − ρ<sup>K+1</sup>)</code></li>
+              <li><strong>P<sub>n</sub></strong> = <code>P<sub>0</sub> · ρ<sup>n</sup></code> for n=0..K</li>
+              <li><strong>Blocking</strong> (loss) <strong>B</strong> = <code>P<sub>K</sub></code></li>
+              <li><strong>Effective arrivals</strong> λ<sub>eff</sub> = <code>λ · (1 − B)</code></li>
+              <li><strong>L</strong> = <code>∑ n·P<sub>n</sub></code> (closed form exists but the above suffices for quick calcs)</li>
+            </ul>
+          </div>
+        </div>
+        <p class="muted small">Use when you want to trade <em>loss</em> for bounded queueing (e.g., small request buffers).</p>
+      </div>
+    </section>
+
+    <!-- M/M/K Erlang C -->
+    <section class="section">
+      <div class="container">
+        <h2>M/M/K (parallel servers) — Erlang-C</h2>
+        <p>Let <strong>a = λ/μ</strong> (offered load) and <strong>ρ = a/K</strong>. Valid when ρ &lt; 1.</p>
+        <div class="card">
+          <div class="card__body">
+            <ul class="tight">
+              <li><strong>Probability of wait</strong> (Erlang-C):
+                <code>
+                  P<sub>wait</sub> =
+                  [ (a<sup>K</sup> / K!) · (K / (K−a)) ] ÷ [ ∑<sub>i=0</sub><sup>K−1</sup> (a<sup>i</sup>/i!) + (a<sup>K</sup>/K!) · (K/(K−a)) ]
+                </code>
+              </li>
+              <li><strong>W<sub>q</sub></strong> = <code>P<sub>wait</sub> / (K·μ − λ)</code></li>
+              <li><strong>W</strong> = <code>W<sub>q</sub> + 1/μ</code></li>
+              <li><strong>L<sub>q</sub></strong> = <code>λ · W<sub>q</sub></code>, &nbsp; <strong>L</strong> = <code>λ · W</code></li>
+            </ul>
+          </div>
+        </div>
+        <p class="muted small">Great for sizing thread pools / replica counts to hit a latency SLO (e.g., W ≤ 1 s).</p>
+      </div>
+    </section>
+
+    <!-- Rules of thumb -->
+    <section class="section">
+      <div class="container">
+        <h2>Rules of Thumb</h2>
+        <ul class="checklist">
+          <li><strong>Headroom:</strong> plan peak <strong>ρ ≤ 0.7–0.8</strong> to avoid tail blow-ups.</li>
+          <li><strong>Parallelism beats buffering</strong> for latency SLOs; buffers mainly trade delay vs loss.</li>
+          <li><strong>Deterministic service</strong> (M/D/1) ≈ halves queueing vs M/M/1 near same ρ.</li>
+          <li><strong>Knee point:</strong> alert when <strong>W ≈ service time</strong> (M/M/1) — queueing starts dominating.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Quick calculator stub -->
+    <section class="section">
+      <div class="container">
+        <h2>Quick Calculator (optional)</h2>
+        <p class="muted small">This form is wired in <code>assets/js/main.js</code> if you enable it. Otherwise, use the formulas above.</p>
+
+        <form id="queueCalc" class="card form" action="#" method="post" novalidate>
+          <div class="form-row">
+            <label for="model">Model</label>
+            <select id="model" name="model">
+              <option value="mm1">M/M/1</option>
+              <option value="md1">M/D/1</option>
+              <option value="mm1k">M/M/1/K</option>
+              <option value="mmk">M/M/K</option>
+            </select>
+          </div>
+
+          <div class="grid two">
+            <div class="form-row">
+              <label for="lambda">λ (req/s)</label>
+              <input id="lambda" name="lambda" type="number" min="0" step="any" />
+            </div>
+            <div class="form-row">
+              <label for="mu">μ (1/s)</label>
+              <input id="mu" name="mu" type="number" min="0" step="any" />
+            </div>
+          </div>
+
+          <div class="grid two">
+            <div class="form-row">
+              <label for="servers">K (servers)</label>
+              <input id="servers" name="servers" type="number" min="1" step="1" value="1" />
+            </div>
+            <div class="form-row">
+              <label for="capacity">K (capacity for M/M/1/K)</label>
+              <input id="capacity" name="capacity" type="number" min="1" step="1" value="10" />
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn--primary">Compute</button>
+            <button type="reset" class="btn btn--ghost">Clear</button>
+          </div>
+
+          <div id="calcResults" class="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- References -->
+    <section class="section">
+      <div class="container">
+        <h2>References &amp; Caveats</h2>
+        <ul class="muted small">
+          <li>Assumes Poisson arrivals and specified service distributions; validate with load tests.</li>
+          <li>Use <strong>M/G/1</strong> (Pollaczek–Khinchine) for general service times: <code>W<sub>q</sub> = λ·E[S²] / (2·(1−ρ))</code>.</li>
+          <li>For percentiles, analytical forms are limited; simulate or fit distributions to traces.</li>
+        </ul>
+      </div>
+    </section>
   </main>
-  
-    <footer class="site-footer">
-      <p>© Nirav Ramidi · <a href="https://github.com/Nirav01/" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></p>
-    </footer>
-    <script src="/assets/js/main.js"></script>
-    
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../resume/">Resume</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>

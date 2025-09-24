@@ -3,84 +3,305 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Home · Nirav Ramidi</title>
-  <meta name="description" content="Data Scientist & ML Engineer — shipping reliable models and systems" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css" />
+  <title>Nirav Ramidi — Data Scientist & ML Engineer</title>
+  <meta name="description" content="Portfolio of Nirav Ramidi — Data/ML, SWE/Systems, and Cloud/SRE projects. Forecasting (MAPE 7.9%), BigQuery pipelines, CNN/OCR microservices (p95 < 300 ms), and SLAM/vision experiments." />
+
+  <!-- Open Graph / Twitter (fill image later) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Nirav Ramidi — Portfolio" />
+  <meta property="og:description" content="Data/ML, SWE/Systems, and Cloud/SRE projects with measurable impact." />
+  <meta property="og:url" content="https://nirav01.github.io/" />
+  <meta property="og:image" content="assets/img/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="icon" href="assets/img/favicon.png" />
 </head>
+
 <body>
-  
-    <header class="site-header">
-      <a class="brand" href="index.html">Nirav Ramidi</a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-      <nav class="site-nav"><a href="index.html" class="active">Home</a><a href="experience.html" class="">Experience</a><a href="projects/index.html" class="">Projects</a><a href="writing/index.html" class="">Writing</a><a href="education/index.html" class="">Education</a><a href="resume/index.html" class="">Resume</a><a href="contact.html" class="">Contact</a></nav>
-      
-    <div class="socials">
-      <a href="https://github.com/Nirav01/" aria-label="GitHub (opens in new tab)" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/nirav-ramidi/" aria-label="LinkedIn (opens in new tab)" target="_blank" rel="noopener">LinkedIn</a>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="/" aria-current="page">Home</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="projects/">Projects</a></li>
+          <li><a href="writing/">Writing</a></li>
+          <li><a href="education/">Education</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
     </div>
-    </header>
-    
-  <main class="container">
-    
-<section class="hero">
-  <div class="card">
-    <h1>Nirav Ramidi</h1>
-    <p>Data Scientist & ML Engineer — shipping reliable models and systems</p>
-    <p style="color:var(--muted)">Forecasting (MAPE 7.9%), BigQuery pipelines, CNN/OCR services at p95 < 300 ms (~1k req/s), and SLAM/vision experiments.</p>
-    <div class="kpis">
-      <span class="kpi">MAPE&nbsp;7.9%</span>
-      <span class="kpi">p95&nbsp;&lt;&nbsp;300&nbsp;ms</span>
-      <span class="kpi">~1,000&nbsp;req/s</span>
-      <span class="kpi">BigQuery&nbsp;·&nbsp;Airflow</span>
-      <span class="kpi">Docker&nbsp;·&nbsp;K8s</span>
-    </div>
-    <div class="btn-row">
-      <a class="btn" href="projects/index.html">View Projects</a>
-      <a class="btn secondary" href="resume/index.html">Download CV</a>
-    </div>
-  </div>
-  <div class="grid cols-1">
-    <div class="card">
-      <h2>Spotlight</h2>
-      <ul class="list">
-        <li><strong>Icon Life Sciences</strong>: BigQuery golden-source + LightGBM forecasting → <em>MAPE 7.9%</em>.</li>
-        <li><strong>Vision Microservice</strong>: CNN-OCR on K8s → <em>p95 &lt; 300 ms</em> at ~1k req/s.</li>
-        <li><strong>LiDAR Re-localisation</strong>: ICP under sensor degradation (KITTI).</li>
-        <li><strong>Performance Modelling</strong>: M/M/K sizing to meet <em>W ≤ 1 s</em>.</li>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <h1>Data Scientist &amp; ML Engineer</h1>
+          <p class="lead">
+            I build reliable data products end-to-end — from <strong>BigQuery</strong> pipelines and forecasting
+            (MAPE <strong>7.9%</strong>) to <strong>CNN/OCR</strong> microservices on <strong>Docker/Kubernetes</strong> with
+            <strong>p95 &lt; 300&nbsp;ms</strong> at ~<strong>1k req/s</strong>.
+          </p>
+
+          <div class="hero__ctas">
+            <a href="projects/" class="btn btn--primary">View Projects</a>
+            <a href="resume/Nirav_Ramidi_CV.pdf" class="btn btn--secondary">Download CV</a>
+            <a href="contact.html" class="btn btn--ghost">Contact</a>
+          </div>
+
+          <ul class="metrics">
+            <li class="chip">MAPE 7.9%</li>
+            <li class="chip">p95 &lt; 300&nbsp;ms</li>
+            <li class="chip">~1k req/s</li>
+            <li class="chip">BigQuery + Airflow</li>
+            <li class="chip">Vertex AI</li>
+          </ul>
+        </div>
+
+        <figure class="hero__media">
+          <img src="assets/img/avatar.jpg" alt="Portrait of Nirav Ramidi" loading="lazy" />
+          <figcaption class="visually-hidden">Nirav Ramidi</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="highlights section">
+      <div class="container">
+        <h2 class="section__title">Highlights</h2>
+        <div class="grid cards">
+          <article class="card">
+            <header class="card__header">
+              <h3>Golden-Source &amp; Forecasting</h3>
+              <p class="card__kicker">Icon Life Sciences · Data/ML</p>
+            </header>
+            <p class="card__body">
+              Unified 12+ ERP/CRM/e-com/Rx silos into BigQuery and delivered brand-level forecasts
+              (MAPE 7.9%) — reduced CNS stock-outs by 18%.
+            </p>
+            <footer class="card__footer">
+              <a class="card__link" href="projects/data-ml/golden-source-forecasting.html">Read case study →</a>
+            </footer>
+          </article>
+
+          <article class="card">
+            <header class="card__header">
+              <h3>Vision Microservice at Scale</h3>
+              <p class="card__kicker">Cloud/SRE · CNN-OCR</p>
+            </header>
+            <p class="card__body">
+              Docker/K8s microservice with p95 &lt; 300 ms at ~1k req/s and ~0.2% error in load tests.
+            </p>
+            <footer class="card__footer">
+              <a class="card__link" href="projects/cloud-sre/vision-microservice.html">See architecture →</a>
+            </footer>
+          </article>
+
+          <article class="card">
+            <header class="card__header">
+              <h3>LiDAR Re-localisation</h3>
+              <p class="card__kicker">FYP · SLAM/ICP</p>
+            </header>
+            <p class="card__body">
+              Evaluated point-to-plane ICP under sensor degradation on KITTI; prioritised FoV &amp; range for
+              mobile setups.
+            </p>
+            <footer class="card__footer">
+              <a class="card__link" href="projects/swe-systems/lidar-icp.html">Explore results →</a>
+            </footer>
+          </article>
+
+          <article class="card">
+            <header class="card__header">
+              <h3>Queueing for Capacity Planning</h3>
+              <p class="card__kicker">Performance · M/M/K · Erlang-C</p>
+            </header>
+            <p class="card__body">
+              Sized DB connection pools to meet W ≤ 1s while minimising servers; compared M/D/1, M/M/1/n, and M/M/K.
+            </p>
+            <footer class="card__footer">
+              <a class="card__link" href="projects/cloud-sre/queueing-capacity.html">View analysis →</a>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="featured section">
+      <div class="container">
+        <h2 class="section__title">Featured Projects</h2>
+        <div class="grid tiles">
+          <a class="tile" href="projects/data-ml/astronomy-classifier.html">
+            <img src="assets/img/projects/astro-thumb.jpg" alt="Astronomy classifier project thumbnail" loading="lazy" />
+            <div class="tile__meta">
+              <h3>Astronomy Classifier (SDSS)</h3>
+              <p>SVM vs kNN vs DT · ROC per class · Feature selection</p>
+            </div>
+          </a>
+
+          <a class="tile" href="projects/swe-systems/java-marketplace.html">
+            <img src="assets/img/projects/market-thumb.jpg" alt="Java marketplace project thumbnail" loading="lazy" />
+            <div class="tile__meta">
+              <h3>Java Marketplace</h3>
+              <p>Spring Boot + Thymeleaf + Docker · Cart, Auth, Admin</p>
+            </div>
+          </a>
+
+          <a class="tile" href="projects/swe-systems/huffman-compressor.html">
+            <img src="assets/img/projects/huffman-thumb.jpg" alt="Huffman compressor project thumbnail" loading="lazy" />
+            <div class="tile__meta">
+              <h3>Huffman Compressor</h3>
+              <p>Greedy optimality · Compress/Decompress · Benchmarks</p>
+            </div>
+          </a>
+        </div>
+        <p class="section__cta"><a class="btn btn--ghost" href="projects/">Browse all projects</a></p>
+      </div>
+    </section>
+
+    <!-- Experience snapshot -->
+    <section class="experience section">
+      <div class="container">
+        <h2 class="section__title">Recent Experience</h2>
+
+        <div class="timeline">
+          <article class="timeline__item">
+            <div class="timeline__meta">
+              <h3>Data Science Analyst Intern</h3>
+              <p class="muted">Icon Life Sciences · May–Sept 2025</p>
+            </div>
+            <ul class="timeline__bullets">
+              <li>Built BigQuery golden source (12+ systems); cut manual Excel &gt;80%.</li>
+              <li>Brand-level forecasting (MAPE 7.9%); CNS stock-outs −18%.</li>
+            </ul>
+          </article>
+
+          <article class="timeline__item">
+            <div class="timeline__meta">
+              <h3>Junior ML Engineer</h3>
+              <p class="muted">iAssist Innovation Labs · Apr–Sept 2024</p>
+            </div>
+            <ul class="timeline__bullets">
+              <li>CNN-OCR service on K8s: p95 &lt; 300 ms @ ~1k req/s; ~0.2% error.</li>
+              <li>Quality gates reduced resubmissions; improved first-time-right.</li>
+            </ul>
+          </article>
+
+          <article class="timeline__item">
+            <div class="timeline__meta">
+              <h3>Founder &amp; Treasurer — FarmEasy</h3>
+              <p class="muted">Jan 2020–Sept 2022</p>
+            </div>
+            <ul class="timeline__bullets">
+              <li>Backyard-to-table micro-farm; end-to-end ops + delivery.</li>
+              <li>Managed finances ≈ €25,000 cashflow.</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="section__cta">
+          <a class="btn btn--secondary" href="experience.html">See full experience</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="education section">
+      <div class="container">
+        <h2 class="section__title">Education</h2>
+        <p>
+          BSc (Hons) Computer Science — University College Dublin. Modules include Optimisation, Machine Learning,
+          Data Mining, Cloud Computing, Wireless Networking, Performance of Computer Systems, Graph Algorithms,
+          Operating Systems, Web Development, Data Structures &amp; Algorithms, Digital Systems, HCAI, Information Visualisation.
+        </p>
+        <p class="section__cta">
+          <a class="btn btn--ghost" href="education/">See modules &amp; artefacts</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Writing -->
+    <section class="writing section">
+      <div class="container">
+        <h2 class="section__title">Writing &amp; Research</h2>
+        <div class="grid cards">
+          <article class="card">
+            <header class="card__header">
+              <h3>Business Management Research (IA)</h3>
+              <p class="card__kicker">Icon Life Sciences · Break-even &amp; CVP</p>
+            </header>
+            <p class="card__body">
+              Viability of launching a new division; 4-point moving average, PMPM, divisional P&amp;L, and break-even analysis.
+            </p>
+            <footer class="card__footer">
+              <a class="card__link" href="writing/business-management-ia.html">Read summary →</a>
+            </footer>
+          </article>
+
+          <article class="card">
+            <header class="card__header">
+              <h3>HCAI Essay (UN SDG)</h3>
+              <p class="card__kicker">Human-Centred AI</p>
+            </header>
+            <p class="card__body">
+              Critical synthesis of 5–10 papers; design principles, fairness, and explainability considerations.
+            </p>
+            <footer class="card__footer">
+              <a class="card__link" href="writing/hcai-essay.html">Open essay →</a>
+            </footer>
+          </article>
+        </div>
+        <p class="section__cta"><a class="btn btn--ghost" href="writing/">Browse all writing</a></p>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="cta section">
+      <div class="container cta__inner">
+        <h2>Let’s build something reliable.</h2>
+        <p>Open to Data/ML, Platform/ML Ops, or SWE roles. Based in Dublin, available for remote/hybrid.</p>
+        <div class="cta__buttons">
+          <a href="contact.html" class="btn btn--primary">Get in touch</a>
+          <a href="projects/" class="btn btn--secondary">See projects</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="resume/">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section class="section">
-  <div class="grid cols-3">
-    <div class="card">
-      <h3>Data / ML</h3>
-      <p>Forecasting, classification, and MLOps on GCP.</p>
-      <div><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">BigQuery</span></div>
-    </div>
-    <div class="card">
-      <h3>SWE / Systems</h3>
-      <p>Java/Spring, C, and fast APIs with clean deployments.</p>
-      <div><span class="tag">Spring Boot</span><span class="tag">FastAPI</span><span class="tag">Docker</span></div>
-    </div>
-    <div class="card">
-      <h3>Cloud / SRE</h3>
-      <p>Capacity planning and reliable services.</p>
-      <div><span class="tag">Kubernetes</span><span class="tag">Erlang-C</span><span class="tag">Airflow</span></div>
-    </div>
-  </div>
-</section>
-
-  </main>
-  
-    <footer class="site-footer">
-      <p>© Nirav Ramidi · <a href="https://github.com/Nirav01/" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></p>
-    </footer>
-    <script src="/assets/js/main.js"></script>
-    
+  <!-- Scripts (kept separate) -->
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "owner": "Nirav Ramidi",
+  "generatedAt": "2025-09-24",
+  "experience": [
+    {
+      "id": "icon-life-sciences-intern-2025",
+      "title": "Data Science Analyst Intern",
+      "org": "Icon Life Sciences",
+      "location": "Dublin, Ireland",
+      "employmentType": "internship",
+      "start": "2025-05-01",
+      "end": "2025-09-30",
+      "summary": "Supported analytics initiatives with reproducible data pipelines and exploratory ML.",
+      "bullets": [
+        "Built Python/SQL data pipelines and EDA notebooks; delivered clean datasets for downstream analysis.",
+        "Prototyped forecasting/classification baselines; compared metrics and documented assumptions.",
+        "Collaborated with stakeholders on problem framing, validation criteria, and lightweight dashboards."
+      ],
+      "skills": ["Python", "Pandas", "scikit-learn", "SQL", "Jupyter", "Version Control"],
+      "links": {
+        "project": "/projects/data-ml/golden-source-forecasting.html"
+      },
+      "tags": ["Data Science", "Analytics", "ML", "Internship"]
+    },
+    {
+      "id": "fameasy-founder-2020",
+      "title": "Founder",
+      "org": "FarmEasy",
+      "location": "Local / Dublin, Ireland",
+      "employmentType": "entrepreneurship",
+      "start": "2020-01-01",
+      "end": "2022-09-30",
+      "summary": "Bootstrapped a backyard produce micro-business during COVID; handled operations, customers, and basic finance.",
+      "bullets": [
+        "Grew and sold seasonal vegetables; built repeat local customers and simple delivery workflow.",
+        "Managed pricing, inventory, and quality; tracked orders and costs in spreadsheets.",
+        "Applied simple demand forecasting to minimise waste and stock-outs."
+      ],
+      "skills": ["Operations", "Customer Service", "Basic Forecasting", "Spreadsheets"],
+      "links": {},
+      "tags": ["Entrepreneurship", "Small Business"]
+    },
+    {
+      "id": "student-treasurer-2021",
+      "title": "Treasurer",
+      "org": "Student organisation",
+      "location": "Ireland",
+      "employmentType": "volunteer",
+      "start": "2021-01-01",
+      "end": "2022-12-31",
+      "summary": "Oversaw budget and reporting; introduced light financial controls and transparency.",
+      "bullets": [
+        "Managed ~€25,000 budget across the academic year; prepared monthly summaries.",
+        "Implemented basic controls (dual approval, receipts, spreadsheet ledgers).",
+        "Coordinated reimbursements and vendor payments; supported event budgeting."
+      ],
+      "finance": {
+        "currency": "EUR",
+        "budgetManaged": 25000
+      },
+      "skills": ["Budgeting", "Reporting", "Spreadsheets", "Vendor Management"],
+      "links": {},
+      "tags": ["Finance", "Leadership"]
+    }
+  ]
+}

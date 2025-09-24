@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Algorithms — Module — Nirav Ramidi</title>
+  <meta name="description" content="Greedy, divide & conquer, dynamic programming, and graph basics with rigor on correctness and complexity. Includes Huffman coding and classic recurrences." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="icon" href="../../assets/img/favicon.png" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../experience.html">Experience</a></li>
+          <li><a href="../../projects/">Projects</a></li>
+          <li><a href="../../writing/">Writing</a></li>
+          <li><a href="../">Education</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../">Home</a></li>
+        <li><a href="../">Education</a></li>
+        <li><span aria-current="page">Algorithms</span></li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Algorithms</h1>
+        <p class="lead">
+          A tour of <strong>greedy</strong>, <strong>divide &amp; conquer</strong>, and <strong>dynamic programming</strong>,
+          with graph essentials and proof techniques for <strong>correctness</strong> and <strong>complexity</strong>.
+          Includes a practical detour into <strong>compression</strong> via Huffman coding.
+        </p>
+        <ul class="chips">
+          <li class="chip">Greedy</li>
+          <li class="chip">Divide &amp; Conquer</li>
+          <li class="chip">Dynamic Programming</li>
+          <li class="chip">Complexity</li>
+        </ul>
+
+        <div class="actions">
+          <!-- Place these files in this folder to activate links -->
+          <a class="btn btn--secondary" href="Week%201_Lecture%201.pdf">Week 1 — Lecture 1 (PDF)</a>
+          <a class="btn btn--ghost" href="Compression%20Assignment-1.pdf">Compression — Assignment 1 (PDF)</a>
+        </div>
+
+        <p class="muted small">
+          Tip: If a link 404s, ensure the PDF lives in <code>/education/modules/</code> with the exact filename shown.
+        </p>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="section">
+      <div class="container grid case-grid">
+        <!-- Meta -->
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Module info</h2>
+          <dl class="meta-list">
+            <dt>Category</dt><dd>Theory</dd>
+            <dt>Focus</dt><dd>Design paradigms · Proofs · Asymptotics</dd>
+            <dt>Stack</dt><dd>Pseudocode, Python/Java for implementations</dd>
+            <dt>Assessment</dt><dd>Problem sets, coding tasks, final assessment</dd>
+          </dl>
+          <div class="note small">
+            <p><strong>Related work:</strong> see the
+              <a href="../../projects/swe-systems/huffman-compressor.html">Huffman Compressor</a> project and
+              <a href="graph-algorithms.html">Graph Algorithms</a> module.</p>
+          </div>
+        </aside>
+
+        <!-- Body -->
+        <article class="case-body">
+          <!-- Outcomes -->
+          <section class="case-section" id="outcomes">
+            <h2>Learning Outcomes</h2>
+            <ul>
+              <li>Design algorithms using <strong>greedy</strong>, <strong>divide &amp; conquer</strong>, and <strong>DP</strong> patterns.</li>
+              <li>Prove <strong>correctness</strong> via loop invariants, exchange arguments, and induction.</li>
+              <li>Analyse <strong>time</strong> and <strong>space</strong> complexity with asymptotic notation.</li>
+              <li>Implement and evaluate classic algorithms with clean, testable code.</li>
+            </ul>
+          </section>
+
+          <!-- Topics -->
+          <section class="case-section" id="topics">
+            <h2>Indicative Topics</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>Greedy</h3></header>
+                <p class="card__body">Interval scheduling, activity selection, Huffman coding, exchange arguments, matroids overview.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Divide &amp; Conquer</h3></header>
+                <p class="card__body">Recurrences &amp; Master theorem, merge sort, quickselect, closest pair of points.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Dynamic Programming</h3></header>
+                <p class="card__body">Optimal substructure, overlapping subproblems, knapsack, LIS, edit distance.</p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Graphs (basics)</h3></header>
+                <p class="card__body">BFS/DFS, topological sort, shortest paths (Dijkstra/Bellman-Ford) at a glance.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Quick reference -->
+          <section class="case-section" id="reference">
+            <h2>Quick Reference</h2>
+
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Master Theorem (common case)</h3></header>
+                <pre class="code-block"><code>T(n) = a T(n/b) + f(n)
+Let n^{log_b a} = n^k
+- If f(n) = O(n^{k-ε}) → T(n) = Θ(n^k)
+- If f(n) = Θ(n^k log^p n) → T(n) = Θ(n^k log^{p+1} n)
+- If f(n) = Ω(n^{k+ε}) and regularity → T(n) = Θ(f(n))</code></pre>
+                <p class="muted small">Typical examples: mergesort (a=2,b=2,f=n) → Θ(n log n); Strassen-like recurrences vary k.</p>
+              </div>
+
+              <div class="card">
+                <header class="card__header"><h3>Greedy correctness (pattern)</h3></header>
+                <pre class="code-block"><code>1) Greedy choice property: show an optimal solution has a greedy-first choice.
+2) Exchange argument: swap steps to transform any optimum to greedy form
+   without lowering optimal value.</code></pre>
+                <p class="muted small">Huffman: merging two least-frequent symbols is always safe (exchange proof).</p>
+              </div>
+            </div>
+
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>DP recipe</h3></header>
+                <pre class="code-block"><code>1) Define subproblem F(i, …)
+2) Recurrence (optimal substructure)
+3) Base cases
+4) Order of evaluation (topo)
+5) Transition complexity
+6) Reconstruct solution (parents)</code></pre>
+                <p class="muted small">Memoise top-down first to validate, then convert to bottom-up for speed.</p>
+              </div>
+
+              <div class="card">
+                <header class="card__header"><h3>BFS / DFS complexity</h3></header>
+                <pre class="code-block"><code>Adjacency list:
+BFS/DFS: Θ(V + E)
+Topological sort: Θ(V + E)</code></pre>
+                <p class="muted small">Use adjacency lists for sparse graphs; matrices cost Θ(V²).</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Snippets -->
+          <section class="case-section" id="snippets">
+            <h2>Code Snippets</h2>
+            <div class="grid two">
+              <div class="card">
+                <header class="card__header"><h3>Huffman coding (sketch)</h3></header>
+                <pre class="code-block"><code># frequencies: dict{char: freq}
+import heapq
+heap = [[f, c] for c, f in frequencies.items()]
+heapq.heapify(heap)
+while len(heap) > 1:
+  f1, n1 = heapq.heappop(heap)
+  f2, n2 = heapq.heappop(heap)
+  heapq.heappush(heap, [f1+f2, (n1, n2)])  # merge
+# heap[0] holds the tree; traverse to assign codes</code></pre>
+                <p class="muted small">Time Θ(n log n) with <em>n</em> symbols (priority queue merges).</p>
+              </div>
+              <div class="card">
+                <header class="card__header"><h3>Dijkstra (array vs heap)</h3></header>
+                <pre class="code-block"><code># Min-heap implementation: Θ((V+E) log V)
+# Using array for 'extract-min': Θ(V²) on dense graphs
+# Initialise dist[s]=0; relax edges via priority queue updates</code></pre>
+                <p class="muted small">Non-negative weights only; use Bellman-Ford for negatives.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Artefacts -->
+          <section class="case-section" id="artifacts">
+            <h2>Selected Artefacts</h2>
+            <ul class="list">
+              <li><a href="Week%201_Lecture%201.pdf">Lecture — Introduction &amp; course outline</a></li>
+              <li><a href="Compression%20Assignment-1.pdf">Assignment — Huffman Compression</a></li>
+            </ul>
+          </section>
+
+          <!-- Takeaways -->
+          <section class="case-section" id="learnings">
+            <h2>Key Takeaways</h2>
+            <ul class="checklist">
+              <li>Pick the right paradigm: greedy when exchange works, DP when subproblems overlap.</li>
+              <li>Prove before you optimise: correctness + complexity guide implementation choices.</li>
+              <li>Use the right data structures to hit the intended time bounds.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Module pagination">
+            <a class="btn btn--ghost" href="data-structures.html">← Data Structures</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="graph-algorithms.html">Next: Graph Algorithms →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../resume/">Resume</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

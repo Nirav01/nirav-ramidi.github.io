@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "owner": "Nirav Ramidi",
+  "generatedAt": "2025-09-24",
+  "projects": [
+    {
+      "id": "golden-source-forecasting",
+      "area": "data-ml",
+      "title": "Golden Source Forecasting",
+      "summary": "Time-series forecasting for scheduling/capacity with strong baselines and error analysis.",
+      "date": "2025-03-01",
+      "tags": ["Python", "Pandas", "Forecasting", "Metrics"],
+      "page": "/projects/data-ml/golden-source-forecasting.html",
+      "image": "/assets/img/projects/golden-source-forecasting.svg",
+      "links": { "repo": "", "demo": "" },
+      "status": "complete",
+      "highlight": true
+    },
+    {
+      "id": "astronomy-classifier",
+      "area": "data-ml",
+      "title": "Astronomy Classifier",
+      "summary": "Classify celestial events from light curves with feature engineering and PR/AUC evaluation.",
+      "date": "2024-11-15",
+      "tags": ["Python", "scikit-learn", "Feature Engineering", "Classification"],
+      "page": "/projects/data-ml/astronomy-classifier.html",
+      "image": "/assets/img/projects/astronomy-classifier.svg",
+      "links": { "repo": "", "demo": "" },
+      "status": "complete",
+      "highlight": false
+    },
+    {
+      "id": "healthcare-data-mining",
+      "area": "data-ml",
+      "title": "Healthcare Data Mining",
+      "summary": "ETL, imbalance handling, and model selection on structured healthcare data.",
+      "date": "2024-10-01",
+      "tags": ["Python", "ETL", "Data Mining", "Imbalanced Data"],
+      "page": "/projects/data-ml/healthcare-data-mining.html",
+      "image": "/assets/img/projects/healthcare-data-mining.svg",
+      "links": { "repo": "", "demo": "" },
+      "status": "complete",
+      "highlight": false
+    },
+
+    {
+      "id": "java-marketplace",
+      "area": "swe-systems",
+      "title": "Java Marketplace",
+      "summary": "Object-oriented marketplace with testing and REST endpoints.",
+      "date": "2023-12-10",
+      "tags": ["Java", "OOP", "Testing", "REST"],
+      "page": "/projects/swe-systems/java-marketplace.html",
+      "image": "/assets/img/projects/java-marketplace.svg",
+      "links": { "repo": "", "demo": "" },
+      "status": "complete",
+      "highlight": false
+    },
+    {
+      "id": "huffman-compressor",
+      "area": "swe-systems",
+      "title": "Huffman Compressor",
+      "summary": "Greedy compression with priority queues; profiling and complexity discussion.",
+      "date": "2023-11-20",
+      "tags": ["Java", "Algorithms", "Data Structures"],
+      "page": "/projects/swe-systems/huffman-compressor.html",
+      "image": "/assets/img/projects/huffman-compressor.svg",
+      "links": { "repo": "", "demo": "" },
+      "status": "complete",
+      "highlight": false
+    },
+    {
+      "id": "twitter-cli",
+      "area": "swe-systems",
+      "title": "Twitter CLI",
+      "summary": "Command-line client with OAuth, rate-limit handling, and robust I/O.",
+      "date": "2023-10-05",
+      "tags": ["Java", "HTTP", "CLI"],
+      "page": "/projects/swe-systems/twitter-cli.html",
+      "image": "/assets/img/projects/twitter-cli.svg",
+      "links": { "repo": "", "demo": "" },
+      "status": "complete",
+      "highlight": false
+    },
+
+    {
+      "id": "vision-microservice",
+      "area": "cloud-sre",
+      "title": "Vision Microservice",
+      "summary": "Containerised model inference with health checks, retries, and simple monitoring.",
+      "date": "2024-03-22",
+      "tags": ["Docker", "APIs", "Observability"],
+      "page": "/projects/cloud-sre/vision-microservice.html",
+      "image": "/assets/img/projects/vision-microservice.svg",
+      "links": { "repo": "", "demo": "" },
+      "status": "complete",
+      "highlight": true
+    },
+    {
+      "id": "queueing-capacity",
+      "area": "cloud-sre",
+      "title": "Queueing & Capacity",
+      "summary": "M/M/1 toy model and SLO-aware capacity planning with practical telemetry.",
+      "date": "2025-01-30",
+      "tags": ["Performance", "Queueing", "SRE"],
+      "page": "/projects/cloud-sre/queueing-capacity.html",
+      "image": "/assets/img/projects/queueing-capacity.svg",
+      "links": { "repo": "", "demo": "" },
+      "status": "complete",
+      "highlight": false
+    },
+    {
+      "id": "library-analytics",
+      "area": "cloud-sre",
+      "title": "Library Analytics",
+      "summary": "SQL-driven dashboards and insights for library circulation data.",
+      "date": "2024-02-14",
+      "tags": ["SQL", "Dashboards", "Analytics"],
+      "page": "/projects/cloud-sre/library-analytics.html",
+      "image": "/assets/img/projects/library-analytics.svg",
+      "links": { "repo": "", "demo": "" },
+      "status": "complete",
+      "highlight": false
+    },
+
+    {
+      "id": "hcai-experiment",
+      "area": "hcai-viz",
+      "title": "HCAI Experiment",
+      "summary": "Empirical study design, statistics, and UX reporting for human-centred AI.",
+      "date": "2024-04-10",
+      "tags": ["HCI", "Statistics", "UX"],
+      "page": "/projects/hcai-viz/hcai-experiment.html",
+      "image": "/assets/img/projects/hcai-experiment.svg",
+      "links": { "repo": "", "demo": "" },
+      "status": "complete",
+      "highlight": false
+    },
+    {
+      "id": "infovis-vega-lite",
+      "area": "hcai-viz",
+      "title": "Information Visualization (Vega-Lite)",
+      "summary": "Interactive charts with marks, encodings, and design notes.",
+      "date": "2024-03-05",
+      "tags": ["Vega-Lite", "Visualization", "Design"],
+      "page": "/projects/hcai-viz/infovis-vega-lite.html",
+      "image": "/assets/img/projects/infovis-vega-lite.svg",
+      "links": { "repo": "", "demo": "" },
+      "status": "complete",
+      "highlight": false
+    }
+  ]
+}

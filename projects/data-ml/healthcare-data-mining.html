@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Healthcare Data Mining — Case Study — Nirav Ramidi</title>
+  <meta name="description" content="Healthcare data mining pipelines: imbalanced classification with SMOTE, exploratory clustering (KMeans/DBSCAN), and a light regression track. Clean preprocessing, proper validation, and practical evaluation." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../../../assets/css/main.css" />
+  <link rel="icon" href="../../../assets/img/favicon.png" />
+
+  <!-- Optional structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CreativeWork",
+    "name":"Healthcare Data Mining",
+    "author":{"@type":"Person","name":"Nirav Ramidi"},
+    "about":"Data mining pipelines in healthcare",
+    "keywords":"Healthcare, Data Mining, SMOTE, Classification, Clustering, Imbalanced Learning"
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../../../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../../../">Home</a></li>
+          <li><a href="../../../experience.html">Experience</a></li>
+          <li><a href="../../">Projects</a></li>
+          <li><a href="../../../writing/">Writing</a></li>
+          <li><a href="../../../education/">Education</a></li>
+          <li><a href="../../../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../../../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../../">Home</a></li>
+        <li><a href="../../">Projects</a></li>
+        <li><span aria-current="page">Healthcare Data Mining</span></li>
+      </ol>
+    </nav>
+
+    <!-- Hero -->
+    <section class="case-hero section">
+      <div class="container case-hero__inner">
+        <div class="case-hero__copy">
+          <h1>Healthcare Data Mining</h1>
+          <p class="lead">
+            Built end-to-end pipelines for an imbalanced <strong>stroke-risk</strong> dataset: cleaned features,
+            applied <strong>SMOTE</strong> for minority up-sampling, compared classifiers, and explored
+            <strong>clustering</strong> structure (KMeans/DBSCAN). Included a small <strong>regression</strong> track for numeric outcomes.
+          </p>
+          <ul class="metrics">
+            <li class="chip">SMOTE (train-only)</li>
+            <li class="chip">ROC-AUC · PR-AUC · F1</li>
+            <li class="chip">KMeans · DBSCAN</li>
+            <li class="chip">Pipelines & CV</li>
+          </ul>
+        </div>
+        <figure class="case-hero__media">
+          <img src="../../../assets/img/case-studies/healthcare-hero.jpg" alt="Healthcare dataset visualization" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- Meta sidebar layout -->
+    <section class="case-layout section">
+      <div class="container grid case-grid">
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Project info</h2>
+          <dl class="meta-list">
+            <dt>Course</dt><dd>Data Mining (COMP40370)</dd>
+            <dt>Institution</dt><dd>University College Dublin</dd>
+            <dt>Role</dt><dd>Student — practical labs</dd>
+            <dt>Focus</dt><dd>Imbalanced learning · Clustering · Evaluation</dd>
+            <dt>Stack</dt><dd>Python, pandas, scikit-learn, imbalanced-learn, matplotlib</dd>
+            <dt>Links</dt>
+            <dd>
+              <ul class="bare">
+                <li><a href="../../" aria-label="Back to projects">Back to Projects</a></li>
+                <li><a href="../../../education/">Related modules</a></li>
+              </ul>
+            </dd>
+          </dl>
+        </aside>
+
+        <article class="case-body">
+          <!-- Dataset & Objectives -->
+          <section class="case-section" id="dataset">
+            <h2>Dataset &amp; Objectives</h2>
+            <p>
+              The primary task is binary classification of <strong>stroke vs no-stroke</strong> (high class imbalance).
+              A secondary unsupervised task explores natural groupings that align with risk factors.
+              An additional regression variant estimates a numeric health outcome (e.g., risk score).
+            </p>
+            <ul>
+              <li>Split: <strong>stratified</strong> train/test. Validation inside training via cross-validation.</li>
+              <li>Targets: binary label; optional numeric outcome for regression track.</li>
+              <li>Goal: high recall/PR-AUC on the positive class while keeping precision reasonable.</li>
+            </ul>
+          </section>
+
+          <!-- Preprocessing -->
+          <section class="case-section" id="preprocess">
+            <h2>Preprocessing</h2>
+            <div class="cols">
+              <div>
+                <h3>Cleaning &amp; Encoding</h3>
+                <ul>
+                  <li>Handled invalid entries; imputed rare missing values with median/most-frequent.</li>
+                  <li>One-hot encoded categoricals; ensured consistent feature order.</li>
+                  <li>Standardised numeric features for distance-based/linear models.</li>
+                </ul>
+                <h3>Imbalance Handling</h3>
+                <ul>
+                  <li><strong>SMOTE</strong> applied <em>inside</em> the training fold only (to prevent leakage).</li>
+                  <li>Compared to class-weighted learners as a baseline.</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Pipelines &amp; CV</h3>
+                <ul>
+                  <li>scikit-learn <strong>Pipeline</strong> steps: preprocess → sampler → model.</li>
+                  <li>Repeated/stratified CV; grid search with ROC-AUC (and PR-AUC) as scorers.</li>
+                  <li>Threshold tuning on validation folds to target desired recall/precision.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Models -->
+          <section class="case-section" id="models">
+            <h2>Models</h2>
+            <div class="cols">
+              <div>
+                <h3>Classification</h3>
+                <ul>
+                  <li>Logistic Regression (with class weights)</li>
+                  <li>Random Forest / Gradient Boosting</li>
+                  <li>SVM (RBF) with probability estimates</li>
+                  <li>Baseline: majority class, dummy strategies</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Clustering</h3>
+                <ul>
+                  <li>KMeans (elbow + silhouette to select <code>k</code>)</li>
+                  <li>DBSCAN (ε/MinPts tuned on scaled feature space)</li>
+                </ul>
+                <h3>Regression (light track)</h3>
+                <ul>
+                  <li>Linear Regression / Ridge</li>
+                  <li>RandomForestRegressor</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Evaluation -->
+          <section class="case-section" id="evaluation">
+            <h2>Evaluation</h2>
+            <div class="cols">
+              <div>
+                <h3>Classification Metrics</h3>
+                <ul>
+                  <li><strong>ROC-AUC</strong> and <strong>PR-AUC</strong> (sensitive to imbalance)</li>
+                  <li>Recall/Precision, <strong>F1</strong> (macro &amp; weighted)</li>
+                  <li>Calibration check (reliability curve, Brier score)</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Clustering Metrics</h3>
+                <ul>
+                  <li>Silhouette score, Davies–Bouldin index</li>
+                  <li>Qualitative inspection vs known risk factors</li>
+                </ul>
+                <h3>Regression Metrics</h3>
+                <ul>
+                  <li>MAE, RMSE, and R² on held-out test set</li>
+                </ul>
+              </div>
+            </div>
+            <figure class="case-figure">
+              <img src="../../../assets/img/case-studies/healthcare-roc.png" alt="ROC/PR curves comparing classifiers with and without SMOTE" loading="lazy" />
+              <figcaption>SMOTE improves minority recall and PR-AUC with a small precision trade-off.</figcaption>
+            </figure>
+          </section>
+
+          <!-- Results -->
+          <section class="case-section" id="results">
+            <h2>Results</h2>
+            <ul class="checklist">
+              <li>With <strong>SMOTE</strong>, tree-based models achieved meaningfully higher recall at similar ROC-AUC.</li>
+              <li><strong>Threshold tuning</strong> (Youden’s J / PR-curve sweep) balanced precision vs recall for clinical use.</li>
+              <li><strong>KMeans</strong> revealed clusters aligned with age/BMI/hypertension patterns; <strong>DBSCAN</strong> found small dense risk groups.</li>
+              <li>Regression baselines were stable after removing outliers and standardising features.</li>
+            </ul>
+          </section>
+
+          <!-- Lessons & Next steps -->
+          <section class="case-section" id="lessons">
+            <h2>Lessons &amp; Next Steps</h2>
+            <ul>
+              <li>Prevent leakage: apply <strong>SMOTE strictly within CV folds</strong>; keep test untouched.</li>
+              <li>Prefer <strong>PR-AUC</strong> for highly imbalanced problems; use calibration before decision thresholds.</li>
+              <li>Next: add <strong>XGBoost/LightGBM</strong>, cost-sensitive learning, SHAP explanations, and drift monitoring.</li>
+            </ul>
+          </section>
+
+          <!-- Footer nav -->
+          <nav class="case-pager" aria-label="Case study pagination">
+            <a class="btn btn--ghost" href="../../">← All projects</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="../swe-systems/java-marketplace.html">Next: Java Marketplace →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../../resume/">Resume</a></li>
+        <li><a href="../../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../../../assets/js/main.js" defer></script>
+</body>
+</html>

@@ -3,34 +3,252 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Business Management Research (IA) · Nirav Ramidi</title>
-  <meta name="description" content="Data Scientist & ML Engineer — shipping reliable models and systems" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css" />
+  <title>Business Management Research (IA) — Nirav Ramidi</title>
+  <meta name="description" content="Practical business management analysis: four-point moving averages, PMPM calculations, divisional P&L, and break-even sensitivity with scenario planning." />
+
+  <!-- Styles (kept separate) -->
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="icon" href="../assets/img/favicon.png" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ScholarlyArticle",
+    "headline":"Business Management Research (IA)",
+    "author":{"@type":"Person","name":"Nirav Ramidi"},
+    "about":"Break-even analysis, PMPM, moving averages, divisional P&L",
+    "inLanguage":"en"
+  }
+  </script>
 </head>
+
 <body>
-  
-    <header class="site-header">
-      <a class="brand" href="index.html">Nirav Ramidi</a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-      <nav class="site-nav"><a href="index.html" class="">Home</a><a href="experience.html" class="">Experience</a><a href="projects/index.html" class="">Projects</a><a href="writing/index.html" class="active">Writing</a><a href="education/index.html" class="">Education</a><a href="resume/index.html" class="">Resume</a><a href="contact.html" class="">Contact</a></nav>
-      
-    <div class="socials">
-      <a href="https://github.com/Nirav01/" aria-label="GitHub (opens in new tab)" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/nirav-ramidi/" aria-label="LinkedIn (opens in new tab)" target="_blank" rel="noopener">LinkedIn</a>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="../" aria-label="Nirav Ramidi — home">
+        <span class="brand__mark" aria-hidden="true">NR</span>
+        <span class="brand__text">Nirav Ramidi</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../">Home</a></li>
+          <li><a href="../experience.html">Experience</a></li>
+          <li><a href="../projects/">Projects</a></li>
+          <li><a href="../writing/" aria-current="page">Writing</a></li>
+          <li><a href="../education/">Education</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li class="hide-on-mobile"><a href="../resume/" class="btn btn--ghost">Resume</a></li>
+          <li class="nav-icons">
+            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
     </div>
-    </header>
-    
-  <main class="container">
-    <article class="card"><h1>Business Management Research (IA)</h1><p>One‑page brief of the IA: CVP & break‑even; findings and recommendations.</p></article>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../">Home</a></li>
+        <li><a href="./">Writing</a></li>
+        <li><span aria-current="page">Business Management Research (IA)</span></li>
+      </ol>
+    </nav>
+
+    <!-- Hero -->
+    <section class="case-hero section">
+      <div class="container case-hero__inner">
+        <div class="case-hero__copy">
+          <h1>Business Management Research (IA)</h1>
+          <p class="lead">
+            A practical analysis of a proposed division using <strong>four-point moving averages</strong>, 
+            <strong>PMPM</strong> (per-member-per-month) calculations, a divisional <strong>P&amp;L</strong>, 
+            and <strong>break-even sensitivity</strong> across price, volume, and cost scenarios.
+          </p>
+          <ul class="metrics">
+            <li class="chip">Time-series smoothing</li>
+            <li class="chip">CVP / Break-even</li>
+            <li class="chip">Scenario planning</li>
+            <li class="chip">Unit economics</li>
+          </ul>
+          <div class="case-hero__buttons">
+            <!-- Place your PDF at /writing/BM-IA-Final.pdf (rename if needed) -->
+            <a class="btn btn--primary" href="BM-IA-Final.pdf">Download full PDF</a>
+            <a class="btn btn--ghost" href="../contact.html">Request spreadsheet</a>
+          </div>
+        </div>
+        <figure class="case-hero__media">
+          <img src="../assets/img/writing/business-ia-hero.jpg" alt="Financial charts showing moving averages and break-even lines" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="case-layout section">
+      <div class="container grid case-grid">
+        <!-- Meta -->
+        <aside class="case-meta card">
+          <h2 class="visually-hidden">Article info</h2>
+          <dl class="meta-list">
+            <dt>Type</dt><dd>Individual research / analysis</dd>
+            <dt>Focus</dt><dd>Forecasting · Cost–Volume–Profit · Sensitivity</dd>
+            <dt>Artifacts</dt><dd>PDF report, spreadsheet model</dd>
+            <dt>Keywords</dt><dd>PMPM, Moving Average, Break-even, Margin of Safety</dd>
+          </dl>
+          <div class="note small">
+            <p><strong>Tip:</strong> Put <code>BM-IA-Final.pdf</code> in this folder to activate the download link.</p>
+          </div>
+        </aside>
+
+        <!-- Body -->
+        <article class="case-body">
+          <!-- Executive Summary -->
+          <section class="case-section" id="summary">
+            <h2>Executive Summary</h2>
+            <p>
+              The analysis evaluates whether launching/expanding a division is financially justified under realistic
+              demand and cost assumptions. We smooth historical volumes with a <em>four-point moving average</em>, build a PMPM view to normalise revenue and cost per member, and assemble a divisional P&amp;L. Finally, we compute <em>break-even</em> and stress-test it across price, volume, and variable-cost shocks to assess the <strong>margin of safety</strong>.
+            </p>
+          </section>
+
+          <!-- Problem & Questions -->
+          <section class="case-section" id="questions">
+            <h2>Decision Questions</h2>
+            <ul>
+              <li>What is the most reasonable near-term <strong>volume forecast</strong> given recent volatility?</li>
+              <li>At current pricing and cost structure, what is the <strong>break-even volume</strong> and <strong>time to break even</strong>?</li>
+              <li>How sensitive is profit to ±Δ in <strong>price</strong>, <strong>conversion/volume</strong>, and <strong>variable cost</strong>?</li>
+              <li>What <strong>capacity</strong> and <strong>cash</strong> headroom are required for a conservative ramp?</li>
+            </ul>
+          </section>
+
+          <!-- Data & Assumptions -->
+          <section class="case-section" id="assumptions">
+            <h2>Data &amp; Assumptions</h2>
+            <div class="cols">
+              <div>
+                <h3>Inputs</h3>
+                <ul>
+                  <li>Historical monthly demand (last 12–18 months).</li>
+                  <li>Price per unit and expected discount rate.</li>
+                  <li>Variable cost per unit (materials, fulfilment, payment fees).</li>
+                  <li>Fixed costs (labour, rent, tooling, marketing baseline).</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Assumption hygiene</h3>
+                <ul>
+                  <li>Document each input’s source and rationale.</li>
+                  <li>Use ranges/triangles where uncertainty is high; central case = mid-point.</li>
+                  <li>Separate one-off launch costs from steady-state fixed costs.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Methods -->
+          <section class="case-section" id="methods">
+            <h2>Methods</h2>
+            <div class="grid cards">
+              <article class="card">
+                <header class="card__header"><h3>Four-Point Moving Average</h3></header>
+                <p class="card__body">
+                  Smooths monthly demand to reduce noise from seasonality and outliers. Used as the baseline for near-term
+                  volume planning and staffing.
+                </p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>PMPM (Unit Economics)</h3></header>
+                <p class="card__body">
+                  Normalises revenue and cost per member/month to compare cohorts and pricing tiers; clarifies contribution margin and CAC payback.
+                </p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Divisional P&amp;L</h3></header>
+                <p class="card__body">
+                  Revenue − variable costs = <em>contribution</em>; subtract fixed costs to obtain operating profit. Tracks run-rate vs. plan.
+                </p>
+              </article>
+              <article class="card">
+                <header class="card__header"><h3>Break-Even &amp; Sensitivity</h3></header>
+                <p class="card__body">
+                  <em>Break-even units</em> = Fixed Costs ÷ (Price − Variable Cost). Sensitivity sweeps ±10–30% on price, volume, and variable cost to quantify margin of safety.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Results -->
+          <section class="case-section" id="results">
+            <h2>Results (Highlights)</h2>
+            <ul class="checklist">
+              <li>Smoothed demand reduces forecast error vs. raw month-to-month volatility.</li>
+              <li>PMPM view exposes underperforming tiers and discount leakage.</li>
+              <li>Break-even occurs when contribution covers fixed costs; sensitivity shows price elasticity is the dominant lever.</li>
+              <li>Scenario planning recommends a staged capacity ramp with explicit cash buffers.</li>
+            </ul>
+            <figure class="case-figure">
+              <img src="../assets/img/writing/business-ia-breakeven.png" alt="Break-even chart: total cost vs total revenue lines with intersection point" loading="lazy" />
+              <figcaption>Break-even visual: intersection of revenue and total cost; slopes reflect price and variable cost.</figcaption>
+            </figure>
+          </section>
+
+          <!-- Risks -->
+          <section class="case-section" id="risks">
+            <h2>Risks &amp; Mitigations</h2>
+            <ul>
+              <li><strong>Demand variance:</strong> add rolling forecast updates; maintain flexible staffing.</li>
+              <li><strong>Input inflation:</strong> negotiate supplier tiers; add indexed pricing clauses.</li>
+              <li><strong>Capacity bottlenecks:</strong> pilot queueing calculations for lead-time targets.</li>
+              <li><strong>Cash runway:</strong> tie spend to milestone gates; monitor MoM contribution.</li>
+            </ul>
+          </section>
+
+          <!-- Appendix -->
+          <section class="case-section" id="appendix">
+            <h2>Appendix — Key Formulas</h2>
+            <div class="formula-grid">
+              <p><strong>Contribution (per unit):</strong> <code>price − variable_cost</code></p>
+              <p><strong>Break-even (units):</strong> <code>fixed_costs ÷ (price − variable_cost)</code></p>
+              <p><strong>Margin of Safety:</strong> <code>(actual_sales − break_even_sales) ÷ actual_sales</code></p>
+              <p><strong>PMPM:</strong> <code>(revenue − variable_costs) ÷ members</code></p>
+            </div>
+          </section>
+
+          <!-- Footer Nav -->
+          <nav class="case-pager" aria-label="Writing pagination">
+            <a class="btn btn--ghost" href="./">← All writing</a>
+            <div class="spacer"></div>
+            <a class="btn btn--secondary" href="hcai-essay.html">Next: Human-Centred AI Essay →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
   </main>
-  
-    <footer class="site-footer">
-      <p>© Nirav Ramidi · <a href="https://github.com/Nirav01/" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></p>
-    </footer>
-    <script src="/assets/js/main.js"></script>
-    
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../resume/">Resume</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts (kept separate) -->
+  <script src="../assets/js/main.js" defer></script>
 </body>
 </html>

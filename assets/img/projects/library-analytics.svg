@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs><linearGradient id="bg9" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0ea5e9"></stop><stop offset="1" stop-color="#22c55e"></stop></linearGradient></defs>
+  <rect width="1200" height="630" rx="28" fill="url(#bg9)"></rect>
+  <rect x="140" y="200" width="920" height="260" rx="16" fill="#fff" opacity=".9"></rect>
+  <rect x="180" y="420" width="200" height="20" rx="10" fill="#0ea5e9" opacity=".8"></rect>
+  <rect x="420" y="420" width="220" height="20" rx="10" fill="#22c55e" opacity=".8"></rect>
+  <text x="60" y="120" fill="#fff" font-size="48" font-weight="800" font-family="Inter, ui-sans-serif">Library Analytics</text>
+  <text x="60" y="560" fill="#e6fffb" font-size="24" font-family="Inter, ui-sans-serif">SQL • Dashboards • Insights</text>
+</svg>
