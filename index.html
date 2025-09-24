@@ -2,137 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Nirav — Data & Software Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Nirav — data & software engineer focused on ML pipelines, systems performance, and optimisation." />
-  <link rel="preload" href="assets/images/placeholder.png" as="image" />
-  <link rel="stylesheet" href="assets/css/utilities.css" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="icon" href="assets/images/placeholder.png" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Nirav",
-    "url": "https://example.com",
-    "jobTitle": "Data & Software Engineer",
-    "sameAs": ["https://github.com/yourhandle","https://www.linkedin.com/in/yourhandle/"]
-  }
-  </script>
+  <title>Home · Nirav Ramidi</title>
+  <meta name="description" content="Data Scientist & ML Engineer — shipping reliable models and systems" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html">NIRAV</a>
-      <nav aria-label="Main">
-        <ul class="menu">
-          <li><a class="active" href="index.html">Home</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="resume.html">Résumé</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a class="btn" href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">🌓</button>
+  
+    <header class="site-header">
+      <a class="brand" href="index.html">Nirav Ramidi</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="site-nav"><a href="index.html" class="active">Home</a><a href="experience.html" class="">Experience</a><a href="projects/index.html" class="">Projects</a><a href="writing/index.html" class="">Writing</a><a href="education/index.html" class="">Education</a><a href="resume/index.html" class="">Resume</a><a href="contact.html" class="">Contact</a></nav>
+      
+    <div class="socials">
+      <a href="https://github.com/Nirav01/" aria-label="GitHub (opens in new tab)" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/nirav-ramidi/" aria-label="LinkedIn (opens in new tab)" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-  </header>
-
-  <main id="main">
-    <section class="hero container">
-      <div class="hero__copy">
-        <h1>Data & Software Engineer</h1>
-        <p class="lead">
-          I build measurable solutions — from LiDAR re-localisation to Kubernetes deployments and
-          queueing-theory capacity plans.
-        </p>
-        <div class="actions">
-          <a class="btn primary" href="projects.html">View Projects</a>
-          <a class="btn" href="resume.html">Download CV</a>
-        </div>
-        <ul class="tech-tags" aria-label="Key skills">
-          <li>Python</li><li>Julia</li><li>Java</li><li>Docker</li><li>Kubernetes</li>
-          <li>scikit-learn</li><li>RabbitMQ</li><li>Open3D</li><li>PostgreSQL</li>
-        </ul>
-      </div>
-      <div class="hero__art">
-        <img src="assets/images/placeholder.png" alt="" width="560" height="420" loading="eager" />
-      </div>
-    </section>
-
-    <section class="container section">
-      <h2 class="section__title">Featured Work</h2>
-      <div class="grid cards">
-        <article class="card">
-          <a href="project-template.html">
-            <img src="assets/images/placeholder.png" alt="" loading="lazy" />
-            <div class="card__body">
-              <h3>LiDAR Re-localisation on Constrained Devices</h3>
-              <p>Open3D pipeline with ICP ablations (FoV, range, density, noise) on KITTI.</p>
-              <ul class="tags"><li>Python</li><li>Open3D</li><li>SLAM</li></ul>
-            </div>
-          </a>
-        </article>
-
-        <article class="card">
-          <a href="project-template.html">
-            <img src="assets/images/placeholder.png" alt="" loading="lazy" />
-            <div class="card__body">
-              <h3>Astro Classification (SDSS)</h3>
-              <p>Compared SVM kernels vs kNN/DT with filter + wrapper feature selection.</p>
-              <ul class="tags"><li>scikit-learn</li><li>ROC/AUC</li></ul>
-            </div>
-          </a>
-        </article>
-
-        <article class="card">
-          <a href="project-template.html">
-            <img src="assets/images/placeholder.png" alt="" loading="lazy" />
-            <div class="card__body">
-              <h3>Compose → Kubernetes in a Day</h3>
-              <p>Kompose conversion, Services/Deployments, Minikube workflows.</p>
-              <ul class="tags"><li>Docker</li><li>K8s</li></ul>
-            </div>
-          </a>
-        </article>
-      </div>
-      <div class="center mt-24">
-        <a class="btn" href="projects.html">See all projects</a>
-      </div>
-    </section>
-
-    <section class="container section section--alt">
-      <div class="two-col">
-        <div>
-          <h2>Entrepreneurial Edge</h2>
-          <p>
-            Co-founded <strong>FarmEasy</strong> during COVID (Jan 2020–Sept 2022). Managed ~€25,000 as treasurer,
-            ran zero-waste harvests, and served local customers.
-          </p>
-        </div>
-        <div>
-          <h2>Currently</h2>
-          <p>
-            <strong>Data Science Analyst Intern (May–Sept 2025)</strong>. Building analytics & ML artifacts that move
-            the needle for stakeholders.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer__inner">
-      <p>© <span id="year"></span> Nirav — Built with vanilla HTML/CSS/JS</p>
-      <ul class="social">
-        <li><a href="https://github.com/yourhandle" aria-label="GitHub">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/yourhandle/" aria-label="LinkedIn">LinkedIn</a></li>
-        <li><a href="mailto:you@example.com" aria-label="Email">Email</a></li>
+    </header>
+    
+  <main class="container">
+    
+<section class="hero">
+  <div class="card">
+    <h1>Nirav Ramidi</h1>
+    <p>Data Scientist & ML Engineer — shipping reliable models and systems</p>
+    <p style="color:var(--muted)">Forecasting (MAPE 7.9%), BigQuery pipelines, CNN/OCR services at p95 < 300 ms (~1k req/s), and SLAM/vision experiments.</p>
+    <div class="kpis">
+      <span class="kpi">MAPE&nbsp;7.9%</span>
+      <span class="kpi">p95&nbsp;&lt;&nbsp;300&nbsp;ms</span>
+      <span class="kpi">~1,000&nbsp;req/s</span>
+      <span class="kpi">BigQuery&nbsp;·&nbsp;Airflow</span>
+      <span class="kpi">Docker&nbsp;·&nbsp;K8s</span>
+    </div>
+    <div class="btn-row">
+      <a class="btn" href="projects/index.html">View Projects</a>
+      <a class="btn secondary" href="resume/index.html">Download CV</a>
+    </div>
+  </div>
+  <div class="grid cols-1">
+    <div class="card">
+      <h2>Spotlight</h2>
+      <ul class="list">
+        <li><strong>Icon Life Sciences</strong>: BigQuery golden-source + LightGBM forecasting → <em>MAPE 7.9%</em>.</li>
+        <li><strong>Vision Microservice</strong>: CNN-OCR on K8s → <em>p95 &lt; 300 ms</em> at ~1k req/s.</li>
+        <li><strong>LiDAR Re-localisation</strong>: ICP under sensor degradation (KITTI).</li>
+        <li><strong>Performance Modelling</strong>: M/M/K sizing to meet <em>W ≤ 1 s</em>.</li>
       </ul>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="assets/js/main.js" defer></script>
+<section class="section">
+  <div class="grid cols-3">
+    <div class="card">
+      <h3>Data / ML</h3>
+      <p>Forecasting, classification, and MLOps on GCP.</p>
+      <div><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">BigQuery</span></div>
+    </div>
+    <div class="card">
+      <h3>SWE / Systems</h3>
+      <p>Java/Spring, C, and fast APIs with clean deployments.</p>
+      <div><span class="tag">Spring Boot</span><span class="tag">FastAPI</span><span class="tag">Docker</span></div>
+    </div>
+    <div class="card">
+      <h3>Cloud / SRE</h3>
+      <p>Capacity planning and reliable services.</p>
+      <div><span class="tag">Kubernetes</span><span class="tag">Erlang-C</span><span class="tag">Airflow</span></div>
+    </div>
+  </div>
+</section>
+
+  </main>
+  
+    <footer class="site-footer">
+      <p>© Nirav Ramidi · <a href="https://github.com/Nirav01/" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></p>
+    </footer>
+    <script src="/assets/js/main.js"></script>
+    
 </body>
 </html>

@@ -2,58 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>About — Nirav</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/utilities.css" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <title>About · Nirav Ramidi</title>
+  <meta name="description" content="Data Scientist & ML Engineer — shipping reliable models and systems" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css" />
 </head>
 <body>
-<header class="site-header">
-  <div class="container nav">
-    <a class="brand" href="index.html">NIRAV</a>
-    <nav aria-label="Main">
-      <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="resume.html">Résumé</a></li>
-        <li><a class="active" href="about.html">About</a></li>
-        <li><a class="btn" href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <button class="theme-toggle" aria-label="Toggle dark mode">🌓</button>
-  </div>
-</header>
-
-<main class="container section">
-  <div class="about">
-    <img class="avatar" src="assets/images/avatar.jpg" alt="Portrait of Nirav" />
-    <div>
-      <h1>About</h1>
-      <p>
-        I’m a data & software engineer who likes turning messy problems into measurable results.
-        My work spans ML pipelines, optimisation, and systems performance.
-      </p>
-      <h2>Highlights</h2>
-      <ul class="bullets">
-        <li>Final Year Project: LiDAR re-localisation with ICP on KITTI (Open3D).</li>
-        <li>Cloud: Docker, Kubernetes (compose → k8s conversion), RabbitMQ pipelines.</li>
-        <li>Performance: M/M/K capacity planning with Erlang-C.</li>
-        <li>Entrepreneurship: FarmEasy (Jan 2020–Sept 2022), managed ~€25,000 as treasurer.</li>
-      </ul>
+  
+    <header class="site-header">
+      <a class="brand" href="index.html">Nirav Ramidi</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="site-nav"><a href="index.html" class="active">Home</a><a href="experience.html" class="">Experience</a><a href="projects/index.html" class="">Projects</a><a href="writing/index.html" class="">Writing</a><a href="education/index.html" class="">Education</a><a href="resume/index.html" class="">Resume</a><a href="contact.html" class="">Contact</a></nav>
+      
+    <div class="socials">
+      <a href="https://github.com/Nirav01/" aria-label="GitHub (opens in new tab)" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/nirav-ramidi/" aria-label="LinkedIn (opens in new tab)" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-  </div>
-</main>
+    </header>
+    
+  <main class="container">
+    
+<h1>About</h1>
+<p>Hi, I’m Nirav Ramidi. I build data products and backend services that are reliable, measurable, and useful.</p>
+<h2>Skills</h2>
+<div class="grid cols-3">
+  <div class="card"><h3>Data/ML</h3><p>Python, pandas, scikit‑learn, TensorFlow/PyTorch, MLflow</p></div>
+  <div class="card"><h3>Data Eng/BI</h3><p>SQL, BigQuery, Airflow, Looker</p></div>
+  <div class="card"><h3>Cloud/DevOps</h3><p>Docker, Kubernetes, Vertex AI, GCP, CI/CD</p></div>
+  <div class="card"><h3>SWE</h3><p>Java, Spring Boot, FastAPI, C, Git</p></div>
+  <div class="card"><h3>Math/OR</h3><p>Queueing (M/M/K), LP/ILP (Julia/JuMP)</p></div>
+</div>
 
-<footer class="site-footer">
-  <div class="container footer__inner">
-    <p>© <span id="year"></span> Nirav</p>
-    <ul class="social">
-      <li><a href="https://github.com/yourhandle">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/yourhandle/">LinkedIn</a></li>
-    </ul>
-  </div>
-</footer>
-
-<script src="assets/js/main.js" defer></script>
+  </main>
+  
+    <footer class="site-footer">
+      <p>© Nirav Ramidi · <a href="https://github.com/Nirav01/" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></p>
+    </footer>
+    <script src="/assets/js/main.js"></script>
+    
 </body>
 </html>

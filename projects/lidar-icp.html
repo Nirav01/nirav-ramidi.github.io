@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact · Nirav Ramidi</title>
+  <title>LiDAR Re‑localisation · Nirav Ramidi</title>
   <meta name="description" content="Data Scientist & ML Engineer — shipping reliable models and systems" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
     <header class="site-header">
       <a class="brand" href="index.html">Nirav Ramidi</a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-      <nav class="site-nav"><a href="index.html" class="">Home</a><a href="experience.html" class="">Experience</a><a href="projects/index.html" class="">Projects</a><a href="writing/index.html" class="">Writing</a><a href="education/index.html" class="">Education</a><a href="resume/index.html" class="">Resume</a><a href="contact.html" class="active">Contact</a></nav>
+      <nav class="site-nav"><a href="index.html" class="">Home</a><a href="experience.html" class="">Experience</a><a href="projects/index.html" class="active">Projects</a><a href="writing/index.html" class="">Writing</a><a href="education/index.html" class="">Education</a><a href="resume/index.html" class="">Resume</a><a href="contact.html" class="">Contact</a></nav>
       
     <div class="socials">
       <a href="https://github.com/Nirav01/" aria-label="GitHub (opens in new tab)" target="_blank" rel="noopener">GitHub</a>
@@ -25,12 +25,25 @@
     
   <main class="container">
     
-<h1>Contact</h1>
-<div class="card">
-  <p>Reach out via <a href="mailto:your.email@example.com?subject=Hello%20Nirav">email</a>, or find me on <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://github.com/Nirav01/" target="_blank" rel="noopener">GitHub</a>.</p>
-  <p><strong>Note:</strong> GitHub Pages is static—use a mailto link or a service like Formspree for forms.</p>
-</div>
+    <article class="card">
+      <h1>LiDAR Re‑localisation</h1>
+      <p><em>ICP robustness under sensor degradation (KITTI).</em></p>
+      <div style="margin:8px 0"><span class="tag">Open3D</span><span class="tag">Python</span></div>
+      
+<h2>Context</h2>
+<p>Evaluate ICP re‑localisation on degraded LiDAR to emulate low‑cost sensors.</p>
+<h2>Approach</h2>
+<ul class="list">
+  <li>Build reference map from KITTI; degrade query scan (FoV, range, density, noise).</li>
+  <li>Point‑to‑plane ICP; translation/rotation error metrics.</li>
+</ul>
+<h2>Results</h2>
+<ul class="list">
+  <li>FoV strongly affected rotation accuracy; extreme range limits hurt stability.</li>
+</ul>
 
+    </article>
+    
   </main>
   
     <footer class="site-footer">
