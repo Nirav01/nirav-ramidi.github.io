@@ -2,59 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects · Nirav Ramidi</title>
-  <meta name="description" content="Data Scientist & ML Engineer — shipping reliable models and systems" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Nirav Ramidi</title>
+  <meta name="description" content="Case studies and projects by category." />
+  <link rel="stylesheet" href="../assets/css/main.css" />
 </head>
 <body>
-  
-    <header class="site-header">
-      <a class="brand" href="index.html">Nirav Ramidi</a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-      <nav class="site-nav"><a href="index.html" class="">Home</a><a href="experience.html" class="">Experience</a><a href="projects/index.html" class="active">Projects</a><a href="writing/index.html" class="">Writing</a><a href="education/index.html" class="">Education</a><a href="resume/index.html" class="">Resume</a><a href="contact.html" class="">Contact</a></nav>
-      
-    <div class="socials">
-      <a href="https://github.com/Nirav01/" aria-label="GitHub (opens in new tab)" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/nirav-ramidi/" aria-label="LinkedIn (opens in new tab)" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    </header>
-    
-  <main class="container">
-    
-<h1>Projects</h1>
-<div class="grid cols-2">
-  <a class="card" href="golden-source-forecasting.html">
-    <h2>Golden‑Source & Forecasting</h2>
-    <p>BigQuery warehouse + LightGBM forecasting (MAPE 7.9%).</p>
-    <div><span class="tag">BigQuery</span><span class="tag">Airflow</span><span class="tag">Python</span></div>
-  </a>
-  <a class="card" href="vision-microservice.html">
-    <h2>Vision Microservice at Scale</h2>
-    <p>CNN‑OCR on Kubernetes with p95 &lt; 300 ms at ~1k req/s.</p>
-    <div><span class="tag">Docker</span><span class="tag">K8s</span><span class="tag">FastAPI</span></div>
-  </a>
-  <a class="card" href="lidar-icp.html">
-    <h2>LiDAR Re‑localisation</h2>
-    <p>ICP robustness under sensor degradation (KITTI).</p>
-    <div><span class="tag">Open3D</span><span class="tag">Python</span></div>
-  </a>
-  <a class="card" href="huffman.html">
-    <h2>Huffman Compressor</h2>
-    <p>Greedy optimal compression; multi‑corpus benchmarks.</p>
-    <div><span class="tag">Java</span></div>
-  </a>
-</div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
+  <header class="site-header">
+    <nav aria-label="Primary">
+      <a class="brand" href="../index.html">NR</a>
+      <ul class="nav">
+        <li><a href="../experience.html">Experience</a></li>
+        <li><a aria-current="page" href="index.html">Projects</a></li>
+        <li><a href="../writing/index.html">Writing</a></li>
+        <li><a href="../education/index.html">Education</a></li>
+        <li><a href="../resume/index.html">Resume</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li class="ext"><a href="https://github.com/Nirav01">GitHub</a></li>
+        <li class="ext"><a href="https://www.linkedin.com/in/nirav-ramidi/">LinkedIn</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Projects</h1>
+    <nav class="subnav" aria-label="Categories">
+      <ul>
+        <li><a href="data-ml/golden-source-forecasting.html">Data / ML</a></li>
+        <li><a href="swe-systems/huffman-compressor.html">SWE / Systems</a></li>
+        <li><a href="cloud-sre/vision-microservice.html">Cloud / SRE</a></li>
+        <li><a href="hcai-viz/infovis-vegalite.html">HCAI / Viz</a></li>
+      </ul>
+    </nav>
+
+    <section class="grid">
+      <article class="card">
+        <a href="data-ml/golden-source-forecasting.html">
+          <h2>Golden-Source & Forecasting</h2>
+          <p>BigQuery + Airflow + LightGBM • MAPE 7.9%</p>
+        </a>
+      </article>
+
+      <article class="card">
+        <a href="cloud-sre/vision-microservice.html">
+          <h2>CNN-OCR Vision Service</h2>
+          <p>Docker/K8s • p95 &lt; 300 ms @ ~1k req/s</p>
+        </a>
+      </article>
+
+      <article class="card">
+        <a href="swe-systems/huffman-compressor.html">
+          <h2>Huffman Compressor</h2>
+          <p>Greedy optimality • Benchmarked corpora</p>
+        </a>
+      </article>
+
+      <article class="card">
+        <a href="cloud-sre/queueing-capacity.html">
+          <h2>Queueing for Capacity</h2>
+          <p>M/M/K sizing • W ≤ 1s</p>
+        </a>
+      </article>
+    </section>
   </main>
-  
-    <footer class="site-footer">
-      <p>© Nirav Ramidi · <a href="https://github.com/Nirav01/" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></p>
-    </footer>
-    <script src="/assets/js/main.js"></script>
-    
+
+  <footer class="site-footer">
+    <p>© <span data-year></span> Nirav Ramidi</p>
+  </footer>
+  <script src="../assets/js/main.js" defer></script>
 </body>
 </html>
