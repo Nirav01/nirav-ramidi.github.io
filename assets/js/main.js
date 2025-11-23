@@ -194,6 +194,10 @@
      8) Little helper: warn if PDF links missing (dev-only)
      Console hint when a .pdf link 404s after click.
      ---------------------------------------- */
+  /* ----------------------------------------
+     8) Little helper: warn if PDF links missing (dev-only)
+     Console hint when a .pdf link 404s after click.
+     ---------------------------------------- */
   $$(".actions a[href$='.pdf'], .list a[href$='.pdf']").forEach((a) => {
     a.addEventListener("click", async (e) => {
       // HEAD check (best effort; some hosts block it)
@@ -203,4 +207,63 @@
       } catch { /* ignore */ }
     });
   });
+
+  /* ----------------------------------------
+     9) Theme Toggle (Light/Dark)
+     ---------------------------------------- */
+  (function initTheme() {
+    const themeKey = "theme-preference";
+    const getSystemTheme = () => window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    const getSavedTheme = () => localStorage.getItem(themeKey);
+    const setTheme = (theme) => {
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem(themeKey, theme);
+      updateIcon(theme);
+    };
+
+    // Initial load
+    const saved = getSavedTheme();
+    const system = getSystemTheme();
+    const current = saved || system;
+    // Only set attribute if saved, otherwise let CSS media query handle it (cleaner)
+    if (saved) document.documentElement.setAttribute("data-theme", saved);
+
+    // Create button
+    const navIcons = $(".nav-icons");
+    if (!navIcons) return;
+
+    const btn = document.createElement("button");
+    btn.className = "theme-toggle";
+    btn.setAttribute("aria-label", "Toggle theme");
+    Object.assign(btn.style, {
+      background: "transparent",
+      border: "none",
+      cursor: "pointer",
+      padding: "0.25rem",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      color: "var(--muted)",
+      marginLeft: "0.5rem"
+    });
+
+    // Icons (Simple SVGs)
+    const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`;
+    const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+
+    function updateIcon(theme) {
+      // If theme is dark, show sun (to switch to light). If light, show moon.
+      btn.innerHTML = theme === "dark" ? sunIcon : moonIcon;
+    }
+
+    updateIcon(current);
+
+    btn.addEventListener("click", () => {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark" ||
+        (!document.documentElement.hasAttribute("data-theme") && getSystemTheme() === "dark");
+      setTheme(isDark ? "light" : "dark");
+    });
+
+    navIcons.appendChild(btn);
+  })();
 })();
