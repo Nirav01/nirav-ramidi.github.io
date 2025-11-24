@@ -194,10 +194,6 @@
      8) Little helper: warn if PDF links missing (dev-only)
      Console hint when a .pdf link 404s after click.
      ---------------------------------------- */
-  /* ----------------------------------------
-     8) Little helper: warn if PDF links missing (dev-only)
-     Console hint when a .pdf link 404s after click.
-     ---------------------------------------- */
   $$(".actions a[href$='.pdf'], .list a[href$='.pdf']").forEach((a) => {
     a.addEventListener("click", async (e) => {
       // HEAD check (best effort; some hosts block it)
@@ -229,8 +225,8 @@
     if (saved) document.documentElement.setAttribute("data-theme", saved);
 
     // Create button
-    const navIcons = $(".nav-icons");
-    if (!navIcons) return;
+    const headerInner = $(".header-inner");
+    if (!headerInner) return;
 
     const btn = document.createElement("button");
     btn.className = "theme-toggle";
@@ -243,8 +239,7 @@
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      color: "var(--muted)",
-      marginLeft: "0.5rem"
+      color: "var(--muted)"
     });
 
     // Icons (Simple SVGs)
@@ -264,6 +259,6 @@
       setTheme(isDark ? "light" : "dark");
     });
 
-    navIcons.appendChild(btn);
+    headerInner.appendChild(btn);
   })();
 })();
