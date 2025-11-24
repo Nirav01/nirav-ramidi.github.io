@@ -225,8 +225,8 @@
     if (saved) document.documentElement.setAttribute("data-theme", saved);
 
     // Create button
-    const headerInner = $(".header-inner");
-    if (!headerInner) return;
+    const headerActions = $(".header-actions");
+    if (!headerActions) return;
 
     const btn = document.createElement("button");
     btn.className = "theme-toggle";
@@ -259,6 +259,6 @@
       setTheme(isDark ? "light" : "dark");
     });
 
-    headerInner.appendChild(btn);
+    headerActions.appendChild(btn);
   })();
 })();
