@@ -198,10 +198,6 @@ pre {
   margin-inline: auto;
 }
 
-.grid.cards {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-
 @media (max-width: 860px) {
   .grid.two {
     grid-template-columns: 1fr;
@@ -244,6 +240,12 @@ pre {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.header-actions .btn {
+  height: 36px;
+  padding-block: 0;
+  font-size: 0.9rem;
 }
 
 .brand {
