@@ -167,40 +167,7 @@
   }
 
   /* ----------------------------------------
-     7) Project filtering
-     Filters project cards based on category
-     ---------------------------------------- */
-  const filterButtons = $$(".filter[data-filter]");
-  const projectCards = $$(".project-card[data-tags]");
-
-  if (filterButtons.length > 0 && projectCards.length > 0) {
-    filterButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const filter = btn.getAttribute("data-filter");
-
-        // Update active state
-        filterButtons.forEach((b) => {
-          b.classList.remove("is-active");
-          b.setAttribute("aria-pressed", "false");
-        });
-        btn.classList.add("is-active");
-        btn.setAttribute("aria-pressed", "true");
-
-        // Filter cards
-        projectCards.forEach((card) => {
-          const tags = card.getAttribute("data-tags");
-          if (filter === "all" || tags === filter) {
-            card.style.display = "";
-          } else {
-            card.style.display = "none";
-          }
-        });
-      });
-    });
-  }
-
-  /* ----------------------------------------
-     8) Reveal-on-view for cards (skips if reduced motion)
+     7) Reveal-on-view for cards (skips if reduced motion)
      ---------------------------------------- */
   if (!prefersReduced && "IntersectionObserver" in window) {
     const reveal = (el) => {
@@ -238,7 +205,39 @@
   });
 
   /* ----------------------------------------
-     9) Theme Toggle (Light/Dark)
+     9) Project Filters
+     ---------------------------------------- */
+  const filters = $$('.filter[data-filter]');
+  const projects = $$('.project-card[data-tags]');
+
+  if (filters.length && projects.length) {
+    filters.forEach(filter => {
+      filter.addEventListener('click', (e) => {
+        const selectedFilter = e.target.dataset.filter;
+
+        // Update active state
+        filters.forEach(f => {
+          f.classList.remove('is-active');
+          f.setAttribute('aria-pressed', 'false');
+        });
+        filter.classList.add('is-active');
+        filter.setAttribute('aria-pressed', 'true');
+
+        // Filter projects
+        projects.forEach(project => {
+          const tags = project.dataset.tags;
+          if (selectedFilter === 'all' || tags === selectedFilter) {
+            project.style.display = '';
+          } else {
+            project.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  /* ----------------------------------------
+     10) Theme Toggle (Light/Dark)
      ---------------------------------------- */
   (function initTheme() {
     const themeKey = "theme-preference";
