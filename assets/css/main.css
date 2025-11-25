@@ -572,6 +572,52 @@ pre {
 
 
 /* Tile cards (home page featured projects) */
+
+/* Hero section (home page) */
+.hero {
+  padding: var(--space-8) 0;
+}
+
+.hero__inner {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  .hero__inner {
+    grid-template-columns: 1.2fr 0.8fr;
+  } n
+  .hero__media {
+    order: 2;
+  } n
+  .hero__copy {
+    order: 1;
+  } n}
+
+.hero__media img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-2);
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  object-fit: cover;
+}
+
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin: var(--space-5) 0;
+}
+
+.metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: var(--space-4);
+}
+
 .tiles {
   display: grid;
   gap: var(--space-5);
