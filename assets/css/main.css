@@ -565,6 +565,40 @@ pre {
 }
 
 /* -----------------------------
+   Case Hero
+   ----------------------------- */
+.case-hero {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+}
+
+.case-hero__inner {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  .case-hero__inner {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .case-hero__media {
+    order: 2;
+  }
+}
+
+.case-hero__media img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-2);
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* -----------------------------
    Case page sections
    ----------------------------- */
 .case-section+.case-section {
