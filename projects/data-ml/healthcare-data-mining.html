@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Healthcare Data Mining — Case Study — Nirav Ramidi</title>
-  <meta name="description" content="Healthcare data mining pipelines: imbalanced classification with SMOTE, exploratory clustering (KMeans/DBSCAN), and a light regression track. Clean preprocessing, proper validation, and practical evaluation." />
+  <meta name="description"
+    content="Healthcare data mining pipelines: imbalanced classification with SMOTE, exploratory clustering (KMeans/DBSCAN), and a light regression track. Clean preprocessing, proper validation, and practical evaluation." />
 
   <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../../assets/css/main.css" />
@@ -45,7 +47,8 @@
           <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
           <li class="nav-icons">
             <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+              aria-label="LinkedIn">LinkedIn</a>
           </li>
         </ul>
       </nav>
@@ -60,6 +63,7 @@
       <ol>
         <li><a href="../../">Home</a></li>
         <li><a href="../">Projects</a></li>
+        <li><a href="../">Data / ML</a></li>
         <li><span aria-current="page">Healthcare Data Mining</span></li>
       </ol>
     </nav>
@@ -72,7 +76,8 @@
           <p class="lead">
             Built end-to-end pipelines for an imbalanced <strong>stroke-risk</strong> dataset: cleaned features,
             applied <strong>SMOTE</strong> for minority up-sampling, compared classifiers, and explored
-            <strong>clustering</strong> structure (KMeans/DBSCAN). Included a small <strong>regression</strong> track for numeric outcomes.
+            <strong>clustering</strong> structure (KMeans/DBSCAN). Included a small <strong>regression</strong> track
+            for numeric outcomes.
           </p>
           <ul class="metrics">
             <li class="chip">SMOTE (train-only)</li>
@@ -82,7 +87,8 @@
           </ul>
         </div>
         <figure class="case-hero__media">
-          <img src="../../assets/img/case-studies/healthcare-hero.jpg" alt="Healthcare dataset visualization" loading="lazy" />
+          <img src="../../assets/img/case-studies/healthcare-hero.jpg" alt="Healthcare dataset visualization"
+            loading="lazy" />
         </figure>
       </div>
     </section>
@@ -93,11 +99,16 @@
         <aside class="case-meta card">
           <h2 class="visually-hidden">Project info</h2>
           <dl class="meta-list">
-            <dt>Course</dt><dd>Data Mining (COMP40370)</dd>
-            <dt>Institution</dt><dd>University College Dublin</dd>
-            <dt>Role</dt><dd>Student — practical labs</dd>
-            <dt>Focus</dt><dd>Imbalanced learning · Clustering · Evaluation</dd>
-            <dt>Stack</dt><dd>Python, pandas, scikit-learn, imbalanced-learn, matplotlib</dd>
+            <dt>Course</dt>
+            <dd>Data Mining (COMP40370)</dd>
+            <dt>Institution</dt>
+            <dd>University College Dublin</dd>
+            <dt>Role</dt>
+            <dd>Student — practical labs</dd>
+            <dt>Focus</dt>
+            <dd>Imbalanced learning · Clustering · Evaluation</dd>
+            <dt>Stack</dt>
+            <dd>Python, pandas, scikit-learn, imbalanced-learn, matplotlib</dd>
             <dt>Links</dt>
             <dd>
               <ul class="bare">
@@ -205,7 +216,8 @@
               </div>
             </div>
             <figure class="case-figure">
-              <img src="../../assets/img/case-studies/healthcare-roc.png" alt="ROC/PR curves comparing classifiers with and without SMOTE" loading="lazy" />
+              <img src="../../assets/img/case-studies/healthcare-roc.png"
+                alt="ROC/PR curves comparing classifiers with and without SMOTE" loading="lazy" />
               <figcaption>SMOTE improves minority recall and PR-AUC with a small precision trade-off.</figcaption>
             </figure>
           </section>
@@ -214,9 +226,12 @@
           <section class="case-section" id="results">
             <h2>Results</h2>
             <ul class="checklist">
-              <li>With <strong>SMOTE</strong>, tree-based models achieved meaningfully higher recall at similar ROC-AUC.</li>
-              <li><strong>Threshold tuning</strong> (Youden’s J / PR-curve sweep) balanced precision vs recall for clinical use.</li>
-              <li><strong>KMeans</strong> revealed clusters aligned with age/BMI/hypertension patterns; <strong>DBSCAN</strong> found small dense risk groups.</li>
+              <li>With <strong>SMOTE</strong>, tree-based models achieved meaningfully higher recall at similar ROC-AUC.
+              </li>
+              <li><strong>Threshold tuning</strong> (Youden’s J / PR-curve sweep) balanced precision vs recall for
+                clinical use.</li>
+              <li><strong>KMeans</strong> revealed clusters aligned with age/BMI/hypertension patterns;
+                <strong>DBSCAN</strong> found small dense risk groups.</li>
               <li>Regression baselines were stable after removing outliers and standardising features.</li>
             </ul>
           </section>
@@ -226,14 +241,16 @@
             <h2>Lessons &amp; Next Steps</h2>
             <ul>
               <li>Prevent leakage: apply <strong>SMOTE strictly within CV folds</strong>; keep test untouched.</li>
-              <li>Prefer <strong>PR-AUC</strong> for highly imbalanced problems; use calibration before decision thresholds.</li>
-              <li>Next: add <strong>XGBoost/LightGBM</strong>, cost-sensitive learning, SHAP explanations, and drift monitoring.</li>
+              <li>Prefer <strong>PR-AUC</strong> for highly imbalanced problems; use calibration before decision
+                thresholds.</li>
+              <li>Next: add <strong>XGBoost/LightGBM</strong>, cost-sensitive learning, SHAP explanations, and drift
+                monitoring.</li>
             </ul>
           </section>
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Case study pagination">
-            <a class="btn btn--ghost" href="../">← All projects</a>
+            <a class="btn btn--ghost" href="astronomy-classifier.html">← Astronomy Classifier</a>
             <div class="spacer"></div>
             <a class="btn btn--secondary" href="../swe-systems/java-marketplace.html">Next: Java Marketplace →</a>
           </nav>
@@ -258,4 +275,5 @@
   <!-- Scripts (kept separate) -->
   <script src="../../assets/js/main.js" defer></script>
 </body>
+
 </html>

@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HCAI Empirical Study — Case Study — Nirav Ramidi</title>
-  <meta name="description" content="Human-Centred AI empirical study: experiment comparing a baseline model UI vs an explainable, human-centred design. Study design, analysis, findings, and ethics." />
+  <meta name="description"
+    content="Human-Centred AI empirical study: experiment comparing a baseline model UI vs an explainable, human-centred design. Study design, analysis, findings, and ethics." />
 
   <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../../assets/css/main.css" />
@@ -45,7 +47,8 @@
           <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
           <li class="nav-icons">
             <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+              aria-label="LinkedIn">LinkedIn</a>
           </li>
         </ul>
       </nav>
@@ -83,7 +86,8 @@
           </ul>
         </div>
         <figure class="case-hero__media">
-          <img src="../../assets/img/case-studies/hcai-hero.jpg" alt="Participants using two AI interfaces: baseline vs explainable UI" loading="lazy" />
+          <img src="../../assets/img/case-studies/hcai-hero.jpg"
+            alt="Participants using two AI interfaces: baseline vs explainable UI" loading="lazy" />
         </figure>
       </div>
     </section>
@@ -95,11 +99,16 @@
         <aside class="case-meta card">
           <h2 class="visually-hidden">Project info</h2>
           <dl class="meta-list">
-            <dt>Course</dt><dd>Human-Centred AI</dd>
-            <dt>Type</dt><dd>Empirical study</dd>
-            <dt>Role</dt><dd>Study design, implementation, analysis</dd>
-            <dt>Focus</dt><dd>Explainability · Trust · Usability</dd>
-            <dt>Stack</dt><dd>Figma/HTML prototype, JS logger, R/Python stats</dd>
+            <dt>Course</dt>
+            <dd>Human-Centred AI</dd>
+            <dt>Type</dt>
+            <dd>Empirical study</dd>
+            <dt>Role</dt>
+            <dd>Study design, implementation, analysis</dd>
+            <dt>Focus</dt>
+            <dd>Explainability · Trust · Usability</dd>
+            <dt>Stack</dt>
+            <dd>Figma/HTML prototype, JS logger, R/Python stats</dd>
             <dt>Links</dt>
             <dd>
               <ul class="bare">
@@ -115,8 +124,10 @@
           <section class="case-section" id="rq">
             <h2>Research Questions</h2>
             <ul>
-              <li>Does an explainable, human-centred UI improve <strong>task success</strong> and reduce <strong>time-on-task</strong> vs a baseline UI?</li>
-              <li>Does it increase <strong>perceived trust</strong> and <strong>usability (SUS)</strong> while lowering <strong>workload (NASA-TLX)</strong>?</li>
+              <li>Does an explainable, human-centred UI improve <strong>task success</strong> and reduce
+                <strong>time-on-task</strong> vs a baseline UI?</li>
+              <li>Does it increase <strong>perceived trust</strong> and <strong>usability (SUS)</strong> while lowering
+                <strong>workload (NASA-TLX)</strong>?</li>
             </ul>
           </section>
 
@@ -127,27 +138,33 @@
               <div>
                 <h3>Design</h3>
                 <ul>
-                  <li><strong>Within-subjects</strong> with <strong>counter-balanced</strong> order (AB/BA) to minimise learning effects.</li>
-                  <li>Two conditions: <em>Baseline</em> vs <em>XAI</em> (salient explanations, confidence, data provenance, and recourse).</li>
+                  <li><strong>Within-subjects</strong> with <strong>counter-balanced</strong> order (AB/BA) to minimise
+                    learning effects.</li>
+                  <li>Two conditions: <em>Baseline</em> vs <em>XAI</em> (salient explanations, confidence, data
+                    provenance, and recourse).</li>
                 </ul>
                 <h3>Variables</h3>
                 <ul>
                   <li><strong>IV:</strong> Interface type (Baseline vs XAI).</li>
-                  <li><strong>DV:</strong> task success, time-on-task, error rate, trust, SUS, NASA-TLX; plus open-ended feedback.</li>
+                  <li><strong>DV:</strong> task success, time-on-task, error rate, trust, SUS, NASA-TLX; plus open-ended
+                    feedback.</li>
                 </ul>
               </div>
               <div>
                 <h3>Participants &amp; Tasks</h3>
                 <ul>
                   <li>Convenience sample of university participants (mixed backgrounds).</li>
-                  <li>Scenario-based decisions (e.g., classify, triage, or recommend) with ground truth available to compute accuracy.</li>
+                  <li>Scenario-based decisions (e.g., classify, triage, or recommend) with ground truth available to
+                    compute accuracy.</li>
                   <li>Think-aloud encouraged; post-task questionnaires per condition.</li>
                 </ul>
               </div>
             </div>
 
             <figure class="case-figure">
-              <img src="../../assets/img/case-studies/hcai-design.png" alt="Experiment flow: consent → training → condition A tasks → SUS/TLX → condition B tasks → exit interview" loading="lazy" />
+              <img src="../../assets/img/case-studies/hcai-design.png"
+                alt="Experiment flow: consent → training → condition A tasks → SUS/TLX → condition B tasks → exit interview"
+                loading="lazy" />
               <figcaption>Experiment flow and measures per phase.</figcaption>
             </figure>
           </section>
@@ -157,7 +174,8 @@
             <h2>Instrumentation &amp; Data</h2>
             <ul>
               <li>Client-side logger captured timestamps, actions, and errors (pseudo-anonymous IDs).</li>
-              <li>Questionnaires: <strong>SUS</strong>, <strong>NASA-TLX</strong>, and a <strong>Likert trust</strong> scale.</li>
+              <li>Questionnaires: <strong>SUS</strong>, <strong>NASA-TLX</strong>, and a <strong>Likert trust</strong>
+                scale.</li>
               <li>Post-study semi-structured interview for qualitative themes.</li>
             </ul>
           </section>
@@ -166,14 +184,17 @@
           <section class="case-section" id="analysis">
             <h2>Analysis</h2>
             <ul>
-              <li>Checked normality; used <strong>paired t-tests</strong> or <strong>Wilcoxon</strong> where appropriate.</li>
+              <li>Checked normality; used <strong>paired t-tests</strong> or <strong>Wilcoxon</strong> where
+                appropriate.</li>
               <li>Effect sizes: <em>dz</em> / <em>r</em>; confidence intervals via bootstrap for robustness.</li>
               <li>Thematic coding on interview notes; triangulated with quantitative trends.</li>
             </ul>
 
             <figure class="case-figure">
-              <img src="../../assets/img/case-studies/hcai-results.png" alt="Bar/violin plots comparing SUS, Trust, TLX, and time between Baseline and XAI" loading="lazy" />
-              <figcaption>Indicative results view; the XAI condition generally trends better on SUS/Trust and time.</figcaption>
+              <img src="../../assets/img/case-studies/hcai-results.png"
+                alt="Bar/violin plots comparing SUS, Trust, TLX, and time between Baseline and XAI" loading="lazy" />
+              <figcaption>Indicative results view; the XAI condition generally trends better on SUS/Trust and time.
+              </figcaption>
             </figure>
           </section>
 
@@ -181,9 +202,12 @@
           <section class="case-section" id="findings">
             <h2>Findings (Summary)</h2>
             <ul class="checklist">
-              <li>XAI UI improved <strong>perceived trust</strong> and <strong>usability</strong> without increasing cognitive load.</li>
-              <li>Participants relied on <em>confidence + rationale</em> to resolve edge cases and reduced unnecessary overrides.</li>
-              <li>Qualitative feedback: participants valued <em>recourse</em> (“what can I do?”) as much as explanations.</li>
+              <li>XAI UI improved <strong>perceived trust</strong> and <strong>usability</strong> without increasing
+                cognitive load.</li>
+              <li>Participants relied on <em>confidence + rationale</em> to resolve edge cases and reduced unnecessary
+                overrides.</li>
+              <li>Qualitative feedback: participants valued <em>recourse</em> (“what can I do?”) as much as
+                explanations.</li>
             </ul>
           </section>
 
@@ -212,7 +236,7 @@
           <nav class="case-pager" aria-label="Case study pagination">
             <a class="btn btn--ghost" href="../cloud-sre/library-analytics.html">← Cloud-Native Library Analytics</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="infovis-vegalite.html">Next: InfoVis Dashboard (Vega-Lite) →</a>
+            <a class="btn btn--secondary" href="infovis-vega-lite.html">Next: InfoVis Dashboard (Vega-Lite) →</a>
           </nav>
         </article>
       </div>
@@ -235,4 +259,5 @@
   <!-- Scripts (kept separate) -->
   <script src="../../assets/js/main.js" defer></script>
 </body>
+
 </html>

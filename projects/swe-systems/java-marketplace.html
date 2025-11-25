@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Java Marketplace — Case Study — Nirav Ramidi</title>
-  <meta name="description" content="Spring Boot marketplace with catalogue, cart/checkout, auth/roles, order history, and an admin back-office. Clean MVC, validation, and tests." />
+  <meta name="description"
+    content="Spring Boot marketplace with catalogue, cart/checkout, auth/roles, order history, and an admin back-office. Clean MVC, validation, and tests." />
 
   <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../../assets/css/main.css" />
@@ -46,7 +48,8 @@
           <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
           <li class="nav-icons">
             <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+              aria-label="LinkedIn">LinkedIn</a>
           </li>
         </ul>
       </nav>
@@ -72,7 +75,8 @@
         <div class="case-hero__copy">
           <h1>Java Marketplace</h1>
           <p class="lead">
-            A full-stack <strong>Spring Boot</strong> marketplace with catalogue, cart/checkout, authentication &amp; roles,
+            A full-stack <strong>Spring Boot</strong> marketplace with catalogue, cart/checkout, authentication &amp;
+            roles,
             order history, and an admin back-office. Built with clean MVC, form validation, and integration tests.
           </p>
           <ul class="metrics">
@@ -83,7 +87,8 @@
           </ul>
         </div>
         <figure class="case-hero__media">
-          <img src="../../assets/img/case-studies/marketplace-hero.jpg" alt="Screens of the Java marketplace: product list, cart, and admin dashboard" loading="lazy" />
+          <img src="../../assets/img/case-studies/marketplace-hero.jpg"
+            alt="Screens of the Java marketplace: product list, cart, and admin dashboard" loading="lazy" />
         </figure>
       </div>
     </section>
@@ -95,11 +100,16 @@
         <aside class="case-meta card">
           <h2 class="visually-hidden">Project info</h2>
           <dl class="meta-list">
-            <dt>Type</dt><dd>Course project — Web Development</dd>
-            <dt>Role</dt><dd>Solo developer</dd>
-            <dt>Focus</dt><dd>Backend, MVC, Auth, Data modelling</dd>
-            <dt>Stack</dt><dd>Java 17, Spring Boot, Spring MVC, Spring Data JPA, Spring Security, Thymeleaf, PostgreSQL/H2, Maven</dd>
-            <dt>Testing</dt><dd>JUnit 5, Mockito, MockMvc</dd>
+            <dt>Type</dt>
+            <dd>Course project — Web Development</dd>
+            <dt>Role</dt>
+            <dd>Solo developer</dd>
+            <dt>Focus</dt>
+            <dd>Backend, MVC, Auth, Data modelling</dd>
+            <dt>Stack</dt>
+            <dd>Java 17, Spring Boot, Spring MVC, Spring Data JPA, Spring Security, Thymeleaf, PostgreSQL/H2, Maven</dd>
+            <dt>Testing</dt>
+            <dd>JUnit 5, Mockito, MockMvc</dd>
             <dt>Links</dt>
             <dd>
               <ul class="bare">
@@ -131,7 +141,9 @@
           <section class="case-section" id="architecture">
             <h2>Architecture</h2>
             <figure class="case-figure">
-              <img src="../../assets/img/case-studies/marketplace-architecture.png" alt="Layered architecture: Controller → Service → Repository → DB; plus Security and View layers" loading="lazy" />
+              <img src="../../assets/img/case-studies/marketplace-architecture.png"
+                alt="Layered architecture: Controller → Service → Repository → DB; plus Security and View layers"
+                loading="lazy" />
               <figcaption>Layered MVC with services mediating between controllers and repositories.</figcaption>
             </figure>
             <div class="cols">
@@ -177,20 +189,31 @@
             <h2>Key Features</h2>
             <div class="grid cards">
               <article class="card">
-                <header class="card__header"><h3>Catalogue</h3></header>
+                <header class="card__header">
+                  <h3>Catalogue</h3>
+                </header>
                 <p class="card__body">Browse by category, keyword search, and product detail with related items.</p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Cart &amp; Checkout</h3></header>
-                <p class="card__body">Add/remove items, address capture, payment stub, order confirmation email stub.</p>
+                <header class="card__header">
+                  <h3>Cart &amp; Checkout</h3>
+                </header>
+                <p class="card__body">Add/remove items, address capture, payment stub, order confirmation email stub.
+                </p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Order History</h3></header>
-                <p class="card__body">Users can review past orders; totals are <em>immutable</em> from price snapshots.</p>
+                <header class="card__header">
+                  <h3>Order History</h3>
+                </header>
+                <p class="card__body">Users can review past orders; totals are <em>immutable</em> from price snapshots.
+                </p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Admin Back-Office</h3></header>
-                <p class="card__body">CRUD products, manage categories, and maintain <em>PriceHistory</em> with effective dates.</p>
+                <header class="card__header">
+                  <h3>Admin Back-Office</h3>
+                </header>
+                <p class="card__body">CRUD products, manage categories, and maintain <em>PriceHistory</em> with
+                  effective dates.</p>
               </article>
             </div>
           </section>
@@ -209,7 +232,8 @@
           <section class="case-section" id="results">
             <h2>What I learned</h2>
             <ul class="checklist">
-              <li>Enforcing <strong>immutable order totals</strong> requires price snapshotting and careful mapping.</li>
+              <li>Enforcing <strong>immutable order totals</strong> requires price snapshotting and careful mapping.
+              </li>
               <li>Clean separation of concerns simplifies testing and refactoring.</li>
               <li>Security defaults (CSRF, password hashing) are easy to miss unless tested explicitly.</li>
             </ul>
@@ -217,7 +241,7 @@
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Case study pagination">
-            <a class="btn btn--ghost" href="../">← All projects</a>
+            <a class="btn btn--ghost" href="../data-ml/healthcare-data-mining.html">← Healthcare Data Mining</a>
             <div class="spacer"></div>
             <a class="btn btn--secondary" href="huffman-compressor.html">Next: Huffman Compressor →</a>
           </nav>
@@ -242,4 +266,5 @@
   <!-- Scripts (kept separate) -->
   <script src="../../assets/js/main.js" defer></script>
 </body>
+
 </html>

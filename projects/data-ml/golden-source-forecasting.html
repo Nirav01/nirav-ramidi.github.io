@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Golden-Source & Forecasting — Case Study — Nirav Ramidi</title>
-  <meta name="description" content="Built a BigQuery golden source across 12+ systems and delivered brand-level LightGBM forecasts (MAPE 7.9%) that reduced CNS stock-outs by 18%." />
+  <meta name="description"
+    content="Built a BigQuery golden source across 12+ systems and delivered brand-level LightGBM forecasts (MAPE 7.9%) that reduced CNS stock-outs by 18%." />
 
   <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../../assets/css/main.css" />
@@ -45,7 +47,8 @@
           <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
           <li class="nav-icons">
             <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+              aria-label="LinkedIn">LinkedIn</a>
           </li>
         </ul>
       </nav>
@@ -60,6 +63,7 @@
       <ol>
         <li><a href="../../">Home</a></li>
         <li><a href="../">Projects</a></li>
+        <li><a href="../">Data / ML</a></li>
         <li><span aria-current="page">Golden-Source & Forecasting</span></li>
       </ol>
     </nav>
@@ -71,7 +75,8 @@
           <h1>Golden-Source &amp; Forecasting</h1>
           <p class="lead">
             Unified <strong>12+ data silos</strong> into a <strong>BigQuery</strong> golden source and shipped
-            brand-level <strong>LightGBM</strong> forecasts with <strong>MAPE 7.9%</strong>, helping reduce CNS stock-outs by <strong>18%</strong>.
+            brand-level <strong>LightGBM</strong> forecasts with <strong>MAPE 7.9%</strong>, helping reduce CNS
+            stock-outs by <strong>18%</strong>.
           </p>
           <ul class="metrics">
             <li class="chip">BigQuery + Airflow</li>
@@ -81,7 +86,8 @@
           </ul>
         </div>
         <figure class="case-hero__media">
-          <img src="../../assets/img/case-studies/golden-source-hero.jpg" alt="Golden-source data architecture illustration" loading="lazy" />
+          <img src="../../assets/img/case-studies/golden-source-hero.jpg"
+            alt="Golden-source data architecture illustration" loading="lazy" />
         </figure>
       </div>
     </section>
@@ -92,11 +98,16 @@
         <aside class="case-meta card">
           <h2 class="visually-hidden">Project info</h2>
           <dl class="meta-list">
-            <dt>Organisation</dt><dd>Icon Life Sciences</dd>
-            <dt>Duration</dt><dd>May 2025 – Sept 2025</dd>
-            <dt>Role</dt><dd>Data Science Analyst Intern</dd>
-            <dt>Focus</dt><dd>Data Engineering · Forecasting · BI</dd>
-            <dt>Stack</dt><dd>Python, BigQuery, Cloud Functions, Airflow, scikit-learn</dd>
+            <dt>Organisation</dt>
+            <dd>Icon Life Sciences</dd>
+            <dt>Duration</dt>
+            <dd>May 2025 – Sept 2025</dd>
+            <dt>Role</dt>
+            <dd>Data Science Analyst Intern</dd>
+            <dt>Focus</dt>
+            <dd>Data Engineering · Forecasting · BI</dd>
+            <dt>Stack</dt>
+            <dd>Python, BigQuery, Cloud Functions, Airflow, scikit-learn</dd>
             <dt>Links</dt>
             <dd>
               <ul class="bare">
@@ -114,10 +125,12 @@
             <p>
               Sales, inventory, and Rx data lived across disparate systems (ERP, CRM, e-commerce, distributor reports).
               Analysts spent hours reconciling extracts and definitions varied by team. The goal was to establish a
-              <strong>single source of truth</strong> in BigQuery and deliver reliable brand-level forecasts for planning.
+              <strong>single source of truth</strong> in BigQuery and deliver reliable brand-level forecasts for
+              planning.
             </p>
             <ul>
-              <li>Unify data from <strong>12+ systems</strong> covering <strong>108 SKUs</strong> across <strong>25 therapy areas</strong>.</li>
+              <li>Unify data from <strong>12+ systems</strong> covering <strong>108 SKUs</strong> across <strong>25
+                  therapy areas</strong>.</li>
               <li>Replace manual Excel workflows (target: <strong>−80%</strong> analyst time).</li>
               <li>Produce quarterly demand forecasts with <strong>MAPE ≤ 10%</strong>.</li>
             </ul>
@@ -127,14 +140,17 @@
           <section class="case-section" id="architecture">
             <h2>Architecture</h2>
             <figure class="case-figure">
-              <img src="../../assets/img/case-studies/golden-source-architecture.png" alt="Pipeline architecture diagram: sources → Cloud Functions → BigQuery staging → transformations → marts → Looker" loading="lazy" />
+              <img src="../../assets/img/case-studies/golden-source-architecture.png"
+                alt="Pipeline architecture diagram: sources → Cloud Functions → BigQuery staging → transformations → marts → Looker"
+                loading="lazy" />
               <figcaption>ETL/ELT pipeline into BigQuery; scheduled with Airflow.</figcaption>
             </figure>
             <div class="cols">
               <div>
                 <h3>Ingestion</h3>
                 <ul>
-                  <li><strong>Cloud Functions</strong> to normalise CSV/API feeds and land to <em>staging</em> tables.</li>
+                  <li><strong>Cloud Functions</strong> to normalise CSV/API feeds and land to <em>staging</em> tables.
+                  </li>
                   <li>Idempotent loads with file hashing &amp; partitioned tables.</li>
                 </ul>
                 <h3>Orchestration</h3>
@@ -145,7 +161,8 @@
               <div>
                 <h3>Transform</h3>
                 <ul>
-                  <li>SQL transforms to conformed dims (product, region, channel) and fact tables (orders, Rx, inventory).</li>
+                  <li>SQL transforms to conformed dims (product, region, channel) and fact tables (orders, Rx,
+                    inventory).</li>
                   <li>Audit columns, data quality checks, referential integrity reports.</li>
                 </ul>
                 <h3>Serve</h3>
@@ -165,11 +182,13 @@
             </p>
             <ul>
               <li><strong>Features:</strong> lags/rolling stats, holiday/calendar flags, stock-in/out indicators.</li>
-              <li><strong>Validation:</strong> time-series CV (expanding window); error reported as <strong>MAPE</strong>.</li>
+              <li><strong>Validation:</strong> time-series CV (expanding window); error reported as
+                <strong>MAPE</strong>.</li>
               <li><strong>Result:</strong> <strong>MAPE 7.9%</strong> (median across brands) vs baselines &gt; 12%.</li>
             </ul>
             <figure class="case-figure">
-              <img src="../../assets/img/case-studies/golden-source-forecasting-metrics.png" alt="Forecast performance chart showing MAPE improvement over baseline" loading="lazy" />
+              <img src="../../assets/img/case-studies/golden-source-forecasting-metrics.png"
+                alt="Forecast performance chart showing MAPE improvement over baseline" loading="lazy" />
               <figcaption>LightGBM vs baselines across brands (lower is better).</figcaption>
             </figure>
           </section>
@@ -190,7 +209,8 @@
             <h2>Lessons &amp; Next Steps</h2>
             <ul>
               <li>Semantic consistency beats model tweaks: a clean product hierarchy reduced unexplained variance.</li>
-              <li>Add <strong>dbt</strong> for versioned transformations; introduce <strong>Great Expectations</strong> checks.</li>
+              <li>Add <strong>dbt</strong> for versioned transformations; introduce <strong>Great Expectations</strong>
+                checks.</li>
               <li>Trial probabilistic forecasts (QR or NGBoost) for service-level planning.</li>
             </ul>
           </section>
@@ -222,4 +242,5 @@
   <!-- Scripts (kept separate) -->
   <script src="../../assets/js/main.js" defer></script>
 </body>
+
 </html>
