@@ -167,7 +167,40 @@
   }
 
   /* ----------------------------------------
-     7) Reveal-on-view for cards (skips if reduced motion)
+     7) Project filtering
+     Filters project cards based on category
+     ---------------------------------------- */
+  const filterButtons = $$(".filter[data-filter]");
+  const projectCards = $$(".project-card[data-tags]");
+
+  if (filterButtons.length > 0 && projectCards.length > 0) {
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const filter = btn.getAttribute("data-filter");
+
+        // Update active state
+        filterButtons.forEach((b) => {
+          b.classList.remove("is-active");
+          b.setAttribute("aria-pressed", "false");
+        });
+        btn.classList.add("is-active");
+        btn.setAttribute("aria-pressed", "true");
+
+        // Filter cards
+        projectCards.forEach((card) => {
+          const tags = card.getAttribute("data-tags");
+          if (filter === "all" || tags === filter) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  }
+
+  /* ----------------------------------------
+     8) Reveal-on-view for cards (skips if reduced motion)
      ---------------------------------------- */
   if (!prefersReduced && "IntersectionObserver" in window) {
     const reveal = (el) => {
