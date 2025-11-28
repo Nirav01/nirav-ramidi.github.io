@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Optimisation — Module — Nirav Ramidi</title>
+  <title>Optimisation â€” Module â€” Nirav Ramidi</title>
   <meta name="description" content="Linear & integer programming, duality, simplex, sensitivity, network flows, and practical modelling with solvers." />
 
   <!-- Styles (kept separate) -->
@@ -17,7 +17,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -30,15 +30,18 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -88,8 +91,8 @@
         <aside class="case-meta card">
           <h2 class="visually-hidden">Module info</h2>
           <dl class="meta-list">
-            <dt>Category</dt><dd>Theory · OR · Applied Math</dd>
-            <dt>Focus</dt><dd>Modelling · Algorithms · Solver use</dd>
+            <dt>Category</dt><dd>Theory Â· OR Â· Applied Math</dd>
+            <dt>Focus</dt><dd>Modelling Â· Algorithms Â· Solver use</dd>
             <dt>Stack</dt><dd>Python (PuLP/OR-Tools), Julia (JuMP), GLPK/Gurobi</dd>
             <dt>Assessment</dt><dd>Problem sets, modelling assignments, final exam/project</dd>
           </dl>
@@ -122,7 +125,7 @@
               </article>
               <article class="card">
                 <header class="card__header"><h3>Duality &amp; sensitivity</h3></header>
-                <p class="card__body">Primal–dual pairs, complementary slackness, shadow prices, RHS/coeff ranges.</p>
+                <p class="card__body">Primalâ€“dual pairs, complementary slackness, shadow prices, RHS/coeff ranges.</p>
               </article>
               <article class="card">
                 <header class="card__header"><h3>Integer programming</h3></header>
@@ -144,17 +147,17 @@
             <h2>Quick Reference</h2>
             <div class="grid two">
               <div class="card">
-                <header class="card__header"><h3>LP — standard form</h3></header>
-                <pre class="code-block"><code>maximise   cᵀx
-subject to Ax ≤ b
-           x ≥ 0</code></pre>
-                <p class="muted small">Convert ≥ with slack/surplus &amp; sign constraints; equality via two inequalities.</p>
+                <header class="card__header"><h3>LP â€” standard form</h3></header>
+                <pre class="code-block"><code>maximise   cáµ€x
+subject to Ax â‰¤ b
+           x â‰¥ 0</code></pre>
+                <p class="muted small">Convert â‰¥ with slack/surplus &amp; sign constraints; equality via two inequalities.</p>
               </div>
               <div class="card">
-                <header class="card__header"><h3>Dual (for ≤-primal)</h3></header>
-                <pre class="code-block"><code>minimise   bᵀy
-subject to Aᵀy ≥ c
-           y ≥ 0</code></pre>
+                <header class="card__header"><h3>Dual (for â‰¤-primal)</h3></header>
+                <pre class="code-block"><code>minimise   báµ€y
+subject to Aáµ€y â‰¥ c
+           y â‰¥ 0</code></pre>
                 <p class="muted small">Complementary slackness ties primal activity to dual feasibility.</p>
               </div>
             </div>
@@ -165,7 +168,7 @@ subject to Aᵀy ≥ c
             <h2>Modelling Snippets</h2>
             <div class="grid two">
               <div class="card">
-                <header class="card__header"><h3>Python · PuLP (transport)</h3></header>
+                <header class="card__header"><h3>Python Â· PuLP (transport)</h3></header>
                 <pre class="code-block"><code>import pulp as pl
 
 prob = pl.LpProblem("transport", pl.LpMinimize)
@@ -181,7 +184,7 @@ for j in markets: prob += pl.lpSum(x[i][j] for i in plants) >= demand[j]
 prob.solve()</code></pre>
               </div>
               <div class="card">
-                <header class="card__header"><h3>Julia · JuMP (assignment)</h3></header>
+                <header class="card__header"><h3>Julia Â· JuMP (assignment)</h3></header>
                 <pre class="code-block"><code>using JuMP, GLPK
 model = Model(GLPK.Optimizer)
 @variable(model, x[1:n,1:n], Bin)
@@ -197,9 +200,9 @@ optimize!(model)</code></pre>
           <section class="case-section" id="artifacts">
             <h2>Selected Artefacts</h2>
             <ul class="list">
-              <li><a href="assignment1_comp30930.pdf">Assignment 1 — LP modelling &amp; sensitivity</a></li>
-              <li><a href="comp30930_assignment2.pdf">Assignment 2 — Network flows &amp; ILP</a></li>
-              <li><a href="Optimisation.pdf">Lecture summary — Optimisation (slides/notes)</a></li>
+              <li><a href="assignment1_comp30930.pdf">Assignment 1 â€” LP modelling &amp; sensitivity</a></li>
+              <li><a href="comp30930_assignment2.pdf">Assignment 2 â€” Network flows &amp; ILP</a></li>
+              <li><a href="Optimisation.pdf">Lecture summary â€” Optimisation (slides/notes)</a></li>
             </ul>
           </section>
 
@@ -210,15 +213,15 @@ optimize!(model)</code></pre>
               <li>Good <strong>formulations</strong> are often more powerful than clever heuristics.</li>
               <li><strong>Dual variables</strong> provide economic intuition (shadow prices) for constraints.</li>
               <li>Be cautious with <strong>big-M</strong>; choose tight bounds to keep relaxations strong.</li>
-              <li>Network problems admit <strong>specialised</strong> fast algorithms—use them when applicable.</li>
+              <li>Network problems admit <strong>specialised</strong> fast algorithmsâ€”use them when applicable.</li>
             </ul>
           </section>
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="../">← All modules</a>
+            <a class="btn btn--ghost" href="../">â† All modules</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="machine-learning.html">Next: Machine Learning →</a>
+            <a class="btn btn--secondary" href="machine-learning.html">Next: Machine Learning â†’</a>
           </nav>
         </article>
       </div>
@@ -228,7 +231,7 @@ optimize!(model)</code></pre>
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -242,3 +245,4 @@ optimize!(model)</code></pre>
   <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
+

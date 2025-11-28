@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cloud Computing — Module — Nirav Ramidi</title>
+  <title>Cloud Computing â€” Module â€” Nirav Ramidi</title>
   <meta name="description" content="Foundations of cloud platforms: containers, services, networking, storage, security/IAM, serverless, cost management, IaC and DevOps workflows with hands-on practicals." />
 
   <!-- Styles (kept separate) -->
@@ -17,7 +17,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -30,15 +30,18 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -70,7 +73,7 @@
 
         <div class="actions">
           <!-- Place these files in this folder to activate links -->
-          <a class="btn btn--secondary" href="COMP30520__W1_Intro_to_Cloud1.pdf">Week 1 — Intro to Cloud (PDF)</a>
+          <a class="btn btn--secondary" href="COMP30520__W1_Intro_to_Cloud1.pdf">Week 1 â€” Intro to Cloud (PDF)</a>
           <a class="btn btn--ghost" href="practical_1.pdf">Practical 1</a>
           <a class="btn btn--ghost" href="practical_2.pdf">Practical 2</a>
           <a class="btn btn--ghost" href="practical_3.pdf">Practical 3</a>
@@ -91,7 +94,7 @@
           <h2 class="visually-hidden">Module info</h2>
           <dl class="meta-list">
             <dt>Category</dt><dd>Cloud / SRE</dd>
-            <dt>Focus</dt><dd>Platform fundamentals · Practical deployments</dd>
+            <dt>Focus</dt><dd>Platform fundamentals Â· Practical deployments</dd>
             <dt>Stack</dt><dd>Docker, basic Kubernetes, Terraform, GitHub Actions</dd>
             <dt>Assessment</dt><dd>Practicals/labs, mini-project, short quizzes</dd>
           </dl>
@@ -109,7 +112,7 @@
           <section class="case-section" id="outcomes">
             <h2>Learning Outcomes</h2>
             <ul>
-              <li>Containerise apps and run them locally and in the cloud (Compose → basic K8s).</li>
+              <li>Containerise apps and run them locally and in the cloud (Compose â†’ basic K8s).</li>
               <li>Pick appropriate compute/storage/networking services and understand trade-offs.</li>
               <li>Apply <strong>IAM</strong> least-privilege, secrets management, and basic network security.</li>
               <li>Automate infra with <strong>Terraform</strong>; ship via <strong>CI/CD</strong> pipelines.</li>
@@ -168,7 +171,7 @@ volumes:
                 <p class="muted small">Use multi-stage Dockerfiles; keep images small and non-root.</p>
               </div>
               <div class="card">
-                <header class="card__header"><h3>GitHub Actions — build &amp; push</h3></header>
+                <header class="card__header"><h3>GitHub Actions â€” build &amp; push</h3></header>
                 <pre class="code-block"><code>name: ci
 on: {push: {branches: ["main"]}}
 jobs:
@@ -195,11 +198,11 @@ jobs:
           <section class="case-section" id="artifacts">
             <h2>Selected Practicals</h2>
             <ul class="list">
-              <li><a href="practical_1.pdf">Practical 1 — Containers &amp; images</a></li>
-              <li><a href="practical_2.pdf">Practical 2 — Networking &amp; load balancing</a></li>
-              <li><a href="practical_3.pdf">Practical 3 — Storage &amp; databases</a></li>
-              <li><a href="practical_4.pdf">Practical 4 — IaC &amp; CI/CD</a></li>
-              <li><a href="COMP30520__W1_Intro_to_Cloud1.pdf">Slides — Intro to Cloud</a></li>
+              <li><a href="practical_1.pdf">Practical 1 â€” Containers &amp; images</a></li>
+              <li><a href="practical_2.pdf">Practical 2 â€” Networking &amp; load balancing</a></li>
+              <li><a href="practical_3.pdf">Practical 3 â€” Storage &amp; databases</a></li>
+              <li><a href="practical_4.pdf">Practical 4 â€” IaC &amp; CI/CD</a></li>
+              <li><a href="COMP30520__W1_Intro_to_Cloud1.pdf">Slides â€” Intro to Cloud</a></li>
             </ul>
           </section>
 
@@ -208,17 +211,17 @@ jobs:
             <h2>Key Takeaways</h2>
             <ul class="checklist">
               <li>Design to the <strong>SLO</strong>: reliability/cost drive service choices more than hype.</li>
-              <li><strong>IAM</strong> and network boundaries are your first line of defence—keep defaults tight.</li>
+              <li><strong>IAM</strong> and network boundaries are your first line of defenceâ€”keep defaults tight.</li>
               <li><strong>Automation</strong> (IaC + CI/CD) reduces drift and speeds up safe iteration.</li>
-              <li>Prefer managed building blocks unless there’s a clear reason to self-manage.</li>
+              <li>Prefer managed building blocks unless thereâ€™s a clear reason to self-manage.</li>
             </ul>
           </section>
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="hcai.html">← Human-Centred AI</a>
+            <a class="btn btn--ghost" href="hcai.html">â† Human-Centred AI</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="performance-of-computer-systems.html">Next: Performance of Computer Systems →</a>
+            <a class="btn btn--secondary" href="performance-of-computer-systems.html">Next: Performance of Computer Systems â†’</a>
           </nav>
         </article>
       </div>
@@ -228,7 +231,7 @@ jobs:
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -242,3 +245,4 @@ jobs:
   <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
+

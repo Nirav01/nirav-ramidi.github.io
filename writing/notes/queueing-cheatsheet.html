@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Queueing Cheatsheet — Notes — Nirav Ramidi</title>
-  <meta name="description" content="Compact formulas and rules of thumb for M/M/1, M/D/1, M/M/1/K, and M/M/K (Erlang-C). Little’s Law, stability, and quick sizing tips." />
+  <title>Queueing Cheatsheet â€” Notes â€” Nirav Ramidi</title>
+  <meta name="description" content="Compact formulas and rules of thumb for M/M/1, M/D/1, M/M/1/K, and M/M/K (Erlang-C). Littleâ€™s Law, stability, and quick sizing tips." />
 
   <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../../assets/css/main.css" />
@@ -17,7 +17,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -30,15 +30,18 @@
           <li><a href="../">Writing</a></li>
           <li><a href="../../education/">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -59,7 +62,7 @@
         <h1 class="page-title">Queueing Cheatsheet</h1>
         <p class="lead">
           Fast reference for common models: <strong>M/M/1</strong>, <strong>M/D/1</strong>, <strong>M/M/1/K</strong> (finite capacity),
-          and <strong>M/M/K</strong> (Erlang-C). Includes <em>Little’s Law</em>, stability, and quick sizing rules.
+          and <strong>M/M/K</strong> (Erlang-C). Includes <em>Littleâ€™s Law</em>, stability, and quick sizing rules.
         </p>
         <ul class="chips">
           <li class="chip">Performance</li>
@@ -75,21 +78,21 @@
         <h2>Notation</h2>
         <div class="grid two">
           <ul>
-            <li><strong>λ</strong> — arrival rate (req/s)</li>
-            <li><strong>μ</strong> — service rate per server (1/s)</li>
-            <li><strong>K</strong> — number of parallel servers</li>
-            <li><strong>ρ</strong> — utilisation
-              <span class="muted">(M/M/1: ρ=λ/μ; M/M/K: ρ=λ/(Kμ))</span>
+            <li><strong>Î»</strong> â€” arrival rate (req/s)</li>
+            <li><strong>Î¼</strong> â€” service rate per server (1/s)</li>
+            <li><strong>K</strong> â€” number of parallel servers</li>
+            <li><strong>Ï</strong> â€” utilisation
+              <span class="muted">(M/M/1: Ï=Î»/Î¼; M/M/K: Ï=Î»/(KÎ¼))</span>
             </li>
           </ul>
           <ul>
-            <li><strong>W</strong> — mean response (sojourn) time</li>
-            <li><strong>W<sub>q</sub></strong> — mean waiting time in queue</li>
-            <li><strong>L</strong> — mean number in system</li>
-            <li><strong>L<sub>q</sub></strong> — mean number waiting</li>
+            <li><strong>W</strong> â€” mean response (sojourn) time</li>
+            <li><strong>W<sub>q</sub></strong> â€” mean waiting time in queue</li>
+            <li><strong>L</strong> â€” mean number in system</li>
+            <li><strong>L<sub>q</sub></strong> â€” mean number waiting</li>
           </ul>
         </div>
-        <p class="muted small"><strong>Little’s Law:</strong> <code>L = λ · W</code> and <code>L<sub>q</sub> = λ · W<sub>q</sub></code> (for stable systems).</p>
+        <p class="muted small"><strong>Littleâ€™s Law:</strong> <code>L = Î» Â· W</code> and <code>L<sub>q</sub> = Î» Â· W<sub>q</sub></code> (for stable systems).</p>
       </div>
     </section>
 
@@ -100,15 +103,15 @@
         <div class="card">
           <div class="card__body">
             <ul class="tight">
-              <li><strong>Stability:</strong> ρ = λ/μ &lt; 1</li>
-              <li><strong>W</strong> = <code>1 / (μ − λ)</code></li>
-              <li><strong>W<sub>q</sub></strong> = <code>ρ / (μ − λ)</code></li>
-              <li><strong>L</strong> = <code>ρ / (1 − ρ)</code></li>
-              <li><strong>L<sub>q</sub></strong> = <code>ρ² / (1 − ρ)</code></li>
+              <li><strong>Stability:</strong> Ï = Î»/Î¼ &lt; 1</li>
+              <li><strong>W</strong> = <code>1 / (Î¼ âˆ’ Î»)</code></li>
+              <li><strong>W<sub>q</sub></strong> = <code>Ï / (Î¼ âˆ’ Î»)</code></li>
+              <li><strong>L</strong> = <code>Ï / (1 âˆ’ Ï)</code></li>
+              <li><strong>L<sub>q</sub></strong> = <code>ÏÂ² / (1 âˆ’ Ï)</code></li>
             </ul>
           </div>
         </div>
-        <p class="muted small">As ρ → 1, queueing explodes; keep planned peaks ≤ 0.7–0.8.</p>
+        <p class="muted small">As Ï â†’ 1, queueing explodes; keep planned peaks â‰¤ 0.7â€“0.8.</p>
       </div>
     </section>
 
@@ -119,10 +122,10 @@
         <div class="card">
           <div class="card__body">
             <ul class="tight">
-              <li><strong>Stability:</strong> ρ = λ/μ &lt; 1</li>
-              <li><strong>W<sub>q</sub></strong> = <code>ρ / (2 · μ · (1 − ρ))</code></li>
-              <li><strong>W</strong> = <code>W<sub>q</sub> + 1/μ</code> = <code>ρ/(2μ(1−ρ)) + 1/μ</code></li>
-              <li>Compare to M/M/1: deterministic service roughly halves waiting time near the same ρ.</li>
+              <li><strong>Stability:</strong> Ï = Î»/Î¼ &lt; 1</li>
+              <li><strong>W<sub>q</sub></strong> = <code>Ï / (2 Â· Î¼ Â· (1 âˆ’ Ï))</code></li>
+              <li><strong>W</strong> = <code>W<sub>q</sub> + 1/Î¼</code> = <code>Ï/(2Î¼(1âˆ’Ï)) + 1/Î¼</code></li>
+              <li>Compare to M/M/1: deterministic service roughly halves waiting time near the same Ï.</li>
             </ul>
           </div>
         </div>
@@ -137,12 +140,12 @@
         <div class="card">
           <div class="card__body">
             <ul class="tight">
-              <li><strong>ρ</strong> = λ/μ (use for formulas below), assume ρ ≠ 1.</li>
-              <li><strong>P<sub>0</sub></strong> = <code>(1−ρ) / (1 − ρ<sup>K+1</sup>)</code></li>
-              <li><strong>P<sub>n</sub></strong> = <code>P<sub>0</sub> · ρ<sup>n</sup></code> for n=0..K</li>
+              <li><strong>Ï</strong> = Î»/Î¼ (use for formulas below), assume Ï â‰  1.</li>
+              <li><strong>P<sub>0</sub></strong> = <code>(1âˆ’Ï) / (1 âˆ’ Ï<sup>K+1</sup>)</code></li>
+              <li><strong>P<sub>n</sub></strong> = <code>P<sub>0</sub> Â· Ï<sup>n</sup></code> for n=0..K</li>
               <li><strong>Blocking</strong> (loss) <strong>B</strong> = <code>P<sub>K</sub></code></li>
-              <li><strong>Effective arrivals</strong> λ<sub>eff</sub> = <code>λ · (1 − B)</code></li>
-              <li><strong>L</strong> = <code>∑ n·P<sub>n</sub></code> (closed form exists but the above suffices for quick calcs)</li>
+              <li><strong>Effective arrivals</strong> Î»<sub>eff</sub> = <code>Î» Â· (1 âˆ’ B)</code></li>
+              <li><strong>L</strong> = <code>âˆ‘ nÂ·P<sub>n</sub></code> (closed form exists but the above suffices for quick calcs)</li>
             </ul>
           </div>
         </div>
@@ -153,24 +156,24 @@
     <!-- M/M/K Erlang C -->
     <section class="section">
       <div class="container">
-        <h2>M/M/K (parallel servers) — Erlang-C</h2>
-        <p>Let <strong>a = λ/μ</strong> (offered load) and <strong>ρ = a/K</strong>. Valid when ρ &lt; 1.</p>
+        <h2>M/M/K (parallel servers) â€” Erlang-C</h2>
+        <p>Let <strong>a = Î»/Î¼</strong> (offered load) and <strong>Ï = a/K</strong>. Valid when Ï &lt; 1.</p>
         <div class="card">
           <div class="card__body">
             <ul class="tight">
               <li><strong>Probability of wait</strong> (Erlang-C):
                 <code>
                   P<sub>wait</sub> =
-                  [ (a<sup>K</sup> / K!) · (K / (K−a)) ] ÷ [ ∑<sub>i=0</sub><sup>K−1</sup> (a<sup>i</sup>/i!) + (a<sup>K</sup>/K!) · (K/(K−a)) ]
+                  [ (a<sup>K</sup> / K!) Â· (K / (Kâˆ’a)) ] Ã· [ âˆ‘<sub>i=0</sub><sup>Kâˆ’1</sup> (a<sup>i</sup>/i!) + (a<sup>K</sup>/K!) Â· (K/(Kâˆ’a)) ]
                 </code>
               </li>
-              <li><strong>W<sub>q</sub></strong> = <code>P<sub>wait</sub> / (K·μ − λ)</code></li>
-              <li><strong>W</strong> = <code>W<sub>q</sub> + 1/μ</code></li>
-              <li><strong>L<sub>q</sub></strong> = <code>λ · W<sub>q</sub></code>, &nbsp; <strong>L</strong> = <code>λ · W</code></li>
+              <li><strong>W<sub>q</sub></strong> = <code>P<sub>wait</sub> / (KÂ·Î¼ âˆ’ Î»)</code></li>
+              <li><strong>W</strong> = <code>W<sub>q</sub> + 1/Î¼</code></li>
+              <li><strong>L<sub>q</sub></strong> = <code>Î» Â· W<sub>q</sub></code>, &nbsp; <strong>L</strong> = <code>Î» Â· W</code></li>
             </ul>
           </div>
         </div>
-        <p class="muted small">Great for sizing thread pools / replica counts to hit a latency SLO (e.g., W ≤ 1 s).</p>
+        <p class="muted small">Great for sizing thread pools / replica counts to hit a latency SLO (e.g., W â‰¤ 1 s).</p>
       </div>
     </section>
 
@@ -179,10 +182,10 @@
       <div class="container">
         <h2>Rules of Thumb</h2>
         <ul class="checklist">
-          <li><strong>Headroom:</strong> plan peak <strong>ρ ≤ 0.7–0.8</strong> to avoid tail blow-ups.</li>
+          <li><strong>Headroom:</strong> plan peak <strong>Ï â‰¤ 0.7â€“0.8</strong> to avoid tail blow-ups.</li>
           <li><strong>Parallelism beats buffering</strong> for latency SLOs; buffers mainly trade delay vs loss.</li>
-          <li><strong>Deterministic service</strong> (M/D/1) ≈ halves queueing vs M/M/1 near same ρ.</li>
-          <li><strong>Knee point:</strong> alert when <strong>W ≈ service time</strong> (M/M/1) — queueing starts dominating.</li>
+          <li><strong>Deterministic service</strong> (M/D/1) â‰ˆ halves queueing vs M/M/1 near same Ï.</li>
+          <li><strong>Knee point:</strong> alert when <strong>W â‰ˆ service time</strong> (M/M/1) â€” queueing starts dominating.</li>
         </ul>
       </div>
     </section>
@@ -206,11 +209,11 @@
 
           <div class="grid two">
             <div class="form-row">
-              <label for="lambda">λ (req/s)</label>
+              <label for="lambda">Î» (req/s)</label>
               <input id="lambda" name="lambda" type="number" min="0" step="any" />
             </div>
             <div class="form-row">
-              <label for="mu">μ (1/s)</label>
+              <label for="mu">Î¼ (1/s)</label>
               <input id="mu" name="mu" type="number" min="0" step="any" />
             </div>
           </div>
@@ -242,7 +245,7 @@
         <h2>References &amp; Caveats</h2>
         <ul class="muted small">
           <li>Assumes Poisson arrivals and specified service distributions; validate with load tests.</li>
-          <li>Use <strong>M/G/1</strong> (Pollaczek–Khinchine) for general service times: <code>W<sub>q</sub> = λ·E[S²] / (2·(1−ρ))</code>.</li>
+          <li>Use <strong>M/G/1</strong> (Pollaczekâ€“Khinchine) for general service times: <code>W<sub>q</sub> = Î»Â·E[SÂ²] / (2Â·(1âˆ’Ï))</code>.</li>
           <li>For percentiles, analytical forms are limited; simulate or fit distributions to traces.</li>
         </ul>
       </div>
@@ -252,7 +255,7 @@
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -266,3 +269,4 @@
   <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
+

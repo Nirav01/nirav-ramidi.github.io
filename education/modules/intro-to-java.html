@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Introduction to Java — Module — Nirav Ramidi</title>
+  <title>Introduction to Java â€” Module â€” Nirav Ramidi</title>
   <meta name="description" content="Foundations of Java and Object-Oriented Programming: syntax, control flow, arrays/collections, classes/objects, testing, exceptions, inheritance, polymorphism, and interfaces." />
 
   <!-- Styles (kept separate) -->
@@ -17,7 +17,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -30,15 +30,18 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -78,7 +81,7 @@
           <h2 class="visually-hidden">Module info</h2>
           <dl class="meta-list">
             <dt>Category</dt><dd>Software Engineering</dd>
-            <dt>Focus</dt><dd>Syntax · OOP · Testing</dd>
+            <dt>Focus</dt><dd>Syntax Â· OOP Â· Testing</dd>
             <dt>Stack</dt><dd>Java 17+, JUnit 5, Maven/Gradle, IntelliJ IDEA</dd>
             <dt>Assessment</dt><dd>Programming exercises, unit tests, small project</dd>
           </dl>
@@ -93,7 +96,7 @@
           <section class="case-section" id="outcomes">
             <h2>Learning Outcomes</h2>
             <ul>
-              <li>Articulate the <strong>software development process</strong> (spec → design → implement → test).</li>
+              <li>Articulate the <strong>software development process</strong> (spec â†’ design â†’ implement â†’ test).</li>
               <li>Define core <strong>OOP concepts</strong> and model simple object-oriented applications.</li>
               <li>Independently implement and test simple Java apps using correct syntax and basic OOP techniques.</li>
               <li>Use programming experience to recognise the <strong>challenges</strong> inherent in software development.</li>
@@ -105,15 +108,15 @@
             <h2>Indicative Module Content</h2>
             <div class="grid cards">
               <article class="card">
-                <header class="card__header"><h3>Part I — Fundamentals</h3></header>
+                <header class="card__header"><h3>Part I â€” Fundamentals</h3></header>
                 <p class="card__body">Data types, variables, I/O, loops, conditionals, arrays &amp; collections.</p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Part II — Class Design</h3></header>
+                <header class="card__header"><h3>Part II â€” Class Design</h3></header>
                 <p class="card__body">Classes &amp; objects, access control, constructors, unit testing (JUnit), exceptions &amp; error handling.</p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Part III — OOP Pillars</h3></header>
+                <header class="card__header"><h3>Part III â€” OOP Pillars</h3></header>
                 <p class="card__body">Inheritance, polymorphism, interfaces; overriding vs overloading; clean API design.</p>
               </article>
             </div>
@@ -156,7 +159,7 @@ class MathUtilsTest {
     assertEquals(5, MathUtils.add(2, 3));
   }
 }</code></pre>
-                <p class="muted small">Arrange–Act–Assert; keep tests small and deterministic.</p>
+                <p class="muted small">Arrangeâ€“Actâ€“Assert; keep tests small and deterministic.</p>
               </div>
               <div class="card">
                 <header class="card__header"><h3>OOP vocabulary</h3></header>
@@ -207,15 +210,15 @@ class Circle extends Shape {
               <li>Favour clear <strong>class design</strong> and small, testable methods.</li>
               <li>Use <strong>interfaces</strong> to depend on contracts, not concrete classes.</li>
               <li>Handle <strong>exceptions</strong> deliberately; fail fast with useful messages.</li>
-              <li>Automate <strong>tests</strong> early—regression safety boosts iteration speed.</li>
+              <li>Automate <strong>tests</strong> earlyâ€”regression safety boosts iteration speed.</li>
             </ul>
           </section>
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="computer-programming-i.html">← Computer Programming I</a>
+            <a class="btn btn--ghost" href="computer-programming-i.html">â† Computer Programming I</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="computer-programming-ii.html">Next: Computer Programming II →</a>
+            <a class="btn btn--secondary" href="computer-programming-ii.html">Next: Computer Programming II â†’</a>
           </nav>
         </article>
       </div>
@@ -225,7 +228,7 @@ class Circle extends Shape {
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -239,3 +242,4 @@ class Circle extends Shape {
   <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
+

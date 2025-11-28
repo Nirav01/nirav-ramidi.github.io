@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Intro to Operating Systems — Module — Nirav Ramidi</title>
+  <title>Intro to Operating Systems â€” Module â€” Nirav Ramidi</title>
   <meta name="description" content="Processes & threads, CPU scheduling, synchronisation, deadlocks, memory management & virtual memory, filesystems, I/O, and virtualisation basics." />
 
   <!-- Styles (kept separate) -->
@@ -17,7 +17,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -30,15 +30,18 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -88,7 +91,7 @@
           <h2 class="visually-hidden">Module info</h2>
           <dl class="meta-list">
             <dt>Category</dt><dd>Systems</dd>
-            <dt>Focus</dt><dd>Abstractions · Isolation · Resource mgmt</dd>
+            <dt>Focus</dt><dd>Abstractions Â· Isolation Â· Resource mgmt</dd>
             <dt>Stack</dt><dd>C, POSIX APIs, Linux tooling</dd>
             <dt>Assessment</dt><dd>Labs, programming exercises, final exam</dd>
           </dl>
@@ -118,7 +121,7 @@
             <div class="grid cards">
               <article class="card">
                 <header class="card__header"><h3>Processes &amp; Threads</h3></header>
-                <p class="card__body">PCB/TCB, state transitions (new→ready→running→blocked→terminated), context switching, user vs kernel mode.</p>
+                <p class="card__body">PCB/TCB, state transitions (newâ†’readyâ†’runningâ†’blockedâ†’terminated), context switching, user vs kernel mode.</p>
               </article>
               <article class="card">
                 <header class="card__header"><h3>CPU Scheduling</h3></header>
@@ -126,7 +129,7 @@
               </article>
               <article class="card">
                 <header class="card__header"><h3>Synchronisation</h3></header>
-                <p class="card__body">Critical sections, atomicity, locks, semaphores, monitors; producer–consumer &amp; readers–writers patterns.</p>
+                <p class="card__body">Critical sections, atomicity, locks, semaphores, monitors; producerâ€“consumer &amp; readersâ€“writers patterns.</p>
               </article>
               <article class="card">
                 <header class="card__header"><h3>Deadlocks</h3></header>
@@ -153,9 +156,9 @@
             <div class="grid two">
               <div class="card">
                 <header class="card__header"><h3>Scheduling metrics</h3></header>
-                <pre class="code-block"><code>Waiting time   = Σ (start_i − arrival_i)
-Turnaround     = finish − arrival
-Response time  = first_run − arrival</code></pre>
+                <pre class="code-block"><code>Waiting time   = Î£ (start_i âˆ’ arrival_i)
+Turnaround     = finish âˆ’ arrival
+Response time  = first_run âˆ’ arrival</code></pre>
                 <p class="muted small">Shorter time-slices improve response but raise context-switch overhead.</p>
               </div>
               <div class="card">
@@ -170,7 +173,7 @@ Response time  = first_run − arrival</code></pre>
 
             <div class="grid two">
               <div class="card">
-                <header class="card__header"><h3>Producer–Consumer (semaphores)</h3></header>
+                <header class="card__header"><h3>Producerâ€“Consumer (semaphores)</h3></header>
                 <pre class="code-block"><code>// Pseudo-code
 semaphore empty = N, full = 0, mutex = 1
 producer:
@@ -186,7 +189,7 @@ consumer:
               <div class="card">
                 <header class="card__header"><h3>Address translation</h3></header>
                 <pre class="code-block"><code>virtual_addr = (VPN, offset)
-phys_frame   = PT[VPN]  // TLB hit ≈ fast; miss → walk
+phys_frame   = PT[VPN]  // TLB hit â‰ˆ fast; miss â†’ walk
 physical_addr = (phys_frame, offset)</code></pre>
                 <p class="muted small">Locality (temporal/spatial) underpins caching & paging performance.</p>
               </div>
@@ -197,7 +200,7 @@ physical_addr = (phys_frame, offset)</code></pre>
           <section class="case-section" id="artifacts">
             <h2>Selected Artefacts</h2>
             <ul class="list">
-              <li><a href="0.%20Overview.pdf">Lecture — Course Overview</a></li>
+              <li><a href="0.%20Overview.pdf">Lecture â€” Course Overview</a></li>
             </ul>
           </section>
 
@@ -214,9 +217,9 @@ physical_addr = (phys_frame, offset)</code></pre>
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="perf-of-comp-sys.html">← Performance of Computer Systems</a>
+            <a class="btn btn--ghost" href="perf-of-comp-sys.html">â† Performance of Computer Systems</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="computer-networking.html">Next: Computer Networking →</a>
+            <a class="btn btn--secondary" href="computer-networking.html">Next: Computer Networking â†’</a>
           </nav>
         </article>
       </div>
@@ -226,7 +229,7 @@ physical_addr = (phys_frame, offset)</code></pre>
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -240,3 +243,4 @@ physical_addr = (phys_frame, offset)</code></pre>
   <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
+

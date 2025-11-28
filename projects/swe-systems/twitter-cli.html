@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Twitter-like CLI (C) — Case Study — Nirav Ramidi</title>
+  <title>Twitter-like CLI (C) â€” Case Study â€” Nirav Ramidi</title>
   <meta name="description" content="C command-line Twitter clone: post, follow/unfollow, top-10 news feed, delete user, and endTurn/endTwitter. Refactored from arrays to a linked-list feed; modular design and tests." />
 
   <!-- Styles (kept separate) -->
@@ -30,7 +30,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -43,15 +43,18 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../../education/">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -135,7 +138,7 @@
               <div>
                 <h3>Structs</h3>
                 <ul>
-                  <li><code>Tweet</code>: <em>id</em> (monotonic timestamp), <em>text</em> (≤280), <em>username</em>, <em>*next</em></li>
+                  <li><code>Tweet</code>: <em>id</em> (monotonic timestamp), <em>text</em> (â‰¤280), <em>username</em>, <em>*next</em></li>
                   <li><code>User</code>: <em>username</em>, <em>followers</em>, <em>following</em>, <em>tweets</em> (head ptr)</li>
                   <li><code>TwitterSystem</code>: dynamic arrays (users), global <em>clock</em>, temp buffers</li>
                 </ul>
@@ -162,19 +165,19 @@
             <div class="grid cards">
               <article class="card">
                 <header class="card__header"><h3>post</h3></header>
-                <p class="card__body"><code>post &lt;user&gt; "&lt;text up to 280 chars&gt;"</code> — creates a tweet with current <em>clock</em> as id.</p>
+                <p class="card__body"><code>post &lt;user&gt; "&lt;text up to 280 chars&gt;"</code> â€” creates a tweet with current <em>clock</em> as id.</p>
               </article>
               <article class="card">
                 <header class="card__header"><h3>follow / unfollow</h3></header>
-                <p class="card__body"><code>follow &lt;userA&gt; &lt;userB&gt;</code> — A follows B. <code>unfollow</code> reverses it (no-ops are safe).</p>
+                <p class="card__body"><code>follow &lt;userA&gt; &lt;userB&gt;</code> â€” A follows B. <code>unfollow</code> reverses it (no-ops are safe).</p>
               </article>
               <article class="card">
                 <header class="card__header"><h3>newsfeed</h3></header>
-                <p class="card__body"><code>newsfeed &lt;user&gt;</code> — print up to 10 most recent tweets from user ∪ following, newest first.</p>
+                <p class="card__body"><code>newsfeed &lt;user&gt;</code> â€” print up to 10 most recent tweets from user âˆª following, newest first.</p>
               </article>
               <article class="card">
                 <header class="card__header"><h3>delete</h3></header>
-                <p class="card__body"><code>delete &lt;user&gt;</code> — remove account and all tweets; detach from follower/following lists.</p>
+                <p class="card__body"><code>delete &lt;user&gt;</code> â€” remove account and all tweets; detach from follower/following lists.</p>
               </article>
               <article class="card">
                 <header class="card__header"><h3>endTurn / endTwitter</h3></header>
@@ -189,7 +192,7 @@
             <ul class="checklist">
               <li><strong>Parsing</strong> separates tokens and quoted text; rejects invalid commands with helpful errors.</li>
               <li><strong>Memory safety</strong>: ownership is explicit; every <code>malloc</code> has a matching <code>free</code> on <code>endTwitter</code> / deletion paths.</li>
-              <li><strong>Feed</strong>: k-way merge from heads of followed lists (and self); a small max-heap by <em>id</em> yields O(m log k) for m≤10.</li>
+              <li><strong>Feed</strong>: k-way merge from heads of followed lists (and self); a small max-heap by <em>id</em> yields O(m log k) for mâ‰¤10.</li>
               <li><strong>Refactor</strong>: initial array solution replaced with linked lists to simplify deletions and head insertions.</li>
             </ul>
             <figure class="case-figure">
@@ -212,7 +215,7 @@
           <section class="case-section" id="lessons">
             <h2>What I learned</h2>
             <ul>
-              <li>How data-structure choice (arrays → linked lists) changes complexity and simplifies edge cases.</li>
+              <li>How data-structure choice (arrays â†’ linked lists) changes complexity and simplifies edge cases.</li>
               <li>Designing a stable CLI and separating I/O from logic improves testability.</li>
               <li>Owning memory in C requires disciplined APIs and teardown paths.</li>
             </ul>
@@ -220,9 +223,9 @@
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Case study pagination">
-            <a class="btn btn--ghost" href="huffman-compressor.html">← Huffman Compressor</a>
+            <a class="btn btn--ghost" href="huffman-compressor.html">â† Huffman Compressor</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="../cloud-sre/vision-microservice.html">Next: Vision Microservice →</a>
+            <a class="btn btn--secondary" href="../cloud-sre/vision-microservice.html">Next: Vision Microservice â†’</a>
           </nav>
         </article>
       </div>
@@ -232,7 +235,7 @@
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -246,3 +249,4 @@
   <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
+

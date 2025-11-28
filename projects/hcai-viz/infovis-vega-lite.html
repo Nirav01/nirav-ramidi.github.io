@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>InfoVis Dashboard (Vega-Lite) — Case Study — Nirav Ramidi</title>
+  <title>InfoVis Dashboard (Vega-Lite) â€” Case Study â€” Nirav Ramidi</title>
   <meta name="description" content="Interactive information visualisation built with Vega-Lite: multi-view dashboard, brushing & linking, selections, and tidy transforms for exploratory analysis." />
 
   <!-- Styles (kept separate) -->
@@ -30,7 +30,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -43,15 +43,18 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../../education/">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -100,7 +103,7 @@
             <dt>Course</dt><dd>Information Visualisation</dd>
             <dt>Type</dt><dd>Graded assignment</dd>
             <dt>Role</dt><dd>Design &amp; implementation</dd>
-            <dt>Focus</dt><dd>Interactive analytics · Visual encodings · UX</dd>
+            <dt>Focus</dt><dd>Interactive analytics Â· Visual encodings Â· UX</dd>
             <dt>Stack</dt><dd>Vega-Lite (JSON), HTML, a pinch of JS to embed specs</dd>
             <dt>Links</dt>
             <dd>
@@ -117,9 +120,9 @@
           <section class="case-section" id="goals">
             <h2>Goals</h2>
             <ul>
-              <li>Provide an <strong>overview → zoom &amp; filter → details</strong> flow with clear affordances.</li>
+              <li>Provide an <strong>overview â†’ zoom &amp; filter â†’ details</strong> flow with clear affordances.</li>
               <li>Use <strong>expressive encodings</strong> (position/length/color) and avoid misleading scales.</li>
-              <li>Stay within <strong>Vega-Lite</strong> primitives—no bespoke JS logic for fairness/grading.</li>
+              <li>Stay within <strong>Vega-Lite</strong> primitivesâ€”no bespoke JS logic for fairness/grading.</li>
             </ul>
           </section>
 
@@ -184,7 +187,7 @@
             <ul class="checklist">
               <li>Used <strong>aligned axes</strong> and <strong>consistent scales</strong> to support visual comparison.</li>
               <li>Kept color palette accessible (contrast-checked); relied on position/length first.</li>
-              <li>Added <strong>legends</strong> and helper text (“Drag to filter”) to improve learnability.</li>
+              <li>Added <strong>legends</strong> and helper text (â€œDrag to filterâ€) to improve learnability.</li>
               <li>Reduced clutter with <strong>gridlines</strong> and minimalist annotations.</li>
             </ul>
           </section>
@@ -210,9 +213,9 @@
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Case study pagination">
-            <a class="btn btn--ghost" href="hcai-experiment.html">← HCAI Empirical Study</a>
+            <a class="btn btn--ghost" href="hcai-experiment.html">â† HCAI Empirical Study</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="../">Back to Projects →</a>
+            <a class="btn btn--secondary" href="../">Back to Projects â†’</a>
           </nav>
         </article>
       </div>
@@ -222,7 +225,7 @@
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -236,3 +239,4 @@
   <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
+

@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vision Microservice at Scale — Case Study — Nirav Ramidi</title>
+  <title>Vision Microservice at Scale â€” Case Study â€” Nirav Ramidi</title>
   <meta name="description" content="CNN-OCR microservice on Docker/Kubernetes with p95 < 300 ms at ~1k req/s and ~0.2% error in load tests. Production hardening, autoscaling, and monitoring." />
 
   <!-- Styles (kept separate) -->
@@ -30,7 +30,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -43,15 +43,18 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../../education/">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -78,7 +81,7 @@
           </p>
           <ul class="metrics">
             <li class="chip">FastAPI</li>
-            <li class="chip">Docker · K8s</li>
+            <li class="chip">Docker Â· K8s</li>
             <li class="chip">p95 &lt; 300 ms</li>
             <li class="chip">~1k req/s</li>
             <li class="chip">~0.2% error</li>
@@ -99,8 +102,8 @@
           <dl class="meta-list">
             <dt>Org</dt><dd>iAssist Innovation Labs</dd>
             <dt>Role</dt><dd>Junior ML Engineer</dd>
-            <dt>Duration</dt><dd>Apr 2024 – Sept 2024</dd>
-            <dt>Focus</dt><dd>Production CV · SRE · Performance</dd>
+            <dt>Duration</dt><dd>Apr 2024 â€“ Sept 2024</dd>
+            <dt>Focus</dt><dd>Production CV Â· SRE Â· Performance</dd>
             <dt>Stack</dt><dd>Python, FastAPI, Docker, Kubernetes, Redis, Prometheus/Grafana</dd>
             <dt>Links</dt>
             <dd>
@@ -131,7 +134,7 @@
           <section class="case-section" id="architecture">
             <h2>Architecture</h2>
             <figure class="case-figure">
-              <img src="../../assets/img/case-studies/vision-architecture.png" alt="Gateway → API → Preprocess → Model → Postprocess → Result store; autoscaling on Kubernetes" loading="lazy" />
+              <img src="../../assets/img/case-studies/vision-architecture.png" alt="Gateway â†’ API â†’ Preprocess â†’ Model â†’ Postprocess â†’ Result store; autoscaling on Kubernetes" loading="lazy" />
               <figcaption>Kubernetes deployment with a gateway, stateless API, and model workers.</figcaption>
             </figure>
 
@@ -139,9 +142,9 @@
               <div>
                 <h3>Request path</h3>
                 <ol>
-                  <li>Client uploads image → <em>Gateway</em> (ingress + auth).</li>
+                  <li>Client uploads image â†’ <em>Gateway</em> (ingress + auth).</li>
                   <li><em>FastAPI</em> validates, normalises (de-skew, resize), and routes to model worker.</li>
-                  <li><em>Model worker</em> runs CNN text detection → OCR decode → post-processing.</li>
+                  <li><em>Model worker</em> runs CNN text detection â†’ OCR decode â†’ post-processing.</li>
                   <li>Response returns extracted fields + confidence; traces/logs pushed asynchronously.</li>
                 </ol>
               </div>
@@ -208,7 +211,7 @@
             <ul>
               <li><strong>Metrics:</strong> RED/USE (rate, errors, duration / utilisation, saturation, errors); per-step timers.</li>
               <li><strong>Logging:</strong> structured JSON with correlation IDs; sensitive fields masked.</li>
-              <li><strong>Tracing:</strong> request spans (ingress → API → model → store).</li>
+              <li><strong>Tracing:</strong> request spans (ingress â†’ API â†’ model â†’ store).</li>
               <li><strong>Dashboards:</strong> Grafana for SLOs, error budget burn, and capacity headroom.</li>
               <li><strong>Alerts:</strong> p95 &gt; 280 ms (warning), &gt; 300 ms (page); 5xx rate; queue depth.</li>
             </ul>
@@ -228,7 +231,7 @@
           <section class="case-section" id="lessons">
             <h2>Lessons &amp; Next Steps</h2>
             <ul>
-              <li>Tail latency hides in pre-processing and I/O; micro-batching isn’t always a win.</li>
+              <li>Tail latency hides in pre-processing and I/O; micro-batching isnâ€™t always a win.</li>
               <li>Separate API/model images speed rollouts and keep cold starts predictable.</li>
               <li>Next: canary releases per model version; quantisation experiments; GPU pool evaluation.</li>
             </ul>
@@ -236,9 +239,9 @@
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Case study pagination">
-            <a class="btn btn--ghost" href="../swe-systems/twitter-cli.html">← Twitter-like CLI</a>
+            <a class="btn btn--ghost" href="../swe-systems/twitter-cli.html">â† Twitter-like CLI</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="queueing-capacity.html">Next: Queueing for Capacity Planning →</a>
+            <a class="btn btn--secondary" href="queueing-capacity.html">Next: Queueing for Capacity Planning â†’</a>
           </nav>
         </article>
       </div>
@@ -248,7 +251,7 @@
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -262,3 +265,4 @@
   <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
+

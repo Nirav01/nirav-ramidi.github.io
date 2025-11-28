@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Software Engineering Project 2 — Module — Nirav Ramidi</title>
+  <title>Software Engineering Project 2 â€” Module â€” Nirav Ramidi</title>
   <meta name="description" content="Capstone team project focused on scalability, reliability, testing, CI/CD, documentation, and delivery polish. Strong emphasis on quality engineering and handover." />
 
   <!-- Styles (kept separate) -->
@@ -17,7 +17,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -30,15 +30,18 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -71,7 +74,7 @@
         <div class="actions">
           <!-- Place these files in this folder to activate links -->
           <a class="btn btn--secondary" href="COMP20050%20Project(2).pdf">Project Brief (PDF)</a>
-          <a class="btn btn--ghost" href="comp20050_00.key.pdf">Lecture 0 — Overview (PDF)</a>
+          <a class="btn btn--ghost" href="comp20050_00.key.pdf">Lecture 0 â€” Overview (PDF)</a>
         </div>
 
         <p class="muted small">
@@ -88,14 +91,14 @@
           <h2 class="visually-hidden">Module info</h2>
           <dl class="meta-list">
             <dt>Category</dt><dd>Software Engineering</dd>
-            <dt>Focus</dt><dd>Quality · Reliability · Delivery</dd>
-            <dt>Stack</dt><dd>Depends on team — CI (GitHub Actions), Docker, basic cloud deploy</dd>
+            <dt>Focus</dt><dd>Quality Â· Reliability Â· Delivery</dd>
+            <dt>Stack</dt><dd>Depends on team â€” CI (GitHub Actions), Docker, basic cloud deploy</dd>
             <dt>Assessment</dt><dd>Milestones, test/coverage targets, final demo &amp; report</dd>
           </dl>
           <div class="note small">
             <p><strong>Related projects:</strong>
-              <a href="../../projects/swe-systems/java-marketplace.html">Java Marketplace</a> ·
-              <a href="../../projects/cloud-sre/library-analytics.html">Library Analytics</a> ·
+              <a href="../../projects/swe-systems/java-marketplace.html">Java Marketplace</a> Â·
+              <a href="../../projects/cloud-sre/library-analytics.html">Library Analytics</a> Â·
               <a href="../../projects/cloud-sre/vision-microservice.html">Vision Microservice</a>
             </p>
           </div>
@@ -149,14 +152,14 @@
               <div class="card">
                 <header class="card__header"><h3>Test Pyramid (at a glance)</h3></header>
                 <ul class="tight">
-                  <li><strong>Unit</strong> (many, fast) → logic correctness</li>
-                  <li><strong>Integration</strong> (some) → modules/services together</li>
-                  <li><strong>E2E</strong> (few, slow) → user-critical paths</li>
+                  <li><strong>Unit</strong> (many, fast) â†’ logic correctness</li>
+                  <li><strong>Integration</strong> (some) â†’ modules/services together</li>
+                  <li><strong>E2E</strong> (few, slow) â†’ user-critical paths</li>
                 </ul>
                 <p class="muted small">Mock only where needed; prefer contract tests for interfaces.</p>
               </div>
               <div class="card">
-                <header class="card__header"><h3>GitHub Actions — basic CI</h3></header>
+                <header class="card__header"><h3>GitHub Actions â€” basic CI</h3></header>
                 <pre class="code-block"><code>name: ci
 on: { push: { branches: ["main"] }, pull_request: {} }
 jobs:
@@ -179,8 +182,8 @@ jobs:
           <section class="case-section" id="artifacts">
             <h2>Selected Artefacts</h2>
             <ul class="list">
-              <li><a href="COMP20050%20Project(2).pdf">Project Brief — goals &amp; rubric</a></li>
-              <li><a href="comp20050_00.key.pdf">Slides — Course overview</a></li>
+              <li><a href="COMP20050%20Project(2).pdf">Project Brief â€” goals &amp; rubric</a></li>
+              <li><a href="comp20050_00.key.pdf">Slides â€” Course overview</a></li>
             </ul>
           </section>
 
@@ -196,9 +199,9 @@ jobs:
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="soft-eng-1.html">← Software Engineering Project 1</a>
+            <a class="btn btn--ghost" href="soft-eng-1.html">â† Software Engineering Project 1</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="web-dev.html">Next: Web Development →</a>
+            <a class="btn btn--secondary" href="web-dev.html">Next: Web Development â†’</a>
           </nav>
         </article>
       </div>
@@ -208,7 +211,7 @@ jobs:
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -222,3 +225,4 @@ jobs:
   <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
+

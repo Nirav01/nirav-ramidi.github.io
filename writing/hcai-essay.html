@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Human-Centred AI — Essay — Nirav Ramidi</title>
+  <title>Human-Centred AI â€” Essay â€” Nirav Ramidi</title>
   <meta name="description" content="A synthesis on Human-Centred AI: principles, design patterns, trade-offs, evaluation, and governance. Focus on building trustworthy, useful, and fair AI systems." />
 
   <!-- Styles (kept separate) -->
@@ -15,7 +15,7 @@
   {
     "@context":"https://schema.org",
     "@type":"ScholarlyArticle",
-    "headline":"Human-Centred AI — Essay",
+    "headline":"Human-Centred AI â€” Essay",
     "author":{"@type":"Person","name":"Nirav Ramidi"},
     "about":"Human-Centred AI, explainability, usability, trust, fairness, governance",
     "inLanguage":"en"
@@ -29,7 +29,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -42,15 +42,18 @@
           <li><a href="./" aria-current="page">Writing</a></li>
           <li><a href="../education/">Education</a></li>
           <li><a href="../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -60,7 +63,7 @@
       <ol>
         <li><a href="../">Home</a></li>
         <li><a href="./">Writing</a></li>
-        <li><span aria-current="page">Human-Centred AI — Essay</span></li>
+        <li><span aria-current="page">Human-Centred AI â€” Essay</span></li>
       </ol>
     </nav>
 
@@ -68,7 +71,7 @@
     <section class="case-hero section">
       <div class="container case-hero__inner">
         <div class="case-hero__copy">
-          <h1>Human-Centred AI — Essay</h1>
+          <h1>Human-Centred AI â€” Essay</h1>
           <p class="lead">
             A synthesis on designing AI systems that are <strong>useful</strong>, <strong>trustworthy</strong>, and
             <strong>fair</strong>. I discuss core principles, pragmatic design patterns, trade-offs, evaluation
@@ -100,7 +103,7 @@
           <h2 class="visually-hidden">Article info</h2>
           <dl class="meta-list">
             <dt>Type</dt><dd>Essay / literature synthesis</dd>
-            <dt>Focus</dt><dd>Design principles · Trade-offs · Evaluation · Governance</dd>
+            <dt>Focus</dt><dd>Design principles Â· Trade-offs Â· Evaluation Â· Governance</dd>
             <dt>Artifacts</dt><dd>PDF essay, slide summary</dd>
             <dt>Keywords</dt><dd>HCAI, XAI, Trust, Fairness, UX, Safety</dd>
           </dl>
@@ -115,9 +118,9 @@
           <section class="case-section" id="thesis">
             <h2>Thesis</h2>
             <p>
-              Human-Centred AI (HCAI) reframes the goal of AI from “maximising model accuracy” to
-              “<em>maximising human outcomes</em>.” Usability, interpretability, and fairness are not
-              “add-ons” but <strong>design constraints</strong> that shape the product surface and the
+              Human-Centred AI (HCAI) reframes the goal of AI from â€œmaximising model accuracyâ€ to
+              â€œ<em>maximising human outcomes</em>.â€ Usability, interpretability, and fairness are not
+              â€œadd-onsâ€ but <strong>design constraints</strong> that shape the product surface and the
               technical stack. An HCAI system makes <em>appropriate use</em> of automation: it is
               legible, contestable, and fails safely.
             </p>
@@ -129,7 +132,7 @@
             <ul class="checklist">
               <li><strong>Clarity over completeness:</strong> provide the <em>right</em> explanation for the decision at hand; defer detail via progressive disclosure.</li>
               <li><strong>Calibrated transparency:</strong> expose <em>uncertainty</em>, <em>confidence</em>, and known limitations; avoid false certainty.</li>
-              <li><strong>Recourse:</strong> show users how to improve outcomes or fix inputs—not just why the model predicted something.</li>
+              <li><strong>Recourse:</strong> show users how to improve outcomes or fix inputsâ€”not just why the model predicted something.</li>
               <li><strong>Human-in/on-the-loop:</strong> keep escalation paths and reversible actions; log overrides to learn from expert judgement.</li>
               <li><strong>Fairness by design:</strong> make sensitive features and group metrics visible during development; measure harms and benefits.</li>
               <li><strong>Privacy &amp; consent:</strong> minimise data collection; communicate how data feeds models and audits.</li>
@@ -146,11 +149,11 @@
               </article>
               <article class="card">
                 <header class="card__header"><h3>Confidence &amp; Uncertainty</h3></header>
-                <p class="card__body">Show calibrated scores, abstain when unsure, and highlight edge cases; avoid binary “AI says so.”</p>
+                <p class="card__body">Show calibrated scores, abstain when unsure, and highlight edge cases; avoid binary â€œAI says so.â€</p>
               </article>
               <article class="card">
                 <header class="card__header"><h3>Counterfactuals &amp; Recourse</h3></header>
-                <p class="card__body">“If X were Y, the outcome would change.” Provide actionable edits users can make, bounded by policy.</p>
+                <p class="card__body">â€œIf X were Y, the outcome would change.â€ Provide actionable edits users can make, bounded by policy.</p>
               </article>
               <article class="card">
                 <header class="card__header"><h3>Provenance &amp; Versioning</h3></header>
@@ -167,11 +170,11 @@
           <section class="case-section" id="tradeoffs">
             <h2>Trade-offs &amp; Pitfalls</h2>
             <ul>
-              <li><strong>Clarity vs fidelity:</strong> simpler explanations aid actionability but may omit nuance; provide “learn more” for power users.</li>
+              <li><strong>Clarity vs fidelity:</strong> simpler explanations aid actionability but may omit nuance; provide â€œlearn moreâ€ for power users.</li>
               <li><strong>Performance vs interpretability:</strong> use <em>post-hoc</em> explanations (e.g., SHAP) when intrinsically simple models underfit. Validate explanations with users.</li>
               <li><strong>Over-trust vs under-trust:</strong> confidence displays and abstention thresholds reduce automation bias but may increase workload; tune with task studies.</li>
               <li><strong>Fairness trade-offs:</strong> equalising metrics for one group can reduce accuracy for another; make the choices explicit and governed.</li>
-              <li><strong>Antipatterns:</strong> explanation-washing, “black-box” buttons, hidden thresholds, and dark patterns that nudge acceptance.</li>
+              <li><strong>Antipatterns:</strong> explanation-washing, â€œblack-boxâ€ buttons, hidden thresholds, and dark patterns that nudge acceptance.</li>
             </ul>
           </section>
 
@@ -220,7 +223,7 @@
           <section class="case-section" id="checklist">
             <h2>Team Checklist</h2>
             <ol class="checklist numbered">
-              <li>Define the <em>human goal</em> and the user’s decision context.</li>
+              <li>Define the <em>human goal</em> and the userâ€™s decision context.</li>
               <li>Choose the <em>minimum viable explanation</em> and add deeper layers on demand.</li>
               <li>Expose <em>uncertainty</em> and handle abstention pathways.</li>
               <li>Measure <em>calibration</em> and <em>fairness</em> continuously; alert on regressions.</li>
@@ -233,7 +236,7 @@
             <h2>Conclusion</h2>
             <p>
               Human-Centred AI treats people as <em>primary stakeholders</em>, not friction in a prediction pipeline.
-              When we design for clarity, recourse, and fairness—and validate with real users—AI features become
+              When we design for clarity, recourse, and fairnessâ€”and validate with real usersâ€”AI features become
               reliable partners rather than inscrutable oracles.
             </p>
             <p class="muted small">References and extended notes are available in the PDF.</p>
@@ -241,9 +244,9 @@
 
           <!-- Footer Nav -->
           <nav class="case-pager" aria-label="Writing pagination">
-            <a class="btn btn--ghost" href="./">← All writing</a>
+            <a class="btn btn--ghost" href="./">â† All writing</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="notes/queueing-cheatsheet.html">Next: Queueing Cheatsheet →</a>
+            <a class="btn btn--secondary" href="notes/queueing-cheatsheet.html">Next: Queueing Cheatsheet â†’</a>
           </nav>
         </article>
       </div>
@@ -253,7 +256,7 @@
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -267,3 +270,4 @@
   <script src="../assets/js/main.js" defer></script>
 </body>
 </html>
+

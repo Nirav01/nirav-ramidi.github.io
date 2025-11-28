@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Java Marketplace — Case Study — Nirav Ramidi</title>
+  <title>Java Marketplace â€” Case Study â€” Nirav Ramidi</title>
   <meta name="description"
     content="Spring Boot marketplace with catalogue, cart/checkout, auth/roles, order history, and an admin back-office. Clean MVC, validation, and tests." />
 
@@ -32,7 +32,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -45,16 +45,18 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../../education/">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
-              aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -80,7 +82,7 @@
             order history, and an admin back-office. Built with clean MVC, form validation, and integration tests.
           </p>
           <ul class="metrics">
-            <li class="chip">Spring Boot · Thymeleaf</li>
+            <li class="chip">Spring Boot Â· Thymeleaf</li>
             <li class="chip">REST + MVC</li>
             <li class="chip">PostgreSQL (H2 dev)</li>
             <li class="chip">Spring Security (BCrypt)</li>
@@ -101,7 +103,7 @@
           <h2 class="visually-hidden">Project info</h2>
           <dl class="meta-list">
             <dt>Type</dt>
-            <dd>Course project — Web Development</dd>
+            <dd>Course project â€” Web Development</dd>
             <dt>Role</dt>
             <dd>Solo developer</dd>
             <dt>Focus</dt>
@@ -131,7 +133,7 @@
             </p>
             <ul>
               <li>Catalogue with categories, search, and product detail pages.</li>
-              <li>Cart → checkout flow with address &amp; payment stub.</li>
+              <li>Cart â†’ checkout flow with address &amp; payment stub.</li>
               <li>Authentication/authorisation: <code>USER</code> vs <code>ADMIN</code>.</li>
               <li>Admin back-office for CRUD on products and price history.</li>
             </ul>
@@ -142,7 +144,7 @@
             <h2>Architecture</h2>
             <figure class="case-figure">
               <img src="../../assets/img/case-studies/marketplace-architecture.png"
-                alt="Layered architecture: Controller → Service → Repository → DB; plus Security and View layers"
+                alt="Layered architecture: Controller â†’ Service â†’ Repository â†’ DB; plus Security and View layers"
                 loading="lazy" />
               <figcaption>Layered MVC with services mediating between controllers and repositories.</figcaption>
             </figure>
@@ -162,7 +164,7 @@
                 <ul>
                   <li>Spring Data JPA + <strong>PostgreSQL</strong> (H2 for local/dev).</li>
                   <li>Flyway migrations to version schema.</li>
-                  <li>Eager vs LAZY tuned per aggregate (e.g., order → items).</li>
+                  <li>Eager vs LAZY tuned per aggregate (e.g., order â†’ items).</li>
                 </ul>
                 <h3>Views &amp; API</h3>
                 <ul>
@@ -241,9 +243,9 @@
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Case study pagination">
-            <a class="btn btn--ghost" href="../data-ml/healthcare-data-mining.html">← Healthcare Data Mining</a>
+            <a class="btn btn--ghost" href="../data-ml/healthcare-data-mining.html">â† Healthcare Data Mining</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="huffman-compressor.html">Next: Huffman Compressor →</a>
+            <a class="btn btn--secondary" href="huffman-compressor.html">Next: Huffman Compressor â†’</a>
           </nav>
         </article>
       </div>
@@ -253,7 +255,7 @@
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>

@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Machine Learning — Module — Nirav Ramidi</title>
+  <title>Machine Learning â€” Module â€” Nirav Ramidi</title>
   <meta name="description" content="Supervised & unsupervised learning, model evaluation, regularisation, SVMs, trees/ensembles, clustering, and dimensionality reduction with hands-on labs." />
 
   <!-- Styles (kept separate) -->
@@ -17,7 +17,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -30,15 +30,18 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -64,8 +67,8 @@
         <ul class="chips">
           <li class="chip">Classification &amp; Regression</li>
           <li class="chip">Model Evaluation</li>
-          <li class="chip">SVMs · Trees · Ensembles</li>
-          <li class="chip">Clustering · PCA</li>
+          <li class="chip">SVMs Â· Trees Â· Ensembles</li>
+          <li class="chip">Clustering Â· PCA</li>
         </ul>
 
         <div class="actions">
@@ -89,7 +92,7 @@
           <h2 class="visually-hidden">Module info</h2>
           <dl class="meta-list">
             <dt>Category</dt><dd>ML / Data</dd>
-            <dt>Focus</dt><dd>Generalisation · Bias–variance · Pipelines</dd>
+            <dt>Focus</dt><dd>Generalisation Â· Biasâ€“variance Â· Pipelines</dd>
             <dt>Stack</dt><dd>Python, NumPy/Pandas, scikit-learn, matplotlib</dd>
             <dt>Assessment</dt><dd>Programming assignment, quizzes, final exam/project</dd>
           </dl>
@@ -107,10 +110,10 @@
           <section class="case-section" id="outcomes">
             <h2>Learning Outcomes</h2>
             <ul>
-              <li>Build end-to-end ML pipelines: preprocessing → model → evaluation → iteration.</li>
+              <li>Build end-to-end ML pipelines: preprocessing â†’ model â†’ evaluation â†’ iteration.</li>
               <li>Choose appropriate models for regression/classification and justify trade-offs.</li>
               <li>Apply <strong>cross-validation</strong>, avoid leakage, and report calibrated metrics.</li>
-              <li>Explain <strong>bias–variance</strong> and effects of <strong>L1/L2</strong> regularisation.</li>
+              <li>Explain <strong>biasâ€“variance</strong> and effects of <strong>L1/L2</strong> regularisation.</li>
               <li>Use <strong>PCA</strong> for dimensionality reduction and <strong>clustering</strong> for structure discovery.</li>
             </ul>
           </section>
@@ -144,15 +147,15 @@
             <div class="grid two">
               <div class="card">
                 <header class="card__header"><h3>Regularised risk</h3></header>
-                <pre class="code-block"><code>min_w  (1/n) Σ L(y_i, f_w(x_i)) + λ ||w||ₚ
-p = 2 → Ridge,  p = 1 → Lasso</code></pre>
-                <p class="muted small">λ controls bias–variance trade-off; scale features before fitting.</p>
+                <pre class="code-block"><code>min_w  (1/n) Î£ L(y_i, f_w(x_i)) + Î» ||w||â‚š
+p = 2 â†’ Ridge,  p = 1 â†’ Lasso</code></pre>
+                <p class="muted small">Î» controls biasâ€“variance trade-off; scale features before fitting.</p>
               </div>
               <div class="card">
                 <header class="card__header"><h3>Confusion matrix (binary)</h3></header>
                 <pre class="code-block"><code>Precision = TP / (TP + FP)
 Recall    = TP / (TP + FN)
-F1        = 2 · (P·R) / (P + R)</code></pre>
+F1        = 2 Â· (PÂ·R) / (P + R)</code></pre>
                 <p class="muted small">Prefer macro-averages for class imbalance.</p>
               </div>
             </div>
@@ -160,7 +163,7 @@ F1        = 2 · (P·R) / (P + R)</code></pre>
 
           <!-- Lab snippet -->
           <section class="case-section" id="labs">
-            <h2>Lab Snippet — scikit-learn Pipeline</h2>
+            <h2>Lab Snippet â€” scikit-learn Pipeline</h2>
             <pre class="code-block"><code>from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import StratifiedKFold, GridSearchCV
@@ -185,9 +188,9 @@ gs.fit(X_train, y_train)</code></pre>
           <section class="case-section" id="artifacts">
             <h2>Selected Artefacts</h2>
             <ul class="list">
-              <li><a href="01%20-%20Introduction-to-ML.pdf">Lecture 1 — Introduction to ML</a></li>
-              <li><a href="ml-Schedule-of-lectures-assessments.pdf">Schedule — lectures &amp; assessments</a></li>
-              <li><a href="2024-ML-Programming-Assignment-instructions.pdf">Programming Assignment — instructions</a></li>
+              <li><a href="01%20-%20Introduction-to-ML.pdf">Lecture 1 â€” Introduction to ML</a></li>
+              <li><a href="ml-Schedule-of-lectures-assessments.pdf">Schedule â€” lectures &amp; assessments</a></li>
+              <li><a href="2024-ML-Programming-Assignment-instructions.pdf">Programming Assignment â€” instructions</a></li>
             </ul>
           </section>
 
@@ -204,9 +207,9 @@ gs.fit(X_train, y_train)</code></pre>
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="optimisation.html">← Optimisation</a>
+            <a class="btn btn--ghost" href="optimisation.html">â† Optimisation</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="data-mining.html">Next: Data Mining →</a>
+            <a class="btn btn--secondary" href="data-mining.html">Next: Data Mining â†’</a>
           </nav>
         </article>
       </div>
@@ -216,7 +219,7 @@ gs.fit(X_train, y_train)</code></pre>
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -230,3 +233,4 @@ gs.fit(X_train, y_train)</code></pre>
   <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
+

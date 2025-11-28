@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Astronomy Classifier (SDSS) — Case Study — Nirav Ramidi</title>
+  <title>Astronomy Classifier (SDSS) â€” Case Study â€” Nirav Ramidi</title>
   <meta name="description"
     content="Multi-class classification of SDSS objects (star/galaxy/quasar) using SVM, kNN, and Decision Trees with ROC-AUC per class and stratified cross-validation." />
 
@@ -31,7 +31,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -44,16 +44,18 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../../education/">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
-              aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -80,7 +82,7 @@
           </p>
           <ul class="metrics">
             <li class="chip">SDSS photometry</li>
-            <li class="chip">SVM · kNN · DT</li>
+            <li class="chip">SVM Â· kNN Â· DT</li>
             <li class="chip">ROC-AUC per class</li>
             <li class="chip">Stratified CV</li>
           </ul>
@@ -103,9 +105,9 @@
             <dt>Institution</dt>
             <dd>University College Dublin</dd>
             <dt>Role</dt>
-            <dd>Student — individual assignment</dd>
+            <dd>Student â€” individual assignment</dd>
             <dt>Focus</dt>
-            <dd>Supervised learning · Model evaluation</dd>
+            <dd>Supervised learning Â· Model evaluation</dd>
             <dt>Stack</dt>
             <dd>Python, pandas, NumPy, scikit-learn, matplotlib</dd>
             <dt>Links</dt>
@@ -167,9 +169,9 @@
             <h2>Models &amp; Tuning</h2>
             <ul>
               <li><strong>Baselines:</strong> Majority class; Logistic Regression (multinomial).</li>
-              <li><strong>kNN:</strong> grid over <code>k ∈ {5, 7, 9, 11, 15, 21}</code>, distance metrics, and
+              <li><strong>kNN:</strong> grid over <code>k âˆˆ {5, 7, 9, 11, 15, 21}</code>, distance metrics, and
                 weighting.</li>
-              <li><strong>SVM (RBF):</strong> grid over <code>C</code> and <code>γ</code>; class weights to handle
+              <li><strong>SVM (RBF):</strong> grid over <code>C</code> and <code>Î³</code>; class weights to handle
                 imbalance.</li>
               <li><strong>Decision Tree:</strong> tuned <code>max_depth</code>, <code>min_samples_split</code>, and
                 <code>ccp_alpha</code> (cost-complexity pruning).
@@ -229,9 +231,9 @@
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Case study pagination">
-            <a class="btn btn--ghost" href="golden-source-forecasting.html">← Golden-Source & Forecasting</a>
+            <a class="btn btn--ghost" href="golden-source-forecasting.html">â† Golden-Source & Forecasting</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="healthcare-data-mining.html">Next: Healthcare Data Mining →</a>
+            <a class="btn btn--secondary" href="healthcare-data-mining.html">Next: Healthcare Data Mining â†’</a>
           </nav>
         </article>
       </div>
@@ -241,7 +243,7 @@
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>

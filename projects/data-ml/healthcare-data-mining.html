@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Healthcare Data Mining — Case Study — Nirav Ramidi</title>
+  <title>Healthcare Data Mining â€” Case Study â€” Nirav Ramidi</title>
   <meta name="description"
     content="Healthcare data mining pipelines: imbalanced classification with SMOTE, exploratory clustering (KMeans/DBSCAN), and a light regression track. Clean preprocessing, proper validation, and practical evaluation." />
 
@@ -31,7 +31,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -44,16 +44,18 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../../education/">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
-              aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -81,8 +83,8 @@
           </p>
           <ul class="metrics">
             <li class="chip">SMOTE (train-only)</li>
-            <li class="chip">ROC-AUC · PR-AUC · F1</li>
-            <li class="chip">KMeans · DBSCAN</li>
+            <li class="chip">ROC-AUC Â· PR-AUC Â· F1</li>
+            <li class="chip">KMeans Â· DBSCAN</li>
             <li class="chip">Pipelines & CV</li>
           </ul>
         </div>
@@ -104,9 +106,9 @@
             <dt>Institution</dt>
             <dd>University College Dublin</dd>
             <dt>Role</dt>
-            <dd>Student — practical labs</dd>
+            <dd>Student â€” practical labs</dd>
             <dt>Focus</dt>
-            <dd>Imbalanced learning · Clustering · Evaluation</dd>
+            <dd>Imbalanced learning Â· Clustering Â· Evaluation</dd>
             <dt>Stack</dt>
             <dd>Python, pandas, scikit-learn, imbalanced-learn, matplotlib</dd>
             <dt>Links</dt>
@@ -155,7 +157,7 @@
               <div>
                 <h3>Pipelines &amp; CV</h3>
                 <ul>
-                  <li>scikit-learn <strong>Pipeline</strong> steps: preprocess → sampler → model.</li>
+                  <li>scikit-learn <strong>Pipeline</strong> steps: preprocess â†’ sampler â†’ model.</li>
                   <li>Repeated/stratified CV; grid search with ROC-AUC (and PR-AUC) as scorers.</li>
                   <li>Threshold tuning on validation folds to target desired recall/precision.</li>
                 </ul>
@@ -180,7 +182,7 @@
                 <h3>Clustering</h3>
                 <ul>
                   <li>KMeans (elbow + silhouette to select <code>k</code>)</li>
-                  <li>DBSCAN (ε/MinPts tuned on scaled feature space)</li>
+                  <li>DBSCAN (Îµ/MinPts tuned on scaled feature space)</li>
                 </ul>
                 <h3>Regression (light track)</h3>
                 <ul>
@@ -206,12 +208,12 @@
               <div>
                 <h3>Clustering Metrics</h3>
                 <ul>
-                  <li>Silhouette score, Davies–Bouldin index</li>
+                  <li>Silhouette score, Daviesâ€“Bouldin index</li>
                   <li>Qualitative inspection vs known risk factors</li>
                 </ul>
                 <h3>Regression Metrics</h3>
                 <ul>
-                  <li>MAE, RMSE, and R² on held-out test set</li>
+                  <li>MAE, RMSE, and RÂ² on held-out test set</li>
                 </ul>
               </div>
             </div>
@@ -228,7 +230,7 @@
             <ul class="checklist">
               <li>With <strong>SMOTE</strong>, tree-based models achieved meaningfully higher recall at similar ROC-AUC.
               </li>
-              <li><strong>Threshold tuning</strong> (Youden’s J / PR-curve sweep) balanced precision vs recall for
+              <li><strong>Threshold tuning</strong> (Youdenâ€™s J / PR-curve sweep) balanced precision vs recall for
                 clinical use.</li>
               <li><strong>KMeans</strong> revealed clusters aligned with age/BMI/hypertension patterns;
                 <strong>DBSCAN</strong> found small dense risk groups.</li>
@@ -250,9 +252,9 @@
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Case study pagination">
-            <a class="btn btn--ghost" href="astronomy-classifier.html">← Astronomy Classifier</a>
+            <a class="btn btn--ghost" href="astronomy-classifier.html">â† Astronomy Classifier</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="../swe-systems/java-marketplace.html">Next: Java Marketplace →</a>
+            <a class="btn btn--secondary" href="../swe-systems/java-marketplace.html">Next: Java Marketplace â†’</a>
           </nav>
         </article>
       </div>
@@ -262,7 +264,7 @@
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>

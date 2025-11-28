@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Business Management Research (IA) — Nirav Ramidi</title>
+  <title>Business Management Research (IA) â€” Nirav Ramidi</title>
   <meta name="description" content="Practical business management analysis: four-point moving averages, PMPM calculations, divisional P&L, and break-even sensitivity with scenario planning." />
 
   <!-- Styles (kept separate) -->
@@ -29,7 +29,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -42,15 +42,18 @@
           <li><a href="../writing/" aria-current="page">Writing</a></li>
           <li><a href="../education/">Education</a></li>
           <li><a href="../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -100,7 +103,7 @@
           <h2 class="visually-hidden">Article info</h2>
           <dl class="meta-list">
             <dt>Type</dt><dd>Individual research / analysis</dd>
-            <dt>Focus</dt><dd>Forecasting · Cost–Volume–Profit · Sensitivity</dd>
+            <dt>Focus</dt><dd>Forecasting Â· Costâ€“Volumeâ€“Profit Â· Sensitivity</dd>
             <dt>Artifacts</dt><dd>PDF report, spreadsheet model</dd>
             <dt>Keywords</dt><dd>PMPM, Moving Average, Break-even, Margin of Safety</dd>
           </dl>
@@ -126,7 +129,7 @@
             <ul>
               <li>What is the most reasonable near-term <strong>volume forecast</strong> given recent volatility?</li>
               <li>At current pricing and cost structure, what is the <strong>break-even volume</strong> and <strong>time to break even</strong>?</li>
-              <li>How sensitive is profit to ±Δ in <strong>price</strong>, <strong>conversion/volume</strong>, and <strong>variable cost</strong>?</li>
+              <li>How sensitive is profit to Â±Î” in <strong>price</strong>, <strong>conversion/volume</strong>, and <strong>variable cost</strong>?</li>
               <li>What <strong>capacity</strong> and <strong>cash</strong> headroom are required for a conservative ramp?</li>
             </ul>
           </section>
@@ -138,7 +141,7 @@
               <div>
                 <h3>Inputs</h3>
                 <ul>
-                  <li>Historical monthly demand (last 12–18 months).</li>
+                  <li>Historical monthly demand (last 12â€“18 months).</li>
                   <li>Price per unit and expected discount rate.</li>
                   <li>Variable cost per unit (materials, fulfilment, payment fees).</li>
                   <li>Fixed costs (labour, rent, tooling, marketing baseline).</li>
@@ -147,7 +150,7 @@
               <div>
                 <h3>Assumption hygiene</h3>
                 <ul>
-                  <li>Document each input’s source and rationale.</li>
+                  <li>Document each inputâ€™s source and rationale.</li>
                   <li>Use ranges/triangles where uncertainty is high; central case = mid-point.</li>
                   <li>Separate one-off launch costs from steady-state fixed costs.</li>
                 </ul>
@@ -175,13 +178,13 @@
               <article class="card">
                 <header class="card__header"><h3>Divisional P&amp;L</h3></header>
                 <p class="card__body">
-                  Revenue − variable costs = <em>contribution</em>; subtract fixed costs to obtain operating profit. Tracks run-rate vs. plan.
+                  Revenue âˆ’ variable costs = <em>contribution</em>; subtract fixed costs to obtain operating profit. Tracks run-rate vs. plan.
                 </p>
               </article>
               <article class="card">
                 <header class="card__header"><h3>Break-Even &amp; Sensitivity</h3></header>
                 <p class="card__body">
-                  <em>Break-even units</em> = Fixed Costs ÷ (Price − Variable Cost). Sensitivity sweeps ±10–30% on price, volume, and variable cost to quantify margin of safety.
+                  <em>Break-even units</em> = Fixed Costs Ã· (Price âˆ’ Variable Cost). Sensitivity sweeps Â±10â€“30% on price, volume, and variable cost to quantify margin of safety.
                 </p>
               </article>
             </div>
@@ -215,20 +218,20 @@
 
           <!-- Appendix -->
           <section class="case-section" id="appendix">
-            <h2>Appendix — Key Formulas</h2>
+            <h2>Appendix â€” Key Formulas</h2>
             <div class="formula-grid">
-              <p><strong>Contribution (per unit):</strong> <code>price − variable_cost</code></p>
-              <p><strong>Break-even (units):</strong> <code>fixed_costs ÷ (price − variable_cost)</code></p>
-              <p><strong>Margin of Safety:</strong> <code>(actual_sales − break_even_sales) ÷ actual_sales</code></p>
-              <p><strong>PMPM:</strong> <code>(revenue − variable_costs) ÷ members</code></p>
+              <p><strong>Contribution (per unit):</strong> <code>price âˆ’ variable_cost</code></p>
+              <p><strong>Break-even (units):</strong> <code>fixed_costs Ã· (price âˆ’ variable_cost)</code></p>
+              <p><strong>Margin of Safety:</strong> <code>(actual_sales âˆ’ break_even_sales) Ã· actual_sales</code></p>
+              <p><strong>PMPM:</strong> <code>(revenue âˆ’ variable_costs) Ã· members</code></p>
             </div>
           </section>
 
           <!-- Footer Nav -->
           <nav class="case-pager" aria-label="Writing pagination">
-            <a class="btn btn--ghost" href="./">← All writing</a>
+            <a class="btn btn--ghost" href="./">â† All writing</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="hcai-essay.html">Next: Human-Centred AI Essay →</a>
+            <a class="btn btn--secondary" href="hcai-essay.html">Next: Human-Centred AI Essay â†’</a>
           </nav>
         </article>
       </div>
@@ -238,7 +241,7 @@
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -252,3 +255,4 @@
   <script src="../assets/js/main.js" defer></script>
 </body>
 </html>
+

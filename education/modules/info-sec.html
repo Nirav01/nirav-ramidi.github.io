@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Information Security — Module — Nirav Ramidi</title>
+  <title>Information Security â€” Module â€” Nirav Ramidi</title>
   <meta name="description" content="Security principles, threat modeling, crypto basics, authentication & access control, web/network security, secure development lifecycle, and incident response." />
 
   <!-- Styles (kept separate) -->
@@ -17,7 +17,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -30,15 +30,18 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -72,8 +75,8 @@
         <div class="actions">
           <!-- Place these files in this folder to activate links -->
           <a class="btn btn--secondary" href="comp41960-course-introduction.pdf">Course Introduction (PDF)</a>
-          <a class="btn btn--ghost" href="comp41960-assignment.pdf">Assignment — Risk &amp; Controls (PDF)</a>
-          <a class="btn btn--ghost" href="Information_Security_Assignment_2.pdf">Assignment 2 — Applied Security (PDF)</a>
+          <a class="btn btn--ghost" href="comp41960-assignment.pdf">Assignment â€” Risk &amp; Controls (PDF)</a>
+          <a class="btn btn--ghost" href="Information_Security_Assignment_2.pdf">Assignment 2 â€” Applied Security (PDF)</a>
           <a class="btn btn--ghost" href="comp30940-organisation.pdf">Organisation &amp; Policies (PDF)</a>
         </div>
 
@@ -91,12 +94,12 @@
           <h2 class="visually-hidden">Module info</h2>
           <dl class="meta-list">
             <dt>Category</dt><dd>Security</dd>
-            <dt>Focus</dt><dd>Risk · Controls · Engineering</dd>
+            <dt>Focus</dt><dd>Risk Â· Controls Â· Engineering</dd>
             <dt>Stack</dt><dd>OWASP, TLS/PKI, Linux tools, logs/SIEM</dd>
             <dt>Assessment</dt><dd>Assignments, labs, short quizzes</dd>
           </dl>
           <div class="note small">
-            <p><strong>Related pages:</strong> <a href="../../projects/cloud-sre/vision-microservice.html">Vision Microservice</a> · <a href="../../projects/swe-systems/java-marketplace.html">Java Marketplace</a>.</p>
+            <p><strong>Related pages:</strong> <a href="../../projects/cloud-sre/vision-microservice.html">Vision Microservice</a> Â· <a href="../../projects/swe-systems/java-marketplace.html">Java Marketplace</a>.</p>
           </div>
         </aside>
 
@@ -155,7 +158,7 @@ ph.verify(hash, "correct horse battery staple")  # True</code></pre>
                 <p class="muted small">Use Argon2id or bcrypt; never store raw passwords.</p>
               </div>
               <div class="card">
-                <header class="card__header"><h3>OpenSSL — quick TLS check</h3></header>
+                <header class="card__header"><h3>OpenSSL â€” quick TLS check</h3></header>
                 <pre class="code-block"><code># List server's cert chain & negotiated ciphersuite
 openssl s_client -connect example.com:443 -servername example.com -showcerts</code></pre>
                 <p class="muted small">Pin to modern TLS; prefer AEAD ciphers (e.g., TLS 1.3 suites).</p>
@@ -174,13 +177,13 @@ add_header Content-Security-Policy "default-src 'self'";</code></pre>
 
               <div class="card">
                 <header class="card__header"><h3>STRIDE prompts</h3></header>
-                <pre class="code-block"><code>Spoofing      → strong auth, MFA
-Tampering     → integrity checks, signatures
-Repudiation   → audit logs, time-sync
-Information   → access controls, encryption
+                <pre class="code-block"><code>Spoofing      â†’ strong auth, MFA
+Tampering     â†’ integrity checks, signatures
+Repudiation   â†’ audit logs, time-sync
+Information   â†’ access controls, encryption
 Disclosure
-Denial of Svc → rate limits, timeouts, WAF
-Elevation     → least privilege, sandboxing</code></pre>
+Denial of Svc â†’ rate limits, timeouts, WAF
+Elevation     â†’ least privilege, sandboxing</code></pre>
               </div>
             </div>
           </section>
@@ -189,10 +192,10 @@ Elevation     → least privilege, sandboxing</code></pre>
           <section class="case-section" id="artifacts">
             <h2>Selected Artefacts</h2>
             <ul class="list">
-              <li><a href="comp41960-course-introduction.pdf">Course Introduction — objectives &amp; assessment</a></li>
-              <li><a href="comp41960-assignment.pdf">Assignment — Risk analysis &amp; control selection</a></li>
-              <li><a href="Information_Security_Assignment_2.pdf">Assignment 2 — Applied security tasks</a></li>
-              <li><a href="comp30940-organisation.pdf">Organisation &amp; Security Policies — overview</a></li>
+              <li><a href="comp41960-course-introduction.pdf">Course Introduction â€” objectives &amp; assessment</a></li>
+              <li><a href="comp41960-assignment.pdf">Assignment â€” Risk analysis &amp; control selection</a></li>
+              <li><a href="Information_Security_Assignment_2.pdf">Assignment 2 â€” Applied security tasks</a></li>
+              <li><a href="comp30940-organisation.pdf">Organisation &amp; Security Policies â€” overview</a></li>
             </ul>
           </section>
 
@@ -208,9 +211,9 @@ Elevation     → least privilege, sandboxing</code></pre>
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="comp-networking.html">← Computer Networking</a>
+            <a class="btn btn--ghost" href="comp-networking.html">â† Computer Networking</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="cloud-comp.html">Next: Cloud Computing →</a>
+            <a class="btn btn--secondary" href="cloud-comp.html">Next: Cloud Computing â†’</a>
           </nav>
         </article>
       </div>
@@ -220,7 +223,7 @@ Elevation     → least privilege, sandboxing</code></pre>
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -234,3 +237,4 @@ Elevation     → least privilege, sandboxing</code></pre>
   <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
+

@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SVM Kernels — Quick Guide — Notes — Nirav Ramidi</title>
-  <meta name="description" content="When to use linear vs RBF vs polynomial SVMs, how C and γ interact, scaling rules, and practical tuning recipes with pitfalls to avoid." />
+  <title>SVM Kernels â€” Quick Guide â€” Notes â€” Nirav Ramidi</title>
+  <meta name="description" content="When to use linear vs RBF vs polynomial SVMs, how C and Î³ interact, scaling rules, and practical tuning recipes with pitfalls to avoid." />
 
   <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../../assets/css/main.css" />
@@ -17,7 +17,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -30,15 +30,18 @@
           <li><a href="../">Writing</a></li>
           <li><a href="../../education/">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -49,17 +52,17 @@
         <li><a href="../../">Home</a></li>
         <li><a href="../">Writing</a></li>
         <li><a href="../index.html#notes">Notes</a></li>
-        <li><span aria-current="page">SVM Kernels — Quick Guide</span></li>
+        <li><span aria-current="page">SVM Kernels â€” Quick Guide</span></li>
       </ol>
     </nav>
 
     <!-- Title -->
     <section class="section">
       <div class="container">
-        <h1 class="page-title">SVM Kernels — Quick Guide</h1>
+        <h1 class="page-title">SVM Kernels â€” Quick Guide</h1>
         <p class="lead">
           How to choose between <strong>Linear</strong>, <strong>RBF</strong>, <strong>Polynomial</strong> (and why <strong>Sigmoid</strong> is rare),
-          plus how <strong>C</strong> and <strong>γ</strong> interact, scaling rules, and practical tuning recipes.
+          plus how <strong>C</strong> and <strong>Î³</strong> interact, scaling rules, and practical tuning recipes.
         </p>
         <ul class="chips">
           <li class="chip">ML</li>
@@ -74,7 +77,7 @@
       <div class="container">
         <h2>When SVMs shine</h2>
         <ul>
-          <li>Small–medium datasets, <strong>high-dimensional</strong> features (text, bag-of-words, pixels).</li>
+          <li>Smallâ€“medium datasets, <strong>high-dimensional</strong> features (text, bag-of-words, pixels).</li>
           <li>Clear margins matter; robustness to outliers via the <em>hinge loss</em> margin.</li>
           <li>Nonlinear decision boundaries via kernels without explicit feature engineering.</li>
         </ul>
@@ -108,10 +111,10 @@
           <article class="card">
             <header class="card__header"><h3>Linear</h3></header>
             <p class="card__body">
-              Best when data are roughly linearly separable or <em>p ≫ n</em> (many features). Fast and often state-of-the-art for text.
+              Best when data are roughly linearly separable or <em>p â‰« n</em> (many features). Fast and often state-of-the-art for text.
             </p>
             <ul class="tight">
-              <li>Hyperparam: <strong>C</strong> (regularisation strength). Lower C ⇒ wider margin (more regularisation).</li>
+              <li>Hyperparam: <strong>C</strong> (regularisation strength). Lower C â‡’ wider margin (more regularisation).</li>
               <li>Pros: simple, fast, interpretable weights, works with sparse data.</li>
               <li>Pick: start here unless you have evidence of strong nonlinearity.</li>
             </ul>
@@ -123,8 +126,8 @@
               Smooth, flexible boundaries. Often the strongest default for tabular numeric data.
             </p>
             <ul class="tight">
-              <li>Hyperparams: <strong>C</strong>, <strong>γ</strong> (gamma). <code>γ = 1/(2σ²)</code>; larger γ ⇒ tighter influence (risk overfit).</li>
-              <li>Effects: ↑C or ↑γ both increase model complexity, but via different knobs (soft-margin vs locality).</li>
+              <li>Hyperparams: <strong>C</strong>, <strong>Î³</strong> (gamma). <code>Î³ = 1/(2ÏƒÂ²)</code>; larger Î³ â‡’ tighter influence (risk overfit).</li>
+              <li>Effects: â†‘C or â†‘Î³ both increase model complexity, but via different knobs (soft-margin vs locality).</li>
             </ul>
           </article>
 
@@ -134,8 +137,8 @@
               Captures interactions up to degree <em>d</em>. Sensitive to scaling and degrees &gt; 3 often overfit.
             </p>
             <ul class="tight">
-              <li>Hyperparams: <strong>C</strong>, <strong>d</strong>, <strong>γ</strong>, <strong>coef0</strong>.</li>
-              <li>Tip: try <em>d</em>=2 or 3; keep γ small and use strong regularisation (lower C).</li>
+              <li>Hyperparams: <strong>C</strong>, <strong>d</strong>, <strong>Î³</strong>, <strong>coef0</strong>.</li>
+              <li>Tip: try <em>d</em>=2 or 3; keep Î³ small and use strong regularisation (lower C).</li>
             </ul>
           </article>
 
@@ -157,15 +160,15 @@
           <div>
             <h3>Linear SVM</h3>
             <ul>
-              <li>Try <code>C ∈ {0.01, 0.1, 1, 10, 100}</code>.</li>
+              <li>Try <code>C âˆˆ {0.01, 0.1, 1, 10, 100}</code>.</li>
               <li>Use <code>LinearSVC</code> (fast, one-vs-rest) for large/sparse; <code>SGDClassifier(loss='hinge')</code> for online/very large.</li>
             </ul>
           </div>
           <div>
             <h3>RBF SVM</h3>
             <ul>
-              <li>Start with <code>γ='scale'</code> (scikit-learn default) and sweep <code>C</code> on log-scale.</li>
-              <li>Grid (log-space): <code>C ∈ [1e-2 … 1e3]</code>, <code>γ ∈ [1e-4 … 1e1]</code>.</li>
+              <li>Start with <code>Î³='scale'</code> (scikit-learn default) and sweep <code>C</code> on log-scale.</li>
+              <li>Grid (log-space): <code>C âˆˆ [1e-2 â€¦ 1e3]</code>, <code>Î³ âˆˆ [1e-4 â€¦ 1e1]</code>.</li>
               <li>Use stratified CV; pick by <strong>macro-F1</strong> or <strong>ROC-AUC (OvR)</strong> for imbalance.</li>
             </ul>
           </div>
@@ -173,7 +176,7 @@
 
         <h3>Probabilities & calibration</h3>
         <ul>
-          <li><code>SVC(probability=True)</code> fits an internal Platt scaler (CV) — slower. For better calibration, wrap with <code>CalibratedClassifierCV</code>.</li>
+          <li><code>SVC(probability=True)</code> fits an internal Platt scaler (CV) â€” slower. For better calibration, wrap with <code>CalibratedClassifierCV</code>.</li>
           <li>For <code>LinearSVC</code>, always use external calibration (<code>CalibratedClassifierCV</code> with <em>sigmoid</em> or <em>isotonic</em>).</li>
         </ul>
 
@@ -188,13 +191,13 @@
     <!-- Interactions of C and gamma -->
     <section class="section">
       <div class="container">
-        <h2>How C and γ interact (RBF)</h2>
+        <h2>How C and Î³ interact (RBF)</h2>
         <div class="card">
           <div class="card__body">
             <ul class="tight">
-              <li>↑ <strong>C</strong> ⇒ penalise misclassifications more ⇒ narrower margin ⇒ higher variance.</li>
-              <li>↑ <strong>γ</strong> ⇒ smaller RBF radius ⇒ decision boundary follows data closely ⇒ higher variance.</li>
-              <li>Grid search often shows <em>diagonals</em> of similar performance; pick the <em>simplest</em> (lower C/γ) with near-best score.</li>
+              <li>â†‘ <strong>C</strong> â‡’ penalise misclassifications more â‡’ narrower margin â‡’ higher variance.</li>
+              <li>â†‘ <strong>Î³</strong> â‡’ smaller RBF radius â‡’ decision boundary follows data closely â‡’ higher variance.</li>
+              <li>Grid search often shows <em>diagonals</em> of similar performance; pick the <em>simplest</em> (lower C/Î³) with near-best score.</li>
             </ul>
           </div>
         </div>
@@ -244,11 +247,11 @@ gs.fit(X_train, y_train)</code></pre>
       <div class="container">
         <h2>Common pitfalls</h2>
         <ul class="checklist">
-          <li><strong>No scaling</strong> → RBF/poly behave erratically; always standardise.</li>
-          <li><strong>Huge γ</strong> with high C → perfect train accuracy, poor generalisation.</li>
-          <li><strong>High-degree poly</strong> without strong regularisation → overfit; start with degree 2–3.</li>
-          <li><strong>Expecting calibrated probs</strong> from margins — use explicit calibration.</li>
-          <li><strong>Large n</strong> with kernel SVMs → O(n²–n³) training; use LinearSVC/SGD or approximate kernels.</li>
+          <li><strong>No scaling</strong> â†’ RBF/poly behave erratically; always standardise.</li>
+          <li><strong>Huge Î³</strong> with high C â†’ perfect train accuracy, poor generalisation.</li>
+          <li><strong>High-degree poly</strong> without strong regularisation â†’ overfit; start with degree 2â€“3.</li>
+          <li><strong>Expecting calibrated probs</strong> from margins â€” use explicit calibration.</li>
+          <li><strong>Large n</strong> with kernel SVMs â†’ O(nÂ²â€“nÂ³) training; use LinearSVC/SGD or approximate kernels.</li>
         </ul>
       </div>
     </section>
@@ -261,16 +264,16 @@ gs.fit(X_train, y_train)</code></pre>
           <div class="card">
             <header class="card__header"><h3>Start here</h3></header>
             <ul class="tight">
-              <li>Text/sparse, p≫n → <strong>Linear</strong> (LinearSVC).</li>
-              <li>Tabular numeric, smooth boundary → <strong>RBF</strong>.</li>
-              <li>Known interactions (x<sub>i</sub>x<sub>j</sub>) → <strong>Poly</strong> (d=2–3).</li>
+              <li>Text/sparse, pâ‰«n â†’ <strong>Linear</strong> (LinearSVC).</li>
+              <li>Tabular numeric, smooth boundary â†’ <strong>RBF</strong>.</li>
+              <li>Known interactions (x<sub>i</sub>x<sub>j</sub>) â†’ <strong>Poly</strong> (d=2â€“3).</li>
             </ul>
           </div>
           <div class="card">
             <header class="card__header"><h3>Quick ranges</h3></header>
             <ul class="tight">
-              <li><strong>C</strong>: 1e-2 → 1e3 (log steps).</li>
-              <li><strong>γ</strong> (RBF): 1e-4 → 1e1 (log steps), or start with <code>'scale'</code>.</li>
+              <li><strong>C</strong>: 1e-2 â†’ 1e3 (log steps).</li>
+              <li><strong>Î³</strong> (RBF): 1e-4 â†’ 1e1 (log steps), or start with <code>'scale'</code>.</li>
               <li><strong>degree</strong> (poly): 2 or 3 first.</li>
             </ul>
           </div>
@@ -283,7 +286,7 @@ gs.fit(X_train, y_train)</code></pre>
       <div class="container">
         <h2>Evaluation & reporting</h2>
         <ul>
-          <li>Use stratified CV; report mean ± std of your primary metric.</li>
+          <li>Use stratified CV; report mean Â± std of your primary metric.</li>
           <li>For imbalance: macro-F1, PR-AUC, and class-wise precision/recall.</li>
           <li>Inspect confusion matrices; plot ROC/PR curves (OvR for multiclass).</li>
         </ul>
@@ -294,9 +297,9 @@ gs.fit(X_train, y_train)</code></pre>
     <section class="section">
       <div class="container">
         <nav class="case-pager" aria-label="Notes pagination">
-          <a class="btn btn--ghost" href="../index.html#notes">← All notes</a>
+          <a class="btn btn--ghost" href="../index.html#notes">â† All notes</a>
           <div class="spacer"></div>
-          <a class="btn btn--secondary" href="queueing-cheatsheet.html">Next: Queueing Cheatsheet →</a>
+          <a class="btn btn--secondary" href="queueing-cheatsheet.html">Next: Queueing Cheatsheet â†’</a>
         </nav>
       </div>
     </section>
@@ -305,7 +308,7 @@ gs.fit(X_train, y_train)</code></pre>
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -319,3 +322,4 @@ gs.fit(X_train, y_train)</code></pre>
   <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
+

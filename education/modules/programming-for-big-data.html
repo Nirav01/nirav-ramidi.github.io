@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Programming for Big Data — Module — Nirav Ramidi</title>
+  <title>Programming for Big Data â€” Module â€” Nirav Ramidi</title>
   <meta name="description" content="Practical data engineering with Python & PySpark: distributed dataframes, ETL pipelines, joins & shuffles, storage formats, streaming, and performance tuning." />
 
   <!-- Styles (kept separate) -->
@@ -17,7 +17,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -30,15 +30,18 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -70,8 +73,8 @@
 
         <div class="actions">
           <!-- Place these files in this folder to activate links -->
-          <a class="btn btn--secondary" href="1-Introduction.pdf">Lecture 1 — Introduction (PDF)</a>
-          <a class="btn btn--ghost" href="group_project.html">Group Project — Big Data App</a>
+          <a class="btn btn--secondary" href="1-Introduction.pdf">Lecture 1 â€” Introduction (PDF)</a>
+          <a class="btn btn--ghost" href="group_project.html">Group Project â€” Big Data App</a>
         </div>
 
         <p class="muted small">
@@ -88,7 +91,7 @@
           <h2 class="visually-hidden">Module info</h2>
           <dl class="meta-list">
             <dt>Category</dt><dd>Data Engineering</dd>
-            <dt>Focus</dt><dd>Distributed processing · Storage · Tuning</dd>
+            <dt>Focus</dt><dd>Distributed processing Â· Storage Â· Tuning</dd>
             <dt>Stack</dt><dd>Python, PySpark/Spark SQL, HDFS/S3, Parquet/Avro, (Kafka optional)</dd>
             <dt>Assessment</dt><dd>Labs, group project, short quizzes</dd>
           </dl>
@@ -161,7 +164,7 @@ facts = (
 )
 
 facts.write.mode("overwrite").partitionBy("day").parquet("s3://bucket/curated/events_by_day")</code></pre>
-                <p class="muted small">Broadcast joins trade network shuffle for executor memory — ensure the dim table is small.</p>
+                <p class="muted small">Broadcast joins trade network shuffle for executor memory â€” ensure the dim table is small.</p>
               </div>
 
               <div class="card">
@@ -208,8 +211,8 @@ q.awaitTermination()</code></pre>
           <section class="case-section" id="artifacts">
             <h2>Selected Artefacts</h2>
             <ul class="list">
-              <li><a href="1-Introduction.pdf">Lecture 1 — course introduction</a></li>
-              <li><a href="group_project.html">Group Project — Big Data application (HTML)</a></li>
+              <li><a href="1-Introduction.pdf">Lecture 1 â€” course introduction</a></li>
+              <li><a href="group_project.html">Group Project â€” Big Data application (HTML)</a></li>
             </ul>
           </section>
 
@@ -218,16 +221,16 @@ q.awaitTermination()</code></pre>
             <h2>Key Takeaways</h2>
             <ul class="checklist">
               <li>Columnar formats + partitioning enable fast scans and pruning.</li>
-              <li>Most performance problems are <strong>shuffle</strong> or <strong>skew</strong> — fix joins first.</li>
+              <li>Most performance problems are <strong>shuffle</strong> or <strong>skew</strong> â€” fix joins first.</li>
               <li>Design for retries and idempotency; storage is the system of record.</li>
             </ul>
           </section>
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="perf-of-comp-sys.html">← Performance of Computer Systems</a>
+            <a class="btn btn--ghost" href="perf-of-comp-sys.html">â† Performance of Computer Systems</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="data-mining.html">Next: Data Mining →</a>
+            <a class="btn btn--secondary" href="data-mining.html">Next: Data Mining â†’</a>
           </nav>
         </article>
       </div>
@@ -237,7 +240,7 @@ q.awaitTermination()</code></pre>
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -251,3 +254,4 @@ q.awaitTermination()</code></pre>
   <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
+

@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cloud-Native Library Analytics — Case Study — Nirav Ramidi</title>
+  <title>Cloud-Native Library Analytics â€” Case Study â€” Nirav Ramidi</title>
   <meta name="description" content="Containerised data pipeline for library operations: ingest circulation/web events, model a star schema, ship dashboards, and wire alerts for data freshness & anomalies." />
 
   <!-- Styles (kept separate) -->
@@ -29,7 +29,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -42,15 +42,18 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../../education/">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -95,9 +98,9 @@
         <aside class="case-meta card">
           <h2 class="visually-hidden">Project info</h2>
           <dl class="meta-list">
-            <dt>Type</dt><dd>Data Engineering · BI</dd>
+            <dt>Type</dt><dd>Data Engineering Â· BI</dd>
             <dt>Role</dt><dd>Solo developer</dd>
-            <dt>Focus</dt><dd>Ingestion · Modelling · Dashboards · Monitoring</dd>
+            <dt>Focus</dt><dd>Ingestion Â· Modelling Â· Dashboards Â· Monitoring</dd>
             <dt>Stack</dt><dd>Python, Docker, Airflow, dbt, Postgres/BigQuery, Metabase, Grafana/Prometheus</dd>
             <dt>Links</dt>
             <dd>
@@ -129,7 +132,7 @@
           <section class="case-section" id="architecture">
             <h2>Architecture</h2>
             <figure class="case-figure">
-              <img src="../../assets/img/case-studies/library-analytics-architecture.png" alt="Sources → Airflow ingestion → Staging (warehouse) → dbt transforms → Marts → Metabase/Grafana with Prometheus alerts" loading="lazy" />
+              <img src="../../assets/img/case-studies/library-analytics-architecture.png" alt="Sources â†’ Airflow ingestion â†’ Staging (warehouse) â†’ dbt transforms â†’ Marts â†’ Metabase/Grafana with Prometheus alerts" loading="lazy" />
               <figcaption>Containerised stack: Airflow orchestrates ingestion and transformations; dashboards pull from marts.</figcaption>
             </figure>
             <div class="cols">
@@ -141,7 +144,7 @@
                 </ul>
                 <h3>Modelling</h3>
                 <ul>
-                  <li><strong>dbt</strong> models: <em>staging → core → marts</em> with tests (unique/not null, referential).</li>
+                  <li><strong>dbt</strong> models: <em>staging â†’ core â†’ marts</em> with tests (unique/not null, referential).</li>
                   <li>Star schema facts: <em>fact_circulation</em>, <em>fact_visits</em>; dims: <em>dim_item</em>, <em>dim_branch</em>, <em>dim_time</em>, <em>dim_patron</em>.</li>
                 </ul>
               </div>
@@ -174,7 +177,7 @@
               </article>
               <article class="card">
                 <header class="card__header"><h3>Freshness &amp; Anomalies</h3></header>
-                <p class="card__body">Alerts when tables lag or when daily volumes deviate &gt; 3σ from rolling mean.</p>
+                <p class="card__body">Alerts when tables lag or when daily volumes deviate &gt; 3Ïƒ from rolling mean.</p>
               </article>
               <article class="card">
                 <header class="card__header"><h3>Governance</h3></header>
@@ -205,9 +208,9 @@
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Case study pagination">
-            <a class="btn btn--ghost" href="queueing-capacity.html">← Queueing for Capacity Planning</a>
+            <a class="btn btn--ghost" href="queueing-capacity.html">â† Queueing for Capacity Planning</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="../hcai-viz/hcai-experiment.html">Next: HCAI Empirical Study →</a>
+            <a class="btn btn--secondary" href="../hcai-viz/hcai-experiment.html">Next: HCAI Empirical Study â†’</a>
           </nav>
         </article>
       </div>
@@ -217,7 +220,7 @@
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -231,3 +234,4 @@
   <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
+

@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Web Development — Module — Nirav Ramidi</title>
+  <title>Web Development â€” Module â€” Nirav Ramidi</title>
   <meta name="description" content="Frontend, backend, and full-stack fundamentals: HTML/CSS/JS, HTTP & REST, MVC, auth, validation, databases, and deployment practices." />
 
   <!-- Styles (kept separate) -->
@@ -17,7 +17,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -30,15 +30,18 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -70,7 +73,7 @@
 
         <div class="actions">
           <!-- Place these files in this folder to activate links -->
-          <a class="btn btn--secondary" href="COMP30860_lecture1.pdf">Lecture 1 — Course Intro (PDF)</a>
+          <a class="btn btn--secondary" href="COMP30860_lecture1.pdf">Lecture 1 â€” Course Intro (PDF)</a>
           <a class="btn btn--ghost" href="frontend.pdf">Frontend slides</a>
           <a class="btn btn--ghost" href="backend.pdf">Backend slides</a>
         </div>
@@ -89,7 +92,7 @@
           <h2 class="visually-hidden">Module info</h2>
           <dl class="meta-list">
             <dt>Category</dt><dd>Software Engineering</dd>
-            <dt>Focus</dt><dd>MVC · REST · Forms · Auth</dd>
+            <dt>Focus</dt><dd>MVC Â· REST Â· Forms Â· Auth</dd>
             <dt>Stack</dt><dd>HTML/CSS/JS, Node/Express or Flask, SQL basics</dd>
             <dt>Assessment</dt><dd>Labs, mini-project, short write-ups</dd>
           </dl>
@@ -138,7 +141,7 @@
               </article>
               <article class="card">
                 <header class="card__header"><h3>Data Layer</h3></header>
-                <p class="card__body">ER → schema, migrations, parameterised SQL/ORM, N+1 pitfalls, indexes.</p>
+                <p class="card__body">ER â†’ schema, migrations, parameterised SQL/ORM, N+1 pitfalls, indexes.</p>
               </article>
               <article class="card">
                 <header class="card__header"><h3>Deploy &amp; Ops</h3></header>
@@ -154,12 +157,12 @@
             <div class="grid two">
               <div class="card">
                 <header class="card__header"><h3>RESTful routes (example)</h3></header>
-                <pre class="code-block"><code>GET    /items          → list
-POST   /items          → create
-GET    /items/:id      → retrieve
-PUT    /items/:id      → replace
-PATCH  /items/:id      → partial update
-DELETE /items/:id      → delete</code></pre>
+                <pre class="code-block"><code>GET    /items          â†’ list
+POST   /items          â†’ create
+GET    /items/:id      â†’ retrieve
+PUT    /items/:id      â†’ replace
+PATCH  /items/:id      â†’ partial update
+DELETE /items/:id      â†’ delete</code></pre>
                 <p class="muted small">Use plural nouns; return proper status codes and problem+json on errors.</p>
               </div>
 
@@ -251,9 +254,9 @@ document.getElementById("newItem").onsubmit = async (e) =&gt; {
           <section class="case-section" id="artifacts">
             <h2>Selected Artefacts</h2>
             <ul class="list">
-              <li><a href="COMP30860_lecture1.pdf">Lecture 1 — Course introduction</a></li>
-              <li><a href="frontend.pdf">Frontend slides — HTML/CSS/JS &amp; accessibility</a></li>
-              <li><a href="backend.pdf">Backend slides — REST, MVC, auth, database</a></li>
+              <li><a href="COMP30860_lecture1.pdf">Lecture 1 â€” Course introduction</a></li>
+              <li><a href="frontend.pdf">Frontend slides â€” HTML/CSS/JS &amp; accessibility</a></li>
+              <li><a href="backend.pdf">Backend slides â€” REST, MVC, auth, database</a></li>
             </ul>
           </section>
 
@@ -270,9 +273,9 @@ document.getElementById("newItem").onsubmit = async (e) =&gt; {
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="data-structures.html">← Data Structures</a>
+            <a class="btn btn--ghost" href="data-structures.html">â† Data Structures</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="databases-and-information-systems-i.html">Next: Databases &amp; Info Systems I →</a>
+            <a class="btn btn--secondary" href="databases-and-information-systems-i.html">Next: Databases &amp; Info Systems I â†’</a>
           </nav>
         </article>
       </div>
@@ -282,7 +285,7 @@ document.getElementById("newItem").onsubmit = async (e) =&gt; {
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -296,3 +299,4 @@ document.getElementById("newItem").onsubmit = async (e) =&gt; {
   <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
+

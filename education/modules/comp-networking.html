@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Computer Networking — Module — Nirav Ramidi</title>
+  <title>Computer Networking â€” Module â€” Nirav Ramidi</title>
   <meta name="description" content="OSI & TCP/IP models, Ethernet/Wi-Fi, IP addressing & subnetting, routing, transport (TCP/UDP, congestion control), DNS, HTTP, and hands-on labs." />
 
   <!-- Styles (kept separate) -->
@@ -17,7 +17,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -30,15 +30,18 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -61,10 +64,10 @@
           <strong>hands-on practice</strong> with the fundamental challenges in networking.
         </p>
         <ul class="chips">
-          <li class="chip">OSI · TCP/IP</li>
+          <li class="chip">OSI Â· TCP/IP</li>
           <li class="chip">Routing</li>
           <li class="chip">TCP/UDP</li>
-          <li class="chip">DNS · HTTP</li>
+          <li class="chip">DNS Â· HTTP</li>
         </ul>
       </div>
     </section>
@@ -77,7 +80,7 @@
           <h2 class="visually-hidden">Module info</h2>
           <dl class="meta-list">
             <dt>Category</dt><dd>Systems</dd>
-            <dt>Focus</dt><dd>Protocols · Performance · Troubleshooting</dd>
+            <dt>Focus</dt><dd>Protocols Â· Performance Â· Troubleshooting</dd>
             <dt>Stack</dt><dd>Wireshark, iproute2, Python sockets/curl, traceroute</dd>
             <dt>Assessment</dt><dd>Labs, short quizzes, final practical/written</dd>
           </dl>
@@ -123,7 +126,7 @@
               </article>
               <article class="card">
                 <header class="card__header"><h3>Application</h3></header>
-                <p class="card__body">DNS, HTTP/1.1→2→3, TLS, email protocols; REST patterns and latency budgets.</p>
+                <p class="card__body">DNS, HTTP/1.1â†’2â†’3, TLS, email protocols; REST patterns and latency budgets.</p>
               </article>
               <article class="card">
                 <header class="card__header"><h3>Performance &amp; Troubleshooting</h3></header>
@@ -145,13 +148,13 @@
 3  Network      (IP, ICMP, routing)
 2  Data Link    (Ethernet, ARP, VLAN)
 1  Physical     (bits, media)</code></pre>
-                <p class="muted small">TCP/IP model condenses 5–7 into 4 layers (App · Transport · Internet · Link).</p>
+                <p class="muted small">TCP/IP model condenses 5â€“7 into 4 layers (App Â· Transport Â· Internet Â· Link).</p>
               </div>
 
               <div class="card">
                 <header class="card__header"><h3>TCP Handshake &amp; Close</h3></header>
-                <pre class="code-block"><code>Connect:  SYN →  SYN+ACK →  ACK
-Close:    FIN →  ACK  →  FIN →  ACK</code></pre>
+                <pre class="code-block"><code>Connect:  SYN â†’  SYN+ACK â†’  ACK
+Close:    FIN â†’  ACK  â†’  FIN â†’  ACK</code></pre>
                 <p class="muted small">Retransmissions/backoff handle loss; TIME_WAIT prevents old segments reappearing.</p>
               </div>
             </div>
@@ -159,15 +162,15 @@ Close:    FIN →  ACK  →  FIN →  ACK</code></pre>
             <div class="grid two">
               <div class="card">
                 <header class="card__header"><h3>CIDR &amp; Subnetting</h3></header>
-                <pre class="code-block"><code>Hosts per /n  = 2^(32−n) − 2   (for /n ≤ /30)
-Example: 192.168.1.0/26 → 64 addrs → 62 hosts</code></pre>
-                <p class="muted small">/31 (point-to-point) and /32 (host route) are special cases without −2.</p>
+                <pre class="code-block"><code>Hosts per /n  = 2^(32âˆ’n) âˆ’ 2   (for /n â‰¤ /30)
+Example: 192.168.1.0/26 â†’ 64 addrs â†’ 62 hosts</code></pre>
+                <p class="muted small">/31 (point-to-point) and /32 (host route) are special cases without âˆ’2.</p>
               </div>
 
               <div class="card">
                 <header class="card__header"><h3>Latency &amp; BDP</h3></header>
-                <pre class="code-block"><code>Total latency ≈ propagation + transmission + queueing + processing
-BDP (bytes)    = bandwidth · RTT</code></pre>
+                <pre class="code-block"><code>Total latency â‰ˆ propagation + transmission + queueing + processing
+BDP (bytes)    = bandwidth Â· RTT</code></pre>
                 <p class="muted small">Windows/buffers must cover the bandwidth-delay product for full throughput.</p>
               </div>
             </div>
@@ -200,18 +203,18 @@ wireshark          # GUI analysis</code></pre>
           <section class="case-section" id="artifacts">
             <h2>Selected Artefacts</h2>
             <ul class="list">
-              <li>Wireshark trace analysis — HTTP/3 vs HTTP/1.1</li>
-              <li>Socket programming mini-lab — TCP echo/latency measurements</li>
-              <li>Subnetting &amp; routing exercises — CIDR, static routes, traceroute paths</li>
+              <li>Wireshark trace analysis â€” HTTP/3 vs HTTP/1.1</li>
+              <li>Socket programming mini-lab â€” TCP echo/latency measurements</li>
+              <li>Subnetting &amp; routing exercises â€” CIDR, static routes, traceroute paths</li>
             </ul>
             <p class="muted small">PDFs and handouts can be added here later.</p>
           </section>
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="intro-to-os.html">← Intro to Operating Systems</a>
+            <a class="btn btn--ghost" href="intro-to-os.html">â† Intro to Operating Systems</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="digital-systems.html">Next: Digital Systems →</a>
+            <a class="btn btn--secondary" href="digital-systems.html">Next: Digital Systems â†’</a>
           </nav>
         </article>
       </div>
@@ -221,7 +224,7 @@ wireshark          # GUI analysis</code></pre>
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -235,3 +238,4 @@ wireshark          # GUI analysis</code></pre>
   <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
+

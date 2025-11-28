@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Databases & Information Systems I — Module — Nirav Ramidi</title>
+  <title>Databases & Information Systems I â€” Module â€” Nirav Ramidi</title>
   <meta name="description" content="Relational model, SQL, ER modeling, normalisation, transactions, indexing, and application integration. Hands-on practice with schema design and queries." />
 
   <!-- Styles (kept separate) -->
@@ -17,7 +17,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi — home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -30,15 +30,18 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
-          <li class="nav-icons">
-            <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
       </nav>
 
-      <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      <div class="header-actions">
+        <div class="nav-icons">
+          <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">LinkedIn</a>
+        </div>
+
+        <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+      </div>
     </div>
   </header>
 
@@ -58,7 +61,7 @@
         <h1 class="page-title">Databases &amp; Information Systems I</h1>
         <p class="lead">
           Foundations of data management: <strong>relational model</strong>, <strong>SQL</strong>, 
-          <strong>ER modeling → schema</strong>, <strong>normalisation</strong>, 
+          <strong>ER modeling â†’ schema</strong>, <strong>normalisation</strong>, 
           <strong>transactions</strong> &amp; <strong>indexes</strong>. Build correct schemas and write efficient queries.
         </p>
         <ul class="chips">
@@ -88,13 +91,13 @@
           <h2 class="visually-hidden">Module info</h2>
           <dl class="meta-list">
             <dt>Category</dt><dd>Software Engineering</dd>
-            <dt>Focus</dt><dd>Relational theory · Querying · Consistency</dd>
+            <dt>Focus</dt><dd>Relational theory Â· Querying Â· Consistency</dd>
             <dt>Stack</dt><dd>SQL (PostgreSQL/MySQL), ER tools, JDBC/ORM basics</dd>
             <dt>Assessment</dt><dd>Assignment(s), labs, short quizzes</dd>
           </dl>
           <div class="note small">
             <p><strong>Related projects:</strong>
-              <a href="../../projects/cloud-sre/library-analytics.html">Library Analytics</a> ·
+              <a href="../../projects/cloud-sre/library-analytics.html">Library Analytics</a> Â·
               <a href="../../projects/swe-systems/java-marketplace.html">Java Marketplace</a>.
             </p>
           </div>
@@ -108,7 +111,7 @@
             <ul>
               <li>Model a problem domain with <strong>ER diagrams</strong> and transform to a relational schema.</li>
               <li>Write correct <strong>SQL</strong> queries (selection, joins, grouping/aggregation, subqueries).</li>
-              <li>Apply <strong>normal forms</strong> (1NF–3NF/BCNF) to remove redundancy and anomalies.</li>
+              <li>Apply <strong>normal forms</strong> (1NFâ€“3NF/BCNF) to remove redundancy and anomalies.</li>
               <li>Explain and use <strong>transactions</strong> (ACID) and understand isolation phenomena.</li>
               <li>Choose <strong>indexes</strong> to improve performance; reason about query plans.</li>
             </ul>
@@ -128,7 +131,7 @@
               </article>
               <article class="card">
                 <header class="card__header"><h3>Design &amp; Normalisation</h3></header>
-                <p class="card__body">ER → tables, functional dependencies, 1NF/2NF/3NF/BCNF, anomalies &amp; decomposition.</p>
+                <p class="card__body">ER â†’ tables, functional dependencies, 1NF/2NF/3NF/BCNF, anomalies &amp; decomposition.</p>
               </article>
               <article class="card">
                 <header class="card__header"><h3>Transactions</h3></header>
@@ -147,7 +150,7 @@
 
             <div class="grid two">
               <div class="card">
-                <header class="card__header"><h3>SQL pattern — joins &amp; grouping</h3></header>
+                <header class="card__header"><h3>SQL pattern â€” joins &amp; grouping</h3></header>
                 <pre class="code-block"><code>SELECT a.name, COUNT(o.id) AS orders
 FROM accounts a
 LEFT JOIN orders o ON o.account_id = a.id
@@ -197,8 +200,8 @@ SELECT * FROM orders WHERE status='shipped' AND created_at&gt;now()-interval '30
           <section class="case-section" id="artifacts">
             <h2>Selected Artefacts</h2>
             <ul class="list">
-              <li><a href="COMP20070___1___Course_Info.pdf">Course Info — overview &amp; assessment</a></li>
-              <li><a href="COMP20070___Assignment.pdf">Assignment — schema &amp; SQL queries</a></li>
+              <li><a href="COMP20070___1___Course_Info.pdf">Course Info â€” overview &amp; assessment</a></li>
+              <li><a href="COMP20070___Assignment.pdf">Assignment â€” schema &amp; SQL queries</a></li>
             </ul>
           </section>
 
@@ -208,15 +211,15 @@ SELECT * FROM orders WHERE status='shipped' AND created_at&gt;now()-interval '30
             <ul class="checklist">
               <li>Design schemas from real-world entities and constraints before writing queries.</li>
               <li>Normalise to remove anomalies; denormalise deliberately with a performance goal.</li>
-              <li>Read query plans; indexes are tools, not magic—measure before/after.</li>
+              <li>Read query plans; indexes are tools, not magicâ€”measure before/after.</li>
             </ul>
           </section>
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="web-dev.html">← Web Development</a>
+            <a class="btn btn--ghost" href="web-dev.html">â† Web Development</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="intro-to-sociology.html">Next: Introduction to Sociology →</a>
+            <a class="btn btn--secondary" href="intro-to-sociology.html">Next: Introduction to Sociology â†’</a>
           </nav>
         </article>
       </div>
@@ -226,7 +229,7 @@ SELECT * FROM orders WHERE status='shipped' AND created_at&gt;now()-interval '30
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -240,3 +243,4 @@ SELECT * FROM orders WHERE status='shipped' AND created_at&gt;now()-interval '30
   <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
+
