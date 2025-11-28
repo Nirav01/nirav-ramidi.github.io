@@ -183,6 +183,7 @@ p {
   margin: 0 0 var(--space-4);
 }
 
+
 small,
 .small {
   font-size: .875rem;
@@ -328,6 +329,12 @@ pre {
 .site-nav a:hover {
   background: var(--soft);
   text-decoration: none;
+}
+
+.site-nav a[aria-current="page"] {
+  background: var(--soft);
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .nav-icons {
@@ -573,6 +580,28 @@ pre {
 
 /* Tile cards (home page featured projects) */
 
+
+
+.tiles {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: var(--space-5);
+}
+
+.tile {
+  display: grid;
+  gap: .5rem;
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-1);
+  transition: transform .08s ease, box-shadow .2s ease, border-color .2s;
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Hero section (home page) */
 .hero {
   padding: var(--space-8) 0;
@@ -587,13 +616,16 @@ pre {
 @media (min-width: 800px) {
   .hero__inner {
     grid-template-columns: 1.2fr 0.8fr;
-  } n
+  }
+
   .hero__media {
     order: 2;
-  } n
+  }
+
   .hero__copy {
     order: 1;
-  } n}
+  }
+}
 
 .hero__media img {
   border-radius: var(--radius);
