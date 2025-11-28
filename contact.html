@@ -41,7 +41,8 @@
           <li><a href="writing/">Writing</a></li>
           <li><a href="education/">Education</a></li>
           <li><a href="about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="resume/" class="btn btn--ghost">Resume</a></li>        </ul>
+          <li class="hide-on-mobile"><a href="resume/" class="btn btn--ghost">Resume</a></li>
+        </ul>
       </nav>
 
       <div class="header-actions">
@@ -67,7 +68,7 @@
 
         <div class="grid contact-grid">
           <!-- Contact form -->
-          <form id="contactForm" class="card form" method="post" action="#" novalidate>
+          <form id="contact-form" class="card form" method="post" action="https://formspree.io/f/mangleyp" novalidate>
             <fieldset>
               <legend class="visually-hidden">Send a message</legend>
 
@@ -136,10 +137,15 @@
 
             <div class="note">
               <p class="small">
-                Tip: On GitHub Pages, forms need a backend or a form service (e.g., Formspree).
-                The button above is wired for client-side handling in <code>assets/js/main.js</code>
-                and falls back to email if scripting is disabled.
+                <strong>To enable this form:</strong>
               </p>
+              <ol class="small">
+                <li>Go to <a href="https://formspree.io" target="_blank" rel="noopener">formspree.io</a> and create a
+                  free account</li>
+                <li>Create a new form and get your unique form ID</li>
+                <li>Replace <code>YOUR_FORM_ID</code> in the form action with your actual form ID</li>
+                <li>The form will send submissions to your email automatically</li>
+              </ol>
               <noscript>
                 <p class="small">
                   JavaScript is off. You can email me directly:
