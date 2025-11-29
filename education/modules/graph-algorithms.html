@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Graph Algorithms &mdash; Module &mdash; Nirav Ramidi</title>
   <meta name="description"
-    content="Connectivity, traversals (BFS/DFS), shortest paths (Dijkstra/Bellmanâ€“Ford), minimum spanning trees (Kruskal/Prim), and flows/cuts with proofs and complexity." />
+    content="Connectivity, traversals (BFS/DFS), shortest paths (Dijkstra/Bellman&ndash;Ford), minimum spanning trees (Kruskal/Prim), and flows/cuts with proofs and complexity." />
 
   <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../../assets/css/main.css" />
@@ -117,11 +117,11 @@
             <ul>
               <li>Implement and analyse <strong>BFS/DFS</strong>, including topological sort and SCCs (Kosaraju/Tarjan).
               </li>
-              <li>Choose and justify <strong>shortest path</strong> algorithms (BFS, Dijkstra, Bellmanâ€“Ford) based on
+              <li>Choose and justify <strong>shortest path</strong> algorithms (BFS, Dijkstra, Bellman&ndash;Ford) based on
                 weights.</li>
               <li>Build <strong>MSTs</strong> via Kruskal or Prim; prove correctness using cut/cycle properties.</li>
-              <li>Understand <strong>max-flow min-cut</strong> and implement Edmondsâ€“Karp at a high level.</li>
-              <li>Use appropriate data structures (heaps, unionâ€“find) to hit target time bounds.</li>
+              <li>Understand <strong>max-flow min-cut</strong> and implement Edmonds&ndash;Karp at a high level.</li>
+              <li>Use appropriate data structures (heaps, union&ndash;find) to hit target time bounds.</li>
             </ul>
           </section>
 
@@ -139,21 +139,21 @@
                 <header class="card__header">
                   <h3>Shortest Paths</h3>
                 </header>
-                <p class="card__body">Unweighted (BFS), non-negative (Dijkstra), general weights (Bellmanâ€“Ford),
+                <p class="card__body">Unweighted (BFS), non-negative (Dijkstra), general weights (Bellman&ndash;Ford),
                   DAG-SP via topo order.</p>
               </article>
               <article class="card">
                 <header class="card__header">
                   <h3>MSTs</h3>
                 </header>
-                <p class="card__body">Cut/cycle properties, Kruskal (unionâ€“find), Prim (heap), distinct-weight
+                <p class="card__body">Cut/cycle properties, Kruskal (union&ndash;find), Prim (heap), distinct-weight
                   uniqueness.</p>
               </article>
               <article class="card">
                 <header class="card__header">
                   <h3>Flows &amp; Cuts</h3>
                 </header>
-                <p class="card__body">Residual graphs, augmenting paths, Edmondsâ€“Karp, min-cut and applications
+                <p class="card__body">Residual graphs, augmenting paths, Edmonds&ndash;Karp, min-cut and applications
                   (matching).</p>
               </article>
             </div>
@@ -182,7 +182,7 @@ SCC (Kosaraju) 2 Ã— DFS</code></pre>
 Time: Î˜((V + E) log V)
 Initialise dist[s]=0; others=âˆž
 Relax via PQ (decrease-key)</code></pre>
-                <p class="muted small">For negative edges, use Bellmanâ€“Ford (Î˜(V&middot;E)) or reweight (Johnsonâ€™s).</p>
+                <p class="muted small">For negative edges, use Bellman&ndash;Ford (Î˜(V&middot;E)) or reweight (Johnson&rsquo;s).</p>
               </div>
             </div>
 
@@ -200,7 +200,7 @@ Cycle property:
               </div>
               <div class="card">
                 <header class="card__header">
-                  <h3>Edmondsâ€“Karp (flow)</h3>
+                  <h3>Edmonds&ndash;Karp (flow)</h3>
                 </header>
                 <pre class="code-block"><code>While an s&rarr;t path exists in residual graph:
   augment by its bottleneck capacity
@@ -216,7 +216,7 @@ Runtime: O(V&middot;EÂ²)</code></pre>
             <div class="grid two">
               <div class="card">
                 <header class="card__header">
-                  <h3>Kruskal + Unionâ€“Find</h3>
+                  <h3>Kruskal + Union&ndash;Find</h3>
                 </header>
                 <pre class="code-block"><code>parent = list(range(n))
 rank   = [0]*n
@@ -234,7 +234,7 @@ def union(a,b):
 mst, cost = [], 0
 for w,u,v in sorted(edges):  # edges as (w,u,v)
   if union(u,v): mst.append((u,v,w)); cost += w</code></pre>
-                <p class="muted small">Runtime Î˜(E log E) from sorting; unionâ€“find is near-constant (Î±(V)).</p>
+                <p class="muted small">Runtime Î˜(E log E) from sorting; union&ndash;find is near-constant (Î±(V)).</p>
               </div>
 
               <div class="card">

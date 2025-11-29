@@ -177,7 +177,7 @@
 3  Network      (IP, ICMP, routing)
 2  Data Link    (Ethernet, ARP, VLAN)
 1  Physical     (bits, media)</code></pre>
-                <p class="muted small">TCP/IP model condenses 5â€“7 into 4 layers (App &middot; Transport &middot; Internet &middot;
+                <p class="muted small">TCP/IP model condenses 5&ndash;7 into 4 layers (App &middot; Transport &middot; Internet &middot;
                   Link).</p>
               </div>
 
@@ -197,16 +197,16 @@ Close:    FIN &rarr;  ACK  &rarr;  FIN &rarr;  ACK</code></pre>
                 <header class="card__header">
                   <h3>CIDR &amp; Subnetting</h3>
                 </header>
-                <pre class="code-block"><code>Hosts per /n  = 2^(32âˆ’n) âˆ’ 2   (for /n â‰¤ /30)
+                <pre class="code-block"><code>Hosts per /n  = 2^(32&minus;n) &minus; 2   (for /n â‰¤ /30)
 Example: 192.168.1.0/26 &rarr; 64 addrs &rarr; 62 hosts</code></pre>
-                <p class="muted small">/31 (point-to-point) and /32 (host route) are special cases without âˆ’2.</p>
+                <p class="muted small">/31 (point-to-point) and /32 (host route) are special cases without &minus;2.</p>
               </div>
 
               <div class="card">
                 <header class="card__header">
                   <h3>Latency &amp; BDP</h3>
                 </header>
-                <pre class="code-block"><code>Total latency â‰ˆ propagation + transmission + queueing + processing
+                <pre class="code-block"><code>Total latency &approx; propagation + transmission + queueing + processing
 BDP (bytes)    = bandwidth &middot; RTT</code></pre>
                 <p class="muted small">Windows/buffers must cover the bandwidth-delay product for full throughput.</p>
               </div>

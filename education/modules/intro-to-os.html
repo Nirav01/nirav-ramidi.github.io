@@ -146,8 +146,8 @@
                 <header class="card__header">
                   <h3>Synchronisation</h3>
                 </header>
-                <p class="card__body">Critical sections, atomicity, locks, semaphores, monitors; producerâ€“consumer
-                  &amp; readersâ€“writers patterns.</p>
+                <p class="card__body">Critical sections, atomicity, locks, semaphores, monitors; producer&ndash;consumer
+                  &amp; readers&ndash;writers patterns.</p>
               </article>
               <article class="card">
                 <header class="card__header">
@@ -188,9 +188,9 @@
                 <header class="card__header">
                   <h3>Scheduling metrics</h3>
                 </header>
-                <pre class="code-block"><code>Waiting time   = Î£ (start_i âˆ’ arrival_i)
-Turnaround     = finish âˆ’ arrival
-Response time  = first_run âˆ’ arrival</code></pre>
+                <pre class="code-block"><code>Waiting time   = Î£ (start_i &minus; arrival_i)
+Turnaround     = finish &minus; arrival
+Response time  = first_run &minus; arrival</code></pre>
                 <p class="muted small">Shorter time-slices improve response but raise context-switch overhead.</p>
               </div>
               <div class="card">
@@ -208,7 +208,7 @@ Response time  = first_run âˆ’ arrival</code></pre>
             <div class="grid two">
               <div class="card">
                 <header class="card__header">
-                  <h3>Producerâ€“Consumer (semaphores)</h3>
+                  <h3>Producer&ndash;Consumer (semaphores)</h3>
                 </header>
                 <pre class="code-block"><code>// Pseudo-code
 semaphore empty = N, full = 0, mutex = 1
@@ -227,7 +227,7 @@ consumer:
                   <h3>Address translation</h3>
                 </header>
                 <pre class="code-block"><code>virtual_addr = (VPN, offset)
-phys_frame   = PT[VPN]  // TLB hit â‰ˆ fast; miss &rarr; walk
+phys_frame   = PT[VPN]  // TLB hit &approx; fast; miss &rarr; walk
 physical_addr = (phys_frame, offset)</code></pre>
                 <p class="muted small">Locality (temporal/spatial) underpins caching & paging performance.</p>
               </div>
