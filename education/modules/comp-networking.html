@@ -1,10 +1,12 @@
 ﻿<!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Computer Networking â€” Module â€” Nirav Ramidi</title>
-  <meta name="description" content="OSI & TCP/IP models, Ethernet/Wi-Fi, IP addressing & subnetting, routing, transport (TCP/UDP, congestion control), DNS, HTTP, and hands-on labs." />
+  <title>Computer Networking &mdash; Module &mdash; Nirav Ramidi</title>
+  <meta name="description"
+    content="OSI & TCP/IP models, Ethernet/Wi-Fi, IP addressing & subnetting, routing, transport (TCP/UDP, congestion control), DNS, HTTP, and hands-on labs." />
 
   <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../../assets/css/main.css" />
@@ -17,7 +19,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi &mdash; home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -30,7 +32,8 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+        </ul>
       </nav>
 
       <div class="header-actions">
@@ -64,10 +67,10 @@
           <strong>hands-on practice</strong> with the fundamental challenges in networking.
         </p>
         <ul class="chips">
-          <li class="chip">OSI Â· TCP/IP</li>
+          <li class="chip">OSI &middot; TCP/IP</li>
           <li class="chip">Routing</li>
           <li class="chip">TCP/UDP</li>
-          <li class="chip">DNS Â· HTTP</li>
+          <li class="chip">DNS &middot; HTTP</li>
         </ul>
       </div>
     </section>
@@ -79,10 +82,14 @@
         <aside class="case-meta card">
           <h2 class="visually-hidden">Module info</h2>
           <dl class="meta-list">
-            <dt>Category</dt><dd>Systems</dd>
-            <dt>Focus</dt><dd>Protocols Â· Performance Â· Troubleshooting</dd>
-            <dt>Stack</dt><dd>Wireshark, iproute2, Python sockets/curl, traceroute</dd>
-            <dt>Assessment</dt><dd>Labs, short quizzes, final practical/written</dd>
+            <dt>Category</dt>
+            <dd>Systems</dd>
+            <dt>Focus</dt>
+            <dd>Protocols &middot; Performance &middot; Troubleshooting</dd>
+            <dt>Stack</dt>
+            <dd>Wireshark, iproute2, Python sockets/curl, traceroute</dd>
+            <dt>Assessment</dt>
+            <dd>Labs, short quizzes, final practical/written</dd>
           </dl>
           <div class="note small">
             <p><strong>Related work:</strong> see
@@ -99,8 +106,10 @@
             <h2>Learning Outcomes</h2>
             <ul>
               <li>Explain the roles of each layer in the <strong>OSI/TCP-IP</strong> stack and how they interact.</li>
-              <li>Be familiar with the <strong>main topics</strong> in networking: link, network, transport, and application layers.</li>
-              <li>Gain <strong>practical experience</strong> analysing traffic and building simple client/server programs.</li>
+              <li>Be familiar with the <strong>main topics</strong> in networking: link, network, transport, and
+                application layers.</li>
+              <li>Gain <strong>practical experience</strong> analysing traffic and building simple client/server
+                programs.</li>
             </ul>
           </section>
 
@@ -109,28 +118,46 @@
             <h2>Indicative Topics</h2>
             <div class="grid cards">
               <article class="card">
-                <header class="card__header"><h3>Layered Models</h3></header>
-                <p class="card__body">OSI vs TCP/IP; encapsulation/decapsulation; PDU names (frame, packet, segment).</p>
+                <header class="card__header">
+                  <h3>Layered Models</h3>
+                </header>
+                <p class="card__body">OSI vs TCP/IP; encapsulation/decapsulation; PDU names (frame, packet, segment).
+                </p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Link &amp; Physical</h3></header>
-                <p class="card__body">Ethernet (MAC, VLANs, ARP), Wi-Fi basics, error detection (CRC), duplexing &amp; collisions.</p>
+                <header class="card__header">
+                  <h3>Link &amp; Physical</h3>
+                </header>
+                <p class="card__body">Ethernet (MAC, VLANs, ARP), Wi-Fi basics, error detection (CRC), duplexing &amp;
+                  collisions.</p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Network Layer</h3></header>
-                <p class="card__body">IPv4/IPv6 addressing, subnetting/CIDR, ICMP, routing (static, RIP/OSPF/BGP), NAT.</p>
+                <header class="card__header">
+                  <h3>Network Layer</h3>
+                </header>
+                <p class="card__body">IPv4/IPv6 addressing, subnetting/CIDR, ICMP, routing (static, RIP/OSPF/BGP), NAT.
+                </p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Transport</h3></header>
-                <p class="card__body">UDP vs TCP, 3-way handshake/teardown, flow &amp; congestion control, reliability.</p>
+                <header class="card__header">
+                  <h3>Transport</h3>
+                </header>
+                <p class="card__body">UDP vs TCP, 3-way handshake/teardown, flow &amp; congestion control, reliability.
+                </p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Application</h3></header>
-                <p class="card__body">DNS, HTTP/1.1â†’2â†’3, TLS, email protocols; REST patterns and latency budgets.</p>
+                <header class="card__header">
+                  <h3>Application</h3>
+                </header>
+                <p class="card__body">DNS, HTTP/1.1&rarr;2&rarr;3, TLS, email protocols; REST patterns and latency budgets.
+                </p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Performance &amp; Troubleshooting</h3></header>
-                <p class="card__body">BDP, latency components, packet loss, QoS; tools: ping, traceroute, tcpdump/Wireshark.</p>
+                <header class="card__header">
+                  <h3>Performance &amp; Troubleshooting</h3>
+                </header>
+                <p class="card__body">BDP, latency components, packet loss, QoS; tools: ping, traceroute,
+                  tcpdump/Wireshark.</p>
               </article>
             </div>
           </section>
@@ -140,7 +167,9 @@
             <h2>Quick Reference</h2>
             <div class="grid two">
               <div class="card">
-                <header class="card__header"><h3>OSI Layers</h3></header>
+                <header class="card__header">
+                  <h3>OSI Layers</h3>
+                </header>
                 <pre class="code-block"><code>7  Application  (HTTP, DNS)
 6  Presentation (TLS, encoding)
 5  Session      (state, dialogs)
@@ -148,29 +177,37 @@
 3  Network      (IP, ICMP, routing)
 2  Data Link    (Ethernet, ARP, VLAN)
 1  Physical     (bits, media)</code></pre>
-                <p class="muted small">TCP/IP model condenses 5â€“7 into 4 layers (App Â· Transport Â· Internet Â· Link).</p>
+                <p class="muted small">TCP/IP model condenses 5â€“7 into 4 layers (App &middot; Transport &middot; Internet &middot;
+                  Link).</p>
               </div>
 
               <div class="card">
-                <header class="card__header"><h3>TCP Handshake &amp; Close</h3></header>
-                <pre class="code-block"><code>Connect:  SYN â†’  SYN+ACK â†’  ACK
-Close:    FIN â†’  ACK  â†’  FIN â†’  ACK</code></pre>
-                <p class="muted small">Retransmissions/backoff handle loss; TIME_WAIT prevents old segments reappearing.</p>
+                <header class="card__header">
+                  <h3>TCP Handshake &amp; Close</h3>
+                </header>
+                <pre class="code-block"><code>Connect:  SYN &rarr;  SYN+ACK &rarr;  ACK
+Close:    FIN &rarr;  ACK  &rarr;  FIN &rarr;  ACK</code></pre>
+                <p class="muted small">Retransmissions/backoff handle loss; TIME_WAIT prevents old segments reappearing.
+                </p>
               </div>
             </div>
 
             <div class="grid two">
               <div class="card">
-                <header class="card__header"><h3>CIDR &amp; Subnetting</h3></header>
+                <header class="card__header">
+                  <h3>CIDR &amp; Subnetting</h3>
+                </header>
                 <pre class="code-block"><code>Hosts per /n  = 2^(32âˆ’n) âˆ’ 2   (for /n â‰¤ /30)
-Example: 192.168.1.0/26 â†’ 64 addrs â†’ 62 hosts</code></pre>
+Example: 192.168.1.0/26 &rarr; 64 addrs &rarr; 62 hosts</code></pre>
                 <p class="muted small">/31 (point-to-point) and /32 (host route) are special cases without âˆ’2.</p>
               </div>
 
               <div class="card">
-                <header class="card__header"><h3>Latency &amp; BDP</h3></header>
+                <header class="card__header">
+                  <h3>Latency &amp; BDP</h3>
+                </header>
                 <pre class="code-block"><code>Total latency â‰ˆ propagation + transmission + queueing + processing
-BDP (bytes)    = bandwidth Â· RTT</code></pre>
+BDP (bytes)    = bandwidth &middot; RTT</code></pre>
                 <p class="muted small">Windows/buffers must cover the bandwidth-delay product for full throughput.</p>
               </div>
             </div>
@@ -203,18 +240,18 @@ wireshark          # GUI analysis</code></pre>
           <section class="case-section" id="artifacts">
             <h2>Selected Artefacts</h2>
             <ul class="list">
-              <li>Wireshark trace analysis â€” HTTP/3 vs HTTP/1.1</li>
-              <li>Socket programming mini-lab â€” TCP echo/latency measurements</li>
-              <li>Subnetting &amp; routing exercises â€” CIDR, static routes, traceroute paths</li>
+              <li>Wireshark trace analysis &mdash; HTTP/3 vs HTTP/1.1</li>
+              <li>Socket programming mini-lab &mdash; TCP echo/latency measurements</li>
+              <li>Subnetting &amp; routing exercises &mdash; CIDR, static routes, traceroute paths</li>
             </ul>
             <p class="muted small">PDFs and handouts can be added here later.</p>
           </section>
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="intro-to-os.html">â† Intro to Operating Systems</a>
+            <a class="btn btn--ghost" href="intro-to-os.html">&larr; Intro to Operating Systems</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="digital-systems.html">Next: Digital Systems â†’</a>
+            <a class="btn btn--secondary" href="digital-systems.html">Next: Digital Systems &rarr;</a>
           </nav>
         </article>
       </div>
@@ -224,7 +261,7 @@ wireshark          # GUI analysis</code></pre>
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -237,5 +274,5 @@ wireshark          # GUI analysis</code></pre>
   <!-- Scripts (kept separate) -->
   <script src="../../assets/js/main.js" defer></script>
 </body>
-</html>
 
+</html>

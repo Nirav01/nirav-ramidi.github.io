@@ -1,10 +1,12 @@
 ﻿<!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vision Microservice at Scale â€” Case Study â€” Nirav Ramidi</title>
-  <meta name="description" content="CNN-OCR microservice on Docker/Kubernetes with p95 < 300 ms at ~1k req/s and ~0.2% error in load tests. Production hardening, autoscaling, and monitoring." />
+  <meta name="description"
+    content="CNN-OCR microservice on Docker/Kubernetes with p95 < 300 ms at ~1k req/s and ~0.2% error in load tests. Production hardening, autoscaling, and monitoring." />
 
   <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../../assets/css/main.css" />
@@ -43,7 +45,8 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../../education/">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+        </ul>
       </nav>
 
       <div class="header-actions">
@@ -76,7 +79,8 @@
           <h1>Vision Microservice at Scale</h1>
           <p class="lead">
             Productionised a <strong>CNN-OCR</strong> pipeline behind a <strong>FastAPI</strong> service on
-            <strong>Docker/Kubernetes</strong> with <strong>p95 &lt; 300&nbsp;ms</strong> latency at ~<strong>1,000 req/s</strong>
+            <strong>Docker/Kubernetes</strong> with <strong>p95 &lt; 300&nbsp;ms</strong> latency at ~<strong>1,000
+              req/s</strong>
             and ~<strong>0.2%</strong> error in load tests.
           </p>
           <ul class="metrics">
@@ -88,7 +92,8 @@
           </ul>
         </div>
         <figure class="case-hero__media">
-          <img src="../../assets/img/case-studies/vision-hero.jpg" alt="High-level architecture of a computer-vision microservice on Kubernetes" loading="lazy" />
+          <img src="../../assets/img/case-studies/vision-hero.jpg"
+            alt="High-level architecture of a computer-vision microservice on Kubernetes" loading="lazy" />
         </figure>
       </div>
     </section>
@@ -100,11 +105,16 @@
         <aside class="case-meta card">
           <h2 class="visually-hidden">Project info</h2>
           <dl class="meta-list">
-            <dt>Org</dt><dd>iAssist Innovation Labs</dd>
-            <dt>Role</dt><dd>Junior ML Engineer</dd>
-            <dt>Duration</dt><dd>Apr 2024 â€“ Sept 2024</dd>
-            <dt>Focus</dt><dd>Production CV Â· SRE Â· Performance</dd>
-            <dt>Stack</dt><dd>Python, FastAPI, Docker, Kubernetes, Redis, Prometheus/Grafana</dd>
+            <dt>Org</dt>
+            <dd>iAssist Innovation Labs</dd>
+            <dt>Role</dt>
+            <dd>Junior ML Engineer</dd>
+            <dt>Duration</dt>
+            <dd>Apr 2024 â€“ Sept 2024</dd>
+            <dt>Focus</dt>
+            <dd>Production CV Â· SRE Â· Performance</dd>
+            <dt>Stack</dt>
+            <dd>Python, FastAPI, Docker, Kubernetes, Redis, Prometheus/Grafana</dd>
             <dt>Links</dt>
             <dd>
               <ul class="bare">
@@ -124,7 +134,8 @@
               We needed a reliable OCR pipeline with strict latency SLOs for mobile upload flows and back-office scans.
             </p>
             <ul>
-              <li><strong>SLO:</strong> p95 &lt; 300 ms end-to-end for typical pages; &lt; 1% error rate under load.</li>
+              <li><strong>SLO:</strong> p95 &lt; 300 ms end-to-end for typical pages; &lt; 1% error rate under load.
+              </li>
               <li><strong>Scale:</strong> bursty traffic patterns; sustain ~1k req/s in peak tests.</li>
               <li><strong>Reliability:</strong> graceful degradation for poor-quality inputs; clear error surfaces.</li>
             </ul>
@@ -134,7 +145,9 @@
           <section class="case-section" id="architecture">
             <h2>Architecture</h2>
             <figure class="case-figure">
-              <img src="../../assets/img/case-studies/vision-architecture.png" alt="Gateway â†’ API â†’ Preprocess â†’ Model â†’ Postprocess â†’ Result store; autoscaling on Kubernetes" loading="lazy" />
+              <img src="../../assets/img/case-studies/vision-architecture.png"
+                alt="Gateway â†’ API â†’ Preprocess â†’ Model â†’ Postprocess â†’ Result store; autoscaling on Kubernetes"
+                loading="lazy" />
               <figcaption>Kubernetes deployment with a gateway, stateless API, and model workers.</figcaption>
             </figure>
 
@@ -165,12 +178,14 @@
             <h2>Performance &amp; Load Testing</h2>
             <ul class="checklist">
               <li>k6 load tests with mixed payloads (mobile scans, PDFs); open and closed-model phases.</li>
-              <li>Achieved <strong>p95 &lt; 300 ms</strong> at ~<strong>1,000 req/s</strong> with ~<strong>0.2%</strong> HTTP 5xx/timeout.</li>
+              <li>Achieved <strong>p95 &lt; 300 ms</strong> at ~<strong>1,000 req/s</strong> with ~<strong>0.2%</strong>
+                HTTP 5xx/timeout.</li>
               <li>Removed micro-batching to reduce tail latency; optimised image I/O and pre-processing.</li>
               <li>Pinned CPU instruction set; used thread pools sized to <code>cores * 2</code> (empirical).</li>
             </ul>
             <figure class="case-figure">
-              <img src="../../assets/img/case-studies/vision-latency.png" alt="Latency histogram and p95 chart under load" loading="lazy" />
+              <img src="../../assets/img/case-studies/vision-latency.png"
+                alt="Latency histogram and p95 chart under load" loading="lazy" />
               <figcaption>Latency distribution under peak; tail kept under SLO with headroom.</figcaption>
             </figure>
           </section>
@@ -209,7 +224,8 @@
           <section class="case-section" id="observability">
             <h2>Monitoring &amp; Observability</h2>
             <ul>
-              <li><strong>Metrics:</strong> RED/USE (rate, errors, duration / utilisation, saturation, errors); per-step timers.</li>
+              <li><strong>Metrics:</strong> RED/USE (rate, errors, duration / utilisation, saturation, errors); per-step
+                timers.</li>
               <li><strong>Logging:</strong> structured JSON with correlation IDs; sensitive fields masked.</li>
               <li><strong>Tracing:</strong> request spans (ingress â†’ API â†’ model â†’ store).</li>
               <li><strong>Dashboards:</strong> Grafana for SLOs, error budget burn, and capacity headroom.</li>
@@ -221,7 +237,8 @@
           <section class="case-section" id="results">
             <h2>Results</h2>
             <ul class="checklist">
-              <li>Met latency SLO (<strong>p95 &lt; 300 ms</strong>) at target throughput (~<strong>1k req/s</strong>).</li>
+              <li>Met latency SLO (<strong>p95 &lt; 300 ms</strong>) at target throughput (~<strong>1k req/s</strong>).
+              </li>
               <li>Reduced resubmissions via quality gates; improved first-time-right rates.</li>
               <li>Defined clear runbooks and dashboards for support teams.</li>
             </ul>
@@ -251,7 +268,7 @@
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -264,5 +281,5 @@
   <!-- Scripts (kept separate) -->
   <script src="../../assets/js/main.js" defer></script>
 </body>
-</html>
 
+</html>

@@ -1,10 +1,12 @@
 ﻿<!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Twitter-like CLI (C) â€” Case Study â€” Nirav Ramidi</title>
-  <meta name="description" content="C command-line Twitter clone: post, follow/unfollow, top-10 news feed, delete user, and endTurn/endTwitter. Refactored from arrays to a linked-list feed; modular design and tests." />
+  <meta name="description"
+    content="C command-line Twitter clone: post, follow/unfollow, top-10 news feed, delete user, and endTurn/endTwitter. Refactored from arrays to a linked-list feed; modular design and tests." />
 
   <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../../assets/css/main.css" />
@@ -43,7 +45,8 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../../education/">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+        </ul>
       </nav>
 
       <div class="header-actions">
@@ -76,7 +79,8 @@
           <h1>Twitter-like CLI (C)</h1>
           <p class="lead">
             A command-line microblogging system written in <strong>C</strong>: users can <strong>post</strong>,
-            <strong>follow/unfollow</strong>, view a <strong>top-10 news feed</strong>, <strong>delete</strong> accounts,
+            <strong>follow/unfollow</strong>, view a <strong>top-10 news feed</strong>, <strong>delete</strong>
+            accounts,
             and advance time with <strong>endTurn</strong>. Final refactor replaces array storage with a
             <strong>linked-list news feed</strong> for simpler deletions and ordered traversal.
           </p>
@@ -88,7 +92,8 @@
           </ul>
         </div>
         <figure class="case-hero__media">
-          <img src="../../assets/img/case-studies/twitter-cli-hero.jpg" alt="Terminal screenshot of the Twitter-like CLI showing posts and a news feed" loading="lazy" />
+          <img src="../../assets/img/case-studies/twitter-cli-hero.jpg"
+            alt="Terminal screenshot of the Twitter-like CLI showing posts and a news feed" loading="lazy" />
         </figure>
       </div>
     </section>
@@ -100,10 +105,14 @@
         <aside class="case-meta card">
           <h2 class="visually-hidden">Project info</h2>
           <dl class="meta-list">
-            <dt>Type</dt><dd>Systems / Data Structures (C)</dd>
-            <dt>Role</dt><dd>Solo developer</dd>
-            <dt>Focus</dt><dd>APIs, memory management, data structure refactor</dd>
-            <dt>Stack</dt><dd>ANSI C, gcc/clang, Make, GDB</dd>
+            <dt>Type</dt>
+            <dd>Systems / Data Structures (C)</dd>
+            <dt>Role</dt>
+            <dd>Solo developer</dd>
+            <dt>Focus</dt>
+            <dd>APIs, memory management, data structure refactor</dd>
+            <dt>Stack</dt>
+            <dd>ANSI C, gcc/clang, Make, GDB</dd>
             <dt>Links</dt>
             <dd>
               <ul class="bare">
@@ -138,8 +147,10 @@
               <div>
                 <h3>Structs</h3>
                 <ul>
-                  <li><code>Tweet</code>: <em>id</em> (monotonic timestamp), <em>text</em> (â‰¤280), <em>username</em>, <em>*next</em></li>
-                  <li><code>User</code>: <em>username</em>, <em>followers</em>, <em>following</em>, <em>tweets</em> (head ptr)</li>
+                  <li><code>Tweet</code>: <em>id</em> (monotonic timestamp), <em>text</em> (â‰¤280), <em>username</em>,
+                    <em>*next</em></li>
+                  <li><code>User</code>: <em>username</em>, <em>followers</em>, <em>following</em>, <em>tweets</em>
+                    (head ptr)</li>
                   <li><code>TwitterSystem</code>: dynamic arrays (users), global <em>clock</em>, temp buffers</li>
                 </ul>
                 <p class="muted small">Tweets are kept in per-user singly linked lists, newest at head.</p>
@@ -154,7 +165,8 @@
               </div>
             </div>
             <figure class="case-figure">
-              <img src="../../assets/img/case-studies/twitter-cli-architecture.png" alt="Diagram of users and tweet linked lists with a k-way merge for the news feed" loading="lazy" />
+              <img src="../../assets/img/case-studies/twitter-cli-architecture.png"
+                alt="Diagram of users and tweet linked lists with a k-way merge for the news feed" loading="lazy" />
               <figcaption>Per-user linked lists; feed uses a small max-heap or pointers for k-way merge.</figcaption>
             </figure>
           </section>
@@ -164,24 +176,39 @@
             <h2>Command Interface</h2>
             <div class="grid cards">
               <article class="card">
-                <header class="card__header"><h3>post</h3></header>
-                <p class="card__body"><code>post &lt;user&gt; "&lt;text up to 280 chars&gt;"</code> â€” creates a tweet with current <em>clock</em> as id.</p>
+                <header class="card__header">
+                  <h3>post</h3>
+                </header>
+                <p class="card__body"><code>post &lt;user&gt; "&lt;text up to 280 chars&gt;"</code> â€” creates a tweet
+                  with current <em>clock</em> as id.</p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>follow / unfollow</h3></header>
-                <p class="card__body"><code>follow &lt;userA&gt; &lt;userB&gt;</code> â€” A follows B. <code>unfollow</code> reverses it (no-ops are safe).</p>
+                <header class="card__header">
+                  <h3>follow / unfollow</h3>
+                </header>
+                <p class="card__body"><code>follow &lt;userA&gt; &lt;userB&gt;</code> â€” A follows B.
+                  <code>unfollow</code> reverses it (no-ops are safe).</p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>newsfeed</h3></header>
-                <p class="card__body"><code>newsfeed &lt;user&gt;</code> â€” print up to 10 most recent tweets from user âˆª following, newest first.</p>
+                <header class="card__header">
+                  <h3>newsfeed</h3>
+                </header>
+                <p class="card__body"><code>newsfeed &lt;user&gt;</code> â€” print up to 10 most recent tweets from user
+                  âˆª following, newest first.</p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>delete</h3></header>
-                <p class="card__body"><code>delete &lt;user&gt;</code> â€” remove account and all tweets; detach from follower/following lists.</p>
+                <header class="card__header">
+                  <h3>delete</h3>
+                </header>
+                <p class="card__body"><code>delete &lt;user&gt;</code> â€” remove account and all tweets; detach from
+                  follower/following lists.</p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>endTurn / endTwitter</h3></header>
-                <p class="card__body"><code>endTurn</code> increments the global clock; <code>endTwitter</code> flushes state and exits.</p>
+                <header class="card__header">
+                  <h3>endTurn / endTwitter</h3>
+                </header>
+                <p class="card__body"><code>endTurn</code> increments the global clock; <code>endTwitter</code> flushes
+                  state and exits.</p>
               </article>
             </div>
           </section>
@@ -190,13 +217,18 @@
           <section class="case-section" id="impl">
             <h2>Implementation Highlights</h2>
             <ul class="checklist">
-              <li><strong>Parsing</strong> separates tokens and quoted text; rejects invalid commands with helpful errors.</li>
-              <li><strong>Memory safety</strong>: ownership is explicit; every <code>malloc</code> has a matching <code>free</code> on <code>endTwitter</code> / deletion paths.</li>
-              <li><strong>Feed</strong>: k-way merge from heads of followed lists (and self); a small max-heap by <em>id</em> yields O(m log k) for mâ‰¤10.</li>
-              <li><strong>Refactor</strong>: initial array solution replaced with linked lists to simplify deletions and head insertions.</li>
+              <li><strong>Parsing</strong> separates tokens and quoted text; rejects invalid commands with helpful
+                errors.</li>
+              <li><strong>Memory safety</strong>: ownership is explicit; every <code>malloc</code> has a matching
+                <code>free</code> on <code>endTwitter</code> / deletion paths.</li>
+              <li><strong>Feed</strong>: k-way merge from heads of followed lists (and self); a small max-heap by
+                <em>id</em> yields O(m log k) for mâ‰¤10.</li>
+              <li><strong>Refactor</strong>: initial array solution replaced with linked lists to simplify deletions and
+                head insertions.</li>
             </ul>
             <figure class="case-figure">
-              <img src="../../assets/img/case-studies/twitter-cli-transcript.png" alt="Transcript snippet showing posting, following, and newsfeed output" loading="lazy" />
+              <img src="../../assets/img/case-studies/twitter-cli-transcript.png"
+                alt="Transcript snippet showing posting, following, and newsfeed output" loading="lazy" />
               <figcaption>Transcript snippet: posting, following, feed generation, and user deletion.</figcaption>
             </figure>
           </section>
@@ -205,7 +237,8 @@
           <section class="case-section" id="tests">
             <h2>Testing</h2>
             <ul>
-              <li><strong>Unit</strong>: follow/unfollow idempotence; delete user removes tweets; post length limits.</li>
+              <li><strong>Unit</strong>: follow/unfollow idempotence; delete user removes tweets; post length limits.
+              </li>
               <li><strong>Integration</strong>: golden transcript comparison for a fixed command script.</li>
               <li><strong>Valgrind</strong> clean on all paths (no leaks, no invalid reads/writes).</li>
             </ul>
@@ -235,7 +268,7 @@
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -248,5 +281,5 @@
   <!-- Scripts (kept separate) -->
   <script src="../../assets/js/main.js" defer></script>
 </body>
-</html>
 
+</html>

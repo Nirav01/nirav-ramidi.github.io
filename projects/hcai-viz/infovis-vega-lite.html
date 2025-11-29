@@ -1,10 +1,12 @@
 ﻿<!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>InfoVis Dashboard (Vega-Lite) â€” Case Study â€” Nirav Ramidi</title>
-  <meta name="description" content="Interactive information visualisation built with Vega-Lite: multi-view dashboard, brushing & linking, selections, and tidy transforms for exploratory analysis." />
+  <meta name="description"
+    content="Interactive information visualisation built with Vega-Lite: multi-view dashboard, brushing & linking, selections, and tidy transforms for exploratory analysis." />
 
   <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../../assets/css/main.css" />
@@ -43,7 +45,8 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../../education/">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+        </ul>
       </nav>
 
       <div class="header-actions">
@@ -88,7 +91,8 @@
           </ul>
         </div>
         <figure class="case-hero__media">
-          <img src="../../assets/img/case-studies/infovis-hero.jpg" alt="Vega-Lite dashboard with linked scatter, bar, and line charts" loading="lazy" />
+          <img src="../../assets/img/case-studies/infovis-hero.jpg"
+            alt="Vega-Lite dashboard with linked scatter, bar, and line charts" loading="lazy" />
         </figure>
       </div>
     </section>
@@ -100,11 +104,16 @@
         <aside class="case-meta card">
           <h2 class="visually-hidden">Project info</h2>
           <dl class="meta-list">
-            <dt>Course</dt><dd>Information Visualisation</dd>
-            <dt>Type</dt><dd>Graded assignment</dd>
-            <dt>Role</dt><dd>Design &amp; implementation</dd>
-            <dt>Focus</dt><dd>Interactive analytics Â· Visual encodings Â· UX</dd>
-            <dt>Stack</dt><dd>Vega-Lite (JSON), HTML, a pinch of JS to embed specs</dd>
+            <dt>Course</dt>
+            <dd>Information Visualisation</dd>
+            <dt>Type</dt>
+            <dd>Graded assignment</dd>
+            <dt>Role</dt>
+            <dd>Design &amp; implementation</dd>
+            <dt>Focus</dt>
+            <dd>Interactive analytics Â· Visual encodings Â· UX</dd>
+            <dt>Stack</dt>
+            <dd>Vega-Lite (JSON), HTML, a pinch of JS to embed specs</dd>
             <dt>Links</dt>
             <dd>
               <ul class="bare">
@@ -120,7 +129,8 @@
           <section class="case-section" id="goals">
             <h2>Goals</h2>
             <ul>
-              <li>Provide an <strong>overview â†’ zoom &amp; filter â†’ details</strong> flow with clear affordances.</li>
+              <li>Provide an <strong>overview â†’ zoom &amp; filter â†’ details</strong> flow with clear affordances.
+              </li>
               <li>Use <strong>expressive encodings</strong> (position/length/color) and avoid misleading scales.</li>
               <li>Stay within <strong>Vega-Lite</strong> primitivesâ€”no bespoke JS logic for fairness/grading.</li>
             </ul>
@@ -131,21 +141,27 @@
             <h2>Views &amp; Interactions</h2>
             <div class="grid cards">
               <article class="card">
-                <header class="card__header"><h3>Scatter (overview)</h3></header>
+                <header class="card__header">
+                  <h3>Scatter (overview)</h3>
+                </header>
                 <p class="card__body">
                   Encodes two continuous metrics with color by category and point <em>size</em> by magnitude.
                   A brush selection filters the other views. Tooltips expose exact values.
                 </p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Bar (composition)</h3></header>
+                <header class="card__header">
+                  <h3>Bar (composition)</h3>
+                </header>
                 <p class="card__body">
                   Aggregated counts/means by category; responds to the scatter brush.
                   Conditional color highlights selected categories; labels show percentages.
                 </p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Line (trend)</h3></header>
+                <header class="card__header">
+                  <h3>Line (trend)</h3>
+                </header>
                 <p class="card__body">
                   Small multiples per category with shared y-scale (can switch to <em>resolve: independent</em>).
                   Hover selection reveals focus lines and value annotations.
@@ -153,8 +169,11 @@
               </article>
             </div>
             <figure class="case-figure">
-              <img src="../../assets/img/case-studies/infovis-views.png" alt="Three linked charts: scatter brush filtering a bar chart and small-multiple lines" loading="lazy" />
-              <figcaption>Brushing in the scatter filters bars &amp; lines; selections drive conditional encodings.</figcaption>
+              <img src="../../assets/img/case-studies/infovis-views.png"
+                alt="Three linked charts: scatter brush filtering a bar chart and small-multiple lines"
+                loading="lazy" />
+              <figcaption>Brushing in the scatter filters bars &amp; lines; selections drive conditional encodings.
+              </figcaption>
             </figure>
           </section>
 
@@ -185,7 +204,8 @@
           <section class="case-section" id="design">
             <h2>Design Decisions</h2>
             <ul class="checklist">
-              <li>Used <strong>aligned axes</strong> and <strong>consistent scales</strong> to support visual comparison.</li>
+              <li>Used <strong>aligned axes</strong> and <strong>consistent scales</strong> to support visual
+                comparison.</li>
               <li>Kept color palette accessible (contrast-checked); relied on position/length first.</li>
               <li>Added <strong>legends</strong> and helper text (â€œDrag to filterâ€) to improve learnability.</li>
               <li>Reduced clutter with <strong>gridlines</strong> and minimalist annotations.</li>
@@ -206,7 +226,8 @@
           <section class="case-section" id="embed">
             <h2>Embedding the Spec</h2>
             <p class="muted small">
-              The actual Vega-Lite spec JSON and embed script live in <code>assets/js/</code> and are initialised on page load.
+              The actual Vega-Lite spec JSON and embed script live in <code>assets/js/</code> and are initialised on
+              page load.
               This page focuses on the narrative; the running demo sits in the <em>live site</em>.
             </p>
           </section>
@@ -225,7 +246,7 @@
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -238,5 +259,5 @@
   <!-- Scripts (kept separate) -->
   <script src="../../assets/js/main.js" defer></script>
 </body>
-</html>
 
+</html>

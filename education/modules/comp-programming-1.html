@@ -1,10 +1,12 @@
 ﻿<!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Computer Programming I â€” Module â€” Nirav Ramidi</title>
-  <meta name="description" content="First principles of programming: variables, types, control flow, I/O, functions, arrays, and the editâ€“compileâ€“run cycle (in C). Build confidence writing small programs that produce correct results." />
+  <title>Computer Programming I &mdash; Module &mdash; Nirav Ramidi</title>
+  <meta name="description"
+    content="First principles of programming: variables, types, control flow, I/O, functions, arrays, and the editâ€“compileâ€“run cycle (in C). Build confidence writing small programs that produce correct results." />
 
   <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../../assets/css/main.css" />
@@ -17,7 +19,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi &mdash; home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -30,7 +32,8 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+        </ul>
       </nav>
 
       <div class="header-actions">
@@ -79,10 +82,14 @@
         <aside class="case-meta card">
           <h2 class="visually-hidden">Module info</h2>
           <dl class="meta-list">
-            <dt>Category</dt><dd>CS Fundamentals</dd>
-            <dt>Focus</dt><dd>Syntax Â· Problem solving Â· Run/debug</dd>
-            <dt>Stack</dt><dd>C (gcc/clang), Make, VS Code/CLion, GDB</dd>
-            <dt>Assessment</dt><dd>Weekly labs, small programming tasks, final practical</dd>
+            <dt>Category</dt>
+            <dd>CS Fundamentals</dd>
+            <dt>Focus</dt>
+            <dd>Syntax &middot; Problem solving &middot; Run/debug</dd>
+            <dt>Stack</dt>
+            <dd>C (gcc/clang), Make, VS Code/CLion, GDB</dd>
+            <dt>Assessment</dt>
+            <dd>Weekly labs, small programming tasks, final practical</dd>
           </dl>
           <div class="note small">
             <p><strong>Next module:</strong> <a href="intro-to-java.html">Introduction to Java</a>.</p>
@@ -95,7 +102,8 @@
           <section class="case-section" id="outcomes">
             <h2>Learning Outcomes</h2>
             <ul>
-              <li>Understand the basic ideas of programming and write small programs using variables, loops, and I/O.</li>
+              <li>Understand the basic ideas of programming and write small programs using variables, loops, and I/O.
+              </li>
               <li>Confidently write programs in C that compile and run to produce correct results.</li>
               <li>Use functions and arrays to structure solutions; reason about common errors and debugging.</li>
             </ul>
@@ -106,23 +114,35 @@
             <h2>Indicative Topics</h2>
             <div class="grid cards">
               <article class="card">
-                <header class="card__header"><h3>Getting Started</h3></header>
+                <header class="card__header">
+                  <h3>Getting Started</h3>
+                </header>
                 <p class="card__body">Tooling (compiler, editor), project layout, the editâ€“compileâ€“run loop.</p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Types &amp; Variables</h3></header>
+                <header class="card__header">
+                  <h3>Types &amp; Variables</h3>
+                </header>
                 <p class="card__body">int/float/double/char, assignment, scope &amp; lifetime, <code>const</code>.</p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Control Flow</h3></header>
-                <p class="card__body"><code>if/else</code>, <code>switch</code>, <code>for</code>/<code>while</code>/<code>do-while</code>, boolean logic.</p>
+                <header class="card__header">
+                  <h3>Control Flow</h3>
+                </header>
+                <p class="card__body"><code>if/else</code>, <code>switch</code>,
+                  <code>for</code>/<code>while</code>/<code>do-while</code>, boolean logic.
+                </p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>I/O</h3></header>
+                <header class="card__header">
+                  <h3>I/O</h3>
+                </header>
                 <p class="card__body"><code>printf</code>, <code>scanf</code>, basic file I/O; formatting pitfalls.</p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Functions &amp; Arrays</h3></header>
+                <header class="card__header">
+                  <h3>Functions &amp; Arrays</h3>
+                </header>
                 <p class="card__body">Parameters/returns, pass-by-value, arrays &amp; strings, simple algorithms.</p>
               </article>
             </div>
@@ -134,7 +154,9 @@
 
             <div class="grid two">
               <div class="card">
-                <header class="card__header"><h3>Hello + compile/run</h3></header>
+                <header class="card__header">
+                  <h3>Hello + compile/run</h3>
+                </header>
                 <pre class="code-block"><code>#include &lt;stdio.h&gt;
 int main(void) {
   printf("Hello, C!\n");
@@ -148,7 +170,9 @@ int main(void) {
               </div>
 
               <div class="card">
-                <header class="card__header"><h3>Input &amp; loops</h3></header>
+                <header class="card__header">
+                  <h3>Input &amp; loops</h3>
+                </header>
                 <pre class="code-block"><code>#include &lt;stdio.h&gt;
 int main(void){
   int n, sum = 0;
@@ -163,14 +187,18 @@ int main(void){
 
             <div class="grid two">
               <div class="card">
-                <header class="card__header"><h3>Functions</h3></header>
+                <header class="card__header">
+                  <h3>Functions</h3>
+                </header>
                 <pre class="code-block"><code>int max(int a, int b) { return (a &gt; b) ? a : b; }
 int main(void){ printf("%d\n", max(3,7)); }</code></pre>
                 <p class="muted small">Prefer small functions; name them after what they return/do.</p>
               </div>
 
               <div class="card">
-                <header class="card__header"><h3>Arrays &amp; strings</h3></header>
+                <header class="card__header">
+                  <h3>Arrays &amp; strings</h3>
+                </header>
                 <pre class="code-block"><code>#include &lt;string.h&gt;
 int main(void){
   int a[5] = {1,2,3,4,5};
@@ -202,25 +230,26 @@ gdb ./app
 (gdb) next / step
 (gdb) print n
 (gdb) backtrace</code></pre>
-            <p class="muted small">Compile with <code>-g</code> for debugging symbols; use <code>valgrind</code> in later modules to find memory issues.</p>
+            <p class="muted small">Compile with <code>-g</code> for debugging symbols; use <code>valgrind</code> in
+              later modules to find memory issues.</p>
           </section>
 
           <!-- Artefacts -->
           <section class="case-section" id="artifacts">
             <h2>Selected Artefacts</h2>
             <ul class="list">
-              <li>Weekly lab exercises â€” variables, loops, arrays</li>
-              <li>Mini-project â€” simple calculator / text utilities</li>
-              <li>Checklist â€” compile, run, test, and submit</li>
+              <li>Weekly lab exercises &mdash; variables, loops, arrays</li>
+              <li>Mini-project &mdash; simple calculator / text utilities</li>
+              <li>Checklist &mdash; compile, run, test, and submit</li>
             </ul>
             <p class="muted small">Syllabi and PDFs can be added here later.</p>
           </section>
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="../">â† All modules</a>
+            <a class="btn btn--ghost" href="../">&larr; All modules</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="intro-to-java.html">Next: Introduction to Java â†’</a>
+            <a class="btn btn--secondary" href="intro-to-java.html">Next: Introduction to Java &rarr;</a>
           </nav>
         </article>
       </div>
@@ -230,7 +259,7 @@ gdb ./app
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -243,5 +272,5 @@ gdb ./app
   <!-- Scripts (kept separate) -->
   <script src="../../assets/js/main.js" defer></script>
 </body>
-</html>
 
+</html>

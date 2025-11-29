@@ -1,10 +1,12 @@
 ﻿<!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Queueing Cheatsheet â€” Notes â€” Nirav Ramidi</title>
-  <meta name="description" content="Compact formulas and rules of thumb for M/M/1, M/D/1, M/M/1/K, and M/M/K (Erlang-C). Littleâ€™s Law, stability, and quick sizing tips." />
+  <meta name="description"
+    content="Compact formulas and rules of thumb for M/M/1, M/D/1, M/M/1/K, and M/M/K (Erlang-C). Littleâ€™s Law, stability, and quick sizing tips." />
 
   <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../../assets/css/main.css" />
@@ -30,7 +32,8 @@
           <li><a href="../">Writing</a></li>
           <li><a href="../../education/">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+        </ul>
       </nav>
 
       <div class="header-actions">
@@ -61,7 +64,8 @@
       <div class="container">
         <h1 class="page-title">Queueing Cheatsheet</h1>
         <p class="lead">
-          Fast reference for common models: <strong>M/M/1</strong>, <strong>M/D/1</strong>, <strong>M/M/1/K</strong> (finite capacity),
+          Fast reference for common models: <strong>M/M/1</strong>, <strong>M/D/1</strong>, <strong>M/M/1/K</strong>
+          (finite capacity),
           and <strong>M/M/K</strong> (Erlang-C). Includes <em>Littleâ€™s Law</em>, stability, and quick sizing rules.
         </p>
         <ul class="chips">
@@ -92,7 +96,8 @@
             <li><strong>L<sub>q</sub></strong> â€” mean number waiting</li>
           </ul>
         </div>
-        <p class="muted small"><strong>Littleâ€™s Law:</strong> <code>L = Î» Â· W</code> and <code>L<sub>q</sub> = Î» Â· W<sub>q</sub></code> (for stable systems).</p>
+        <p class="muted small"><strong>Littleâ€™s Law:</strong> <code>L = Î» Â· W</code> and
+          <code>L<sub>q</sub> = Î» Â· W<sub>q</sub></code> (for stable systems).</p>
       </div>
     </section>
 
@@ -136,7 +141,8 @@
     <section class="section">
       <div class="container">
         <h2>M/M/1/K (finite capacity, blocking)</h2>
-        <p>System capacity <strong>K</strong> includes the job in service. New arrivals seeing K jobs are <em>blocked</em>.</p>
+        <p>System capacity <strong>K</strong> includes the job in service. New arrivals seeing K jobs are
+          <em>blocked</em>.</p>
         <div class="card">
           <div class="card__body">
             <ul class="tight">
@@ -145,11 +151,13 @@
               <li><strong>P<sub>n</sub></strong> = <code>P<sub>0</sub> Â· Ï<sup>n</sup></code> for n=0..K</li>
               <li><strong>Blocking</strong> (loss) <strong>B</strong> = <code>P<sub>K</sub></code></li>
               <li><strong>Effective arrivals</strong> Î»<sub>eff</sub> = <code>Î» Â· (1 âˆ’ B)</code></li>
-              <li><strong>L</strong> = <code>âˆ‘ nÂ·P<sub>n</sub></code> (closed form exists but the above suffices for quick calcs)</li>
+              <li><strong>L</strong> = <code>âˆ‘ nÂ·P<sub>n</sub></code> (closed form exists but the above suffices for
+                quick calcs)</li>
             </ul>
           </div>
         </div>
-        <p class="muted small">Use when you want to trade <em>loss</em> for bounded queueing (e.g., small request buffers).</p>
+        <p class="muted small">Use when you want to trade <em>loss</em> for bounded queueing (e.g., small request
+          buffers).</p>
       </div>
     </section>
 
@@ -169,11 +177,13 @@
               </li>
               <li><strong>W<sub>q</sub></strong> = <code>P<sub>wait</sub> / (KÂ·Î¼ âˆ’ Î»)</code></li>
               <li><strong>W</strong> = <code>W<sub>q</sub> + 1/Î¼</code></li>
-              <li><strong>L<sub>q</sub></strong> = <code>Î» Â· W<sub>q</sub></code>, &nbsp; <strong>L</strong> = <code>Î» Â· W</code></li>
+              <li><strong>L<sub>q</sub></strong> = <code>Î» Â· W<sub>q</sub></code>, &nbsp; <strong>L</strong> =
+                <code>Î» Â· W</code></li>
             </ul>
           </div>
         </div>
-        <p class="muted small">Great for sizing thread pools / replica counts to hit a latency SLO (e.g., W â‰¤ 1 s).</p>
+        <p class="muted small">Great for sizing thread pools / replica counts to hit a latency SLO (e.g., W â‰¤ 1 s).
+        </p>
       </div>
     </section>
 
@@ -185,7 +195,8 @@
           <li><strong>Headroom:</strong> plan peak <strong>Ï â‰¤ 0.7â€“0.8</strong> to avoid tail blow-ups.</li>
           <li><strong>Parallelism beats buffering</strong> for latency SLOs; buffers mainly trade delay vs loss.</li>
           <li><strong>Deterministic service</strong> (M/D/1) â‰ˆ halves queueing vs M/M/1 near same Ï.</li>
-          <li><strong>Knee point:</strong> alert when <strong>W â‰ˆ service time</strong> (M/M/1) â€” queueing starts dominating.</li>
+          <li><strong>Knee point:</strong> alert when <strong>W â‰ˆ service time</strong> (M/M/1) â€” queueing starts
+            dominating.</li>
         </ul>
       </div>
     </section>
@@ -194,7 +205,8 @@
     <section class="section">
       <div class="container">
         <h2>Quick Calculator (optional)</h2>
-        <p class="muted small">This form is wired in <code>assets/js/main.js</code> if you enable it. Otherwise, use the formulas above.</p>
+        <p class="muted small">This form is wired in <code>assets/js/main.js</code> if you enable it. Otherwise, use the
+          formulas above.</p>
 
         <form id="queueCalc" class="card form" action="#" method="post" novalidate>
           <div class="form-row">
@@ -245,7 +257,8 @@
         <h2>References &amp; Caveats</h2>
         <ul class="muted small">
           <li>Assumes Poisson arrivals and specified service distributions; validate with load tests.</li>
-          <li>Use <strong>M/G/1</strong> (Pollaczekâ€“Khinchine) for general service times: <code>W<sub>q</sub> = Î»Â·E[SÂ²] / (2Â·(1âˆ’Ï))</code>.</li>
+          <li>Use <strong>M/G/1</strong> (Pollaczekâ€“Khinchine) for general service times:
+            <code>W<sub>q</sub> = Î»Â·E[SÂ²] / (2Â·(1âˆ’Ï))</code>.</li>
           <li>For percentiles, analytical forms are limited; simulate or fit distributions to traces.</li>
         </ul>
       </div>
@@ -255,7 +268,7 @@
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -268,5 +281,5 @@
   <!-- Scripts (kept separate) -->
   <script src="../../assets/js/main.js" defer></script>
 </body>
-</html>
 
+</html>

@@ -1,10 +1,12 @@
 ﻿<!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SVM Kernels â€” Quick Guide â€” Notes â€” Nirav Ramidi</title>
-  <meta name="description" content="When to use linear vs RBF vs polynomial SVMs, how C and Î³ interact, scaling rules, and practical tuning recipes with pitfalls to avoid." />
+  <meta name="description"
+    content="When to use linear vs RBF vs polynomial SVMs, how C and Î³ interact, scaling rules, and practical tuning recipes with pitfalls to avoid." />
 
   <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../../assets/css/main.css" />
@@ -30,7 +32,8 @@
           <li><a href="../">Writing</a></li>
           <li><a href="../../education/">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+        </ul>
       </nav>
 
       <div class="header-actions">
@@ -61,7 +64,8 @@
       <div class="container">
         <h1 class="page-title">SVM Kernels â€” Quick Guide</h1>
         <p class="lead">
-          How to choose between <strong>Linear</strong>, <strong>RBF</strong>, <strong>Polynomial</strong> (and why <strong>Sigmoid</strong> is rare),
+          How to choose between <strong>Linear</strong>, <strong>RBF</strong>, <strong>Polynomial</strong> (and why
+          <strong>Sigmoid</strong> is rare),
           plus how <strong>C</strong> and <strong>Î³</strong> interact, scaling rules, and practical tuning recipes.
         </p>
         <ul class="chips">
@@ -81,7 +85,8 @@
           <li>Clear margins matter; robustness to outliers via the <em>hinge loss</em> margin.</li>
           <li>Nonlinear decision boundaries via kernels without explicit feature engineering.</li>
         </ul>
-        <p class="muted small">For very large data or many categorical features, prefer linear models or tree ensembles.</p>
+        <p class="muted small">For very large data or many categorical features, prefer linear models or tree ensembles.
+        </p>
       </div>
     </section>
 
@@ -91,7 +96,8 @@
         <h2>Preprocessing essentials</h2>
         <div class="grid two">
           <ul>
-            <li><strong>Scale features</strong> (e.g., StandardScaler). SVMs are distance-based; units must be comparable.</li>
+            <li><strong>Scale features</strong> (e.g., StandardScaler). SVMs are distance-based; units must be
+              comparable.</li>
             <li>Handle imbalance with <code>class_weight='balanced'</code> or tuned weights.</li>
             <li>Remove near-constant features; consider PCA only if features are very collinear/noisy.</li>
           </ul>
@@ -109,30 +115,40 @@
         <h2>Kernels at a glance</h2>
         <div class="grid cards">
           <article class="card">
-            <header class="card__header"><h3>Linear</h3></header>
+            <header class="card__header">
+              <h3>Linear</h3>
+            </header>
             <p class="card__body">
-              Best when data are roughly linearly separable or <em>p â‰« n</em> (many features). Fast and often state-of-the-art for text.
+              Best when data are roughly linearly separable or <em>p â‰« n</em> (many features). Fast and often
+              state-of-the-art for text.
             </p>
             <ul class="tight">
-              <li>Hyperparam: <strong>C</strong> (regularisation strength). Lower C â‡’ wider margin (more regularisation).</li>
+              <li>Hyperparam: <strong>C</strong> (regularisation strength). Lower C â‡’ wider margin (more
+                regularisation).</li>
               <li>Pros: simple, fast, interpretable weights, works with sparse data.</li>
               <li>Pick: start here unless you have evidence of strong nonlinearity.</li>
             </ul>
           </article>
 
           <article class="card">
-            <header class="card__header"><h3>RBF (Gaussian)</h3></header>
+            <header class="card__header">
+              <h3>RBF (Gaussian)</h3>
+            </header>
             <p class="card__body">
               Smooth, flexible boundaries. Often the strongest default for tabular numeric data.
             </p>
             <ul class="tight">
-              <li>Hyperparams: <strong>C</strong>, <strong>Î³</strong> (gamma). <code>Î³ = 1/(2ÏƒÂ²)</code>; larger Î³ â‡’ tighter influence (risk overfit).</li>
-              <li>Effects: â†‘C or â†‘Î³ both increase model complexity, but via different knobs (soft-margin vs locality).</li>
+              <li>Hyperparams: <strong>C</strong>, <strong>Î³</strong> (gamma). <code>Î³ = 1/(2ÏƒÂ²)</code>; larger Î³
+                â‡’ tighter influence (risk overfit).</li>
+              <li>Effects: â†‘C or â†‘Î³ both increase model complexity, but via different knobs (soft-margin vs
+                locality).</li>
             </ul>
           </article>
 
           <article class="card">
-            <header class="card__header"><h3>Polynomial (degree d)</h3></header>
+            <header class="card__header">
+              <h3>Polynomial (degree d)</h3>
+            </header>
             <p class="card__body">
               Captures interactions up to degree <em>d</em>. Sensitive to scaling and degrees &gt; 3 often overfit.
             </p>
@@ -143,7 +159,9 @@
           </article>
 
           <article class="card">
-            <header class="card__header"><h3>Sigmoid</h3></header>
+            <header class="card__header">
+              <h3>Sigmoid</h3>
+            </header>
             <p class="card__body">
               Kernel akin to a 1-hidden-layer tanh network. Rarely outperforms RBF; only use with care (can be non-PSD).
             </p>
@@ -161,7 +179,8 @@
             <h3>Linear SVM</h3>
             <ul>
               <li>Try <code>C âˆˆ {0.01, 0.1, 1, 10, 100}</code>.</li>
-              <li>Use <code>LinearSVC</code> (fast, one-vs-rest) for large/sparse; <code>SGDClassifier(loss='hinge')</code> for online/very large.</li>
+              <li>Use <code>LinearSVC</code> (fast, one-vs-rest) for large/sparse;
+                <code>SGDClassifier(loss='hinge')</code> for online/very large.</li>
             </ul>
           </div>
           <div>
@@ -169,20 +188,24 @@
             <ul>
               <li>Start with <code>Î³='scale'</code> (scikit-learn default) and sweep <code>C</code> on log-scale.</li>
               <li>Grid (log-space): <code>C âˆˆ [1e-2 â€¦ 1e3]</code>, <code>Î³ âˆˆ [1e-4 â€¦ 1e1]</code>.</li>
-              <li>Use stratified CV; pick by <strong>macro-F1</strong> or <strong>ROC-AUC (OvR)</strong> for imbalance.</li>
+              <li>Use stratified CV; pick by <strong>macro-F1</strong> or <strong>ROC-AUC (OvR)</strong> for imbalance.
+              </li>
             </ul>
           </div>
         </div>
 
         <h3>Probabilities & calibration</h3>
         <ul>
-          <li><code>SVC(probability=True)</code> fits an internal Platt scaler (CV) â€” slower. For better calibration, wrap with <code>CalibratedClassifierCV</code>.</li>
-          <li>For <code>LinearSVC</code>, always use external calibration (<code>CalibratedClassifierCV</code> with <em>sigmoid</em> or <em>isotonic</em>).</li>
+          <li><code>SVC(probability=True)</code> fits an internal Platt scaler (CV) â€” slower. For better calibration,
+            wrap with <code>CalibratedClassifierCV</code>.</li>
+          <li>For <code>LinearSVC</code>, always use external calibration (<code>CalibratedClassifierCV</code> with
+            <em>sigmoid</em> or <em>isotonic</em>).</li>
         </ul>
 
         <h3>Multiclass</h3>
         <ul>
-          <li><strong>SVC</strong> uses <em>one-vs-one</em> by default; <strong>LinearSVC</strong> uses <em>one-vs-rest</em>.</li>
+          <li><strong>SVC</strong> uses <em>one-vs-one</em> by default; <strong>LinearSVC</strong> uses
+            <em>one-vs-rest</em>.</li>
           <li>Prefer macro-averaged metrics when class sizes differ.</li>
         </ul>
       </div>
@@ -195,9 +218,12 @@
         <div class="card">
           <div class="card__body">
             <ul class="tight">
-              <li>â†‘ <strong>C</strong> â‡’ penalise misclassifications more â‡’ narrower margin â‡’ higher variance.</li>
-              <li>â†‘ <strong>Î³</strong> â‡’ smaller RBF radius â‡’ decision boundary follows data closely â‡’ higher variance.</li>
-              <li>Grid search often shows <em>diagonals</em> of similar performance; pick the <em>simplest</em> (lower C/Î³) with near-best score.</li>
+              <li>â†‘ <strong>C</strong> â‡’ penalise misclassifications more â‡’ narrower margin â‡’ higher variance.
+              </li>
+              <li>â†‘ <strong>Î³</strong> â‡’ smaller RBF radius â‡’ decision boundary follows data closely â‡’ higher
+                variance.</li>
+              <li>Grid search often shows <em>diagonals</em> of similar performance; pick the <em>simplest</em> (lower
+                C/Î³) with near-best score.</li>
             </ul>
           </div>
         </div>
@@ -238,7 +264,8 @@ cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 gs = GridSearchCV(pipe, param_grid, cv=cv, scoring="f1_macro", n_jobs=-1)
 gs.fit(X_train, y_train)</code></pre>
         </div>
-        <p class="muted small">Swap <code>scoring</code> for <code>roc_auc_ovr</code> (binary/ovr) or <code>average_precision</code> for imbalanced data.</p>
+        <p class="muted small">Swap <code>scoring</code> for <code>roc_auc_ovr</code> (binary/ovr) or
+          <code>average_precision</code> for imbalanced data.</p>
       </div>
     </section>
 
@@ -251,7 +278,8 @@ gs.fit(X_train, y_train)</code></pre>
           <li><strong>Huge Î³</strong> with high C â†’ perfect train accuracy, poor generalisation.</li>
           <li><strong>High-degree poly</strong> without strong regularisation â†’ overfit; start with degree 2â€“3.</li>
           <li><strong>Expecting calibrated probs</strong> from margins â€” use explicit calibration.</li>
-          <li><strong>Large n</strong> with kernel SVMs â†’ O(nÂ²â€“nÂ³) training; use LinearSVC/SGD or approximate kernels.</li>
+          <li><strong>Large n</strong> with kernel SVMs â†’ O(nÂ²â€“nÂ³) training; use LinearSVC/SGD or approximate
+            kernels.</li>
         </ul>
       </div>
     </section>
@@ -262,7 +290,9 @@ gs.fit(X_train, y_train)</code></pre>
         <h2>Cheatsheet: pick a kernel</h2>
         <div class="grid two">
           <div class="card">
-            <header class="card__header"><h3>Start here</h3></header>
+            <header class="card__header">
+              <h3>Start here</h3>
+            </header>
             <ul class="tight">
               <li>Text/sparse, pâ‰«n â†’ <strong>Linear</strong> (LinearSVC).</li>
               <li>Tabular numeric, smooth boundary â†’ <strong>RBF</strong>.</li>
@@ -270,7 +300,9 @@ gs.fit(X_train, y_train)</code></pre>
             </ul>
           </div>
           <div class="card">
-            <header class="card__header"><h3>Quick ranges</h3></header>
+            <header class="card__header">
+              <h3>Quick ranges</h3>
+            </header>
             <ul class="tight">
               <li><strong>C</strong>: 1e-2 â†’ 1e3 (log steps).</li>
               <li><strong>Î³</strong> (RBF): 1e-4 â†’ 1e1 (log steps), or start with <code>'scale'</code>.</li>
@@ -308,7 +340,7 @@ gs.fit(X_train, y_train)</code></pre>
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -321,5 +353,5 @@ gs.fit(X_train, y_train)</code></pre>
   <!-- Scripts (kept separate) -->
   <script src="../../assets/js/main.js" defer></script>
 </body>
-</html>
 
+</html>

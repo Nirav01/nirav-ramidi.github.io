@@ -1,10 +1,12 @@
 ﻿<!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Human-Centred AI â€” Essay â€” Nirav Ramidi</title>
-  <meta name="description" content="A synthesis on Human-Centred AI: principles, design patterns, trade-offs, evaluation, and governance. Focus on building trustworthy, useful, and fair AI systems." />
+  <meta name="description"
+    content="A synthesis on Human-Centred AI: principles, design patterns, trade-offs, evaluation, and governance. Focus on building trustworthy, useful, and fair AI systems." />
 
   <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../assets/css/main.css" />
@@ -42,7 +44,8 @@
           <li><a href="./" aria-current="page">Writing</a></li>
           <li><a href="../education/">Education</a></li>
           <li><a href="../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
+          <li class="hide-on-mobile"><a href="../resume/" class="btn btn--ghost">Resume</a></li>
+        </ul>
       </nav>
 
       <div class="header-actions">
@@ -90,7 +93,8 @@
           </div>
         </div>
         <figure class="case-hero__media">
-          <img src="../assets/img/writing/hcai-essay-hero.jpg" alt="Human-centred AI diagram with people, model, and feedback loops" loading="lazy" />
+          <img src="../assets/img/writing/hcai-essay-hero.jpg"
+            alt="Human-centred AI diagram with people, model, and feedback loops" loading="lazy" />
         </figure>
       </div>
     </section>
@@ -102,10 +106,14 @@
         <aside class="case-meta card">
           <h2 class="visually-hidden">Article info</h2>
           <dl class="meta-list">
-            <dt>Type</dt><dd>Essay / literature synthesis</dd>
-            <dt>Focus</dt><dd>Design principles Â· Trade-offs Â· Evaluation Â· Governance</dd>
-            <dt>Artifacts</dt><dd>PDF essay, slide summary</dd>
-            <dt>Keywords</dt><dd>HCAI, XAI, Trust, Fairness, UX, Safety</dd>
+            <dt>Type</dt>
+            <dd>Essay / literature synthesis</dd>
+            <dt>Focus</dt>
+            <dd>Design principles Â· Trade-offs Â· Evaluation Â· Governance</dd>
+            <dt>Artifacts</dt>
+            <dd>PDF essay, slide summary</dd>
+            <dt>Keywords</dt>
+            <dd>HCAI, XAI, Trust, Fairness, UX, Safety</dd>
           </dl>
           <div class="note small">
             <p><strong>Tip:</strong> Put <code>HCAI-essay.pdf</code> in this folder to enable the download link.</p>
@@ -130,12 +138,18 @@
           <section class="case-section" id="principles">
             <h2>Principles</h2>
             <ul class="checklist">
-              <li><strong>Clarity over completeness:</strong> provide the <em>right</em> explanation for the decision at hand; defer detail via progressive disclosure.</li>
-              <li><strong>Calibrated transparency:</strong> expose <em>uncertainty</em>, <em>confidence</em>, and known limitations; avoid false certainty.</li>
-              <li><strong>Recourse:</strong> show users how to improve outcomes or fix inputsâ€”not just why the model predicted something.</li>
-              <li><strong>Human-in/on-the-loop:</strong> keep escalation paths and reversible actions; log overrides to learn from expert judgement.</li>
-              <li><strong>Fairness by design:</strong> make sensitive features and group metrics visible during development; measure harms and benefits.</li>
-              <li><strong>Privacy &amp; consent:</strong> minimise data collection; communicate how data feeds models and audits.</li>
+              <li><strong>Clarity over completeness:</strong> provide the <em>right</em> explanation for the decision at
+                hand; defer detail via progressive disclosure.</li>
+              <li><strong>Calibrated transparency:</strong> expose <em>uncertainty</em>, <em>confidence</em>, and known
+                limitations; avoid false certainty.</li>
+              <li><strong>Recourse:</strong> show users how to improve outcomes or fix inputsâ€”not just why the model
+                predicted something.</li>
+              <li><strong>Human-in/on-the-loop:</strong> keep escalation paths and reversible actions; log overrides to
+                learn from expert judgement.</li>
+              <li><strong>Fairness by design:</strong> make sensitive features and group metrics visible during
+                development; measure harms and benefits.</li>
+              <li><strong>Privacy &amp; consent:</strong> minimise data collection; communicate how data feeds models
+                and audits.</li>
             </ul>
           </section>
 
@@ -144,24 +158,39 @@
             <h2>Design Patterns</h2>
             <div class="grid cards">
               <article class="card">
-                <header class="card__header"><h3>Model Cards &amp; Data Sheets</h3></header>
-                <p class="card__body">A one-page summary of intended use, training data, metrics, and limits. Link from the UI for expert users.</p>
+                <header class="card__header">
+                  <h3>Model Cards &amp; Data Sheets</h3>
+                </header>
+                <p class="card__body">A one-page summary of intended use, training data, metrics, and limits. Link from
+                  the UI for expert users.</p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Confidence &amp; Uncertainty</h3></header>
-                <p class="card__body">Show calibrated scores, abstain when unsure, and highlight edge cases; avoid binary â€œAI says so.â€</p>
+                <header class="card__header">
+                  <h3>Confidence &amp; Uncertainty</h3>
+                </header>
+                <p class="card__body">Show calibrated scores, abstain when unsure, and highlight edge cases; avoid
+                  binary â€œAI says so.â€</p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Counterfactuals &amp; Recourse</h3></header>
-                <p class="card__body">â€œIf X were Y, the outcome would change.â€ Provide actionable edits users can make, bounded by policy.</p>
+                <header class="card__header">
+                  <h3>Counterfactuals &amp; Recourse</h3>
+                </header>
+                <p class="card__body">â€œIf X were Y, the outcome would change.â€ Provide actionable edits users can
+                  make, bounded by policy.</p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Provenance &amp; Versioning</h3></header>
-                <p class="card__body">Surface model/version, data cut, and time of decision; enable traceability for appeals and audits.</p>
+                <header class="card__header">
+                  <h3>Provenance &amp; Versioning</h3>
+                </header>
+                <p class="card__body">Surface model/version, data cut, and time of decision; enable traceability for
+                  appeals and audits.</p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Progressive Disclosure</h3></header>
-                <p class="card__body">Start with a short rationale; let users expand for features, weights/shap values, and examples.</p>
+                <header class="card__header">
+                  <h3>Progressive Disclosure</h3>
+                </header>
+                <p class="card__body">Start with a short rationale; let users expand for features, weights/shap values,
+                  and examples.</p>
               </article>
             </div>
           </section>
@@ -170,11 +199,16 @@
           <section class="case-section" id="tradeoffs">
             <h2>Trade-offs &amp; Pitfalls</h2>
             <ul>
-              <li><strong>Clarity vs fidelity:</strong> simpler explanations aid actionability but may omit nuance; provide â€œlearn moreâ€ for power users.</li>
-              <li><strong>Performance vs interpretability:</strong> use <em>post-hoc</em> explanations (e.g., SHAP) when intrinsically simple models underfit. Validate explanations with users.</li>
-              <li><strong>Over-trust vs under-trust:</strong> confidence displays and abstention thresholds reduce automation bias but may increase workload; tune with task studies.</li>
-              <li><strong>Fairness trade-offs:</strong> equalising metrics for one group can reduce accuracy for another; make the choices explicit and governed.</li>
-              <li><strong>Antipatterns:</strong> explanation-washing, â€œblack-boxâ€ buttons, hidden thresholds, and dark patterns that nudge acceptance.</li>
+              <li><strong>Clarity vs fidelity:</strong> simpler explanations aid actionability but may omit nuance;
+                provide â€œlearn moreâ€ for power users.</li>
+              <li><strong>Performance vs interpretability:</strong> use <em>post-hoc</em> explanations (e.g., SHAP) when
+                intrinsically simple models underfit. Validate explanations with users.</li>
+              <li><strong>Over-trust vs under-trust:</strong> confidence displays and abstention thresholds reduce
+                automation bias but may increase workload; tune with task studies.</li>
+              <li><strong>Fairness trade-offs:</strong> equalising metrics for one group can reduce accuracy for
+                another; make the choices explicit and governed.</li>
+              <li><strong>Antipatterns:</strong> explanation-washing, â€œblack-boxâ€ buttons, hidden thresholds, and
+                dark patterns that nudge acceptance.</li>
             </ul>
           </section>
 
@@ -185,10 +219,13 @@
               <div>
                 <h3>Quantitative</h3>
                 <ul>
-                  <li><strong>Task success</strong>, <strong>time-on-task</strong>, and <strong>error rates</strong>.</li>
-                  <li><strong>Trust</strong> scales, <strong>SUS</strong> (usability), <strong>NASA-TLX</strong> (workload).</li>
+                  <li><strong>Task success</strong>, <strong>time-on-task</strong>, and <strong>error rates</strong>.
+                  </li>
+                  <li><strong>Trust</strong> scales, <strong>SUS</strong> (usability), <strong>NASA-TLX</strong>
+                    (workload).</li>
                   <li><strong>Calibration</strong>: Brier score / reliability curves for probabilities.</li>
-                  <li><strong>Fairness</strong> metrics: TPR/FPR parity, equalised odds, demographic parity (when appropriate).</li>
+                  <li><strong>Fairness</strong> metrics: TPR/FPR parity, equalised odds, demographic parity (when
+                    appropriate).</li>
                 </ul>
               </div>
               <div>
@@ -212,7 +249,8 @@
             <h2>Operations &amp; Governance</h2>
             <ul class="checklist">
               <li><strong>Monitoring:</strong> live dashboards for quality, drift, calibration, and group fairness.</li>
-              <li><strong>Feedback channels:</strong> capture overrides and user flags; use them to retrain or adjust thresholds.</li>
+              <li><strong>Feedback channels:</strong> capture overrides and user flags; use them to retrain or adjust
+                thresholds.</li>
               <li><strong>Change control:</strong> version models and policies; run canaries and shadow tests.</li>
               <li><strong>Privacy:</strong> log minimal data; protect PII; document retention windows.</li>
               <li><strong>Documentation:</strong> model cards, decision logs, and clear appeal paths.</li>
@@ -256,7 +294,7 @@
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -269,5 +307,5 @@
   <!-- Scripts (kept separate) -->
   <script src="../assets/js/main.js" defer></script>
 </body>
-</html>
 
+</html>

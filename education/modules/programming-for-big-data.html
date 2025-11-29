@@ -1,10 +1,12 @@
 ﻿<!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Programming for Big Data â€” Module â€” Nirav Ramidi</title>
-  <meta name="description" content="Practical data engineering with Python & PySpark: distributed dataframes, ETL pipelines, joins & shuffles, storage formats, streaming, and performance tuning." />
+  <title>Programming for Big Data &mdash; Module &mdash; Nirav Ramidi</title>
+  <meta name="description"
+    content="Practical data engineering with Python & PySpark: distributed dataframes, ETL pipelines, joins & shuffles, storage formats, streaming, and performance tuning." />
 
   <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../../assets/css/main.css" />
@@ -17,7 +19,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi &mdash; home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -30,7 +32,8 @@
           <li><a href="../../writing/">Writing</a></li>
           <li><a href="../">Education</a></li>
           <li><a href="../../about.html">About</a></li>
-          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>        </ul>
+          <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+        </ul>
       </nav>
 
       <div class="header-actions">
@@ -60,8 +63,10 @@
       <div class="container">
         <h1 class="page-title">Programming for Big Data</h1>
         <p class="lead">
-          Build scalable <strong>ETL</strong> and analytics pipelines with <strong>Python</strong> &amp; <strong>PySpark</strong>:
-          distributed dataframes, <strong>joins &amp; shuffles</strong>, <strong>Parquet/Avro</strong>, <strong>streaming</strong>,
+          Build scalable <strong>ETL</strong> and analytics pipelines with <strong>Python</strong> &amp;
+          <strong>PySpark</strong>:
+          distributed dataframes, <strong>joins &amp; shuffles</strong>, <strong>Parquet/Avro</strong>,
+          <strong>streaming</strong>,
           and <strong>performance tuning</strong> on clusters.
         </p>
         <ul class="chips">
@@ -73,8 +78,8 @@
 
         <div class="actions">
           <!-- Place these files in this folder to activate links -->
-          <a class="btn btn--secondary" href="1-Introduction.pdf">Lecture 1 â€” Introduction (PDF)</a>
-          <a class="btn btn--ghost" href="group_project.html">Group Project â€” Big Data App</a>
+          <a class="btn btn--secondary" href="1-Introduction.pdf">Lecture 1 &mdash; Introduction (PDF)</a>
+          <a class="btn btn--ghost" href="group_project.html">Group Project &mdash; Big Data App</a>
         </div>
 
         <p class="muted small">
@@ -90,13 +95,19 @@
         <aside class="case-meta card">
           <h2 class="visually-hidden">Module info</h2>
           <dl class="meta-list">
-            <dt>Category</dt><dd>Data Engineering</dd>
-            <dt>Focus</dt><dd>Distributed processing Â· Storage Â· Tuning</dd>
-            <dt>Stack</dt><dd>Python, PySpark/Spark SQL, HDFS/S3, Parquet/Avro, (Kafka optional)</dd>
-            <dt>Assessment</dt><dd>Labs, group project, short quizzes</dd>
+            <dt>Category</dt>
+            <dd>Data Engineering</dd>
+            <dt>Focus</dt>
+            <dd>Distributed processing &middot; Storage &middot; Tuning</dd>
+            <dt>Stack</dt>
+            <dd>Python, PySpark/Spark SQL, HDFS/S3, Parquet/Avro, (Kafka optional)</dd>
+            <dt>Assessment</dt>
+            <dd>Labs, group project, short quizzes</dd>
           </dl>
           <div class="note small">
-            <p><strong>Related modules:</strong> <a href="data-mining.html">Data Mining</a>, <a href="cloud-comp.html">Cloud Computing</a>, <a href="perf-of-comp-sys.html">Performance of Computer Systems</a>.</p>
+            <p><strong>Related modules:</strong> <a href="data-mining.html">Data Mining</a>, <a
+                href="cloud-comp.html">Cloud Computing</a>, <a href="perf-of-comp-sys.html">Performance of Computer
+                Systems</a>.</p>
           </div>
         </aside>
 
@@ -107,10 +118,12 @@
             <h2>Learning Outcomes</h2>
             <ul>
               <li>Author reliable <strong>ETL pipelines</strong> using Spark DataFrames and SQL.</li>
-              <li>Choose efficient <strong>file formats</strong> and <strong>partitioning</strong> for large datasets.</li>
+              <li>Choose efficient <strong>file formats</strong> and <strong>partitioning</strong> for large datasets.
+              </li>
               <li>Diagnose and reduce <strong>shuffle</strong> and <strong>skew</strong> in joins and aggregations.</li>
               <li>Build <strong>streaming</strong> jobs for near-real-time analytics with watermarks &amp; windows.</li>
-              <li>Measure and tune jobs with <strong>caching</strong>, <strong>coalesce/repartition</strong>, and <strong>broadcast</strong> joins.</li>
+              <li>Measure and tune jobs with <strong>caching</strong>, <strong>coalesce/repartition</strong>, and
+                <strong>broadcast</strong> joins.</li>
             </ul>
           </section>
 
@@ -119,24 +132,39 @@
             <h2>Indicative Topics</h2>
             <div class="grid cards">
               <article class="card">
-                <header class="card__header"><h3>Spark &amp; DataFrames</h3></header>
-                <p class="card__body">Lazy evaluation, lineage, actions vs transformations, Catalyst optimizer, Spark SQL.</p>
+                <header class="card__header">
+                  <h3>Spark &amp; DataFrames</h3>
+                </header>
+                <p class="card__body">Lazy evaluation, lineage, actions vs transformations, Catalyst optimizer, Spark
+                  SQL.</p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Storage &amp; Formats</h3></header>
-                <p class="card__body">Columnar (Parquet/ORC) vs row (Avro/JSON/CSV), compression, partition pruning, Z-ordering (concept).</p>
+                <header class="card__header">
+                  <h3>Storage &amp; Formats</h3>
+                </header>
+                <p class="card__body">Columnar (Parquet/ORC) vs row (Avro/JSON/CSV), compression, partition pruning,
+                  Z-ordering (concept).</p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Joins, Shuffles &amp; Skew</h3></header>
-                <p class="card__body">Shuffle mechanics, broadcast join, salting, map-side combines, bucketing basics.</p>
+                <header class="card__header">
+                  <h3>Joins, Shuffles &amp; Skew</h3>
+                </header>
+                <p class="card__body">Shuffle mechanics, broadcast join, salting, map-side combines, bucketing basics.
+                </p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Streaming</h3></header>
-                <p class="card__body">Micro-batch model, event time vs processing time, watermarks, exactly-once sinks.</p>
+                <header class="card__header">
+                  <h3>Streaming</h3>
+                </header>
+                <p class="card__body">Micro-batch model, event time vs processing time, watermarks, exactly-once sinks.
+                </p>
               </article>
               <article class="card">
-                <header class="card__header"><h3>Reliability &amp; Ops</h3></header>
-                <p class="card__body">Checkpointing, idempotent writes, retries, job monitoring (UI), simple CI for ETL.</p>
+                <header class="card__header">
+                  <h3>Reliability &amp; Ops</h3>
+                </header>
+                <p class="card__body">Checkpointing, idempotent writes, retries, job monitoring (UI), simple CI for ETL.
+                </p>
               </article>
             </div>
           </section>
@@ -147,7 +175,9 @@
 
             <div class="grid two">
               <div class="card">
-                <header class="card__header"><h3>PySpark skeleton</h3></header>
+                <header class="card__header">
+                  <h3>PySpark skeleton</h3>
+                </header>
                 <pre class="code-block"><code>from pyspark.sql import SparkSession, functions as F
 spark = SparkSession.builder.appName("etl").getOrCreate()
 
@@ -164,11 +194,14 @@ facts = (
 )
 
 facts.write.mode("overwrite").partitionBy("day").parquet("s3://bucket/curated/events_by_day")</code></pre>
-                <p class="muted small">Broadcast joins trade network shuffle for executor memory â€” ensure the dim table is small.</p>
+                <p class="muted small">Broadcast joins trade network shuffle for executor memory &mdash; ensure the dim
+                  table is small.</p>
               </div>
 
               <div class="card">
-                <header class="card__header"><h3>Partitions &amp; caching</h3></header>
+                <header class="card__header">
+                  <h3>Partitions &amp; caching</h3>
+                </header>
                 <pre class="code-block"><code># Repartition large datasets by join key to reduce skew
 df = df.repartition(200, "user_id")
 
@@ -176,13 +209,16 @@ df = df.repartition(200, "user_id")
 wide = df.select("a","b","c","user_id").cache()
 # ... multiple actions on 'wide' ...
 wide.unpersist()</code></pre>
-                <p class="muted small">Use <code>coalesce()</code> to reduce partitions for small outputs; avoid over-partitioning tiny writes.</p>
+                <p class="muted small">Use <code>coalesce()</code> to reduce partitions for small outputs; avoid
+                  over-partitioning tiny writes.</p>
               </div>
             </div>
 
             <div class="grid two">
               <div class="card">
-                <header class="card__header"><h3>Windowed aggregations</h3></header>
+                <header class="card__header">
+                  <h3>Windowed aggregations</h3>
+                </header>
                 <pre class="code-block"><code>from pyspark.sql.window import Window
 w = Window.partitionBy("user_id").orderBy("ts").rowsBetween(-10, 0)
 df = df.withColumn("rolling_10", F.sum("amount").over(w))</code></pre>
@@ -190,7 +226,9 @@ df = df.withColumn("rolling_10", F.sum("amount").over(w))</code></pre>
               </div>
 
               <div class="card">
-                <header class="card__header"><h3>Structured Streaming (sketch)</h3></header>
+                <header class="card__header">
+                  <h3>Structured Streaming (sketch)</h3>
+                </header>
                 <pre class="code-block"><code>stream = (spark.readStream.format("kafka")
   .option("subscribe","events").load())
 
@@ -211,8 +249,8 @@ q.awaitTermination()</code></pre>
           <section class="case-section" id="artifacts">
             <h2>Selected Artefacts</h2>
             <ul class="list">
-              <li><a href="1-Introduction.pdf">Lecture 1 â€” course introduction</a></li>
-              <li><a href="group_project.html">Group Project â€” Big Data application (HTML)</a></li>
+              <li><a href="1-Introduction.pdf">Lecture 1 &mdash; course introduction</a></li>
+              <li><a href="group_project.html">Group Project &mdash; Big Data application (HTML)</a></li>
             </ul>
           </section>
 
@@ -221,16 +259,17 @@ q.awaitTermination()</code></pre>
             <h2>Key Takeaways</h2>
             <ul class="checklist">
               <li>Columnar formats + partitioning enable fast scans and pruning.</li>
-              <li>Most performance problems are <strong>shuffle</strong> or <strong>skew</strong> â€” fix joins first.</li>
+              <li>Most performance problems are <strong>shuffle</strong> or <strong>skew</strong> &mdash; fix joins first.
+              </li>
               <li>Design for retries and idempotency; storage is the system of record.</li>
             </ul>
           </section>
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="perf-of-comp-sys.html">â† Performance of Computer Systems</a>
+            <a class="btn btn--ghost" href="perf-of-comp-sys.html">&larr; Performance of Computer Systems</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="data-mining.html">Next: Data Mining â†’</a>
+            <a class="btn btn--secondary" href="data-mining.html">Next: Data Mining &rarr;</a>
           </nav>
         </article>
       </div>
@@ -240,7 +279,7 @@ q.awaitTermination()</code></pre>
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>Â© <span id="year">2025</span> Nirav Ramidi</p>
+      <p>© <span id="year">2025</span> Nirav Ramidi</p>
       <ul class="footer-links">
         <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -253,5 +292,5 @@ q.awaitTermination()</code></pre>
   <!-- Scripts (kept separate) -->
   <script src="../../assets/js/main.js" defer></script>
 </body>
-</html>
 
+</html>
