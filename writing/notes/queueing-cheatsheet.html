@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Queueing Cheatsheet â€” Notes â€” Nirav Ramidi</title>
+  <title>Queueing Cheatsheet &mdash; Notes &mdash; Nirav Ramidi</title>
   <meta name="description"
     content="Compact formulas and rules of thumb for M/M/1, M/D/1, M/M/1/K, and M/M/K (Erlang-C). Littleâ€™s Law, stability, and quick sizing tips." />
 
@@ -19,7 +19,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi &mdash; home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -82,22 +82,22 @@
         <h2>Notation</h2>
         <div class="grid two">
           <ul>
-            <li><strong>Î»</strong> â€” arrival rate (req/s)</li>
-            <li><strong>Î¼</strong> â€” service rate per server (1/s)</li>
-            <li><strong>K</strong> â€” number of parallel servers</li>
-            <li><strong>Ï</strong> â€” utilisation
+            <li><strong>Î»</strong> &mdash; arrival rate (req/s)</li>
+            <li><strong>Î¼</strong> &mdash; service rate per server (1/s)</li>
+            <li><strong>K</strong> &mdash; number of parallel servers</li>
+            <li><strong>Ï</strong> &mdash; utilisation
               <span class="muted">(M/M/1: Ï=Î»/Î¼; M/M/K: Ï=Î»/(KÎ¼))</span>
             </li>
           </ul>
           <ul>
-            <li><strong>W</strong> â€” mean response (sojourn) time</li>
-            <li><strong>W<sub>q</sub></strong> â€” mean waiting time in queue</li>
-            <li><strong>L</strong> â€” mean number in system</li>
-            <li><strong>L<sub>q</sub></strong> â€” mean number waiting</li>
+            <li><strong>W</strong> &mdash; mean response (sojourn) time</li>
+            <li><strong>W<sub>q</sub></strong> &mdash; mean waiting time in queue</li>
+            <li><strong>L</strong> &mdash; mean number in system</li>
+            <li><strong>L<sub>q</sub></strong> &mdash; mean number waiting</li>
           </ul>
         </div>
-        <p class="muted small"><strong>Littleâ€™s Law:</strong> <code>L = Î» Â· W</code> and
-          <code>L<sub>q</sub> = Î» Â· W<sub>q</sub></code> (for stable systems).</p>
+        <p class="muted small"><strong>Littleâ€™s Law:</strong> <code>L = Î» &middot; W</code> and
+          <code>L<sub>q</sub> = Î» &middot; W<sub>q</sub></code> (for stable systems).</p>
       </div>
     </section>
 
@@ -109,14 +109,14 @@
           <div class="card__body">
             <ul class="tight">
               <li><strong>Stability:</strong> Ï = Î»/Î¼ &lt; 1</li>
-              <li><strong>W</strong> = <code>1 / (Î¼ âˆ’ Î»)</code></li>
-              <li><strong>W<sub>q</sub></strong> = <code>Ï / (Î¼ âˆ’ Î»)</code></li>
-              <li><strong>L</strong> = <code>Ï / (1 âˆ’ Ï)</code></li>
-              <li><strong>L<sub>q</sub></strong> = <code>ÏÂ² / (1 âˆ’ Ï)</code></li>
+              <li><strong>W</strong> = <code>1 / (Î¼ &minus; Î»)</code></li>
+              <li><strong>W<sub>q</sub></strong> = <code>Ï / (Î¼ &minus; Î»)</code></li>
+              <li><strong>L</strong> = <code>Ï / (1 &minus; Ï)</code></li>
+              <li><strong>L<sub>q</sub></strong> = <code>ÏÂ² / (1 &minus; Ï)</code></li>
             </ul>
           </div>
         </div>
-        <p class="muted small">As Ï â†’ 1, queueing explodes; keep planned peaks â‰¤ 0.7â€“0.8.</p>
+        <p class="muted small">As Ï &rarr; 1, queueing explodes; keep planned peaks â‰¤ 0.7&ndash;0.8.</p>
       </div>
     </section>
 
@@ -128,8 +128,8 @@
           <div class="card__body">
             <ul class="tight">
               <li><strong>Stability:</strong> Ï = Î»/Î¼ &lt; 1</li>
-              <li><strong>W<sub>q</sub></strong> = <code>Ï / (2 Â· Î¼ Â· (1 âˆ’ Ï))</code></li>
-              <li><strong>W</strong> = <code>W<sub>q</sub> + 1/Î¼</code> = <code>Ï/(2Î¼(1âˆ’Ï)) + 1/Î¼</code></li>
+              <li><strong>W<sub>q</sub></strong> = <code>Ï / (2 &middot; Î¼ &middot; (1 &minus; Ï))</code></li>
+              <li><strong>W</strong> = <code>W<sub>q</sub> + 1/Î¼</code> = <code>Ï/(2Î¼(1&minus;Ï)) + 1/Î¼</code></li>
               <li>Compare to M/M/1: deterministic service roughly halves waiting time near the same Ï.</li>
             </ul>
           </div>
@@ -147,11 +147,11 @@
           <div class="card__body">
             <ul class="tight">
               <li><strong>Ï</strong> = Î»/Î¼ (use for formulas below), assume Ï â‰  1.</li>
-              <li><strong>P<sub>0</sub></strong> = <code>(1âˆ’Ï) / (1 âˆ’ Ï<sup>K+1</sup>)</code></li>
-              <li><strong>P<sub>n</sub></strong> = <code>P<sub>0</sub> Â· Ï<sup>n</sup></code> for n=0..K</li>
+              <li><strong>P<sub>0</sub></strong> = <code>(1&minus;Ï) / (1 &minus; Ï<sup>K+1</sup>)</code></li>
+              <li><strong>P<sub>n</sub></strong> = <code>P<sub>0</sub> &middot; Ï<sup>n</sup></code> for n=0..K</li>
               <li><strong>Blocking</strong> (loss) <strong>B</strong> = <code>P<sub>K</sub></code></li>
-              <li><strong>Effective arrivals</strong> Î»<sub>eff</sub> = <code>Î» Â· (1 âˆ’ B)</code></li>
-              <li><strong>L</strong> = <code>âˆ‘ nÂ·P<sub>n</sub></code> (closed form exists but the above suffices for
+              <li><strong>Effective arrivals</strong> Î»<sub>eff</sub> = <code>Î» &middot; (1 &minus; B)</code></li>
+              <li><strong>L</strong> = <code>âˆ‘ n&middot;P<sub>n</sub></code> (closed form exists but the above suffices for
                 quick calcs)</li>
             </ul>
           </div>
@@ -164,7 +164,7 @@
     <!-- M/M/K Erlang C -->
     <section class="section">
       <div class="container">
-        <h2>M/M/K (parallel servers) â€” Erlang-C</h2>
+        <h2>M/M/K (parallel servers) &mdash; Erlang-C</h2>
         <p>Let <strong>a = Î»/Î¼</strong> (offered load) and <strong>Ï = a/K</strong>. Valid when Ï &lt; 1.</p>
         <div class="card">
           <div class="card__body">
@@ -172,13 +172,13 @@
               <li><strong>Probability of wait</strong> (Erlang-C):
                 <code>
                   P<sub>wait</sub> =
-                  [ (a<sup>K</sup> / K!) Â· (K / (Kâˆ’a)) ] Ã· [ âˆ‘<sub>i=0</sub><sup>Kâˆ’1</sup> (a<sup>i</sup>/i!) + (a<sup>K</sup>/K!) Â· (K/(Kâˆ’a)) ]
+                  [ (a<sup>K</sup> / K!) &middot; (K / (K&minus;a)) ] Ã· [ âˆ‘<sub>i=0</sub><sup>K&minus;1</sup> (a<sup>i</sup>/i!) + (a<sup>K</sup>/K!) &middot; (K/(K&minus;a)) ]
                 </code>
               </li>
-              <li><strong>W<sub>q</sub></strong> = <code>P<sub>wait</sub> / (KÂ·Î¼ âˆ’ Î»)</code></li>
+              <li><strong>W<sub>q</sub></strong> = <code>P<sub>wait</sub> / (K&middot;Î¼ &minus; Î»)</code></li>
               <li><strong>W</strong> = <code>W<sub>q</sub> + 1/Î¼</code></li>
-              <li><strong>L<sub>q</sub></strong> = <code>Î» Â· W<sub>q</sub></code>, &nbsp; <strong>L</strong> =
-                <code>Î» Â· W</code></li>
+              <li><strong>L<sub>q</sub></strong> = <code>Î» &middot; W<sub>q</sub></code>, &nbsp; <strong>L</strong> =
+                <code>Î» &middot; W</code></li>
             </ul>
           </div>
         </div>
@@ -192,10 +192,10 @@
       <div class="container">
         <h2>Rules of Thumb</h2>
         <ul class="checklist">
-          <li><strong>Headroom:</strong> plan peak <strong>Ï â‰¤ 0.7â€“0.8</strong> to avoid tail blow-ups.</li>
+          <li><strong>Headroom:</strong> plan peak <strong>Ï â‰¤ 0.7&ndash;0.8</strong> to avoid tail blow-ups.</li>
           <li><strong>Parallelism beats buffering</strong> for latency SLOs; buffers mainly trade delay vs loss.</li>
-          <li><strong>Deterministic service</strong> (M/D/1) â‰ˆ halves queueing vs M/M/1 near same Ï.</li>
-          <li><strong>Knee point:</strong> alert when <strong>W â‰ˆ service time</strong> (M/M/1) â€” queueing starts
+          <li><strong>Deterministic service</strong> (M/D/1) &approx; halves queueing vs M/M/1 near same Ï.</li>
+          <li><strong>Knee point:</strong> alert when <strong>W &approx; service time</strong> (M/M/1) &mdash; queueing starts
             dominating.</li>
         </ul>
       </div>
@@ -257,8 +257,8 @@
         <h2>References &amp; Caveats</h2>
         <ul class="muted small">
           <li>Assumes Poisson arrivals and specified service distributions; validate with load tests.</li>
-          <li>Use <strong>M/G/1</strong> (Pollaczekâ€“Khinchine) for general service times:
-            <code>W<sub>q</sub> = Î»Â·E[SÂ²] / (2Â·(1âˆ’Ï))</code>.</li>
+          <li>Use <strong>M/G/1</strong> (Pollaczek&ndash;Khinchine) for general service times:
+            <code>W<sub>q</sub> = Î»&middot;E[SÂ²] / (2&middot;(1&minus;Ï))</code>.</li>
           <li>For percentiles, analytical forms are limited; simulate or fit distributions to traces.</li>
         </ul>
       </div>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Huffman Compressor â€” Case Study â€” Nirav Ramidi</title>
+  <title>Huffman Compressor &mdash; Case Study &mdash; Nirav Ramidi</title>
   <meta name="description"
     content="A Java implementation of Huffman coding: optimal prefix codes, bit-level I/O, canonical code serialisation, and benchmarks on mixed corpora." />
 
@@ -32,7 +32,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi &mdash; home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -108,11 +108,11 @@
             <dt>Role</dt>
             <dd>Solo developer</dd>
             <dt>Focus</dt>
-            <dd>Compression Â· Data structures Â· File format design</dd>
+            <dd>Compression &middot; Data structures &middot; File format design</dd>
             <dt>Stack</dt>
             <dd>Java 17, JUnit 5, Maven</dd>
             <dt>CLI</dt>
-            <dd><code>huff -c in.txt out.huf</code> Â· <code>huff -d out.huf out.txt</code></dd>
+            <dd><code>huff -c in.txt out.huf</code> &middot; <code>huff -d out.huf out.txt</code></dd>
             <dt>Links</dt>
             <dd>
               <ul class="bare">
@@ -147,9 +147,9 @@
               <div>
                 <h3>Build (one pass over frequencies)</h3>
                 <ol>
-                  <li>Count symbol frequencies â†’ array[0..255].</li>
+                  <li>Count symbol frequencies &rarr; array[0..255].</li>
                   <li>Push non-zero symbols into a <strong>min-heap</strong> by frequency.</li>
-                  <li>Pop two, merge to parent with sum freq, push back â€” repeat.</li>
+                  <li>Pop two, merge to parent with sum freq, push back &mdash; repeat.</li>
                   <li>Derive code lengths from root-to-leaf depths.</li>
                 </ol>
                 <p class="muted small">Time: O(Ïƒ log Ïƒ + n) with Ïƒâ‰¤256 â‡’ effectively O(n). Space: O(Ïƒ).</p>
@@ -157,7 +157,7 @@
               <div>
                 <h3>Canonicalisation</h3>
                 <ul>
-                  <li>Sort (length, symbol) to produce <strong>canonical codes</strong> â€” compact header,
+                  <li>Sort (length, symbol) to produce <strong>canonical codes</strong> &mdash; compact header,
                     deterministic.</li>
                   <li>Decoder reconstructs codes from lengths only (no tree serialisation needed).</li>
                 </ul>
@@ -170,7 +170,7 @@
             </div>
             <figure class="case-figure">
               <img src="../../assets/img/case-studies/huffman-diagram.png"
-                alt="Diagram: frequency table â†’ heap merges â†’ canonical code lengths â†’ encoder/decoder"
+                alt="Diagram: frequency table &rarr; heap merges &rarr; canonical code lengths &rarr; encoder/decoder"
                 loading="lazy" />
               <figcaption>Pipeline from frequency table to canonical codes and bit-level encoding.</figcaption>
             </figure>
@@ -247,9 +247,9 @@
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Case study pagination">
-            <a class="btn btn--ghost" href="java-marketplace.html">â† Java Marketplace</a>
+            <a class="btn btn--ghost" href="java-marketplace.html">&larr; Java Marketplace</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="twitter-cli.html">Next: Twitter-like CLI â†’</a>
+            <a class="btn btn--secondary" href="twitter-cli.html">Next: Twitter-like CLI &rarr;</a>
           </nav>
         </article>
       </div>

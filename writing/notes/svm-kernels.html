@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SVM Kernels â€” Quick Guide â€” Notes â€” Nirav Ramidi</title>
+  <title>SVM Kernels &mdash; Quick Guide &mdash; Notes &mdash; Nirav Ramidi</title>
   <meta name="description"
     content="When to use linear vs RBF vs polynomial SVMs, how C and Î³ interact, scaling rules, and practical tuning recipes with pitfalls to avoid." />
 
@@ -19,7 +19,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi &mdash; home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -55,14 +55,14 @@
         <li><a href="../../">Home</a></li>
         <li><a href="../">Writing</a></li>
         <li><a href="../index.html#notes">Notes</a></li>
-        <li><span aria-current="page">SVM Kernels â€” Quick Guide</span></li>
+        <li><span aria-current="page">SVM Kernels &mdash; Quick Guide</span></li>
       </ol>
     </nav>
 
     <!-- Title -->
     <section class="section">
       <div class="container">
-        <h1 class="page-title">SVM Kernels â€” Quick Guide</h1>
+        <h1 class="page-title">SVM Kernels &mdash; Quick Guide</h1>
         <p class="lead">
           How to choose between <strong>Linear</strong>, <strong>RBF</strong>, <strong>Polynomial</strong> (and why
           <strong>Sigmoid</strong> is rare),
@@ -81,7 +81,7 @@
       <div class="container">
         <h2>When SVMs shine</h2>
         <ul>
-          <li>Smallâ€“medium datasets, <strong>high-dimensional</strong> features (text, bag-of-words, pixels).</li>
+          <li>Small&ndash;medium datasets, <strong>high-dimensional</strong> features (text, bag-of-words, pixels).</li>
           <li>Clear margins matter; robustness to outliers via the <em>hinge loss</em> margin.</li>
           <li>Nonlinear decision boundaries via kernels without explicit feature engineering.</li>
         </ul>
@@ -140,7 +140,7 @@
             <ul class="tight">
               <li>Hyperparams: <strong>C</strong>, <strong>Î³</strong> (gamma). <code>Î³ = 1/(2ÏƒÂ²)</code>; larger Î³
                 â‡’ tighter influence (risk overfit).</li>
-              <li>Effects: â†‘C or â†‘Î³ both increase model complexity, but via different knobs (soft-margin vs
+              <li>Effects: &larr;‘C or &larr;‘Î³ both increase model complexity, but via different knobs (soft-margin vs
                 locality).</li>
             </ul>
           </article>
@@ -196,7 +196,7 @@
 
         <h3>Probabilities & calibration</h3>
         <ul>
-          <li><code>SVC(probability=True)</code> fits an internal Platt scaler (CV) â€” slower. For better calibration,
+          <li><code>SVC(probability=True)</code> fits an internal Platt scaler (CV) &mdash; slower. For better calibration,
             wrap with <code>CalibratedClassifierCV</code>.</li>
           <li>For <code>LinearSVC</code>, always use external calibration (<code>CalibratedClassifierCV</code> with
             <em>sigmoid</em> or <em>isotonic</em>).</li>
@@ -218,9 +218,9 @@
         <div class="card">
           <div class="card__body">
             <ul class="tight">
-              <li>â†‘ <strong>C</strong> â‡’ penalise misclassifications more â‡’ narrower margin â‡’ higher variance.
+              <li>&larr;‘ <strong>C</strong> â‡’ penalise misclassifications more â‡’ narrower margin â‡’ higher variance.
               </li>
-              <li>â†‘ <strong>Î³</strong> â‡’ smaller RBF radius â‡’ decision boundary follows data closely â‡’ higher
+              <li>&larr;‘ <strong>Î³</strong> â‡’ smaller RBF radius â‡’ decision boundary follows data closely â‡’ higher
                 variance.</li>
               <li>Grid search often shows <em>diagonals</em> of similar performance; pick the <em>simplest</em> (lower
                 C/Î³) with near-best score.</li>
@@ -274,11 +274,11 @@ gs.fit(X_train, y_train)</code></pre>
       <div class="container">
         <h2>Common pitfalls</h2>
         <ul class="checklist">
-          <li><strong>No scaling</strong> â†’ RBF/poly behave erratically; always standardise.</li>
-          <li><strong>Huge Î³</strong> with high C â†’ perfect train accuracy, poor generalisation.</li>
-          <li><strong>High-degree poly</strong> without strong regularisation â†’ overfit; start with degree 2â€“3.</li>
-          <li><strong>Expecting calibrated probs</strong> from margins â€” use explicit calibration.</li>
-          <li><strong>Large n</strong> with kernel SVMs â†’ O(nÂ²â€“nÂ³) training; use LinearSVC/SGD or approximate
+          <li><strong>No scaling</strong> &rarr; RBF/poly behave erratically; always standardise.</li>
+          <li><strong>Huge Î³</strong> with high C &rarr; perfect train accuracy, poor generalisation.</li>
+          <li><strong>High-degree poly</strong> without strong regularisation &rarr; overfit; start with degree 2&ndash;3.</li>
+          <li><strong>Expecting calibrated probs</strong> from margins &mdash; use explicit calibration.</li>
+          <li><strong>Large n</strong> with kernel SVMs &rarr; O(nÂ²&ndash;nÂ³) training; use LinearSVC/SGD or approximate
             kernels.</li>
         </ul>
       </div>
@@ -294,9 +294,9 @@ gs.fit(X_train, y_train)</code></pre>
               <h3>Start here</h3>
             </header>
             <ul class="tight">
-              <li>Text/sparse, pâ‰«n â†’ <strong>Linear</strong> (LinearSVC).</li>
-              <li>Tabular numeric, smooth boundary â†’ <strong>RBF</strong>.</li>
-              <li>Known interactions (x<sub>i</sub>x<sub>j</sub>) â†’ <strong>Poly</strong> (d=2â€“3).</li>
+              <li>Text/sparse, pâ‰«n &rarr; <strong>Linear</strong> (LinearSVC).</li>
+              <li>Tabular numeric, smooth boundary &rarr; <strong>RBF</strong>.</li>
+              <li>Known interactions (x<sub>i</sub>x<sub>j</sub>) &rarr; <strong>Poly</strong> (d=2&ndash;3).</li>
             </ul>
           </div>
           <div class="card">
@@ -304,8 +304,8 @@ gs.fit(X_train, y_train)</code></pre>
               <h3>Quick ranges</h3>
             </header>
             <ul class="tight">
-              <li><strong>C</strong>: 1e-2 â†’ 1e3 (log steps).</li>
-              <li><strong>Î³</strong> (RBF): 1e-4 â†’ 1e1 (log steps), or start with <code>'scale'</code>.</li>
+              <li><strong>C</strong>: 1e-2 &rarr; 1e3 (log steps).</li>
+              <li><strong>Î³</strong> (RBF): 1e-4 &rarr; 1e1 (log steps), or start with <code>'scale'</code>.</li>
               <li><strong>degree</strong> (poly): 2 or 3 first.</li>
             </ul>
           </div>
@@ -329,9 +329,9 @@ gs.fit(X_train, y_train)</code></pre>
     <section class="section">
       <div class="container">
         <nav class="case-pager" aria-label="Notes pagination">
-          <a class="btn btn--ghost" href="../index.html#notes">â† All notes</a>
+          <a class="btn btn--ghost" href="../index.html#notes">&larr; All notes</a>
           <div class="spacer"></div>
-          <a class="btn btn--secondary" href="queueing-cheatsheet.html">Next: Queueing Cheatsheet â†’</a>
+          <a class="btn btn--secondary" href="queueing-cheatsheet.html">Next: Queueing Cheatsheet &rarr;</a>
         </nav>
       </div>
     </section>

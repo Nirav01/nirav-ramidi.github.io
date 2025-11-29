@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Twitter-like CLI (C) â€” Case Study â€” Nirav Ramidi</title>
+  <title>Twitter-like CLI (C) &mdash; Case Study &mdash; Nirav Ramidi</title>
   <meta name="description"
     content="C command-line Twitter clone: post, follow/unfollow, top-10 news feed, delete user, and endTurn/endTwitter. Refactored from arrays to a linked-list feed; modular design and tests." />
 
@@ -32,7 +32,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi &mdash; home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -179,28 +179,28 @@
                 <header class="card__header">
                   <h3>post</h3>
                 </header>
-                <p class="card__body"><code>post &lt;user&gt; "&lt;text up to 280 chars&gt;"</code> â€” creates a tweet
+                <p class="card__body"><code>post &lt;user&gt; "&lt;text up to 280 chars&gt;"</code> &mdash; creates a tweet
                   with current <em>clock</em> as id.</p>
               </article>
               <article class="card">
                 <header class="card__header">
                   <h3>follow / unfollow</h3>
                 </header>
-                <p class="card__body"><code>follow &lt;userA&gt; &lt;userB&gt;</code> â€” A follows B.
+                <p class="card__body"><code>follow &lt;userA&gt; &lt;userB&gt;</code> &mdash; A follows B.
                   <code>unfollow</code> reverses it (no-ops are safe).</p>
               </article>
               <article class="card">
                 <header class="card__header">
                   <h3>newsfeed</h3>
                 </header>
-                <p class="card__body"><code>newsfeed &lt;user&gt;</code> â€” print up to 10 most recent tweets from user
+                <p class="card__body"><code>newsfeed &lt;user&gt;</code> &mdash; print up to 10 most recent tweets from user
                   âˆª following, newest first.</p>
               </article>
               <article class="card">
                 <header class="card__header">
                   <h3>delete</h3>
                 </header>
-                <p class="card__body"><code>delete &lt;user&gt;</code> â€” remove account and all tweets; detach from
+                <p class="card__body"><code>delete &lt;user&gt;</code> &mdash; remove account and all tweets; detach from
                   follower/following lists.</p>
               </article>
               <article class="card">
@@ -248,7 +248,7 @@
           <section class="case-section" id="lessons">
             <h2>What I learned</h2>
             <ul>
-              <li>How data-structure choice (arrays â†’ linked lists) changes complexity and simplifies edge cases.</li>
+              <li>How data-structure choice (arrays &rarr; linked lists) changes complexity and simplifies edge cases.</li>
               <li>Designing a stable CLI and separating I/O from logic improves testability.</li>
               <li>Owning memory in C requires disciplined APIs and teardown paths.</li>
             </ul>
@@ -256,9 +256,9 @@
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Case study pagination">
-            <a class="btn btn--ghost" href="huffman-compressor.html">â† Huffman Compressor</a>
+            <a class="btn btn--ghost" href="huffman-compressor.html">&larr; Huffman Compressor</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="../cloud-sre/vision-microservice.html">Next: Vision Microservice â†’</a>
+            <a class="btn btn--secondary" href="../cloud-sre/vision-microservice.html">Next: Vision Microservice &rarr;</a>
           </nav>
         </article>
       </div>

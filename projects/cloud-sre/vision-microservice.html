@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vision Microservice at Scale â€” Case Study â€” Nirav Ramidi</title>
+  <title>Vision Microservice at Scale &mdash; Case Study &mdash; Nirav Ramidi</title>
   <meta name="description"
     content="CNN-OCR microservice on Docker/Kubernetes with p95 < 300 ms at ~1k req/s and ~0.2% error in load tests. Production hardening, autoscaling, and monitoring." />
 
@@ -32,7 +32,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi &mdash; home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -85,7 +85,7 @@
           </p>
           <ul class="metrics">
             <li class="chip">FastAPI</li>
-            <li class="chip">Docker Â· K8s</li>
+            <li class="chip">Docker &middot; K8s</li>
             <li class="chip">p95 &lt; 300 ms</li>
             <li class="chip">~1k req/s</li>
             <li class="chip">~0.2% error</li>
@@ -110,9 +110,9 @@
             <dt>Role</dt>
             <dd>Junior ML Engineer</dd>
             <dt>Duration</dt>
-            <dd>Apr 2024 â€“ Sept 2024</dd>
+            <dd>Apr 2024 &ndash; Sept 2024</dd>
             <dt>Focus</dt>
-            <dd>Production CV Â· SRE Â· Performance</dd>
+            <dd>Production CV &middot; SRE &middot; Performance</dd>
             <dt>Stack</dt>
             <dd>Python, FastAPI, Docker, Kubernetes, Redis, Prometheus/Grafana</dd>
             <dt>Links</dt>
@@ -146,7 +146,7 @@
             <h2>Architecture</h2>
             <figure class="case-figure">
               <img src="../../assets/img/case-studies/vision-architecture.png"
-                alt="Gateway â†’ API â†’ Preprocess â†’ Model â†’ Postprocess â†’ Result store; autoscaling on Kubernetes"
+                alt="Gateway &rarr; API &rarr; Preprocess &rarr; Model &rarr; Postprocess &rarr; Result store; autoscaling on Kubernetes"
                 loading="lazy" />
               <figcaption>Kubernetes deployment with a gateway, stateless API, and model workers.</figcaption>
             </figure>
@@ -155,9 +155,9 @@
               <div>
                 <h3>Request path</h3>
                 <ol>
-                  <li>Client uploads image â†’ <em>Gateway</em> (ingress + auth).</li>
+                  <li>Client uploads image &rarr; <em>Gateway</em> (ingress + auth).</li>
                   <li><em>FastAPI</em> validates, normalises (de-skew, resize), and routes to model worker.</li>
-                  <li><em>Model worker</em> runs CNN text detection â†’ OCR decode â†’ post-processing.</li>
+                  <li><em>Model worker</em> runs CNN text detection &rarr; OCR decode &rarr; post-processing.</li>
                   <li>Response returns extracted fields + confidence; traces/logs pushed asynchronously.</li>
                 </ol>
               </div>
@@ -227,7 +227,7 @@
               <li><strong>Metrics:</strong> RED/USE (rate, errors, duration / utilisation, saturation, errors); per-step
                 timers.</li>
               <li><strong>Logging:</strong> structured JSON with correlation IDs; sensitive fields masked.</li>
-              <li><strong>Tracing:</strong> request spans (ingress â†’ API â†’ model â†’ store).</li>
+              <li><strong>Tracing:</strong> request spans (ingress &rarr; API &rarr; model &rarr; store).</li>
               <li><strong>Dashboards:</strong> Grafana for SLOs, error budget burn, and capacity headroom.</li>
               <li><strong>Alerts:</strong> p95 &gt; 280 ms (warning), &gt; 300 ms (page); 5xx rate; queue depth.</li>
             </ul>
@@ -256,9 +256,9 @@
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Case study pagination">
-            <a class="btn btn--ghost" href="../swe-systems/twitter-cli.html">â† Twitter-like CLI</a>
+            <a class="btn btn--ghost" href="../swe-systems/twitter-cli.html">&larr; Twitter-like CLI</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="queueing-capacity.html">Next: Queueing for Capacity Planning â†’</a>
+            <a class="btn btn--secondary" href="queueing-capacity.html">Next: Queueing for Capacity Planning &rarr;</a>
           </nav>
         </article>
       </div>

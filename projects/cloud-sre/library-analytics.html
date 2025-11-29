@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cloud-Native Library Analytics â€” Case Study â€” Nirav Ramidi</title>
+  <title>Cloud-Native Library Analytics &mdash; Case Study &mdash; Nirav Ramidi</title>
   <meta name="description"
     content="Containerised data pipeline for library operations: ingest circulation/web events, model a star schema, ship dashboards, and wire alerts for data freshness & anomalies." />
 
@@ -31,7 +31,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi â€” home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi &mdash; home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -105,11 +105,11 @@
           <h2 class="visually-hidden">Project info</h2>
           <dl class="meta-list">
             <dt>Type</dt>
-            <dd>Data Engineering Â· BI</dd>
+            <dd>Data Engineering &middot; BI</dd>
             <dt>Role</dt>
             <dd>Solo developer</dd>
             <dt>Focus</dt>
-            <dd>Ingestion Â· Modelling Â· Dashboards Â· Monitoring</dd>
+            <dd>Ingestion &middot; Modelling &middot; Dashboards &middot; Monitoring</dd>
             <dt>Stack</dt>
             <dd>Python, Docker, Airflow, dbt, Postgres/BigQuery, Metabase, Grafana/Prometheus</dd>
             <dt>Links</dt>
@@ -145,7 +145,7 @@
             <h2>Architecture</h2>
             <figure class="case-figure">
               <img src="../../assets/img/case-studies/library-analytics-architecture.png"
-                alt="Sources â†’ Airflow ingestion â†’ Staging (warehouse) â†’ dbt transforms â†’ Marts â†’ Metabase/Grafana with Prometheus alerts"
+                alt="Sources &rarr; Airflow ingestion &rarr; Staging (warehouse) &rarr; dbt transforms &rarr; Marts &rarr; Metabase/Grafana with Prometheus alerts"
                 loading="lazy" />
               <figcaption>Containerised stack: Airflow orchestrates ingestion and transformations; dashboards pull from
                 marts.</figcaption>
@@ -159,7 +159,7 @@
                 </ul>
                 <h3>Modelling</h3>
                 <ul>
-                  <li><strong>dbt</strong> models: <em>staging â†’ core â†’ marts</em> with tests (unique/not null,
+                  <li><strong>dbt</strong> models: <em>staging &rarr; core &rarr; marts</em> with tests (unique/not null,
                     referential).</li>
                   <li>Star schema facts: <em>fact_circulation</em>, <em>fact_visits</em>; dims: <em>dim_item</em>,
                     <em>dim_branch</em>, <em>dim_time</em>, <em>dim_patron</em>.</li>
@@ -240,9 +240,9 @@
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Case study pagination">
-            <a class="btn btn--ghost" href="queueing-capacity.html">â† Queueing for Capacity Planning</a>
+            <a class="btn btn--ghost" href="queueing-capacity.html">&larr; Queueing for Capacity Planning</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="../hcai-viz/hcai-experiment.html">Next: HCAI Empirical Study â†’</a>
+            <a class="btn btn--secondary" href="../hcai-viz/hcai-experiment.html">Next: HCAI Empirical Study &rarr;</a>
           </nav>
         </article>
       </div>
