@@ -117,7 +117,8 @@
             <ul>
               <li>Implement and analyse <strong>BFS/DFS</strong>, including topological sort and SCCs (Kosaraju/Tarjan).
               </li>
-              <li>Choose and justify <strong>shortest path</strong> algorithms (BFS, Dijkstra, Bellman&ndash;Ford) based on
+              <li>Choose and justify <strong>shortest path</strong> algorithms (BFS, Dijkstra, Bellman&ndash;Ford) based
+                on
                 weights.</li>
               <li>Build <strong>MSTs</strong> via Kruskal or Prim; prove correctness using cut/cycle properties.</li>
               <li>Understand <strong>max-flow min-cut</strong> and implement Edmonds&ndash;Karp at a high level.</li>
@@ -162,86 +163,7 @@
           <!-- Quick reference -->
           <section class="case-section" id="reference">
             <h2>Quick Reference</h2>
-
-            <div class="grid two">
-              <div class="card">
-                <header class="card__header">
-                  <h3>BFS / DFS complexity</h3>
-                </header>
-                <pre class="code-block"><code>Adjacency list:
-BFS/DFS      Î˜(V + E)
-Topo sort    Î˜(V + E)  (DAG)
-SCC (Kosaraju) 2 Ã— DFS</code></pre>
-                <p class="muted small">Use adjacency lists for sparse graphs; matrices cost Î˜(VÂ²).</p>
-              </div>
-              <div class="card">
-                <header class="card__header">
-                  <h3>Dijkstra (min-heap)</h3>
-                </header>
-                <pre class="code-block"><code># Non-negative weights
-Time: Î˜((V + E) log V)
-Initialise dist[s]=0; others=âˆž
-Relax via PQ (decrease-key)</code></pre>
-                <p class="muted small">For negative edges, use Bellman&ndash;Ford (Î˜(V&middot;E)) or reweight (Johnson&rsquo;s).</p>
-              </div>
-            </div>
-
-            <div class="grid two">
-              <div class="card">
-                <header class="card__header">
-                  <h3>MST properties</h3>
-                </header>
-                <pre class="code-block"><code>Cut property:
-  For any cut, the lightest edge crossing it
-  is in some MST.
-Cycle property:
-  Heaviest edge on any cycle is in no MST.</code></pre>
-                <p class="muted small">These drive correctness for Kruskal and Prim.</p>
-              </div>
-              <div class="card">
-                <header class="card__header">
-                  <h3>Edmonds&ndash;Karp (flow)</h3>
-                </header>
-                <pre class="code-block"><code>While an s&rarr;t path exists in residual graph:
-  augment by its bottleneck capacity
-Runtime: O(V&middot;EÂ²)</code></pre>
-                <p class="muted small">Gives max-flow = min-cut; use for bipartite matching too.</p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Snippets -->
-          <section class="case-section" id="snippets">
-            <h2>Code Snippets</h2>
-            <div class="grid two">
-              <div class="card">
-                <header class="card__header">
-                  <h3>Kruskal + Union&ndash;Find</h3>
-                </header>
-                <pre class="code-block"><code>parent = list(range(n))
-rank   = [0]*n
-def find(x):
-  if parent[x]!=x: parent[x]=find(parent[x])
-  return parent[x]
-def union(a,b):
-  ra, rb = find(a), find(b)
-  if ra==rb: return False
-  if rank[ra]<rank[rb]: parent[ra]=rb
-  elif rank[rb]<rank[ra]: parent[rb]=ra
-  else: parent[rb]=ra; rank[ra]+=1
-  return True
-
-mst, cost = [], 0
-for w,u,v in sorted(edges):  # edges as (w,u,v)
-  if union(u,v): mst.append((u,v,w)); cost += w</code></pre>
-                <p class="muted small">Runtime Î˜(E log E) from sorting; union&ndash;find is near-constant (Î±(V)).</p>
-              </div>
-
-              <div class="card">
-                <header class="card__header">
-                  <h3>Topological Sort (Kahn)</h3>
-                </header>
-                <pre class="code-block"><code>in_deg = {v:0 for v in V}
+            <pre class="code-block"><code>in_deg = {v:0 for v in V}
 for (u,v) in E: in_deg[v]+=1
 Q = [v for v in V if in_deg[v]==0]
 order = []
@@ -252,38 +174,38 @@ while Q:
     in_deg[v]-=1
     if in_deg[v]==0: Q.append(v)
 # if len(order) &lt; |V| &rarr; cycle</code></pre>
-                <p class="muted small">Use a queue for BFS-like processing; works only on DAGs.</p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Artefacts -->
-          <section class="case-section" id="artifacts">
-            <h2>Selected Artefacts</h2>
-            <ul class="list">
-              <li><a href="01_intro.pdf">Lecture 1 &mdash; Graph Algorithms introduction</a></li>
-              <li><a href="assignment_updated.pdf">Assignment &mdash; Updated brief and exercises</a></li>
-            </ul>
-          </section>
-
-          <!-- Takeaways -->
-          <section class="case-section" id="learnings">
-            <h2>Key Takeaways</h2>
-            <ul class="checklist">
-              <li>Pick algorithms to match constraints: weights, negatives, DAG structure, density.</li>
-              <li>Data structures (heaps, DSU) often decide whether you hit <em>Î˜(V+E)</em> or worse.</li>
-              <li>Cut/cycle properties are powerful tools for proving correctness on MST problems.</li>
-            </ul>
-          </section>
-
-          <!-- Footer nav -->
-          <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="algorithms.html">&larr; Algorithms</a>
-            <div class="spacer"></div>
-            <a class="btn btn--secondary" href="optimisation.html">Next: Optimisation &rarr;</a>
-          </nav>
-        </article>
+            <p class="muted small">Use a queue for BFS-like processing; works only on DAGs.</p>
       </div>
+      </div>
+    </section>
+
+    <!-- Artefacts -->
+    <section class="case-section" id="artifacts">
+      <h2>Selected Artefacts</h2>
+      <ul class="list">
+        <li><a href="01_intro.pdf">Lecture 1 &mdash; Graph Algorithms introduction</a></li>
+        <li><a href="assignment_updated.pdf">Assignment &mdash; Updated brief and exercises</a></li>
+      </ul>
+    </section>
+
+    <!-- Takeaways -->
+    <section class="case-section" id="learnings">
+      <h2>Key Takeaways</h2>
+      <ul class="checklist">
+        <li>Pick algorithms to match constraints: weights, negatives, DAG structure, density.</li>
+        <li>Data structures (heaps, DSU) often decide whether you hit <em>&Theta;(V+E)</em> or worse.</li>
+        <li>Cut/cycle properties are powerful tools for proving correctness on MST problems.</li>
+      </ul>
+    </section>
+
+    <!-- Footer nav -->
+    <nav class="case-pager" aria-label="Module pagination">
+      <a class="btn btn--ghost" href="algorithms.html">&larr; Algorithms</a>
+      <div class="spacer"></div>
+      <a class="btn btn--secondary" href="optimisation.html">Next: Optimisation &rarr;</a>
+    </nav>
+    </article>
+    </div>
     </section>
   </main>
 

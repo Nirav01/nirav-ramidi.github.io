@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Queueing for Capacity Planning &mdash; Case Study &mdash; Nirav Ramidi</title>
   <meta name="description"
-    content="Applied queueing theory (M/D/1, M/M/1/n, M/M/K with Erlang-C) to size DB connection pools and service clusters to meet W â‰¤ 1 s while minimising cost." />
+    content="Applied queueing theory (M/D/1, M/M/1/n, M/M/K with Erlang-C) to size DB connection pools and service clusters to meet W ≤ 1 s while minimising cost." />
 
   <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../../assets/css/main.css" />
@@ -78,14 +78,14 @@
           <h1>Queueing for Capacity Planning</h1>
           <p class="lead">
             Modelled API/DB capacity using <strong>M/D/1</strong>, <strong>M/M/1/n</strong>, and <strong>M/M/K</strong>
-            (<strong>Erlang-C</strong>) to size resources for a target <strong>W â‰¤ 1&nbsp;s</strong> while keeping
+            (<strong>Erlang-C</strong>) to size resources for a target <strong>W ≤ 1&nbsp;s</strong> while keeping
             utilisation high.
           </p>
           <ul class="metrics">
-            <li class="chip">W â‰¤ 1 s target</li>
+            <li class="chip">W ≤ 1 s target</li>
             <li class="chip">M/M/K + Erlang-C</li>
             <li class="chip">Loss vs Delay trade-off</li>
-            <li class="chip">Stability Ï &lt; 1</li>
+            <li class="chip">Stability ρ &lt; 1</li>
           </ul>
         </div>
         <figure class="case-hero__media">
@@ -126,7 +126,7 @@
             <h2>Problem &amp; Goals</h2>
             <p>
               We needed to determine how many parallel service slots (e.g., DB connections, app replicas, or VMs) are
-              required to keep mean <strong>queueing delay â‰¤ 1 s</strong> under varying load, and to understand the
+              required to keep mean <strong>queueing delay ≤ 1 s</strong> under varying load, and to understand the
               trade-off between <em>blocking</em> (finite buffers) and <em>waiting</em>.
             </p>
             <ul>
@@ -145,23 +145,25 @@
               <div>
                 <h3>Definitions</h3>
                 <ul>
-                  <li>Î» &mdash; arrival rate (req/s); Î¼ &mdash; service rate per server (1/s).</li>
-                  <li>Ï = Î» / (K&middot;Î¼) &mdash; utilisation per server bank (must be &lt; 1 for stability).</li>
+                  <li>λ &mdash; arrival rate (req/s); μ &mdash; service rate per server (1/s).</li>
+                  <li>ρ = λ / (K&middot;μ) &mdash; utilisation per server bank (must be &lt; 1 for stability).</li>
                   <li>W &mdash; mean waiting time in queue; N<sub>q</sub> &mdash; mean # in queue.</li>
                 </ul>
               </div>
               <div>
                 <h3>Erlang-C (M/M/K)</h3>
                 <p class="muted small">
-                  Probability of wait: C(K,Ï) = [ ( (K&middot;Ï)^K / (K!&middot;(1&minus;Ï)) ) ] / [ Î£_{i=0}^{K&minus;1} (K&middot;Ï)^i/i! +
-                  ( (K&middot;Ï)^K / (K!&middot;(1&minus;Ï)) ) ].
-                  Then <strong>W = C(K,Ï) / (K&middot;Î¼ &minus; Î»)</strong>, and N<sub>q</sub> = Î»&middot;W.
+                  Probability of wait: C(K,ρ) = [ ( (K&middot;ρ)^K / (K!&middot;(1&minus;ρ)) ) ] / [
+                  Î£_{i=0}^{K&minus;1} (K&middot;ρ)^i/i! +
+                  ( (K&middot;ρ)^K / (K!&middot;(1&minus;ρ)) ) ].
+                  Then <strong>W = C(K,ρ) / (K&middot;μ &minus; λ)</strong>, and N<sub>q</sub> = λ&middot;W.
                 </p>
               </div>
             </div>
             <p class="muted small">
-              For M/M/1: W = Ï / (Î¼ &minus; Î»). For M/D/1: W &approx; Ï / (2&middot;(Î¼ &minus; Î»)) (deterministic service halves the
-              waiting vs M/M/1 at same Ï).
+              For M/M/1: W = ρ / (μ &minus; λ). For M/D/1: W &approx; ρ / (2&middot;(μ &minus; λ)) (deterministic
+              service halves the
+              waiting vs M/M/1 at same ρ).
               For M/M/1/n: use Erlang-B/C variants to model blocking probability and effective arrival rate.
             </p>
           </section>
@@ -175,9 +177,9 @@
                   <h3>M/D/1 &mdash; DB call with constant service</h3>
                 </header>
                 <p class="card__body">
-                  Service time <strong>65 ms</strong> &rarr; Î¼ &approx; <strong>15.38 req/s</strong>. Sweep Î» from
+                  Service time <strong>65 ms</strong> &rarr; μ &approx; <strong>15.38 req/s</strong>. Sweep λ from
                   8.33&rarr;14.29 req/s (120&rarr;70 ms inter-arrival).
-                  Observe the sharp rise of W as Ï&rarr;1, but lower than M/M/1 due to deterministic service.
+                  Observe the sharp rise of W as ρ&rarr;1, but lower than M/M/1 due to deterministic service.
                 </p>
               </article>
               <article class="card">
@@ -185,8 +187,8 @@
                   <h3>M/M/1 &mdash; Exponential service</h3>
                 </header>
                 <p class="card__body">
-                  Service time <strong>52 ms</strong> &rarr; Î¼ &approx; <strong>19.23 req/s</strong>. Same Î» sweep.
-                  Find Î» where <strong>W &approx; service time</strong>&mdash;useful knee for alerting.
+                  Service time <strong>52 ms</strong> &rarr; μ &approx; <strong>19.23 req/s</strong>. Same λ sweep.
+                  Find λ where <strong>W &approx; service time</strong>&mdash;useful knee for alerting.
                 </p>
               </article>
               <article class="card">
@@ -204,21 +206,22 @@
                   <h3>M/M/K &mdash; Parallel servers</h3>
                 </header>
                 <p class="card__body">
-                  Mean service <strong>83 ms</strong> &rarr; Î¼ &approx; <strong>12.05 req/s</strong>. Vary <strong>K</strong>
+                  Mean service <strong>83 ms</strong> &rarr; μ &approx; <strong>12.05 req/s</strong>. Vary
+                  <strong>K</strong>
                   (e.g., 4, 6, 8, 10)
-                  and sweep Î». Compute Erlang-C &rarr; <strong>W</strong> and <strong>N<sub>q</sub></strong> to find the
-                  smallest K with W â‰¤ 1 s.
+                  and sweep ρ. Compute Erlang-C &rarr; <strong>W</strong> and <strong>N<sub>q</sub></strong> to find the
+                  smallest K with W ≤ 1 s.
                 </p>
               </article>
               <article class="card">
                 <header class="card__header">
-                  <h3>Cluster sizing &mdash; â€œBankâ€ case</h3>
+                  <h3>Cluster sizing &mdash; “Bank” case</h3>
                 </header>
                 <p class="card__body">
-                  16 VMs, service time <strong>316 ms</strong> &rarr; Î¼ &approx; <strong>3.16 req/s</strong> each. Check
-                  capacity at Î» = 10&rarr;50 req/s
+                  16 VMs, service time <strong>316 ms</strong> &rarr; μ &approx; <strong>3.16 req/s</strong> each. Check
+                  capacity at λ = 10&rarr;50 req/s
                   and for daily volume ~420k. Evaluate doubling to <strong>K=32</strong> and note diminishing returns as
-                  Ï decreases.
+                  ρ decreases.
                 </p>
               </article>
             </div>
@@ -240,15 +243,16 @@
             <figure class="case-figure">
               <img src="../../assets/img/case-studies/queueing-mmk-erlangc.png"
                 alt="Erlang-C heatmap of W across K and arrival rates" loading="lazy" />
-              <figcaption>M/M/K with Erlang-C: identify the smallest K that holds W â‰¤ 1 s across expected peak Î».
+              <figcaption>M/M/K with Erlang-C: identify the smallest K that holds W ≤ 1 s across expected peak ρ.
               </figcaption>
             </figure>
             <ul class="checklist">
-              <li><strong>DB pool sizing:</strong> K=8 held W â‰¤ 1 s up to ~95 req/s; K=6 borderline near peak; K=10
+              <li><strong>DB pool sizing:</strong> K=8 held W ≤ 1 s up to ~95 req/s; K=6 borderline near peak; K=10
                 added headroom.</li>
-              <li><strong>Cluster case:</strong> K=16 sufficed to ~40&ndash;45 req/s; K=32 improved headroom but with lower
-                efficiency at Î»=50 req/s.</li>
-              <li>For single-server cases, the â€œkneeâ€ where W&approx;service time marked the alerting threshold.</li>
+              <li><strong>Cluster case:</strong> K=16 sufficed to ~40&ndash;45 req/s; K=32 improved headroom but with
+                lower
+                efficiency at ρ=50 req/s.</li>
+              <li>For single-server cases, the “knee” where W≈service time marked the alerting threshold.</li>
             </ul>
           </section>
 
@@ -257,12 +261,13 @@
             <h2>Sensitivity &amp; Rules of Thumb</h2>
             <ul>
               <li><strong>Variability matters:</strong> deterministic service (M/D/1) halves queueing vs M/M/1 near the
-                same Ï.</li>
-              <li><strong>Ï drives everything:</strong> as Ï&rarr;1, W explodes; keep planned Ï â‰¤ 0.7&ndash;0.8 at peak
+                same ρ.</li>
+              <li><strong>ρ drives everything:</strong> as ρ&rarr;1, W explodes; keep planned ρ ≤ 0.7&ndash;0.8 at
+                peak
                 for headroom.</li>
               <li><strong>Parallelism beats buffers</strong> for latency SLOs; buffers primarily trade off loss vs
                 delay.</li>
-              <li><strong>Scaling rule (heuristic):</strong> doubling K and Î» often holds similar W until coordination
+              <li><strong>Scaling rule (heuristic):</strong> doubling K and ρ often holds similar W until coordination
                 overheads kick in.</li>
             </ul>
           </section>
@@ -271,9 +276,9 @@
           <section class="case-section" id="recs">
             <h2>Recommendations</h2>
             <ul class="checklist">
-              <li>Adopt <strong>M/M/K</strong> model for pool sizing with a target <strong>W â‰¤ 1 s</strong>; verify
+              <li>Adopt <strong>M/M/K</strong> model for pool sizing with a target <strong>W ≤ 1 s</strong>; verify
                 with load tests.</li>
-              <li>Alert when estimated <strong>Ï &gt; 0.8</strong> or when <strong>Erlang-C</strong> predicts C(K,Ï)
+              <li>Alert when estimated <strong>ρ &gt; 0.8</strong> or when <strong>Erlang-C</strong> predicts C(K,ρ)
                 &gt; 0.3.</li>
               <li>Prefer adding servers (K) over deepening buffers for interactive paths.</li>
               <li>Document input distributions; if service is closer to deterministic, claim extra headroom vs M/M/1
@@ -283,7 +288,7 @@
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Case study pagination">
-            <a class="btn btn--ghost" href="vision-microservice.html">&larr; Vision Microservice</a>
+            <a class="btn btn--ghost" href="vision-microservice.html">&larr; Vision Microservice</a>
             <div class="spacer"></div>
             <a class="btn btn--secondary" href="library-analytics.html">Next: Cloud-Native Library Analytics &rarr;</a>
           </nav>

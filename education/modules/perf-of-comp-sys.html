@@ -120,139 +120,44 @@
           <section class="case-section" id="outcomes">
             <h2>Learning Outcomes</h2>
             <ul>
-              <li>Model systems with <strong>M/M/1</strong>, <strong>M/D/1</strong>, <strong>M/M/1/K</strong>, and
-                <strong>M/M/K</strong> (Erlang-C).</li>
-              <li>Translate <strong>arrival</strong> and <strong>service</strong> rates into latency predictions and
-                back.</li>
-              <li>Design experiments: choose representative workloads and avoid <strong>benchmarking traps</strong>.
-              </li>
-              <li>Set and validate <strong>SLOs</strong> (e.g., â€œp95 &lt; 300 msâ€) with proper <strong>SLIs</strong>
-                and alerting.</li>
-              <li>Use results to make <strong>capacity</strong> and <strong>cost</strong> trade-offs.</li>
-            </ul>
-          </section>
-
-          <!-- Topics -->
-          <section class="case-section" id="topics">
-            <h2>Indicative Topics</h2>
-            <div class="grid cards">
-              <article class="card">
-                <header class="card__header">
-                  <h3>Workloads &amp; Metrics</h3>
-                </header>
-                <p class="card__body">Open vs closed workloads, arrival processes, latency distributions, tail
-                  percentiles, throughput and utilisation.</p>
-              </article>
-              <article class="card">
-                <header class="card__header">
-                  <h3>Queueing Basics</h3>
-                </header>
-                <p class="card__body">Little&rsquo;s Law, stability Ï&lt;1, response vs waiting time, parallel servers and
-                  Erlang-C.</p>
-              </article>
-              <article class="card">
-                <header class="card__header">
-                  <h3>Benchmarking</h3>
-                </header>
-                <p class="card__body">Warm-up, steady-state, Coordinated Omission, resource saturation, reproducibility.
-                </p>
-              </article>
-              <article class="card">
-                <header class="card__header">
-                  <h3>SLOs &amp; Capacity</h3>
-                </header>
-                <p class="card__body">Pick percentiles, budget queueing delay, pick <em>K</em> servers to meet latency
-                  targets with headroom.</p>
-              </article>
-            </div>
-          </section>
-
-          <!-- Quick reference -->
-          <section class="case-section" id="reference">
-            <h2>Quick Reference</h2>
-            <div class="grid two">
-              <div class="card">
-                <header class="card__header">
-                  <h3>Little&rsquo;s Law</h3>
-                </header>
-                <pre class="code-block"><code>L = Î» &middot; W
-Lq = Î» &middot; Wq</code></pre>
-                <p class="muted small">Holds for stable systems; sanity-check your measurements with it.</p>
-              </div>
-              <div class="card">
-                <header class="card__header">
-                  <h3>M/M/1 formulas</h3>
-                </header>
-                <pre class="code-block"><code>Ï  = Î» / Î¼          (Ï &lt; 1)
-W  = 1 / (Î¼ &minus; Î»)
-Wq = Ï / (Î¼ &minus; Î»)</code></pre>
-                <p class="muted small">As Ï &rarr; 1, queueing explodes; keep planned peaks â‰¤ 0.7&ndash;0.8.</p>
-              </div>
-            </div>
-
-            <div class="grid two">
-              <div class="card">
-                <header class="card__header">
-                  <h3>Erlang-C (M/M/K)</h3>
-                </header>
-                <pre class="code-block"><code>a = Î»/Î¼,  Ï = a/K
-Pwait = [ (a^K / K!) &middot; (K / (K &minus; a)) ]
-        / [ Î£_{i=0}^{K&minus;1} (a^i / i!) + (a^K / K!) &middot; (K / (K &minus; a)) ]
-Wq    = Pwait / (K&middot;Î¼ &minus; Î»)
-W     = Wq + 1/Î¼</code></pre>
-                <p class="muted small">Use to size replicas K for a target W (e.g., p50 budget) with headroom.</p>
-              </div>
-              <div class="card">
-                <header class="card__header">
-                  <h3>Rules of thumb</h3>
-                </header>
-                <ul class="tight">
-                  <li>Parallelism beats buffering for latency SLOs.</li>
-                  <li>Stabilise service time: variance drives queueing.</li>
-                  <li>Alert near the â€œkneeâ€: W &approx; service time.</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <!-- Lab snippet -->
-          <section class="case-section" id="labs">
-            <h2>Lab Snippet &mdash; Simple Load Test</h2>
-            <pre class="code-block"><code># Using 'hey' (Go HTTP load generator)
+              <section class="case-section" id="labs">
+                <h2>Lab Snippet &mdash; Simple Load Test</h2>
+                <pre class="code-block"><code># Using 'hey' (Go HTTP load generator)
 hey -z 60s -q 0 -c 64 -m GET https://localhost:8080/api
 
 # Using wrk
 wrk -t8 -c128 -d60s --latency https://localhost:8080/api</code></pre>
-            <p class="muted small">Warm up the system first; capture percentiles and CPU/memory/I/O metrics alongside
-              RPS.</p>
-          </section>
+                <p class="muted small">Warm up the system first; capture percentiles and CPU/memory/I/O metrics
+                  alongside
+                  RPS.</p>
+              </section>
 
-          <!-- Practicals -->
-          <section class="case-section" id="artifacts">
-            <h2>Selected Practicals</h2>
-            <ul class="list">
-              <li><a href="PerfEng-Pract-1-2025.pdf">Practical 1 &mdash; Queueing models &amp; headroom</a></li>
-              <li><a href="PerfEng-Pract-2-2025.pdf">Practical 2 &mdash; Load testing &amp; SLO validation</a></li>
-              <li><a href="40010-jan2025-intro.pdf">Slides &mdash; Course introduction</a></li>
-            </ul>
-          </section>
+              <!-- Practicals -->
+              <section class="case-section" id="artifacts">
+                <h2>Selected Practicals</h2>
+                <ul class="list">
+                  <li><a href="PerfEng-Pract-1-2025.pdf">Practical 1 &mdash; Queueing models &amp; headroom</a></li>
+                  <li><a href="PerfEng-Pract-2-2025.pdf">Practical 2 &mdash; Load testing &amp; SLO validation</a></li>
+                  <li><a href="40010-jan2025-intro.pdf">Slides &mdash; Course introduction</a></li>
+                </ul>
+              </section>
 
-          <!-- Takeaways -->
-          <section class="case-section" id="learnings">
-            <h2>Key Takeaways</h2>
-            <ul class="checklist">
-              <li>Use models to <em>predict</em> and experiments to <em>verify</em> under real workloads.</li>
-              <li>Design to percentiles, not averages; tails drive user experience.</li>
-              <li>Keep utilisation modest at peak; small headroom prevents big tail spikes.</li>
-            </ul>
-          </section>
+              <!-- Takeaways -->
+              <section class="case-section" id="learnings">
+                <h2>Key Takeaways</h2>
+                <ul class="checklist">
+                  <li>Use models to <em>predict</em> and experiments to <em>verify</em> under real workloads.</li>
+                  <li>Design to percentiles, not averages; tails drive user experience.</li>
+                  <li>Keep utilisation modest at peak; small headroom prevents big tail spikes.</li>
+                </ul>
+              </section>
 
-          <!-- Footer nav -->
-          <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="cloud-comp.html">&larr; Cloud Computing</a>
-            <div class="spacer"></div>
-            <a class="btn btn--secondary" href="operating-systems.html">Next: Intro to Operating Systems &rarr;</a>
-          </nav>
+              <!-- Footer nav -->
+              <nav class="case-pager" aria-label="Module pagination">
+                <a class="btn btn--ghost" href="cloud-comp.html">&larr; Cloud Computing</a>
+                <div class="spacer"></div>
+                <a class="btn btn--secondary" href="operating-systems.html">Next: Intro to Operating Systems &rarr;</a>
+              </nav>
         </article>
       </div>
     </section>

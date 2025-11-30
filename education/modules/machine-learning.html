@@ -120,7 +120,8 @@
               <li>Build end-to-end ML pipelines: preprocessing &rarr; model &rarr; evaluation &rarr; iteration.</li>
               <li>Choose appropriate models for regression/classification and justify trade-offs.</li>
               <li>Apply <strong>cross-validation</strong>, avoid leakage, and report calibrated metrics.</li>
-              <li>Explain <strong>bias&ndash;variance</strong> and effects of <strong>L1/L2</strong> regularisation.</li>
+              <li>Explain <strong>bias&ndash;variance</strong> and effects of <strong>L1/L2</strong> regularisation.
+              </li>
               <li>Use <strong>PCA</strong> for dimensionality reduction and <strong>clustering</strong> for structure
                 discovery.</li>
             </ul>
@@ -163,32 +164,17 @@
 
           <!-- Quick reference -->
           <section class="case-section" id="reference">
-            <h2>Quick Reference</h2>
-            <div class="grid two">
-              <div class="card">
-                <header class="card__header">
-                  <h3>Regularised risk</h3>
-                </header>
-                <pre class="code-block"><code>min_w  (1/n) Î£ L(y_i, f_w(x_i)) + Î» ||w||â‚š
-p = 2 &rarr; Ridge,  p = 1 &rarr; Lasso</code></pre>
-                <p class="muted small">Î» controls bias&ndash;variance trade-off; scale features before fitting.</p>
-              </div>
-              <div class="card">
-                <header class="card__header">
-                  <h3>Confusion matrix (binary)</h3>
-                </header>
-                <pre class="code-block"><code>Precision = TP / (TP + FP)
-Recall    = TP / (TP + FN)
-F1        = 2 &middot; (P&middot;R) / (P + R)</code></pre>
-                <p class="muted small">Prefer macro-averages for class imbalance.</p>
-              </div>
-            </div>
-          </section>
+            Recall = TP / (TP + FN)
+            F1 = 2 &middot; (P&middot;R) / (P + R)</code></pre>
+            <p class="muted small">Prefer macro-averages for class imbalance.</p>
+      </div>
+      </div>
+    </section>
 
-          <!-- Lab snippet -->
-          <section class="case-section" id="labs">
-            <h2>Lab Snippet &mdash; scikit-learn Pipeline</h2>
-            <pre class="code-block"><code>from sklearn.pipeline import Pipeline
+    <!-- Lab snippet -->
+    <section class="case-section" id="labs">
+      <h2>Lab Snippet &mdash; scikit-learn Pipeline</h2>
+      <pre class="code-block"><code>from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import StratifiedKFold, GridSearchCV
 from sklearn.svm import SVC
@@ -206,38 +192,38 @@ param_grid = {
 cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 gs = GridSearchCV(pipe, param_grid, cv=cv, scoring="f1_macro", n_jobs=-1)
 gs.fit(X_train, y_train)</code></pre>
-          </section>
+    </section>
 
-          <!-- Assessment artifacts -->
-          <section class="case-section" id="artifacts">
-            <h2>Selected Artefacts</h2>
-            <ul class="list">
-              <li><a href="01%20-%20Introduction-to-ML.pdf">Lecture 1 &mdash; Introduction to ML</a></li>
-              <li><a href="ml-Schedule-of-lectures-assessments.pdf">Schedule &mdash; lectures &amp; assessments</a></li>
-              <li><a href="2024-ML-Programming-Assignment-instructions.pdf">Programming Assignment &mdash; instructions</a>
-              </li>
-            </ul>
-          </section>
+    <!-- Assessment artifacts -->
+    <section class="case-section" id="artifacts">
+      <h2>Selected Artefacts</h2>
+      <ul class="list">
+        <li><a href="01%20-%20Introduction-to-ML.pdf">Lecture 1 &mdash; Introduction to ML</a></li>
+        <li><a href="ml-Schedule-of-lectures-assessments.pdf">Schedule &mdash; lectures &amp; assessments</a></li>
+        <li><a href="2024-ML-Programming-Assignment-instructions.pdf">Programming Assignment &mdash; instructions</a>
+        </li>
+      </ul>
+    </section>
 
-          <!-- What I learned -->
-          <section class="case-section" id="learnings">
-            <h2>Key Takeaways</h2>
-            <ul class="checklist">
-              <li>Clean splits and leakage prevention matter more than fancy models.</li>
-              <li>Metrics must match the business goal; PR-AUC can beat ROC-AUC under heavy imbalance.</li>
-              <li>Scaling + regularisation stabilise optimisation and improve generalisation.</li>
-              <li>Simple baselines (logistic regression) are strong and interpretable; use them first.</li>
-            </ul>
-          </section>
+    <!-- What I learned -->
+    <section class="case-section" id="learnings">
+      <h2>Key Takeaways</h2>
+      <ul class="checklist">
+        <li>Clean splits and leakage prevention matter more than fancy models.</li>
+        <li>Metrics must match the business goal; PR-AUC can beat ROC-AUC under heavy imbalance.</li>
+        <li>Scaling + regularisation stabilise optimisation and improve generalisation.</li>
+        <li>Simple baselines (logistic regression) are strong and interpretable; use them first.</li>
+      </ul>
+    </section>
 
-          <!-- Footer nav -->
-          <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="optimisation.html">&larr; Optimisation</a>
-            <div class="spacer"></div>
-            <a class="btn btn--secondary" href="data-mining.html">Next: Data Mining &rarr;</a>
-          </nav>
-        </article>
-      </div>
+    <!-- Footer nav -->
+    <nav class="case-pager" aria-label="Module pagination">
+      <a class="btn btn--ghost" href="optimisation.html">&larr; Optimisation</a>
+      <div class="spacer"></div>
+      <a class="btn btn--secondary" href="data-mining.html">Next: Data Mining &rarr;</a>
+    </nav>
+    </article>
+    </div>
     </section>
   </main>
 

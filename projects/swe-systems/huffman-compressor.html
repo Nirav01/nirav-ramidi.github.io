@@ -135,7 +135,7 @@
             <ul>
               <li>File format with <strong>self-contained header</strong> (code lengths) for decoder reconstruction.
               </li>
-              <li>Support full 8-bit byte alphabet (Ïƒ â‰¤ 256) and arbitrary binary input.</li>
+              <li>Support full 8-bit byte alphabet (σ ≤ 256) and arbitrary binary input.</li>
               <li>Provide a <strong>CLI</strong> with helpful errors and progress stats.</li>
             </ul>
           </section>
@@ -152,7 +152,7 @@
                   <li>Pop two, merge to parent with sum freq, push back &mdash; repeat.</li>
                   <li>Derive code lengths from root-to-leaf depths.</li>
                 </ol>
-                <p class="muted small">Time: O(Ïƒ log Ïƒ + n) with Ïƒâ‰¤256 â‡’ effectively O(n). Space: O(Ïƒ).</p>
+                <p class="muted small">Time: O(σ log σ + n) with σ ≤ 256 ⇒ effectively O(n). Space: O(σ).</p>
               </div>
               <div>
                 <h3>Canonicalisation</h3>
@@ -186,7 +186,7 @@
                 </header>
                 <p class="card__body">
                   Magic bytes, version, <strong>256 code lengths</strong> (0..maxLen), and <em>payloadBits</em>.
-                  Decoder rebuilds canonical codes from lengths; zero length â‡’ symbol absent.
+                  Decoder rebuilds canonical codes from lengths; zero length ⇒ symbol absent.
                 </p>
               </article>
               <article class="card">
@@ -247,7 +247,7 @@
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Case study pagination">
-            <a class="btn btn--ghost" href="java-marketplace.html">&larr; Java Marketplace</a>
+            <a class="btn btn--ghost" href="java-marketplace.html">&larr; Java Marketplace</a>
             <div class="spacer"></div>
             <a class="btn btn--secondary" href="twitter-cli.html">Next: Twitter-like CLI &rarr;</a>
           </nav>

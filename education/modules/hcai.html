@@ -167,32 +167,16 @@
 
           <!-- Quick reference -->
           <section class="case-section" id="reference">
-            <h2>Quick Reference</h2>
-            <div class="grid two">
-              <div class="card">
-                <header class="card__header">
-                  <h3>SUS scoring</h3>
-                </header>
-                <pre class="code-block"><code>For items 1,3,5,7,9:   score = x - 1
-For items 2,4,6,8,10:  score = 5 - x
-SUS = 2.5 Ã— Î£ scores   (range 0&ndash;100)</code></pre>
-                <p class="muted small">Report mean Â± CI; beware ceiling effects. Pair with task success/time.</p>
-              </div>
-              <div class="card">
-                <header class="card__header">
-                  <h3>NASA-TLX (raw)</h3>
-                </header>
-                <pre class="code-block"><code>Dimensions: Mental, Physical, Temporal, Performance, Effort, Frustration
-Score = mean of 6 ratings (0&ndash;100)  // weighting optional</code></pre>
-                <p class="muted small">Lower is better for workload; complement with qualitative notes.</p>
-              </div>
-            </div>
-          </section>
+            Score = mean of 6 ratings (0&ndash;100) // weighting optional</code></pre>
+            <p class="muted small">Lower is better for workload; complement with qualitative notes.</p>
+      </div>
+      </div>
+    </section>
 
-          <!-- Instrumentation snippet -->
-          <section class="case-section" id="instrumentation">
-            <h2>Instrumentation &mdash; Minimal Logger</h2>
-            <pre class="code-block"><code>// Client-side event logger (pseudo)
+    <!-- Instrumentation snippet -->
+    <section class="case-section" id="instrumentation">
+      <h2>Instrumentation &mdash; Minimal Logger</h2>
+      <pre class="code-block"><code>// Client-side event logger (pseudo)
 const log = (type, payload) => fetch("/log", {
   method: "POST",
   headers: {"Content-Type":"application/json"},
@@ -202,37 +186,37 @@ const log = (type, payload) => fetch("/log", {
 });
 // Example: decision taken
 log("decision", {model_ver, input_hash, output, confidence});</code></pre>
-            <p class="muted small">Use pseudonymous IDs; avoid storing raw PII. Document fields in a data sheet.</p>
-          </section>
+      <p class="muted small">Use pseudonymous IDs; avoid storing raw PII. Document fields in a data sheet.</p>
+    </section>
 
-          <!-- Artefacts -->
-          <section class="case-section" id="artifacts">
-            <h2>Selected Artefacts</h2>
-            <ul class="list">
-              <li><a href="L1%20introduction.pdf">Lecture 1 &mdash; Introduction to HCAI</a></li>
-              <li><a href="Coursework%20-%20empirical%20study.pdf">Coursework &mdash; Empirical Study brief</a></li>
-              <li><a href="HCAI%20essay.pdf">Essay &mdash; Human-Centred AI (submitted)</a></li>
-            </ul>
-          </section>
+    <!-- Artefacts -->
+    <section class="case-section" id="artifacts">
+      <h2>Selected Artefacts</h2>
+      <ul class="list">
+        <li><a href="L1%20introduction.pdf">Lecture 1 &mdash; Introduction to HCAI</a></li>
+        <li><a href="Coursework%20-%20empirical%20study.pdf">Coursework &mdash; Empirical Study brief</a></li>
+        <li><a href="HCAI%20essay.pdf">Essay &mdash; Human-Centred AI (submitted)</a></li>
+      </ul>
+    </section>
 
-          <!-- Takeaways -->
-          <section class="case-section" id="learnings">
-            <h2>Key Takeaways</h2>
-            <ul class="checklist">
-              <li>Clarity and recourse often matter more than raw model accuracy for user outcomes.</li>
-              <li>Trust is calibrated by honest uncertainty and reversible actions, not persuasion.</li>
-              <li>Measure with purpose: pick metrics that reflect the decision context.</li>
-            </ul>
-          </section>
+    <!-- Takeaways -->
+    <section class="case-section" id="learnings">
+      <h2>Key Takeaways</h2>
+      <ul class="checklist">
+        <li>Clarity and recourse often matter more than raw model accuracy for user outcomes.</li>
+        <li>Trust is calibrated by honest uncertainty and reversible actions, not persuasion.</li>
+        <li>Measure with purpose: pick metrics that reflect the decision context.</li>
+      </ul>
+    </section>
 
-          <!-- Footer nav -->
-          <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="info-vis.html">&larr; Information Visualisation</a>
-            <div class="spacer"></div>
-            <a class="btn btn--secondary" href="cloud-computing.html">Next: Cloud Computing &rarr;</a>
-          </nav>
-        </article>
-      </div>
+    <!-- Footer nav -->
+    <nav class="case-pager" aria-label="Module pagination">
+      <a class="btn btn--ghost" href="info-vis.html">&larr; Information Visualisation</a>
+      <div class="spacer"></div>
+      <a class="btn btn--secondary" href="cloud-computing.html">Next: Cloud Computing &rarr;</a>
+    </nav>
+    </article>
+    </div>
     </section>
   </main>
 

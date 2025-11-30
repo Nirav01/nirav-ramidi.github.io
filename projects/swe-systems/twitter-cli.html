@@ -147,8 +147,9 @@
               <div>
                 <h3>Structs</h3>
                 <ul>
-                  <li><code>Tweet</code>: <em>id</em> (monotonic timestamp), <em>text</em> (â‰¤280), <em>username</em>,
-                    <em>*next</em></li>
+                  <li><code>Tweet</code>: <em>id</em> (monotonic timestamp), <em>text</em> (≤280), <em>username</em>,
+                    <em>*next</em>
+                  </li>
                   <li><code>User</code>: <em>username</em>, <em>followers</em>, <em>following</em>, <em>tweets</em>
                     (head ptr)</li>
                   <li><code>TwitterSystem</code>: dynamic arrays (users), global <em>clock</em>, temp buffers</li>
@@ -179,7 +180,8 @@
                 <header class="card__header">
                   <h3>post</h3>
                 </header>
-                <p class="card__body"><code>post &lt;user&gt; "&lt;text up to 280 chars&gt;"</code> &mdash; creates a tweet
+                <p class="card__body"><code>post &lt;user&gt; "&lt;text up to 280 chars&gt;"</code> &mdash; creates a
+                  tweet
                   with current <em>clock</em> as id.</p>
               </article>
               <article class="card">
@@ -187,20 +189,23 @@
                   <h3>follow / unfollow</h3>
                 </header>
                 <p class="card__body"><code>follow &lt;userA&gt; &lt;userB&gt;</code> &mdash; A follows B.
-                  <code>unfollow</code> reverses it (no-ops are safe).</p>
+                  <code>unfollow</code> reverses it (no-ops are safe).
+                </p>
               </article>
               <article class="card">
                 <header class="card__header">
                   <h3>newsfeed</h3>
                 </header>
-                <p class="card__body"><code>newsfeed &lt;user&gt;</code> &mdash; print up to 10 most recent tweets from user
-                  âˆª following, newest first.</p>
+                <p class="card__body"><code>newsfeed &lt;user&gt;</code> &mdash; print up to 10 most recent tweets from
+                  user
+                  ∪ following, newest first.</p>
               </article>
               <article class="card">
                 <header class="card__header">
                   <h3>delete</h3>
                 </header>
-                <p class="card__body"><code>delete &lt;user&gt;</code> &mdash; remove account and all tweets; detach from
+                <p class="card__body"><code>delete &lt;user&gt;</code> &mdash; remove account and all tweets; detach
+                  from
                   follower/following lists.</p>
               </article>
               <article class="card">
@@ -220,9 +225,11 @@
               <li><strong>Parsing</strong> separates tokens and quoted text; rejects invalid commands with helpful
                 errors.</li>
               <li><strong>Memory safety</strong>: ownership is explicit; every <code>malloc</code> has a matching
-                <code>free</code> on <code>endTwitter</code> / deletion paths.</li>
+                <code>free</code> on <code>endTwitter</code> / deletion paths.
+              </li>
               <li><strong>Feed</strong>: k-way merge from heads of followed lists (and self); a small max-heap by
-                <em>id</em> yields O(m log k) for mâ‰¤10.</li>
+                <em>id</em> yields O(m log k) for m ≤ 10.
+              </li>
               <li><strong>Refactor</strong>: initial array solution replaced with linked lists to simplify deletions and
                 head insertions.</li>
             </ul>
@@ -248,7 +255,8 @@
           <section class="case-section" id="lessons">
             <h2>What I learned</h2>
             <ul>
-              <li>How data-structure choice (arrays &rarr; linked lists) changes complexity and simplifies edge cases.</li>
+              <li>How data-structure choice (arrays &rarr; linked lists) changes complexity and simplifies edge cases.
+              </li>
               <li>Designing a stable CLI and separating I/O from logic improves testability.</li>
               <li>Owning memory in C requires disciplined APIs and teardown paths.</li>
             </ul>
@@ -256,9 +264,10 @@
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Case study pagination">
-            <a class="btn btn--ghost" href="huffman-compressor.html">&larr; Huffman Compressor</a>
+            <a class="btn btn--ghost" href="huffman-compressor.html">&larr; Huffman Compressor</a>
             <div class="spacer"></div>
-            <a class="btn btn--secondary" href="../cloud-sre/vision-microservice.html">Next: Vision Microservice &rarr;</a>
+            <a class="btn btn--secondary" href="../cloud-sre/vision-microservice.html">Next: Vision Microservice
+              &rarr;</a>
           </nav>
         </article>
       </div>

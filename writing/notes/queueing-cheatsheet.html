@@ -66,7 +66,8 @@
         <p class="lead">
           Fast reference for common models: <strong>M/M/1</strong>, <strong>M/D/1</strong>, <strong>M/M/1/K</strong>
           (finite capacity),
-          and <strong>M/M/K</strong> (Erlang-C). Includes <em>Little&rsquo;s Law</em>, stability, and quick sizing rules.
+          and <strong>M/M/K</strong> (Erlang-C). Includes <em>Little&rsquo;s Law</em>, stability, and quick sizing
+          rules.
         </p>
         <ul class="chips">
           <li class="chip">Performance</li>
@@ -76,210 +77,21 @@
       </div>
     </section>
 
-    <!-- Notation -->
-    <section class="section">
-      <div class="container">
-        <h2>Notation</h2>
-        <div class="grid two">
-          <ul>
-            <li><strong>Î»</strong> &mdash; arrival rate (req/s)</li>
-            <li><strong>Î¼</strong> &mdash; service rate per server (1/s)</li>
-            <li><strong>K</strong> &mdash; number of parallel servers</li>
-            <li><strong>Ï</strong> &mdash; utilisation
-              <span class="muted">(M/M/1: Ï=Î»/Î¼; M/M/K: Ï=Î»/(KÎ¼))</span>
-            </li>
-          </ul>
-          <ul>
-            <li><strong>W</strong> &mdash; mean response (sojourn) time</li>
-            <li><strong>W<sub>q</sub></strong> &mdash; mean waiting time in queue</li>
-            <li><strong>L</strong> &mdash; mean number in system</li>
-            <li><strong>L<sub>q</sub></strong> &mdash; mean number waiting</li>
-          </ul>
-        </div>
-        <p class="muted small"><strong>Little&rsquo;s Law:</strong> <code>L = Î» &middot; W</code> and
-          <code>L<sub>q</sub> = Î» &middot; W<sub>q</sub></code> (for stable systems).</p>
-      </div>
-    </section>
-
-    <!-- M/M/1 -->
-    <section class="section">
-      <div class="container">
-        <h2>M/M/1 (Poisson arrivals, exponential service, single server)</h2>
-        <div class="card">
-          <div class="card__body">
-            <ul class="tight">
-              <li><strong>Stability:</strong> Ï = Î»/Î¼ &lt; 1</li>
-              <li><strong>W</strong> = <code>1 / (Î¼ &minus; Î»)</code></li>
-              <li><strong>W<sub>q</sub></strong> = <code>Ï / (Î¼ &minus; Î»)</code></li>
-              <li><strong>L</strong> = <code>Ï / (1 &minus; Ï)</code></li>
-              <li><strong>L<sub>q</sub></strong> = <code>ÏÂ² / (1 &minus; Ï)</code></li>
-            </ul>
-          </div>
-        </div>
-        <p class="muted small">As Ï &rarr; 1, queueing explodes; keep planned peaks â‰¤ 0.7&ndash;0.8.</p>
-      </div>
-    </section>
-
-    <!-- M/D/1 -->
-    <section class="section">
-      <div class="container">
-        <h2>M/D/1 (Poisson arrivals, <em>deterministic</em> service, single server)</h2>
-        <div class="card">
-          <div class="card__body">
-            <ul class="tight">
-              <li><strong>Stability:</strong> Ï = Î»/Î¼ &lt; 1</li>
-              <li><strong>W<sub>q</sub></strong> = <code>Ï / (2 &middot; Î¼ &middot; (1 &minus; Ï))</code></li>
-              <li><strong>W</strong> = <code>W<sub>q</sub> + 1/Î¼</code> = <code>Ï/(2Î¼(1&minus;Ï)) + 1/Î¼</code></li>
-              <li>Compare to M/M/1: deterministic service roughly halves waiting time near the same Ï.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- M/M/1/K -->
-    <section class="section">
-      <div class="container">
-        <h2>M/M/1/K (finite capacity, blocking)</h2>
-        <p>System capacity <strong>K</strong> includes the job in service. New arrivals seeing K jobs are
-          <em>blocked</em>.</p>
-        <div class="card">
-          <div class="card__body">
-            <ul class="tight">
-              <li><strong>Ï</strong> = Î»/Î¼ (use for formulas below), assume Ï â‰  1.</li>
-              <li><strong>P<sub>0</sub></strong> = <code>(1&minus;Ï) / (1 &minus; Ï<sup>K+1</sup>)</code></li>
-              <li><strong>P<sub>n</sub></strong> = <code>P<sub>0</sub> &middot; Ï<sup>n</sup></code> for n=0..K</li>
-              <li><strong>Blocking</strong> (loss) <strong>B</strong> = <code>P<sub>K</sub></code></li>
-              <li><strong>Effective arrivals</strong> Î»<sub>eff</sub> = <code>Î» &middot; (1 &minus; B)</code></li>
-              <li><strong>L</strong> = <code>âˆ‘ n&middot;P<sub>n</sub></code> (closed form exists but the above suffices for
-                quick calcs)</li>
-            </ul>
-          </div>
-        </div>
-        <p class="muted small">Use when you want to trade <em>loss</em> for bounded queueing (e.g., small request
-          buffers).</p>
-      </div>
-    </section>
-
-    <!-- M/M/K Erlang C -->
-    <section class="section">
-      <div class="container">
-        <h2>M/M/K (parallel servers) &mdash; Erlang-C</h2>
-        <p>Let <strong>a = Î»/Î¼</strong> (offered load) and <strong>Ï = a/K</strong>. Valid when Ï &lt; 1.</p>
-        <div class="card">
-          <div class="card__body">
-            <ul class="tight">
-              <li><strong>Probability of wait</strong> (Erlang-C):
-                <code>
-                  P<sub>wait</sub> =
-                  [ (a<sup>K</sup> / K!) &middot; (K / (K&minus;a)) ] Ã· [ âˆ‘<sub>i=0</sub><sup>K&minus;1</sup> (a<sup>i</sup>/i!) + (a<sup>K</sup>/K!) &middot; (K/(K&minus;a)) ]
-                </code>
-              </li>
-              <li><strong>W<sub>q</sub></strong> = <code>P<sub>wait</sub> / (K&middot;Î¼ &minus; Î»)</code></li>
-              <li><strong>W</strong> = <code>W<sub>q</sub> + 1/Î¼</code></li>
-              <li><strong>L<sub>q</sub></strong> = <code>Î» &middot; W<sub>q</sub></code>, &nbsp; <strong>L</strong> =
-                <code>Î» &middot; W</code></li>
-            </ul>
-          </div>
-        </div>
-        <p class="muted small">Great for sizing thread pools / replica counts to hit a latency SLO (e.g., W â‰¤ 1 s).
-        </p>
-      </div>
-    </section>
-
-    <!-- Rules of thumb -->
-    <section class="section">
-      <div class="container">
-        <h2>Rules of Thumb</h2>
-        <ul class="checklist">
-          <li><strong>Headroom:</strong> plan peak <strong>Ï â‰¤ 0.7&ndash;0.8</strong> to avoid tail blow-ups.</li>
-          <li><strong>Parallelism beats buffering</strong> for latency SLOs; buffers mainly trade delay vs loss.</li>
-          <li><strong>Deterministic service</strong> (M/D/1) &approx; halves queueing vs M/M/1 near same Ï.</li>
-          <li><strong>Knee point:</strong> alert when <strong>W &approx; service time</strong> (M/M/1) &mdash; queueing starts
-            dominating.</li>
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-inner">
+        <p>© <span id="year">2025</span> Nirav Ramidi</p>
+        <ul class="footer-links">
+          <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="../../resume/">Resume</a></li>
+          <li><a href="../../contact.html">Contact</a></li>
         </ul>
       </div>
-    </section>
+    </footer>
 
-    <!-- Quick calculator stub -->
-    <section class="section">
-      <div class="container">
-        <h2>Quick Calculator (optional)</h2>
-        <p class="muted small">This form is wired in <code>assets/js/main.js</code> if you enable it. Otherwise, use the
-          formulas above.</p>
-
-        <form id="queueCalc" class="card form" action="#" method="post" novalidate>
-          <div class="form-row">
-            <label for="model">Model</label>
-            <select id="model" name="model">
-              <option value="mm1">M/M/1</option>
-              <option value="md1">M/D/1</option>
-              <option value="mm1k">M/M/1/K</option>
-              <option value="mmk">M/M/K</option>
-            </select>
-          </div>
-
-          <div class="grid two">
-            <div class="form-row">
-              <label for="lambda">Î» (req/s)</label>
-              <input id="lambda" name="lambda" type="number" min="0" step="any" />
-            </div>
-            <div class="form-row">
-              <label for="mu">Î¼ (1/s)</label>
-              <input id="mu" name="mu" type="number" min="0" step="any" />
-            </div>
-          </div>
-
-          <div class="grid two">
-            <div class="form-row">
-              <label for="servers">K (servers)</label>
-              <input id="servers" name="servers" type="number" min="1" step="1" value="1" />
-            </div>
-            <div class="form-row">
-              <label for="capacity">K (capacity for M/M/1/K)</label>
-              <input id="capacity" name="capacity" type="number" min="1" step="1" value="10" />
-            </div>
-          </div>
-
-          <div class="form-actions">
-            <button type="submit" class="btn btn--primary">Compute</button>
-            <button type="reset" class="btn btn--ghost">Clear</button>
-          </div>
-
-          <div id="calcResults" class="form-status" role="status" aria-live="polite"></div>
-        </form>
-      </div>
-    </section>
-
-    <!-- References -->
-    <section class="section">
-      <div class="container">
-        <h2>References &amp; Caveats</h2>
-        <ul class="muted small">
-          <li>Assumes Poisson arrivals and specified service distributions; validate with load tests.</li>
-          <li>Use <strong>M/G/1</strong> (Pollaczek&ndash;Khinchine) for general service times:
-            <code>W<sub>q</sub> = Î»&middot;E[SÂ²] / (2&middot;(1&minus;Ï))</code>.</li>
-          <li>For percentiles, analytical forms are limited; simulate or fit distributions to traces.</li>
-        </ul>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Nirav Ramidi</p>
-      <ul class="footer-links">
-        <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="../../resume/">Resume</a></li>
-        <li><a href="../../contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </footer>
-
-  <!-- Scripts (kept separate) -->
-  <script src="../../assets/js/main.js" defer></script>
+    <!-- Scripts (kept separate) -->
+    <script src="../../assets/js/main.js" defer></script>
 </body>
 
 </html>

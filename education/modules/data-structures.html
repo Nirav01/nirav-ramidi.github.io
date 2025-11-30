@@ -153,7 +153,8 @@
                 <header class="card__header">
                   <h3>Trees &amp; Heaps</h3>
                 </header>
-                <p class="card__body">BST invariants, rotations, AVL/Red&ndash;Black intuition, min/max-heaps &amp; priority
+                <p class="card__body">BST invariants, rotations, AVL/Red&ndash;Black intuition, min/max-heaps &amp;
+                  priority
                   queues.</p>
               </article>
               <article class="card">
@@ -178,61 +179,6 @@
   insert/delete at i  O(n)
 Linked list (singly):
   head ops O(1)   search O(n)
-
-Hash table (avg):
-  get/put  O(1)   worst O(n) if many collisions
-BST (balanced):
-  search/insert/delete  O(log n)
-Heap (binary):
-  push/pop-min  O(log n)   peek  O(1)</code></pre>
-                <p class="muted small">Amortised O(1) push via geometric growth (2Ã—) + occasional reallocation.</p>
-              </div>
-              <div class="card">
-                <header class="card__header">
-                  <h3>Asymptotic notation</h3>
-                </header>
-                <pre class="code-block"><code>O(g):     upper bound
-Î©(g):     lower bound
-Î˜(g):     tight bound
-o(g), Ï‰(g): strict</code></pre>
-                <p class="muted small">Prefer Î˜ when you can; document assumptions (e.g., uniform hashing).</p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Snippets -->
-          <section class="case-section" id="snippets">
-            <h2>Code Snippets</h2>
-            <div class="grid two">
-              <div class="card">
-                <header class="card__header">
-                  <h3>Stack via Deque (Java)</h3>
-                </header>
-                <pre class="code-block"><code>import java.util.ArrayDeque;
-ArrayDeque<Integer> st = new ArrayDeque<>();
-st.push(10); st.push(20);
-int top = st.pop();   // 20</code></pre>
-                <p class="muted small">Prefer <code>ArrayDeque</code> over legacy <code>Stack</code>.</p>
-              </div>
-              <div class="card">
-                <header class="card__header">
-                  <h3>Binary Search (Python)</h3>
-                </header>
-                <pre class="code-block"><code>def bsearch(a, x):
-    lo, hi = 0, len(a)-1
-    while lo <= hi:
-        mid = (lo + hi)//2
-        if a[mid] == x: return mid
-        if a[mid] < x:  lo = mid + 1
-        else:           hi = mid - 1
-    return -1</code></pre>
-                <p class="muted small">Requires sorted array; runtime Î˜(log n).</p>
-              </div>
-            </div>
-
-            <div class="grid two">
-              <div class="card">
-                <header class="card__header">
                   <h3>Min-Heap (Java)</h3>
                 </header>
                 <pre class="code-block"><code>import java.util.PriorityQueue;
@@ -276,7 +222,7 @@ int n = freq.getOrDefault("hello", 0);</code></pre>
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="digital-sys.html">&larr; Digital Systems</a>
+            <a class="btn btn--ghost" href="digital-sys.html">&larr; Digital Systems</a>
             <div class="spacer"></div>
             <a class="btn btn--secondary" href="algorithms.html">Next: Algorithms &rarr;</a>
           </nav>

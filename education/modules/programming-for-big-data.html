@@ -123,7 +123,8 @@
               <li>Diagnose and reduce <strong>shuffle</strong> and <strong>skew</strong> in joins and aggregations.</li>
               <li>Build <strong>streaming</strong> jobs for near-real-time analytics with watermarks &amp; windows.</li>
               <li>Measure and tune jobs with <strong>caching</strong>, <strong>coalesce/repartition</strong>, and
-                <strong>broadcast</strong> joins.</li>
+                <strong>broadcast</strong> joins.
+              </li>
             </ul>
           </section>
 
@@ -259,7 +260,8 @@ q.awaitTermination()</code></pre>
             <h2>Key Takeaways</h2>
             <ul class="checklist">
               <li>Columnar formats + partitioning enable fast scans and pruning.</li>
-              <li>Most performance problems are <strong>shuffle</strong> or <strong>skew</strong> &mdash; fix joins first.
+              <li>Most performance problems are <strong>shuffle</strong> or <strong>skew</strong> &mdash; fix joins
+                first.
               </li>
               <li>Design for retries and idempotency; storage is the system of record.</li>
             </ul>
@@ -267,7 +269,7 @@ q.awaitTermination()</code></pre>
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="perf-of-comp-sys.html">&larr; Performance of Computer Systems</a>
+            <a class="btn btn--ghost" href="perf-of-comp-sys.html">&larr; Performance of Computer Systems</a>
             <div class="spacer"></div>
             <a class="btn btn--secondary" href="data-mining.html">Next: Data Mining &rarr;</a>
           </nav>

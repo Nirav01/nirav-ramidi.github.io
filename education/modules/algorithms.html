@@ -162,114 +162,31 @@
           <!-- Quick reference -->
           <section class="case-section" id="reference">
             <h2>Quick Reference</h2>
+            <!-- Artefacts -->
+            <section class="case-section" id="artifacts">
+              <h2>Selected Artefacts</h2>
+              <ul class="list">
+                <li><a href="Week%201_Lecture%201.pdf">Lecture &mdash; Introduction &amp; course outline</a></li>
+                <li><a href="Compression%20Assignment-1.pdf">Assignment &mdash; Huffman Compression</a></li>
+              </ul>
+            </section>
 
-            <div class="grid two">
-              <div class="card">
-                <header class="card__header">
-                  <h3>Master Theorem (common case)</h3>
-                </header>
-                <pre class="code-block"><code>T(n) = a T(n/b) + f(n)
-Let n^{log_b a} = n^k
-- If f(n) = O(n^{k-Îµ}) &rarr; T(n) = Î˜(n^k)
-- If f(n) = Î˜(n^k log^p n) &rarr; T(n) = Î˜(n^k log^{p+1} n)
-- If f(n) = Î©(n^{k+Îµ}) and regularity &rarr; T(n) = Î˜(f(n))</code></pre>
-                <p class="muted small">Typical examples: mergesort (a=2,b=2,f=n) &rarr; Î˜(n log n); Strassen-like
-                  recurrences vary k.</p>
-              </div>
+            <!-- Takeaways -->
+            <section class="case-section" id="learnings">
+              <h2>Key Takeaways</h2>
+              <ul class="checklist">
+                <li>Pick the right paradigm: greedy when exchange works, DP when subproblems overlap.</li>
+                <li>Prove before you optimise: correctness + complexity guide implementation choices.</li>
+                <li>Use the right data structures to hit the intended time bounds.</li>
+              </ul>
+            </section>
 
-              <div class="card">
-                <header class="card__header">
-                  <h3>Greedy correctness (pattern)</h3>
-                </header>
-                <pre class="code-block"><code>1) Greedy choice property: show an optimal solution has a greedy-first choice.
-2) Exchange argument: swap steps to transform any optimum to greedy form
-   without lowering optimal value.</code></pre>
-                <p class="muted small">Huffman: merging two least-frequent symbols is always safe (exchange proof).</p>
-              </div>
-            </div>
-
-            <div class="grid two">
-              <div class="card">
-                <header class="card__header">
-                  <h3>DP recipe</h3>
-                </header>
-                <pre class="code-block"><code>1) Define subproblem F(i, &hellip;)
-2) Recurrence (optimal substructure)
-3) Base cases
-4) Order of evaluation (topo)
-5) Transition complexity
-6) Reconstruct solution (parents)</code></pre>
-                <p class="muted small">Memoise top-down first to validate, then convert to bottom-up for speed.</p>
-              </div>
-
-              <div class="card">
-                <header class="card__header">
-                  <h3>BFS / DFS complexity</h3>
-                </header>
-                <pre class="code-block"><code>Adjacency list:
-BFS/DFS: Î˜(V + E)
-Topological sort: Î˜(V + E)</code></pre>
-                <p class="muted small">Use adjacency lists for sparse graphs; matrices cost Î˜(VÂ²).</p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Snippets -->
-          <section class="case-section" id="snippets">
-            <h2>Code Snippets</h2>
-            <div class="grid two">
-              <div class="card">
-                <header class="card__header">
-                  <h3>Huffman coding (sketch)</h3>
-                </header>
-                <pre class="code-block"><code># frequencies: dict{char: freq}
-import heapq
-heap = [[f, c] for c, f in frequencies.items()]
-heapq.heapify(heap)
-while len(heap) > 1:
-  f1, n1 = heapq.heappop(heap)
-  f2, n2 = heapq.heappop(heap)
-  heapq.heappush(heap, [f1+f2, (n1, n2)])  # merge
-# heap[0] holds the tree; traverse to assign codes</code></pre>
-                <p class="muted small">Time Î˜(n log n) with <em>n</em> symbols (priority queue merges).</p>
-              </div>
-              <div class="card">
-                <header class="card__header">
-                  <h3>Dijkstra (array vs heap)</h3>
-                </header>
-                <pre class="code-block"><code># Min-heap implementation: Î˜((V+E) log V)
-# Using array for 'extract-min': Î˜(VÂ²) on dense graphs
-# Initialise dist[s]=0; relax edges via priority queue updates</code></pre>
-                <p class="muted small">Non-negative weights only; use Bellman-Ford for negatives.</p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Artefacts -->
-          <section class="case-section" id="artifacts">
-            <h2>Selected Artefacts</h2>
-            <ul class="list">
-              <li><a href="Week%201_Lecture%201.pdf">Lecture &mdash; Introduction &amp; course outline</a></li>
-              <li><a href="Compression%20Assignment-1.pdf">Assignment &mdash; Huffman Compression</a></li>
-            </ul>
-          </section>
-
-          <!-- Takeaways -->
-          <section class="case-section" id="learnings">
-            <h2>Key Takeaways</h2>
-            <ul class="checklist">
-              <li>Pick the right paradigm: greedy when exchange works, DP when subproblems overlap.</li>
-              <li>Prove before you optimise: correctness + complexity guide implementation choices.</li>
-              <li>Use the right data structures to hit the intended time bounds.</li>
-            </ul>
-          </section>
-
-          <!-- Footer nav -->
-          <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="data-structures.html">&larr; Data Structures</a>
-            <div class="spacer"></div>
-            <a class="btn btn--secondary" href="graph-algorithms.html">Next: Graph Algorithms &rarr;</a>
-          </nav>
+            <!-- Footer nav -->
+            <nav class="case-pager" aria-label="Module pagination">
+              <a class="btn btn--ghost" href="data-structures.html">&larr; Data Structures</a>
+              <div class="spacer"></div>
+              <a class="btn btn--secondary" href="graph-algorithms.html">Next: Graph Algorithms &rarr;</a>
+            </nav>
         </article>
       </div>
     </section>

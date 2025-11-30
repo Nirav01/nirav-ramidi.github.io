@@ -132,7 +132,8 @@
                 <header class="card__header">
                   <h3>Processes &amp; Threads</h3>
                 </header>
-                <p class="card__body">PCB/TCB, state transitions (new&rarr;ready&rarr;running&rarr;blocked&rarr;terminated), context
+                <p class="card__body">PCB/TCB, state transitions
+                  (new&rarr;ready&rarr;running&rarr;blocked&rarr;terminated), context
                   switching, user vs kernel mode.</p>
               </article>
               <article class="card">
@@ -188,7 +189,7 @@
                 <header class="card__header">
                   <h3>Scheduling metrics</h3>
                 </header>
-                <pre class="code-block"><code>Waiting time   = Î£ (start_i &minus; arrival_i)
+                <pre class="code-block"><code>Waiting time   = &Sigma; (start_i &minus; arrival_i)
 Turnaround     = finish &minus; arrival
 Response time  = first_run &minus; arrival</code></pre>
                 <p class="muted small">Shorter time-slices improve response but raise context-switch overhead.</p>
@@ -255,7 +256,7 @@ physical_addr = (phys_frame, offset)</code></pre>
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="perf-of-comp-sys.html">&larr; Performance of Computer Systems</a>
+            <a class="btn btn--ghost" href="perf-of-comp-sys.html">&larr; Performance of Computer Systems</a>
             <div class="spacer"></div>
             <a class="btn btn--secondary" href="computer-networking.html">Next: Computer Networking &rarr;</a>
           </nav>

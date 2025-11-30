@@ -170,9 +170,9 @@
             <h2>Models &amp; Tuning</h2>
             <ul>
               <li><strong>Baselines:</strong> Majority class; Logistic Regression (multinomial).</li>
-              <li><strong>kNN:</strong> grid over <code>k âˆˆ {5, 7, 9, 11, 15, 21}</code>, distance metrics, and
+              <li><strong>kNN:</strong> grid over <code>k ∈ {5, 7, 9, 11, 15, 21}</code>, distance metrics, and
                 weighting.</li>
-              <li><strong>SVM (RBF):</strong> grid over <code>C</code> and <code>Î³</code>; class weights to handle
+              <li><strong>SVM (RBF):</strong> grid over <code>C</code> and <code>γ</code>; class weights to handle
                 imbalance.</li>
               <li><strong>Decision Tree:</strong> tuned <code>max_depth</code>, <code>min_samples_split</code>, and
                 <code>ccp_alpha</code> (cost-complexity pruning).
@@ -232,7 +232,7 @@
 
           <!-- Footer nav -->
           <nav class="case-pager" aria-label="Case study pagination">
-            <a class="btn btn--ghost" href="golden-source-forecasting.html">&larr; Golden-Source & Forecasting</a>
+            <a class="btn btn--ghost" href="golden-source-forecasting.html">&larr; Golden-Source & Forecasting</a>
             <div class="spacer"></div>
             <a class="btn btn--secondary" href="healthcare-data-mining.html">Next: Healthcare Data Mining &rarr;</a>
           </nav>

@@ -141,8 +141,10 @@
               <li>What is the most reasonable near-term <strong>volume forecast</strong> given recent volatility?</li>
               <li>At current pricing and cost structure, what is the <strong>break-even volume</strong> and <strong>time
                   to break even</strong>?</li>
-              <li>How sensitive is profit to Â±Î” in <strong>price</strong>, <strong>conversion/volume</strong>, and
-                <strong>variable cost</strong>?</li>
+              <li>How sensitive is profit to &plusmn;&Delta; in <strong>price</strong>,
+                <strong>conversion/volume</strong>, and
+                <strong>variable cost</strong>?
+              </li>
               <li>What <strong>capacity</strong> and <strong>cash</strong> headroom are required for a conservative
                 ramp?</li>
             </ul>
@@ -200,68 +202,14 @@
                   <h3>Divisional P&amp;L</h3>
                 </header>
                 <p class="card__body">
-                  Revenue &minus; variable costs = <em>contribution</em>; subtract fixed costs to obtain operating profit.
+                  Revenue &minus; variable costs = <em>contribution</em>; subtract fixed costs to obtain operating
+                  profit.
                   Tracks run-rate vs. plan.
                 </p>
               </article>
-              <article class="card">
-                <header class="card__header">
-                  <h3>Break-Even &amp; Sensitivity</h3>
-                </header>
-                <p class="card__body">
-                  <em>Break-even units</em> = Fixed Costs Ã· (Price &minus; Variable Cost). Sensitivity sweeps Â±10&ndash;30% on
-                  price, volume, and variable cost to quantify margin of safety.
-                </p>
-              </article>
-            </div>
-          </section>
-
-          <!-- Results -->
-          <section class="case-section" id="results">
-            <h2>Results (Highlights)</h2>
-            <ul class="checklist">
-              <li>Smoothed demand reduces forecast error vs. raw month-to-month volatility.</li>
-              <li>PMPM view exposes underperforming tiers and discount leakage.</li>
-              <li>Break-even occurs when contribution covers fixed costs; sensitivity shows price elasticity is the
-                dominant lever.</li>
-              <li>Scenario planning recommends a staged capacity ramp with explicit cash buffers.</li>
-            </ul>
-            <figure class="case-figure">
-              <img src="../assets/img/writing/business-ia-breakeven.png"
-                alt="Break-even chart: total cost vs total revenue lines with intersection point" loading="lazy" />
-              <figcaption>Break-even visual: intersection of revenue and total cost; slopes reflect price and variable
-                cost.</figcaption>
-            </figure>
-          </section>
-
-          <!-- Risks -->
-          <section class="case-section" id="risks">
-            <h2>Risks &amp; Mitigations</h2>
-            <ul>
-              <li><strong>Demand variance:</strong> add rolling forecast updates; maintain flexible staffing.</li>
-              <li><strong>Input inflation:</strong> negotiate supplier tiers; add indexed pricing clauses.</li>
-              <li><strong>Capacity bottlenecks:</strong> pilot queueing calculations for lead-time targets.</li>
-              <li><strong>Cash runway:</strong> tie spend to milestone gates; monitor MoM contribution.</li>
-            </ul>
-          </section>
-
-          <!-- Appendix -->
-          <section class="case-section" id="appendix">
-            <h2>Appendix &mdash; Key Formulas</h2>
-            <div class="formula-grid">
-              <p><strong>Contribution (per unit):</strong> <code>price &minus; variable_cost</code></p>
-              <p><strong>Break-even (units):</strong> <code>fixed_costs Ã· (price &minus; variable_cost)</code></p>
-              <p><strong>Margin of Safety:</strong> <code>(actual_sales &minus; break_even_sales) Ã· actual_sales</code></p>
-              <p><strong>PMPM:</strong> <code>(revenue &minus; variable_costs) Ã· members</code></p>
-            </div>
-          </section>
-
-          <!-- Footer Nav -->
-          <nav class="case-pager" aria-label="Writing pagination">
-            <a class="btn btn--ghost" href="./">&larr; All writing</a>
-            <div class="spacer"></div>
-            <a class="btn btn--secondary" href="hcai-essay.html">Next: Human-Centred AI Essay &rarr;</a>
-          </nav>
+              <div class="spacer"></div>
+              <a class="btn btn--secondary" href="hcai-essay.html">Next: Human-Centred AI Essay &rarr;</a>
+              </nav>
         </article>
       </div>
     </section>

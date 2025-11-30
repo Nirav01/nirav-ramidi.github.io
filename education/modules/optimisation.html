@@ -142,7 +142,8 @@
                 <header class="card__header">
                   <h3>Duality &amp; sensitivity</h3>
                 </header>
-                <p class="card__body">Primal&ndash;dual pairs, complementary slackness, shadow prices, RHS/coeff ranges.</p>
+                <p class="card__body">Primal&ndash;dual pairs, complementary slackness, shadow prices, RHS/coeff ranges.
+                </p>
               </article>
               <article class="card">
                 <header class="card__header">
@@ -170,39 +171,14 @@
 
           <!-- Quick reference -->
           <section class="case-section" id="reference">
-            <h2>Quick Reference</h2>
-            <div class="grid two">
-              <div class="card">
-                <header class="card__header">
-                  <h3>LP &mdash; standard form</h3>
-                </header>
-                <pre class="code-block"><code>maximise   cáµ€x
-subject to Ax â‰¤ b
-           x â‰¥ 0</code></pre>
-                <p class="muted small">Convert â‰¥ with slack/surplus &amp; sign constraints; equality via two
-                  inequalities.</p>
-              </div>
-              <div class="card">
-                <header class="card__header">
-                  <h3>Dual (for â‰¤-primal)</h3>
-                </header>
-                <pre class="code-block"><code>minimise   báµ€y
-subject to Aáµ€y â‰¥ c
-           y â‰¥ 0</code></pre>
-                <p class="muted small">Complementary slackness ties primal activity to dual feasibility.</p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Modelling snippets -->
-          <section class="case-section" id="snippets">
-            <h2>Modelling Snippets</h2>
-            <div class="grid two">
-              <div class="card">
-                <header class="card__header">
-                  <h3>Python &middot; PuLP (transport)</h3>
-                </header>
-                <pre class="code-block"><code>import pulp as pl
+            <section class="case-section" id="snippets">
+              <h2>Modelling Snippets</h2>
+              <div class="grid two">
+                <div class="card">
+                  <header class="card__header">
+                    <h3>Python &middot; PuLP (transport)</h3>
+                  </header>
+                  <pre class="code-block"><code>import pulp as pl
 
 prob = pl.LpProblem("transport", pl.LpMinimize)
 x = pl.LpVariable.dicts("x", (plants, markets), lowBound=0)
@@ -215,49 +191,50 @@ for i in plants:  prob += pl.lpSum(x[i][j] for j in markets) <= supply[i]
 for j in markets: prob += pl.lpSum(x[i][j] for i in plants) >= demand[j]
 
 prob.solve()</code></pre>
-              </div>
-              <div class="card">
-                <header class="card__header">
-                  <h3>Julia &middot; JuMP (assignment)</h3>
-                </header>
-                <pre class="code-block"><code>using JuMP, GLPK
+                </div>
+                <div class="card">
+                  <header class="card__header">
+                    <h3>Julia &middot; JuMP (assignment)</h3>
+                  </header>
+                  <pre class="code-block"><code>using JuMP, GLPK
 model = Model(GLPK.Optimizer)
 @variable(model, x[1:n,1:n], Bin)
 @objective(model, Min, sum(C[i,j]*x[i,j] for i=1:n, j=1:n))
 @constraint(model, [i=1:n], sum(x[i,j] for j=1:n) == 1)
 @constraint(model, [j=1:n], sum(x[i,j] for i=1:n) == 1)
 optimize!(model)</code></pre>
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <!-- Assessment artifacts -->
-          <section class="case-section" id="artifacts">
-            <h2>Selected Artefacts</h2>
-            <ul class="list">
-              <li><a href="assignment1_comp30930.pdf">Assignment 1 &mdash; LP modelling &amp; sensitivity</a></li>
-              <li><a href="comp30930_assignment2.pdf">Assignment 2 &mdash; Network flows &amp; ILP</a></li>
-              <li><a href="Optimisation.pdf">Lecture summary &mdash; Optimisation (slides/notes)</a></li>
-            </ul>
-          </section>
+            <!-- Assessment artifacts -->
+            <section class="case-section" id="artifacts">
+              <h2>Selected Artefacts</h2>
+              <ul class="list">
+                <li><a href="assignment1_comp30930.pdf">Assignment 1 &mdash; LP modelling &amp; sensitivity</a></li>
+                <li><a href="comp30930_assignment2.pdf">Assignment 2 &mdash; Network flows &amp; ILP</a></li>
+                <li><a href="Optimisation.pdf">Lecture summary &mdash; Optimisation (slides/notes)</a></li>
+              </ul>
+            </section>
 
-          <!-- What I learned -->
-          <section class="case-section" id="learnings">
-            <h2>Key Takeaways</h2>
-            <ul class="checklist">
-              <li>Good <strong>formulations</strong> are often more powerful than clever heuristics.</li>
-              <li><strong>Dual variables</strong> provide economic intuition (shadow prices) for constraints.</li>
-              <li>Be cautious with <strong>big-M</strong>; choose tight bounds to keep relaxations strong.</li>
-              <li>Network problems admit <strong>specialised</strong> fast algorithms&mdash;use them when applicable.</li>
-            </ul>
-          </section>
+            <!-- What I learned -->
+            <section class="case-section" id="learnings">
+              <h2>Key Takeaways</h2>
+              <ul class="checklist">
+                <li>Good <strong>formulations</strong> are often more powerful than clever heuristics.</li>
+                <li><strong>Dual variables</strong> provide economic intuition (shadow prices) for constraints.</li>
+                <li>Be cautious with <strong>big-M</strong>; choose tight bounds to keep relaxations strong.</li>
+                <li>Network problems admit <strong>specialised</strong> fast algorithms&mdash;use them when applicable.
+                </li>
+              </ul>
+            </section>
 
-          <!-- Footer nav -->
-          <nav class="case-pager" aria-label="Module pagination">
-            <a class="btn btn--ghost" href="../">&larr; All modules</a>
-            <div class="spacer"></div>
-            <a class="btn btn--secondary" href="machine-learning.html">Next: Machine Learning &rarr;</a>
-          </nav>
+            <!-- Footer nav -->
+            <nav class="case-pager" aria-label="Module pagination">
+              <a class="btn btn--ghost" href="../">&larr; All modules</a>
+              <div class="spacer"></div>
+              <a class="btn btn--secondary" href="machine-learning.html">Next: Machine Learning &rarr;</a>
+            </nav>
         </article>
       </div>
     </section>

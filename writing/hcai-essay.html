@@ -120,174 +120,80 @@
           </div>
         </aside>
 
-        <!-- Body -->
-        <article class="case-body">
-          <!-- Thesis -->
-          <section class="case-section" id="thesis">
-            <h2>Thesis</h2>
-            <p>
-              Human-Centred AI (HCAI) reframes the goal of AI from â€œmaximising model accuracyâ€ to
-              â€œ<em>maximising human outcomes</em>.â€ Usability, interpretability, and fairness are not
-              â€œadd-onsâ€ but <strong>design constraints</strong> that shape the product surface and the
-              technical stack. An HCAI system makes <em>appropriate use</em> of automation: it is
-              legible, contestable, and fails safely.
-            </p>
-          </section>
-
-          <!-- Principles -->
-          <section class="case-section" id="principles">
-            <h2>Principles</h2>
-            <ul class="checklist">
-              <li><strong>Clarity over completeness:</strong> provide the <em>right</em> explanation for the decision at
-                hand; defer detail via progressive disclosure.</li>
-              <li><strong>Calibrated transparency:</strong> expose <em>uncertainty</em>, <em>confidence</em>, and known
-                limitations; avoid false certainty.</li>
-              <li><strong>Recourse:</strong> show users how to improve outcomes or fix inputs&mdash;not just why the model
-                predicted something.</li>
-              <li><strong>Human-in/on-the-loop:</strong> keep escalation paths and reversible actions; log overrides to
-                learn from expert judgement.</li>
-              <li><strong>Fairness by design:</strong> make sensitive features and group metrics visible during
-                development; measure harms and benefits.</li>
-              <li><strong>Privacy &amp; consent:</strong> minimise data collection; communicate how data feeds models
-                and audits.</li>
-            </ul>
-          </section>
-
-          <!-- Patterns -->
-          <section class="case-section" id="patterns">
-            <h2>Design Patterns</h2>
-            <div class="grid cards">
-              <article class="card">
-                <header class="card__header">
-                  <h3>Model Cards &amp; Data Sheets</h3>
-                </header>
-                <p class="card__body">A one-page summary of intended use, training data, metrics, and limits. Link from
-                  the UI for expert users.</p>
-              </article>
-              <article class="card">
-                <header class="card__header">
-                  <h3>Confidence &amp; Uncertainty</h3>
-                </header>
-                <p class="card__body">Show calibrated scores, abstain when unsure, and highlight edge cases; avoid
-                  binary â€œAI says so.â€</p>
-              </article>
-              <article class="card">
-                <header class="card__header">
-                  <h3>Counterfactuals &amp; Recourse</h3>
-                </header>
-                <p class="card__body">â€œIf X were Y, the outcome would change.â€ Provide actionable edits users can
-                  make, bounded by policy.</p>
-              </article>
-              <article class="card">
-                <header class="card__header">
-                  <h3>Provenance &amp; Versioning</h3>
-                </header>
-                <p class="card__body">Surface model/version, data cut, and time of decision; enable traceability for
-                  appeals and audits.</p>
-              </article>
-              <article class="card">
-                <header class="card__header">
-                  <h3>Progressive Disclosure</h3>
-                </header>
-                <p class="card__body">Start with a short rationale; let users expand for features, weights/shap values,
-                  and examples.</p>
-              </article>
-            </div>
-          </section>
-
-          <!-- Trade-offs -->
-          <section class="case-section" id="tradeoffs">
-            <h2>Trade-offs &amp; Pitfalls</h2>
+        <h2>Evaluation Framework</h2>
+        <div class="cols">
+          <div>
+            <h3>Quantitative</h3>
             <ul>
-              <li><strong>Clarity vs fidelity:</strong> simpler explanations aid actionability but may omit nuance;
-                provide â€œlearn moreâ€ for power users.</li>
-              <li><strong>Performance vs interpretability:</strong> use <em>post-hoc</em> explanations (e.g., SHAP) when
-                intrinsically simple models underfit. Validate explanations with users.</li>
-              <li><strong>Over-trust vs under-trust:</strong> confidence displays and abstention thresholds reduce
-                automation bias but may increase workload; tune with task studies.</li>
-              <li><strong>Fairness trade-offs:</strong> equalising metrics for one group can reduce accuracy for
-                another; make the choices explicit and governed.</li>
-              <li><strong>Antipatterns:</strong> explanation-washing, â€œblack-boxâ€ buttons, hidden thresholds, and
-                dark patterns that nudge acceptance.</li>
+              <li><strong>Task success</strong>, <strong>time-on-task</strong>, and <strong>error rates</strong>.
+              </li>
+              <li><strong>Trust</strong> scales, <strong>SUS</strong> (usability), <strong>NASA-TLX</strong>
+                (workload).</li>
+              <li><strong>Calibration</strong>: Brier score / reliability curves for probabilities.</li>
+              <li><strong>Fairness</strong> metrics: TPR/FPR parity, equalised odds, demographic parity (when
+                appropriate).</li>
             </ul>
-          </section>
-
-          <!-- Evaluation -->
-          <section class="case-section" id="evaluation">
-            <h2>Evaluation Framework</h2>
-            <div class="cols">
-              <div>
-                <h3>Quantitative</h3>
-                <ul>
-                  <li><strong>Task success</strong>, <strong>time-on-task</strong>, and <strong>error rates</strong>.
-                  </li>
-                  <li><strong>Trust</strong> scales, <strong>SUS</strong> (usability), <strong>NASA-TLX</strong>
-                    (workload).</li>
-                  <li><strong>Calibration</strong>: Brier score / reliability curves for probabilities.</li>
-                  <li><strong>Fairness</strong> metrics: TPR/FPR parity, equalised odds, demographic parity (when
-                    appropriate).</li>
-                </ul>
-              </div>
-              <div>
-                <h3>Qualitative</h3>
-                <ul>
-                  <li>Think-aloud protocols; semi-structured interviews.</li>
-                  <li>Thematic coding of pain points and mental models.</li>
-                  <li>Field observation to spot real-world workaround behaviour.</li>
-                </ul>
-                <h3>Study Designs</h3>
-                <ul>
-                  <li>A/B or within-subjects with counter-balancing.</li>
-                  <li>Power analysis for sample size; pre-registered analysis plan.</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <!-- Ops & Governance -->
-          <section class="case-section" id="governance">
-            <h2>Operations &amp; Governance</h2>
-            <ul class="checklist">
-              <li><strong>Monitoring:</strong> live dashboards for quality, drift, calibration, and group fairness.</li>
-              <li><strong>Feedback channels:</strong> capture overrides and user flags; use them to retrain or adjust
-                thresholds.</li>
-              <li><strong>Change control:</strong> version models and policies; run canaries and shadow tests.</li>
-              <li><strong>Privacy:</strong> log minimal data; protect PII; document retention windows.</li>
-              <li><strong>Documentation:</strong> model cards, decision logs, and clear appeal paths.</li>
+          </div>
+          <div>
+            <h3>Qualitative</h3>
+            <ul>
+              <li>Think-aloud protocols; semi-structured interviews.</li>
+              <li>Thematic coding of pain points and mental models.</li>
+              <li>Field observation to spot real-world workaround behaviour.</li>
             </ul>
-          </section>
+            <h3>Study Designs</h3>
+            <ul>
+              <li>A/B or within-subjects with counter-balancing.</li>
+              <li>Power analysis for sample size; pre-registered analysis plan.</li>
+            </ul>
+          </div>
+        </div>
+    </section>
 
-          <!-- Checklist -->
-          <section class="case-section" id="checklist">
-            <h2>Team Checklist</h2>
-            <ol class="checklist numbered">
-              <li>Define the <em>human goal</em> and the user&rsquo;s decision context.</li>
-              <li>Choose the <em>minimum viable explanation</em> and add deeper layers on demand.</li>
-              <li>Expose <em>uncertainty</em> and handle abstention pathways.</li>
-              <li>Measure <em>calibration</em> and <em>fairness</em> continuously; alert on regressions.</li>
-              <li>Provide <em>recourse</em> and an <em>appeal</em> mechanism; close the loop with users.</li>
-            </ol>
-          </section>
+    <!-- Ops & Governance -->
+    <section class="case-section" id="governance">
+      <h2>Operations &amp; Governance</h2>
+      <ul class="checklist">
+        <li><strong>Monitoring:</strong> live dashboards for quality, drift, calibration, and group fairness.</li>
+        <li><strong>Feedback channels:</strong> capture overrides and user flags; use them to retrain or adjust
+          thresholds.</li>
+        <li><strong>Change control:</strong> version models and policies; run canaries and shadow tests.</li>
+        <li><strong>Privacy:</strong> log minimal data; protect PII; document retention windows.</li>
+        <li><strong>Documentation:</strong> model cards, decision logs, and clear appeal paths.</li>
+      </ul>
+    </section>
 
-          <!-- Closing -->
-          <section class="case-section" id="closing">
-            <h2>Conclusion</h2>
-            <p>
-              Human-Centred AI treats people as <em>primary stakeholders</em>, not friction in a prediction pipeline.
-              When we design for clarity, recourse, and fairness&mdash;and validate with real users&mdash;AI features become
-              reliable partners rather than inscrutable oracles.
-            </p>
-            <p class="muted small">References and extended notes are available in the PDF.</p>
-          </section>
+    <!-- Checklist -->
+    <section class="case-section" id="checklist">
+      <h2>Team Checklist</h2>
+      <ol class="checklist numbered">
+        <li>Define the <em>human goal</em> and the user&rsquo;s decision context.</li>
+        <li>Choose the <em>minimum viable explanation</em> and add deeper layers on demand.</li>
+        <li>Expose <em>uncertainty</em> and handle abstention pathways.</li>
+        <li>Measure <em>calibration</em> and <em>fairness</em> continuously; alert on regressions.</li>
+        <li>Provide <em>recourse</em> and an <em>appeal</em> mechanism; close the loop with users.</li>
+      </ol>
+    </section>
 
-          <!-- Footer Nav -->
-          <nav class="case-pager" aria-label="Writing pagination">
-            <a class="btn btn--ghost" href="./">&larr; All writing</a>
-            <div class="spacer"></div>
-            <a class="btn btn--secondary" href="notes/queueing-cheatsheet.html">Next: Queueing Cheatsheet &rarr;</a>
-          </nav>
-        </article>
-      </div>
+    <!-- Closing -->
+    <section class="case-section" id="closing">
+      <h2>Conclusion</h2>
+      <p>
+        Human-Centred AI treats people as <em>primary stakeholders</em>, not friction in a prediction pipeline.
+        When we design for clarity, recourse, and fairness&mdash;and validate with real users&mdash;AI features become
+        reliable partners rather than inscrutable oracles.
+      </p>
+      <p class="muted small">References and extended notes are available in the PDF.</p>
+    </section>
+
+    <!-- Footer Nav -->
+    <nav class="case-pager" aria-label="Writing pagination">
+      <a class="btn btn--ghost" href="./">&larr; All writing</a>
+      <div class="spacer"></div>
+      <a class="btn btn--secondary" href="notes/queueing-cheatsheet.html">Next: Queueing Cheatsheet &rarr;</a>
+    </nav>
+    </article>
+    </div>
     </section>
   </main>
 
