@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Real-Time Switch Project &mdash; Case Study &mdash; Nirav Ramidi</title>
+    <meta name="description"
+        content="High-performance real-time network switch implementation in C/C++. Focus on low latency, packet processing, and concurrent lookup tables." />
+
+    <!-- Styles (kept separate) -->
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <link rel="icon" href="../../assets/img/favicon.png" />
+
+    <!-- Optional structured data -->
+    <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareSourceCode",
+    "name":"Real-Time Switch Project",
+    "author":{"@type":"Person","name":"Nirav Ramidi"},
+    "programmingLanguage":"C/C++",
+    "runtimePlatform":"Linux",
+    "keywords":"C, C++, networking, switch, low latency, real-time"
+  }
+  </script>
+</head>
+
+<body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <!-- Header / Nav -->
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <a class="brand" href="../../" aria-label="Nirav Ramidi &mdash; home">
+                <span class="brand__mark" aria-hidden="true">NR</span>
+                <span class="brand__text">Nirav Ramidi</span>
+            </a>
+
+            <nav class="site-nav" aria-label="Primary">
+                <ul class="nav-list">
+                    <li><a href="../../">Home</a></li>
+                    <li><a href="../../experience.html">Experience</a></li>
+                    <li><a href="../">Projects</a></li>
+                    <li><a href="../../writing/">Writing</a></li>
+                    <li><a href="../../education/">Education</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                    <li class="hide-on-mobile"><a href="../../resume/" class="btn btn--ghost">Resume</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="nav-icons">
+                    <a href="https://github.com/Nirav01" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+                    <a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener"
+                        aria-label="LinkedIn">LinkedIn</a>
+                </div>
+
+                <a href="../../resume/Nirav_Ramidi_CV.pdf" class="btn btn--primary show-on-mobile">Download CV</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="content" class="site-main" role="main">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs container" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="../../">Home</a></li>
+                <li><a href="../">Projects</a></li>
+                <li><a href="../">SWE / Systems</a></li>
+                <li><span aria-current="page">Real-Time Switch</span></li>
+            </ol>
+        </nav>
+
+        <!-- Hero -->
+        <section class="case-hero section">
+            <div class="container case-hero__inner">
+                <div class="case-hero__copy">
+                    <h1>Real-Time Switch Project</h1>
+                    <p class="lead">
+                        A high-performance <strong>real-time network switch</strong> implementation designed for
+                        <strong>low latency</strong>
+                        and high throughput. Built with <strong>C/C++</strong>, it handles packet forwarding, address
+                        learning, and
+                        switching logic with minimal overhead.
+                    </p>
+                    <ul class="metrics">
+                        <li class="chip">C/C++</li>
+                        <li class="chip">Low Latency</li>
+                        <li class="chip">Packet Processing</li>
+                        <li class="chip">Concurrency</li>
+                    </ul>
+                </div>
+                <figure class="case-hero__media">
+                    <!-- Placeholder image, user can replace later -->
+                    <img src="../../assets/img/case-studies/switch-hero.jpg"
+                        alt="Diagram or screenshot of the Real-Time Switch architecture" loading="lazy"
+                        style="background-color: #eee; min-height: 300px; display: flex; align-items: center; justify-content: center; text-align: center; color: #666;"
+                        onerror="this.style.display='none'" />
+                    <!-- Fallback if image doesn't exist, though we should probably generate one or use a generic one -->
+                </figure>
+            </div>
+        </section>
+
+        <!-- Meta + Body -->
+        <section class="case-layout section">
+            <div class="container grid case-grid">
+
+                <aside class="case-meta card">
+                    <h2 class="visually-hidden">Project info</h2>
+                    <dl class="meta-list">
+                        <dt>Type</dt>
+                        <dd>Systems / Networking</dd>
+                        <dt>Role</dt>
+                        <dd>Developer</dd>
+                        <dt>Focus</dt>
+                        <dd>Performance, Concurrency, Real-time constraints</dd>
+                        <dt>Stack</dt>
+                        <dd>C/C++, Linux, Networking APIs</dd>
+                        <dt>Links</dt>
+                        <dd>
+                            <ul class="bare">
+                                <li><a href="../" aria-label="Back to projects">Back to Projects</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </aside>
+
+                <article class="case-body">
+                    <!-- Problem & Goals -->
+                    <section class="case-section" id="context">
+                        <h2>Problem &amp; Goals</h2>
+                        <p>
+                            Modern networks require switches that can handle high traffic loads with minimal delay. The
+                            goal of this project
+                            was to design and implement a software-based switch that mimics the behavior of hardware
+                            switches, focusing on:
+                        </p>
+                        <ul>
+                            <li><strong>Real-time packet processing</strong> to ensure strict timing guarantees.</li>
+                            <li>Efficient <strong>MAC address learning</strong> and lookup tables.</li>
+                            <li>Handling concurrent traffic flows without blocking or dropping packets unnecessarily.
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- Architecture -->
+                    <section class="case-section" id="architecture">
+                        <h2>Architecture</h2>
+                        <p>
+                            The switch architecture is built around a central forwarding engine that interacts with
+                            multiple network interfaces.
+                            Key components include:
+                        </p>
+                        <ul>
+                            <li><strong>Ingress/Egress Queues:</strong> Buffers to handle bursty traffic.</li>
+                            <li><strong>Lookup Table:</strong> A hash map or similar structure for fast MAC-to-Port
+                                mapping.</li>
+                            <li><strong>Switching Logic:</strong> The core decision-making unit that determines where to
+                                forward packets.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Implementation -->
+                    <section class="case-section" id="impl">
+                        <h2>Implementation Highlights</h2>
+                        <ul class="checklist">
+                            <li><strong>Optimized Data Structures:</strong> Used efficient hashing for O(1) average time
+                                lookups.</li>
+                            <li><strong>Zero-Copy Networking:</strong> Minimized data copying to reduce CPU usage and
+                                latency.</li>
+                            <li><strong>Concurrency Control:</strong> Implemented lock-free or fine-grained locking
+                                mechanisms to handle multi-threaded packet processing.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Challenges -->
+                    <section class="case-section" id="challenges">
+                        <h2>Challenges &amp; Solutions</h2>
+                        <p>
+                            One of the main challenges was managing <strong>race conditions</strong> in the lookup table
+                            when multiple threads
+                            attempted to update or read from it simultaneously. This was resolved using atomic
+                            operations and careful synchronization.
+                        </p>
+                    </section>
+
+                    <!-- Footer nav -->
+                    <nav class="case-pager" aria-label="Case study pagination">
+                        <a class="btn btn--ghost" href="twitter-cli.html">&larr; Twitter-like CLI</a>
+                        <div class="spacer"></div>
+                        <a class="btn btn--secondary" href="../">Back to Projects &rarr;</a>
+                    </nav>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-inner">
+            <p>© <span id="year">2025</span> Nirav Ramidi</p>
+            <ul class="footer-links">
+                <li><a href="https://github.com/Nirav01" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="../../resume/">Resume</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts (kept separate) -->
+    <script src="../../assets/js/main.js" defer></script>
+</body>
+
+</html>
