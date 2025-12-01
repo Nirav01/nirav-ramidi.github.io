@@ -4,26 +4,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Real-Time Switch Project &mdash; Case Study &mdash; Nirav Ramidi</title>
+    <title>Antigravity Transaction Switch &mdash; Case Study &mdash; Nirav Ramidi</title>
     <meta name="description"
-        content="High-performance real-time network switch implementation in C/C++. Focus on low latency, packet processing, and concurrent lookup tables." />
+        content="Distributed transaction switch with RabbitMQ, FastAPI, and real-time dashboard. At-least-once delivery, auto-failover, and SRE observability." />
 
     <!-- Styles (kept separate) -->
     <link rel="stylesheet" href="../../assets/css/main.css" />
     <link rel="icon" href="../../assets/img/favicon.png" />
-
-    <!-- Optional structured data -->
-    <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"SoftwareSourceCode",
-    "name":"Real-Time Switch Project",
-    "author":{"@type":"Person","name":"Nirav Ramidi"},
-    "programmingLanguage":"C/C++",
-    "runtimePlatform":"Linux",
-    "keywords":"C, C++, networking, switch, low latency, real-time"
-  }
-  </script>
 </head>
 
 <body>
@@ -41,7 +28,7 @@
                 <ul class="nav-list">
                     <li><a href="../../">Home</a></li>
                     <li><a href="../../experience.html">Experience</a></li>
-                    <li><a href="../">Projects</a></li>
+                    <li><a href="../" aria-current="page">Projects</a></li>
                     <li><a href="../../writing/">Writing</a></li>
                     <li><a href="../../education/">Education</a></li>
                     <li><a href="../../about.html">About</a></li>
@@ -67,8 +54,8 @@
             <ol>
                 <li><a href="../../">Home</a></li>
                 <li><a href="../">Projects</a></li>
-                <li><a href="../">SWE / Systems</a></li>
-                <li><span aria-current="page">Real-Time Switch</span></li>
+                <li><a href="../">Cloud / SRE</a></li>
+                <li><span aria-current="page">Antigravity Transaction Switch</span></li>
             </ol>
         </nav>
 
@@ -76,28 +63,23 @@
         <section class="case-hero section">
             <div class="container case-hero__inner">
                 <div class="case-hero__copy">
-                    <h1>Real-Time Switch Project</h1>
+                    <h1>Antigravity Transaction Switch</h1>
                     <p class="lead">
-                        A high-performance <strong>real-time network switch</strong> implementation designed for
-                        <strong>low latency</strong>
-                        and high throughput. Built with <strong>C/C++</strong>, it handles packet forwarding, address
-                        learning, and
-                        switching logic with minimal overhead.
+                        Built a distributed, message-queue-based “transaction switch” that routes synthetic
+                        payment-like events (“gravity particles”) across a pool of worker nodes with
+                        at-least-once delivery, automatic failover, and a live WebSocket dashboard.
                     </p>
                     <ul class="metrics">
-                        <li class="chip">C/C++</li>
-                        <li class="chip">Low Latency</li>
-                        <li class="chip">Packet Processing</li>
-                        <li class="chip">Concurrency</li>
+                        <li class="chip">FastAPI + WebSockets</li>
+                        <li class="chip">RabbitMQ</li>
+                        <li class="chip">Redis</li>
+                        <li class="chip">Docker Compose</li>
                     </ul>
                 </div>
                 <figure class="case-hero__media">
-                    <!-- Placeholder image, user can replace later -->
-                    <img src="../../assets/img/case-studies/switch-hero.jpg"
-                        alt="Diagram or screenshot of the Real-Time Switch architecture" loading="lazy"
-                        style="background-color: #eee; min-height: 300px; display: flex; align-items: center; justify-content: center; text-align: center; color: #666;"
-                        onerror="this.style.display='none'" />
-                    <!-- Fallback if image doesn't exist, though we should probably generate one or use a generic one -->
+                    <img src="../../assets/img/case-studies/real-time-switch-hero.png"
+                        alt="Architecture diagram showing clients, API gateway, RabbitMQ, workers, and dashboard"
+                        loading="lazy" />
                 </figure>
             </div>
         </section>
@@ -110,86 +92,179 @@
                     <h2 class="visually-hidden">Project info</h2>
                     <dl class="meta-list">
                         <dt>Type</dt>
-                        <dd>Systems / Networking</dd>
+                        <dd>Distributed systems &middot; Cloud / SRE</dd>
                         <dt>Role</dt>
-                        <dd>Developer</dd>
+                        <dd>Solo developer</dd>
                         <dt>Focus</dt>
-                        <dd>Performance, Concurrency, Real-time constraints</dd>
+                        <dd>Message queues, Fault tolerance, Observability</dd>
                         <dt>Stack</dt>
-                        <dd>C/C++, Linux, Networking APIs</dd>
+                        <dd>Python, FastAPI, RabbitMQ, Redis, Docker Compose, WebSockets, Chart.js, Locust</dd>
                         <dt>Links</dt>
                         <dd>
                             <ul class="bare">
                                 <li><a href="../" aria-label="Back to projects">Back to Projects</a></li>
+                                <li><a href="../../experience.html">Related experience</a></li>
                             </ul>
                         </dd>
                     </dl>
                 </aside>
 
                 <article class="case-body">
-                    <!-- Problem & Goals -->
+                    <!-- Context -->
                     <section class="case-section" id="context">
                         <h2>Problem &amp; Goals</h2>
                         <p>
-                            Modern networks require switches that can handle high traffic loads with minimal delay. The
-                            goal of this project
-                            was to design and implement a software-based switch that mimics the behavior of hardware
-                            switches, focusing on:
+                            Real payment switches sit between front-ends (ATMs, POS, mobile apps) and multiple
+                            back-end processors. They need to route transactions in real time, tolerate node
+                            failures, and provide strong delivery guarantees while remaining observable and
+                            horizontally scalable.
+                        </p>
+                        <p>
+                            This project recreates a simplified version of that environment to demonstrate core
+                            distributed-systems concepts in a concrete way:
                         </p>
                         <ul>
-                            <li><strong>Real-time packet processing</strong> to ensure strict timing guarantees.</li>
-                            <li>Efficient <strong>MAC address learning</strong> and lookup tables.</li>
-                            <li>Handling concurrent traffic flows without blocking or dropping packets unnecessarily.
+                            <li>Model a mission-critical “transaction switch” using modern cloud primitives.</li>
+                            <li>Demonstrate at-least-once delivery and graceful failure handling with a message broker.
                             </li>
+                            <li>Show how to scale out stateless workers without changing the API contract.</li>
+                            <li>Expose health and performance via a real-time dashboard suitable for SRE-style
+                                monitoring.</li>
                         </ul>
                     </section>
 
                     <!-- Architecture -->
                     <section class="case-section" id="architecture">
                         <h2>Architecture</h2>
-                        <p>
-                            The switch architecture is built around a central forwarding engine that interacts with
-                            multiple network interfaces.
-                            Key components include:
-                        </p>
+                        <p>The system runs as a small cluster under Docker Compose:</p>
+                        <div class="grid cards">
+                            <article class="card">
+                                <header class="card__header">
+                                    <h3>API Gateway</h3>
+                                </header>
+                                <p class="card__body">FastAPI app that receives "gravity particles" (REST), exposes
+                                    health checks, and streams telemetry via WebSockets.</p>
+                            </article>
+                            <article class="card">
+                                <header class="card__header">
+                                    <h3>RabbitMQ Broker</h3>
+                                </header>
+                                <p class="card__body">Central durable queue providing at-least-once delivery semantics
+                                    via manual acknowledgements.</p>
+                            </article>
+                            <article class="card">
+                                <header class="card__header">
+                                    <h3>Worker Nodes</h3>
+                                </header>
+                                <p class="card__body">Stateless <code>switch-node</code> consumers that pull messages,
+                                    simulate logic, and update metrics.</p>
+                            </article>
+                            <article class="card">
+                                <header class="card__header">
+                                    <h3>Redis &amp; Dashboard</h3>
+                                </header>
+                                <p class="card__body">Redis stores ephemeral metrics (throughput, heartbeats). The
+                                    dashboard visualises this state in real-time.</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- Message Flow -->
+                    <section class="case-section" id="flow">
+                        <h2>Message Flow</h2>
+                        <ol>
+                            <li>
+                                Client sends a “gravity particle” via <code>POST /send</code> with <code>id</code>,
+                                <code>payload</code>, and <code>priority</code>.
+                            </li>
+                            <li>
+                                FastAPI validates the request and publishes it to a RabbitMQ queue with the appropriate
+                                routing key.
+                            </li>
+                            <li>
+                                One of the <code>switch-node</code> workers consumes the message, simulates processing,
+                                and writes metrics to Redis.
+                            </li>
+                            <li>
+                                On success, the worker sends a manual <code>ack</code> to RabbitMQ. On failure, it can
+                                <code>nack</code> or crash—leaving the broker to requeue.
+                            </li>
+                            <li>
+                                The dashboard subscribes to a WebSocket stream that pulls metrics from Redis and pushes
+                                updates to the browser.
+                            </li>
+                        </ol>
+                    </section>
+
+                    <!-- Fault Tolerance -->
+                    <section class="case-section" id="fault-tolerance">
+                        <h2>Fault Tolerance &amp; Scaling</h2>
+                        <h3>At-least-once delivery</h3>
                         <ul>
-                            <li><strong>Ingress/Egress Queues:</strong> Buffers to handle bursty traffic.</li>
-                            <li><strong>Lookup Table:</strong> A hash map or similar structure for fast MAC-to-Port
-                                mapping.</li>
-                            <li><strong>Switching Logic:</strong> The core decision-making unit that determines where to
-                                forward packets.</li>
+                            <li>Workers use explicit acknowledgements. A message is only "done" when <code>ack</code>'d.
+                            </li>
+                            <li>If a node dies mid-transaction, unacknowledged messages are automatically requeued by
+                                RabbitMQ.</li>
+                        </ul>
+
+                        <h3>Horizontal scaling</h3>
+                        <ul>
+                            <li>Worker nodes are stateless and configured via environment variables.</li>
+                            <li>Scaling is as simple as adding more <code>switch-node</code> containers; RabbitMQ
+                                load-balances automatically.</li>
+                        </ul>
+
+                        <h3>Failure simulation</h3>
+                        <ul>
+                            <li>You can <code>docker stop</code> a worker to simulate failure.</li>
+                            <li>The dashboard detects the missing heartbeat and marks the node OFFLINE.</li>
+                            <li>Remaining nodes absorb the load without service interruption.</li>
                         </ul>
                     </section>
 
-                    <!-- Implementation -->
-                    <section class="case-section" id="impl">
-                        <h2>Implementation Highlights</h2>
-                        <ul class="checklist">
-                            <li><strong>Optimized Data Structures:</strong> Used efficient hashing for O(1) average time
-                                lookups.</li>
-                            <li><strong>Zero-Copy Networking:</strong> Minimized data copying to reduce CPU usage and
-                                latency.</li>
-                            <li><strong>Concurrency Control:</strong> Implemented lock-free or fine-grained locking
-                                mechanisms to handle multi-threaded packet processing.</li>
-                        </ul>
-                    </section>
-
-                    <!-- Challenges -->
-                    <section class="case-section" id="challenges">
-                        <h2>Challenges &amp; Solutions</h2>
+                    <!-- Dashboard -->
+                    <section class="case-section" id="observability">
+                        <h2>Dashboard &amp; Observability</h2>
                         <p>
-                            One of the main challenges was managing <strong>race conditions</strong> in the lookup table
-                            when multiple threads
-                            attempted to update or read from it simultaneously. This was resolved using atomic
-                            operations and careful synchronization.
+                            The dashboard is a small SPA served by FastAPI that presents an SRE-friendly view of the
+                            switch.
+                            It features real-time charts (Chart.js) for throughput and queue depth, a live list of
+                            active nodes with status indicators, and controls to inject load.
                         </p>
+                        <p>
+                            Metrics are kept lightweight—simple Redis counters and gauges—showcasing how to decouple
+                            telemetry from the hot path.
+                        </p>
+                    </section>
+
+                    <!-- Chaos Testing -->
+                    <section class="case-section" id="testing">
+                        <h2>Chaos &amp; Load Testing</h2>
+                        <p>
+                            The project includes a <strong>Locust</strong> load generator to simulate steady-state
+                            traffic, burst spikes, and failure scenarios.
+                            The system targets ~1,000–1,500 particles/sec with simulated latency.
+                        </p>
+                    </section>
+
+                    <!-- Learnings -->
+                    <section class="case-section" id="learnings">
+                        <h2>What I learned</h2>
+                        <ul class="checklist">
+                            <li>How to use RabbitMQ for resilient, message-driven architectures.</li>
+                            <li>The trade-offs between at-least-once delivery, idempotency, and complexity.</li>
+                            <li>Separating API, processing, and observability into composable services.</li>
+                            <li>Framing systems projects in SRE language: SLOs, availability, and failover.</li>
+                        </ul>
                     </section>
 
                     <!-- Footer nav -->
                     <nav class="case-pager" aria-label="Case study pagination">
-                        <a class="btn btn--ghost" href="twitter-cli.html">&larr; Twitter-like CLI</a>
+                        <a class="btn btn--ghost" href="../cloud-sre/library-analytics.html">&larr; Cloud-Native Library
+                            Analytics</a>
                         <div class="spacer"></div>
-                        <a class="btn btn--secondary" href="../">Back to Projects &rarr;</a>
+                        <a class="btn btn--secondary" href="../hcai-viz/hcai-experiment.html">Next: HCAI Empirical Study
+                            &rarr;</a>
                     </nav>
                 </article>
             </div>
@@ -209,7 +284,7 @@
         </div>
     </footer>
 
-    <!-- Scripts (kept separate) -->
+    <!-- Scripts -->
     <script src="../../assets/js/main.js" defer></script>
 </body>
 
