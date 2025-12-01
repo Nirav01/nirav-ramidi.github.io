@@ -650,6 +650,42 @@ pre {
   margin-top: var(--space-4);
 }
 
+/* About Page Hero */
+.about-hero__inner {
+  display: grid;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+@media (min-width: 800px) {
+  .about-hero__inner {
+    grid-template-columns: 1.5fr 1fr;
+  }
+
+  .about-hero__media {
+    order: 2;
+  }
+
+  .about-hero__copy {
+    order: 1;
+  }
+}
+
+.about-hero__media img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-2);
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.about-hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin: var(--space-5) 0;
+}
+
 .tiles {
   display: grid;
   gap: var(--space-5);
