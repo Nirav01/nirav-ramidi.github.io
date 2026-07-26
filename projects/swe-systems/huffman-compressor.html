@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Huffman Compressor &mdash; Case Study &mdash; Nirav Ramidi</title>
+  <title>Huffman Compressor &ndash; Case Study &ndash; Nirav Ramidi</title>
   <meta name="description"
     content="A Java implementation of Huffman coding: optimal prefix codes, bit-level I/O, canonical code serialisation, and benchmarks on mixed corpora." />
 
@@ -32,7 +32,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi &mdash; home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi &ndash; home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -149,7 +149,7 @@
                 <ol>
                   <li>Count symbol frequencies &rarr; array[0..255].</li>
                   <li>Push non-zero symbols into a <strong>min-heap</strong> by frequency.</li>
-                  <li>Pop two, merge to parent with sum freq, push back &mdash; repeat.</li>
+                  <li>Pop two, merge to parent with sum freq, push back &ndash; repeat.</li>
                   <li>Derive code lengths from root-to-leaf depths.</li>
                 </ol>
                 <p class="muted small">Time: O(σ log σ + n) with σ ≤ 256 ⇒ effectively O(n). Space: O(σ).</p>
@@ -157,7 +157,7 @@
               <div>
                 <h3>Canonicalisation</h3>
                 <ul>
-                  <li>Sort (length, symbol) to produce <strong>canonical codes</strong> &mdash; compact header,
+                  <li>Sort (length, symbol) to produce <strong>canonical codes</strong> &ndash; compact header,
                     deterministic.</li>
                   <li>Decoder reconstructs codes from lengths only (no tree serialisation needed).</li>
                 </ul>

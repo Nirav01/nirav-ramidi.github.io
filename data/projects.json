@@ -82,6 +82,19 @@
       "status": "complete",
       "highlight": false
     },
+    {
+      "id": "real-time-switch",
+      "area": "cloud-sre",
+      "title": "Antigravity Transaction Switch",
+      "summary": "Real-time transaction switch with message queueing, idempotent processing and a caching layer.",
+      "date": "2026-01-15",
+      "tags": ["RabbitMQ", "FastAPI", "Redis", "Docker"],
+      "page": "/projects/swe-systems/real-time-switch.html",
+      "image": "/assets/img/case-studies/real-time-switch-hero.png",
+      "links": { "repo": "", "demo": "" },
+      "status": "complete",
+      "highlight": true
+    },
 
     {
       "id": "vision-microservice",

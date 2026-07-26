@@ -208,12 +208,12 @@
      9) Project Filters
      ---------------------------------------- */
   const filters = $$('.filter[data-filter]');
-  const projects = $$('.project-card[data-tags]');
+  const filterables = $$('.project-card[data-tags], .role-card[data-tags]');
 
-  if (filters.length && projects.length) {
+  if (filters.length && filterables.length) {
     filters.forEach(filter => {
-      filter.addEventListener('click', (e) => {
-        const selectedFilter = e.target.dataset.filter;
+      filter.addEventListener('click', () => {
+        const selectedFilter = filter.dataset.filter;
 
         // Update active state
         filters.forEach(f => {
@@ -223,14 +223,11 @@
         filter.classList.add('is-active');
         filter.setAttribute('aria-pressed', 'true');
 
-        // Filter projects
-        projects.forEach(project => {
-          const tags = project.dataset.tags;
-          if (selectedFilter === 'all' || tags === selectedFilter) {
-            project.style.display = '';
-          } else {
-            project.style.display = 'none';
-          }
+        // Filter cards. data-tags may carry several space separated tags.
+        filterables.forEach(card => {
+          const tags = (card.dataset.tags || '').split(/\s+/).filter(Boolean);
+          const show = selectedFilter === 'all' || tags.includes(selectedFilter);
+          card.style.display = show ? '' : 'none';
         });
       });
     });

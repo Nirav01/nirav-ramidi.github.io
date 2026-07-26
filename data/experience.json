@@ -1,65 +1,142 @@
 {
   "schemaVersion": 1,
   "owner": "Nirav Ramidi",
-  "generatedAt": "2025-09-24",
+  "generatedAt": "2026-07-26",
   "experience": [
+    {
+      "id": "knoops-consultant-2026",
+      "title": "Data & Technology Consultant",
+      "org": "Knoops",
+      "orgDescriptor": "Premium hot chocolate brand, 30+ UK stores plus UAE",
+      "location": "Independent retainer, remote",
+      "employmentType": "consulting",
+      "start": "2026-03-01",
+      "end": "2026-07-31",
+      "summary": "Owned the Power BI report layer at Knoops. Estate audit, data quality incident response, SaaS capability assessment and C-suite advisory.",
+      "bullets": [
+        "Owned the Power BI report layer for a premium hot chocolate brand scaling across 30+ UK stores plus the UAE. Ran a full estate audit; the flagship Weekly Scorecard alone carried 50+ tables and 600+ measures.",
+        "Led incident response when a Shopify store migration loaded several hundred historical UAE orders into the UK store with incorrect dates and an unconverted currency. Root caused it, ruled out three lookalike pipeline symptoms and specified the resolution.",
+        "Reconciled Weekly Scorecard metrics against Tenzo. Isolated defects including material duplication in Arch app order data, unmapped fact rows traced to a stale SharePoint product hierarchy and a timezone day shift that reproduced only in the Power BI Service.",
+        "Assessed the commercial SaaS stack (Klaviyo, Shopify, Revel, Arch, Katana, MarketMan) against actual usage. Klaviyo was running at under a quarter of its licensed capability, a five figure revenue opportunity from features already paid for.",
+        "Built a four phase roadmap to reduce dependency on Ardeema, the external agency holding the pipeline and semantic model. Reported to and briefed C-suite including the CEO and CFO."
+      ],
+      "skills": ["Power BI", "DAX", "Power Query", "Shopify", "Data Quality", "SaaS Assessment", "Stakeholder Management"],
+      "links": {},
+      "tags": ["Consulting", "BI", "Data Quality", "Advisory"],
+      "publishingNote": "Company names are cleared for publication. Figures stay rounded (as-reported, never audited). Do not publish individuals' names, and do not claim ownership of the pipeline or semantic model, which were Ardeema's."
+    },
     {
       "id": "icon-life-sciences-intern-2025",
       "title": "Data Science Analyst Intern",
       "org": "Icon Life Sciences",
-      "location": "Dublin, Ireland",
+      "location": "Remote / Dublin, Ireland",
       "employmentType": "internship",
       "start": "2025-05-01",
       "end": "2025-09-30",
-      "summary": "Supported analytics initiatives with reproducible data pipelines and exploratory ML.",
+      "summary": "Built a BigQuery golden source across 12+ systems and delivered brand-level demand forecasts.",
       "bullets": [
-        "Built Python/SQL data pipelines and EDA notebooks; delivered clean datasets for downstream analysis.",
-        "Prototyped forecasting/classification baselines; compared metrics and documented assumptions.",
-        "Collaborated with stakeholders on problem framing, validation criteria, and lightweight dashboards."
+        "Unified 12+ systems into a BigQuery golden source via Cloud Functions and Airflow, covering 108 SKUs across 25 therapy areas; cut manual Excel effort by over 80%.",
+        "Delivered brand-level LightGBM forecasts at MAPE 7.9%; helped reduce CNS stock-outs by 18%.",
+        "Ran weekly and monthly reviews; shipped executive dashboards for planning and supply decisions."
       ],
-      "skills": ["Python", "Pandas", "scikit-learn", "SQL", "Jupyter", "Version Control"],
+      "skills": ["BigQuery", "Airflow", "Python", "LightGBM", "scikit-learn", "SQL"],
       "links": {
         "project": "/projects/data-ml/golden-source-forecasting.html"
       },
       "tags": ["Data Science", "Analytics", "ML", "Internship"]
     },
     {
-      "id": "fameasy-founder-2020",
+      "id": "iassist-junior-ml-engineer-2024",
+      "title": "Junior ML Engineer",
+      "org": "iAssist Innovation Labs",
+      "location": "Dublin / Remote",
+      "employmentType": "full-time",
+      "start": "2024-04-01",
+      "end": "2024-09-30",
+      "summary": "Supported go-live of a CNN-OCR and auto-adjudication product, and a containerised vision microservice at scale.",
+      "bullets": [
+        "Supported go-live for CNN-OCR and auto-adjudication for top insurers; triaged product and engineering issues to resolution.",
+        "Contributed to a Docker/Kubernetes vision microservice achieving p95 under 300 ms at ~1,000 req/s with ~0.2% error in load tests.",
+        "Added CV quality gates (de-skew, resolution checks), reducing re-submissions and improving first-time-right."
+      ],
+      "skills": ["Docker", "Kubernetes", "FastAPI", "Computer Vision", "Python"],
+      "links": {
+        "project": "/projects/cloud-sre/vision-microservice.html"
+      },
+      "tags": ["Cloud/SRE", "ML", "Computer Vision"]
+    },
+    {
+      "id": "iassist-ai-ml-intern-2023",
+      "title": "AI & ML Intern",
+      "org": "iAssist Innovation Labs",
+      "location": "Remote",
+      "employmentType": "internship",
+      "start": "2023-05-01",
+      "end": "2023-09-30",
+      "summary": "Automated cloud data pipelines and trained image classification models with experiment tracking.",
+      "bullets": [
+        "Automated GCS to BigQuery pipelines and Vertex AI jobs; raised data validity to 99% and cut preprocessing latency by ~40%.",
+        "Curated and labelled ~1.2M images; trained EfficientNet-B3 to ~92% hold-out accuracy with MLflow tracking and handover docs.",
+        "Prototyped a FastAPI inference service with versioned contracts and monitoring hooks."
+      ],
+      "skills": ["BigQuery", "Vertex AI", "MLflow", "EfficientNet", "FastAPI"],
+      "links": {},
+      "tags": ["Data Science", "ML", "Internship"]
+    },
+    {
+      "id": "iassist-app-web-intern-2022",
+      "title": "Application & Web Design Intern",
+      "org": "iAssist Innovation Labs",
+      "location": "Remote",
+      "employmentType": "internship",
+      "start": "2022-05-01",
+      "end": "2022-09-30",
+      "summary": "Built a Flutter inventory-scanning app, a React admin UI and a barcode/QR backend service.",
+      "bullets": [
+        "Built a Flutter inventory-scanning app with camera and scan flows, local caching and error handling.",
+        "Shipped a React.js admin UI and a FastAPI + PostgreSQL barcode/QR service; added CI/CD."
+      ],
+      "skills": ["Flutter", "React", "FastAPI", "PostgreSQL", "CI/CD"],
+      "links": {},
+      "tags": ["SWE", "Frontend", "Internship"]
+    },
+    {
+      "id": "farmeasy-founder-2020",
       "title": "Founder",
       "org": "FarmEasy",
-      "location": "Local / Dublin, Ireland",
+      "location": "Dublin, Ireland",
       "employmentType": "entrepreneurship",
       "start": "2020-01-01",
       "end": "2022-09-30",
-      "summary": "Bootstrapped a backyard produce micro-business during COVID; handled operations, customers, and basic finance.",
+      "summary": "Bootstrapped a backyard-to-table produce micro-business during COVID; owned operations, customers and finance.",
       "bullets": [
-        "Grew and sold seasonal vegetables; built repeat local customers and simple delivery workflow.",
-        "Managed pricing, inventory, and quality; tracked orders and costs in spreadsheets.",
+        "Launched a backyard-to-table micro-farm; owned planting through harvesting through last-mile delivery.",
+        "Managed pricing, inventory and quality; tracked orders and costs, building a recurring local customer base.",
         "Applied simple demand forecasting to minimise waste and stock-outs."
       ],
-      "skills": ["Operations", "Customer Service", "Basic Forecasting", "Spreadsheets"],
+      "skills": ["Operations", "Customer Service", "Basic Forecasting", "Bookkeeping"],
       "links": {},
-      "tags": ["Entrepreneurship", "Small Business"]
+      "tags": ["Entrepreneurship", "Leadership", "Small Business"]
     },
     {
-      "id": "student-treasurer-2021",
+      "id": "ucd-treasurer-2023",
       "title": "Treasurer",
-      "org": "Student organisation",
-      "location": "Ireland",
+      "org": "UCD Badminton Club & Music Society",
+      "location": "Dublin, Ireland",
       "employmentType": "volunteer",
-      "start": "2021-01-01",
-      "end": "2022-12-31",
-      "summary": "Oversaw budget and reporting; introduced light financial controls and transparency.",
+      "start": "2023-01-01",
+      "end": "2024-09-30",
+      "summary": "Oversaw society budgets and reporting; introduced light financial controls and transparency.",
       "bullets": [
-        "Managed ~€25,000 budget across the academic year; prepared monthly summaries.",
-        "Implemented basic controls (dual approval, receipts, spreadsheet ledgers).",
+        "Managed budgets totalling approximately EUR 25,000; produced monthly statements.",
+        "Implemented basic controls (dual approval, receipts, ledgers).",
         "Coordinated reimbursements and vendor payments; supported event budgeting."
       ],
       "finance": {
         "currency": "EUR",
         "budgetManaged": 25000
       },
-      "skills": ["Budgeting", "Reporting", "Spreadsheets", "Vendor Management"],
+      "skills": ["Budgeting", "Reporting", "Vendor Management"],
       "links": {},
       "tags": ["Finance", "Leadership"]
     }

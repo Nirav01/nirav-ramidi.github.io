@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Programming for Big Data &mdash; Module &mdash; Nirav Ramidi</title>
+  <title>Programming for Big Data &ndash; Module &ndash; Nirav Ramidi</title>
   <meta name="description"
     content="Practical data engineering with Python & PySpark: distributed dataframes, ETL pipelines, joins & shuffles, storage formats, streaming, and performance tuning." />
 
@@ -19,7 +19,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../../" aria-label="Nirav Ramidi &mdash; home">
+      <a class="brand" href="../../" aria-label="Nirav Ramidi &ndash; home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -78,8 +78,8 @@
 
         <div class="actions">
           <!-- Place these files in this folder to activate links -->
-          <a class="btn btn--secondary" href="1-Introduction.pdf">Lecture 1 &mdash; Introduction (PDF)</a>
-          <a class="btn btn--ghost" href="group_project.html">Group Project &mdash; Big Data App</a>
+          <a class="btn btn--secondary" href="1-Introduction.pdf">Lecture 1 &ndash; Introduction (PDF)</a>
+          <a class="btn btn--ghost" href="group_project.html">Group Project &ndash; Big Data App</a>
         </div>
 
         <p class="muted small">
@@ -195,7 +195,7 @@ facts = (
 )
 
 facts.write.mode("overwrite").partitionBy("day").parquet("s3://bucket/curated/events_by_day")</code></pre>
-                <p class="muted small">Broadcast joins trade network shuffle for executor memory &mdash; ensure the dim
+                <p class="muted small">Broadcast joins trade network shuffle for executor memory &ndash; ensure the dim
                   table is small.</p>
               </div>
 
@@ -250,8 +250,8 @@ q.awaitTermination()</code></pre>
           <section class="case-section" id="artifacts">
             <h2>Selected Artefacts</h2>
             <ul class="list">
-              <li><a href="1-Introduction.pdf">Lecture 1 &mdash; course introduction</a></li>
-              <li><a href="group_project.html">Group Project &mdash; Big Data application (HTML)</a></li>
+              <li><a href="1-Introduction.pdf">Lecture 1 &ndash; course introduction</a></li>
+              <li><a href="group_project.html">Group Project &ndash; Big Data application (HTML)</a></li>
             </ul>
           </section>
 
@@ -260,7 +260,7 @@ q.awaitTermination()</code></pre>
             <h2>Key Takeaways</h2>
             <ul class="checklist">
               <li>Columnar formats + partitioning enable fast scans and pruning.</li>
-              <li>Most performance problems are <strong>shuffle</strong> or <strong>skew</strong> &mdash; fix joins
+              <li>Most performance problems are <strong>shuffle</strong> or <strong>skew</strong> &ndash; fix joins
                 first.
               </li>
               <li>Design for retries and idempotency; storage is the system of record.</li>

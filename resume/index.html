@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Resume &mdash; Nirav Ramidi</title>
+  <title>Resume &ndash; Nirav Ramidi</title>
   <meta name="description"
     content="One-page resume for Nirav Ramidi. Download the PDF or view an HTML summary of skills, experience, projects, and education." />
 
@@ -18,13 +18,13 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Nirav Ramidi",
-    "url": "https://your-domain-or-github-io.example/resume/",
+    "url": "https://nirav01.github.io/nirav-ramidi.github.io/resume/",
     "sameAs": [
       "https://github.com/Nirav01",
       "https://www.linkedin.com/in/nirav-ramidi/"
     ],
-    "jobTitle": "Data / Software Engineer",
-    "image": "https://your-domain-or-github-io.example/assets/img/avatar.jpg"
+    "jobTitle": "Data & Technology Consultant",
+    "image": "https://nirav01.github.io/nirav-ramidi.github.io/assets/img/nirav.jpg"
   }
   </script>
 </head>
@@ -35,7 +35,7 @@
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="../" aria-label="Nirav Ramidi &mdash; home">
+      <a class="brand" href="../" aria-label="Nirav Ramidi &ndash; home">
         <span class="brand__mark" aria-hidden="true">NR</span>
         <span class="brand__text">Nirav Ramidi</span>
       </a>
@@ -107,22 +107,23 @@
 
           <h3 class="h6">Core Skills</h3>
           <ul class="chips">
+            <li class="chip">Power BI</li>
+            <li class="chip">DAX</li>
             <li class="chip">Python</li>
+            <li class="chip">SQL</li>
             <li class="chip">Java</li>
             <li class="chip">C</li>
-            <li class="chip">SQL</li>
             <li class="chip">PySpark</li>
-            <li class="chip">Data Mining</li>
             <li class="chip">Machine Learning</li>
-            <li class="chip">Cloud & SRE</li>
-            <li class="chip">InfoSec</li>
-            <li class="chip">Visualization</li>
+            <li class="chip">Cloud &amp; SRE</li>
+            <li class="chip">Data Quality</li>
           </ul>
 
           <h3 class="h6">Tools</h3>
           <ul class="list tight">
+            <li>Power BI, Power Query</li>
             <li>Git/GitHub, Linux</li>
-            <li>Docker (basics)</li>
+            <li>Docker, Kubernetes</li>
             <li>Jupyter, VS Code, IntelliJ</li>
             <li>Matplotlib/Vega-Lite</li>
           </ul>
@@ -139,9 +140,10 @@
           <section class="resume-section">
             <h2>Summary</h2>
             <p>
-              Data/Software engineer with hands-on projects in ML, distributed data (PySpark), systems performance,
-              and secure software practices. Built forecasting, classification, and microservice workloads; comfortable
-              moving between modeling, code, and the shell.
+              Data and technology consultant with a delivery background in ML, data engineering and cloud
+              infrastructure. Recent work centres on BI report estates, data quality diagnostics and SaaS capability
+              assessment for Knoops, a scaling multi-site retail brand. Comfortable moving between a semantic model, a
+              stakeholder briefing and the shell.
             </p>
           </section>
 
@@ -151,15 +153,34 @@
 
             <div class="xp">
               <header class="xp__head">
-                <h3>Data Science Analyst Intern <span class="muted">&mdash; Icon Life Sciences</span></h3>
+                <h3>Data &amp; Technology Consultant <span class="muted">&ndash; Knoops</span></h3>
+                <span class="xp__time">Mar 2026 &ndash; July 2026</span>
+              </header>
+              <ul>
+                <li>Owned the Power BI report layer for a premium hot chocolate brand across 30+ UK stores; audited an
+                  estate whose flagship Weekly Scorecard carried 50+ tables and 600+ measures.</li>
+                <li>Led incident response on a Shopify migration that contaminated UK order data, root causing it and
+                  separating it from three lookalike pipeline symptoms.</li>
+                <li>Reconciled Weekly Scorecard metrics against Tenzo and isolated the underlying data and measure
+                  defects.</li>
+                <li>Assessed the SaaS stack (Klaviyo, Shopify, Revel, Arch, Katana, MarketMan) against actual usage;
+                  identified a five figure revenue opportunity from features already licensed.</li>
+                <li>Built a four phase roadmap to reduce dependency on Ardeema, the external agency holding the data
+                  pipeline. Briefed the CEO and CFO.</li>
+              </ul>
+            </div>
+
+            <div class="xp">
+              <header class="xp__head">
+                <h3>Data Science Analyst Intern <span class="muted">&ndash; Icon Life Sciences</span></h3>
                 <span class="xp__time">May 2025 &ndash; Sept 2025</span>
               </header>
               <ul>
-                <li>Developed data pipelines and exploratory models to support analytics use-cases; collaborated with
-                  stakeholders on metrics and validation.</li>
-                <li>Prototyped ML workflows (e.g., time series/NLP) and delivered reproducible notebooks and dashboards.
-                </li>
-                <li>Hardened experiments with versioned configs, code reviews, and documentation.</li>
+                <li>Unified 12+ source systems into a BigQuery golden source via Cloud Functions and Airflow; cut manual
+                  Excel effort by over 80%.</li>
+                <li>Delivered brand-level LightGBM forecasts at MAPE 7.9%, contributing to an 18% reduction in CNS
+                  stock-outs.</li>
+                <li>Ran weekly and monthly reviews; shipped executive dashboards for planning and supply decisions.</li>
               </ul>
               <p class="muted small">See related work: <a
                   href="../projects/data-ml/golden-source-forecasting.html">Golden Source Forecasting</a>.</p>
@@ -167,7 +188,35 @@
 
             <div class="xp">
               <header class="xp__head">
-                <h3>Founder <span class="muted">&mdash; FarmEasy</span></h3>
+                <h3>Junior ML Engineer <span class="muted">&ndash; iAssist Innovation Labs</span></h3>
+                <span class="xp__time">Apr 2024 &ndash; Sept 2024</span>
+              </header>
+              <ul>
+                <li>Contributed to a Docker/Kubernetes vision microservice sustaining p95 under 300 ms at ~1,000 req/s
+                  with ~0.2% error in load tests.</li>
+                <li>Supported go-live for CNN-OCR and auto-adjudication for top insurers; added CV quality gates that
+                  reduced re-submissions.</li>
+              </ul>
+              <p class="muted small">See related work: <a href="../projects/cloud-sre/vision-microservice.html">Vision
+                  Microservice</a>.</p>
+            </div>
+
+            <div class="xp">
+              <header class="xp__head">
+                <h3>AI &amp; ML Intern <span class="muted">&ndash; iAssist Innovation Labs</span></h3>
+                <span class="xp__time">May 2023 &ndash; Sept 2023</span>
+              </header>
+              <ul>
+                <li>Automated GCS to BigQuery pipelines and Vertex AI jobs; raised data validity to 99% and cut
+                  preprocessing latency by ~40%.</li>
+                <li>Curated ~1.2M images and trained EfficientNet-B3 to ~92% hold-out accuracy with MLflow tracking.
+                </li>
+              </ul>
+            </div>
+
+            <div class="xp">
+              <header class="xp__head">
+                <h3>Founder <span class="muted">&ndash; FarmEasy</span></h3>
                 <span class="xp__time">Jan 2020 &ndash; Sept 2022</span>
               </header>
               <ul>
@@ -178,11 +227,11 @@
 
             <div class="xp">
               <header class="xp__head">
-                <h3>Treasurer <span class="muted">&mdash; Student organisation</span></h3>
-                <span class="xp__time">2021 &ndash; 2022</span>
+                <h3>Treasurer <span class="muted">&ndash; UCD Badminton Club &amp; Music Society</span></h3>
+                <span class="xp__time">Jan 2023 &ndash; Sept 2024</span>
               </header>
               <ul>
-                <li>Oversaw ~&euro;25k annual budget; implemented light controls for expenses and reporting.</li>
+                <li>Managed budgets totalling ~&euro;25,000; produced monthly statements and improved transparency.</li>
               </ul>
             </div>
           </section>
@@ -242,7 +291,7 @@
                 href="../education/modules/cloud-comp.html">Cloud Computing</a>, <a
                 href="../education/modules/info-sec.html">Information Security</a>, <a
                 href="../education/modules/graph-algorithms.html">Graph Algorithms</a>.</p>
-            <p>Capstone: <a href="../education/modules/final-year-project.html">Final Year Project</a> &mdash; research,
+            <p>Capstone: <a href="../education/modules/final-year-project.html">Final Year Project</a> &ndash; research,
               prototype, and evaluation.</p>
           </section>
 
@@ -261,10 +310,15 @@
                 </ul>
               </div>
               <div>
-                <h3 class="h6">Systems & Tools</h3>
+                <h3 class="h6">BI &amp; Reporting</h3>
                 <ul class="list tight">
-                  <li>Git/GitHub, Linux, Docker (basics), CLI</li>
-                  <li>Testing, code review, basic CI</li>
+                  <li>Power BI, DAX, Power Query, semantic models</li>
+                  <li>Estate audits, metric reconciliation, data quality diagnostics</li>
+                </ul>
+                <h3 class="h6">Systems &amp; Tools</h3>
+                <ul class="list tight">
+                  <li>Git/GitHub, Linux, Docker, Kubernetes, CLI</li>
+                  <li>Testing, code review, CI/CD</li>
                 </ul>
               </div>
             </div>
@@ -279,7 +333,11 @@
               <li><a href="https://www.linkedin.com/in/nirav-ramidi/" target="_blank" rel="noopener">LinkedIn:
                   nirav-ramidi</a></li>
               <li><a href="../contact.html">Contact page</a></li>
+            </ul>
           </section>
+        </article>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
