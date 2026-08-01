@@ -1038,9 +1038,17 @@ th {
   align-items: start;
 }
 
-.resume-side {
-  position: sticky;
-  top: 84px;
+/* Sticky only where the two column layout actually exists. A full width
+   card that is also sticky pins itself over the body text while scrolling,
+   so this is opt-in at large widths rather than opt-out at small ones. */
+@media (min-width: 1025px) {
+  .resume-side {
+    position: sticky;
+    top: 84px;
+    align-self: start;
+    max-height: calc(100vh - 104px);
+    overflow-y: auto;
+  }
 }
 
 .resume-section {
@@ -1090,10 +1098,6 @@ th {
 @media (max-width: 1024px) {
   .resume-grid {
     grid-template-columns: 1fr;
-  }
-
-  .resume-side {
-    position: static;
   }
 }
 
