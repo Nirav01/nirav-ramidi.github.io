@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Resume &ndash; Nirav Ramidi</title>
   <meta name="description"
-    content="One-page resume for Nirav Ramidi. Download the PDF or view an HTML summary of skills, experience, projects, and education." />
+    content="Resume of Nirav Ramidi, Data &amp; Technology Consultant. BI report estates and data quality, plus Data/ML, SWE/Systems and Cloud/SRE experience. Download the PDF or read the HTML summary." />
 
   <!-- Styles (kept separate) -->
   <link rel="stylesheet" href="../assets/css/main.css" />
@@ -78,7 +78,7 @@
       <div class="container resume-hero">
         <h1 class="page-title">Resume</h1>
         <p class="lead">
-          Brief, skills-first summary with links to projects and coursework. A print-optimized PDF is also available.
+          Skills-first summary with links to projects and coursework. A print-optimised PDF is also available.
         </p>
         <div class="actions">
           <a class="btn btn--primary" href="Nirav_Ramidi_CV.pdf">Download PDF</a>
@@ -95,8 +95,12 @@
         <aside class="card resume-side">
           <h2 class="visually-hidden">Quick facts</h2>
           <dl class="meta-list">
+            <dt>Role</dt>
+            <dd>Data &amp; Technology Consultant</dd>
             <dt>Location</dt>
             <dd>Dublin, Ireland</dd>
+            <dt>Availability</dt>
+            <dd>Consulting engagements, hybrid or remote</dd>
             <dt>Email</dt>
             <dd><a href="../contact.html">Get in touch</a></dd>
             <dt>GitHub</dt>
@@ -245,12 +249,12 @@
                 <header class="card__header">
                   <h3><a href="../projects/data-ml/golden-source-forecasting.html">Golden Source Forecasting</a></h3>
                 </header>
-                <p class="card__body">Time-series forecasting for scheduling and capacity planning; emphasis on
-                  baselines and error analysis.</p>
+                <p class="card__body">Unified 12+ systems into a BigQuery golden source and delivered brand-level
+                  LightGBM forecasts at MAPE 7.9%.</p>
                 <ul class="tags">
-                  <li>Python</li>
-                  <li>Pandas</li>
-                  <li>Forecasting</li>
+                  <li>BigQuery</li>
+                  <li>Airflow</li>
+                  <li>LightGBM</li>
                 </ul>
               </article>
 
@@ -258,12 +262,25 @@
                 <header class="card__header">
                   <h3><a href="../projects/cloud-sre/vision-microservice.html">Vision Microservice</a></h3>
                 </header>
-                <p class="card__body">Containerised model inference with health checks, retries, and simple monitoring.
-                </p>
+                <p class="card__body">CNN-OCR inference on Docker/Kubernetes sustaining p95 under 300 ms at ~1k req/s
+                  with ~0.2% error.</p>
                 <ul class="tags">
                   <li>Docker</li>
-                  <li>APIs</li>
+                  <li>Kubernetes</li>
                   <li>Observability</li>
+                </ul>
+              </article>
+
+              <article class="card">
+                <header class="card__header">
+                  <h3><a href="../projects/swe-systems/real-time-switch.html">Antigravity Transaction Switch</a></h3>
+                </header>
+                <p class="card__body">Real-time transaction switch with message queueing, idempotent processing and a
+                  caching layer.</p>
+                <ul class="tags">
+                  <li>RabbitMQ</li>
+                  <li>FastAPI</li>
+                  <li>Redis</li>
                 </ul>
               </article>
 
@@ -284,7 +301,8 @@
 
           <!-- Education -->
           <section class="resume-section" id="education">
-            <h2>Education & Coursework</h2>
+            <h2>Education &amp; Coursework</h2>
+            <p><strong>BSc (Hons) Computer Science</strong>, University College Dublin. Graduated September 2025.</p>
             <p>Highlights: <a href="../education/modules/machine-learning.html">Machine Learning</a>, <a
                 href="../education/modules/data-mining.html">Data Mining</a>, <a
                 href="../education/modules/perf-of-comp-sys.html">Performance of Computer Systems</a>, <a

@@ -232,8 +232,30 @@ pre {
   margin-inline: auto;
 }
 
+/* Base grid. Without this the modifiers below have nothing to act on,
+   since grid-template-columns is inert on a non-grid element. */
+.grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
 .grid.cards {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid.skills-grid,
+.grid.contact-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.grid.link-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  list-style: none;
+  padding: 0;
 }
 
 @media (max-width: 860px) {
@@ -355,6 +377,25 @@ pre {
   display: none;
 }
 
+/* Brand + nav + actions need ~1090px on one row. Below that, drop the nav
+   onto its own line rather than letting the bar overflow the viewport. */
+@media (max-width: 1100px) {
+  .header-inner {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .site-nav {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .site-nav .nav-list {
+    flex-wrap: wrap;
+    gap: .5rem .75rem;
+  }
+}
+
 @media (max-width: 720px) {
   .hide-on-mobile {
     display: none;
@@ -364,9 +405,9 @@ pre {
     display: inline-flex;
   }
 
-  .site-nav .nav-list {
-    flex-wrap: wrap;
-    gap: .5rem .75rem;
+  /* Duplicated in the footer, so drop them rather than squeeze the bar. */
+  .nav-icons {
+    display: none;
   }
 }
 
@@ -1004,6 +1045,24 @@ th {
 
 .resume-section {
   margin-bottom: var(--space-6);
+}
+
+/* Small heading utility. Used in the resume sidebar and skills columns
+   to demote an h3 visually without breaking the heading order. */
+.h6 {
+  font-size: .8rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: var(--space-5) 0 var(--space-2);
+}
+
+.resume-side .h6:first-of-type {
+  margin-top: var(--space-4);
+}
+
+.resume-body>.resume-section:first-child {
+  margin-top: 0;
 }
 
 .xp {
